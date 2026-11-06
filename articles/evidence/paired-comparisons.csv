@@ -1,0 +1,10 @@
+treatment,reference,mean_difference,ci95_low,ci95_high,pairs,cohort_blocks,method
+AR-5,momentum-20,0.0005920958920476299,-0.012076656150709058,0.013458960389519232,13,4,paired cohort-block bootstrap; exploratory with 4 matured blocks
+DLinear,momentum-20,0.01141504805053346,0.0011438657439194649,0.019902785825147182,29,4,paired cohort-block bootstrap; exploratory with 4 matured blocks
+XGBoost,momentum-20,0.010054364621288359,0.0038883328417131046,0.018200016861607562,23,4,paired cohort-block bootstrap; exploratory with 4 matured blocks
+chronos-bolt-small,momentum-20,-0.0030356684554717836,-0.012943869613076836,0.006872532702133269,32,4,paired cohort-block bootstrap; exploratory with 4 matured blocks
+default-committee,momentum-20,-0.0032729582998346036,-0.012484478178799623,0.007393012086335418,41,4,paired cohort-block bootstrap; exploratory with 4 matured blocks
+luna-committee,momentum-20,-0.0023743121266238433,-0.015177607468011861,0.00593196493232512,41,4,paired cohort-block bootstrap; exploratory with 4 matured blocks
+mean-reversion-5,momentum-20,0.011744550156666454,0.0029498359231859756,0.02112062655392415,42,4,paired cohort-block bootstrap; exploratory with 4 matured blocks
+ridge,momentum-20,0.020852815602679105,-0.0005673919503744554,0.04359268018947889,28,4,paired cohort-block bootstrap; exploratory with 4 matured blocks
+single-luna,momentum-20,-0.0014328110937627903,-0.013480194078669789,0.01163633931344115,41,4,paired cohort-block bootstrap; exploratory with 4 matured blocks

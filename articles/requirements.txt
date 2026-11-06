@@ -1,0 +1,8 @@
+# Versions used to build and publish this article release (Python 3.12).
+# Agent execution uses the repository's separate locked environment.
+matplotlib==3.11.2
+numpy==2.5.4
+Markdown==3.11.3
+wandb==0.31.0
+wandb-workspaces==0.4.13
+requests==2.34.2
