@@ -32,6 +32,7 @@ dependencies = [
 
 [project.optional-dependencies]
 forge = ["coreweave==0.1.0b0"]
+dashboards = ["wandb==0.31.0", "wandb-workspaces==0.4.13"]
 lab = ["exchange-calendars==4.13.2", "weave==0.54.1", "wandb==0.31.0",
        "scikit-learn==1.9.1", "xgboost==3.4.1", "torch==2.15.0", "chronos-forecasting==2.3.2"]
 dev = [
