@@ -1,0 +1,227 @@
+{
+  "files": {
+    "meet-the-investment-committee/assets/coverage-and-maturity.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/meet-the-investment-committee/assets/coverage-and-maturity.png",
+      "sha256": "81024d7e579975ee1fbf6b743d4db43b5648ff5b907bc27cfd8c87e537271c17",
+      "bytes": 123932,
+      "anonymous_verified": true
+    },
+    "meet-the-investment-committee/assets/coverage-and-maturity.svg": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/meet-the-investment-committee/assets/coverage-and-maturity.svg",
+      "sha256": "d7bb2f33d24d32dd1e3177ea6748ff1f3f3e4936a4a604e208e8142cb0fa4959",
+      "bytes": 14246,
+      "anonymous_verified": true
+    },
+    "meet-the-investment-committee/assets/evidence-chain.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/meet-the-investment-committee/assets/evidence-chain.png",
+      "sha256": "6eda09411f85ef1c281dd176f3dfd20e941587e4b475ca8ffc0f41856aa9bcb7",
+      "bytes": 135199,
+      "anonymous_verified": true
+    },
+    "meet-the-investment-committee/assets/evidence-chain.svg": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/meet-the-investment-committee/assets/evidence-chain.svg",
+      "sha256": "e12613b920732375ad7edefcad5544d13005d1e764842b36bb84255f8b682ac0",
+      "bytes": 7982,
+      "anonymous_verified": true
+    },
+    "meet-the-investment-committee/assets/forge-notebook-roles.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/meet-the-investment-committee/assets/forge-notebook-roles.png",
+      "sha256": "729acd7c5e82046d568ca07e1c3ab9a5c67e28b14f4183b7e8ecd650197188db",
+      "bytes": 15473,
+      "anonymous_verified": true
+    },
+    "meet-the-investment-committee/assets/lens-timeline.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/meet-the-investment-committee/assets/lens-timeline.png",
+      "sha256": "5a8ec5a08b2f42c3524ed3ee8e96a9d17e58c0b9b32d136aeb5ad768ba6a762b",
+      "bytes": 26202,
+      "anonymous_verified": true
+    },
+    "confident-expensive-and-wrong/assets/forge-behavior-dashboard.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/confident-expensive-and-wrong/assets/forge-behavior-dashboard.png",
+      "sha256": "5c5c1beb4ae5e511affe7eeab7a9ba5861a8851201b7a636ad7b1991f0c2acc1",
+      "bytes": 14939,
+      "anonymous_verified": true
+    },
+    "confident-expensive-and-wrong/assets/latency-and-model-cost.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/confident-expensive-and-wrong/assets/latency-and-model-cost.png",
+      "sha256": "7592970c2b793180bcab082a7adbd15e03bb68a073d0676f22e514e8b32602fd",
+      "bytes": 44529,
+      "anonymous_verified": true
+    },
+    "confident-expensive-and-wrong/assets/latency-and-model-cost.svg": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/confident-expensive-and-wrong/assets/latency-and-model-cost.svg",
+      "sha256": "8675b64f001bc8ff82347d262bbef84e0e8c523bec146cf2d3e2e58973d839ca",
+      "bytes": 8778,
+      "anonymous_verified": true
+    },
+    "confident-expensive-and-wrong/assets/lens-missing-news.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/confident-expensive-and-wrong/assets/lens-missing-news.png",
+      "sha256": "8c6996879e7d71cab5bfe13a14a3196893ebba69b9ab40bc2df4a9ff1a616b39",
+      "bytes": 42731,
+      "anonymous_verified": true
+    },
+    "confident-expensive-and-wrong/assets/reviewed-candidates.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/confident-expensive-and-wrong/assets/reviewed-candidates.png",
+      "sha256": "d86d7844a8899afc810e7a38e2d56d23fb42e05967789e0e20851a83be8e8ea3",
+      "bytes": 118717,
+      "anonymous_verified": true
+    },
+    "confident-expensive-and-wrong/assets/reviewed-candidates.svg": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/confident-expensive-and-wrong/assets/reviewed-candidates.svg",
+      "sha256": "585c421fd9934fe5b820f8bfaabfd11883e66244f9feb6a3c0a4187c8aca2578",
+      "bytes": 5320,
+      "anonymous_verified": true
+    },
+    "did-it-beat-doing-nothing/assets/directional-denominators.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/did-it-beat-doing-nothing/assets/directional-denominators.png",
+      "sha256": "96f2c51ab3d31ce6b431d78866e919bb819595d6674562e9d983aa40ad113198",
+      "bytes": 109169,
+      "anonymous_verified": true
+    },
+    "did-it-beat-doing-nothing/assets/directional-denominators.svg": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/did-it-beat-doing-nothing/assets/directional-denominators.svg",
+      "sha256": "adc2b9ab81518c43eea42c96e8d8b03340aeb8a4de47e859d33c173eb2ae7b59",
+      "bytes": 20252,
+      "anonymous_verified": true
+    },
+    "did-it-beat-doing-nothing/assets/fee-sensitivity.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/did-it-beat-doing-nothing/assets/fee-sensitivity.png",
+      "sha256": "00e67640c24191b8e7184a304048e1fc9671ab41d47122e208f74240f613e37a",
+      "bytes": 150424,
+      "anonymous_verified": true
+    },
+    "did-it-beat-doing-nothing/assets/fee-sensitivity.svg": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/did-it-beat-doing-nothing/assets/fee-sensitivity.svg",
+      "sha256": "757b046628f88781670b1871b6a9f0327484f0c4d9ab76787196521d1f846f3b",
+      "bytes": 25492,
+      "anonymous_verified": true
+    },
+    "did-it-beat-doing-nothing/assets/forge-financial-dashboard.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/did-it-beat-doing-nothing/assets/forge-financial-dashboard.png",
+      "sha256": "c21cd0279a3ea2fb44038483d1db6fe766f5afa679cfdca9221cc486eccf74e6",
+      "bytes": 40096,
+      "anonymous_verified": true
+    },
+    "did-it-beat-doing-nothing/assets/paired-uncertainty.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/did-it-beat-doing-nothing/assets/paired-uncertainty.png",
+      "sha256": "f2f863c3140e850855573baf790e6a4ebe6a4c773fffd1191801e41f69e87ae0",
+      "bytes": 110324,
+      "anonymous_verified": true
+    },
+    "did-it-beat-doing-nothing/assets/paired-uncertainty.svg": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/did-it-beat-doing-nothing/assets/paired-uncertainty.svg",
+      "sha256": "38cac6b9b29c0bdcfe237c3e59c7ad684ea23ac4f6736abff1c2af3b2cf928b7",
+      "bytes": 13474,
+      "anonymous_verified": true
+    },
+    "did-it-beat-doing-nothing/assets/portfolio-pnl.csv": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/did-it-beat-doing-nothing/assets/portfolio-pnl.csv",
+      "sha256": "356ab4609604b2da73c8f66215819a592bda217d039bbceff4465765fc13de2f",
+      "bytes": 1160,
+      "anonymous_verified": true
+    },
+    "did-it-beat-doing-nothing/assets/portfolio-pnl.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/did-it-beat-doing-nothing/assets/portfolio-pnl.png",
+      "sha256": "edbf760367a43dc5a0de4d35a757aa644fcac25ec7c40e7a19b49b7ca65462fb",
+      "bytes": 123433,
+      "anonymous_verified": true
+    },
+    "did-it-beat-doing-nothing/assets/portfolio-pnl.svg": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/did-it-beat-doing-nothing/assets/portfolio-pnl.svg",
+      "sha256": "43146aa24daf16309b86af6c9953f982b6c42abf00ea9853d8f7efe2acdd7560",
+      "bytes": 13703,
+      "anonymous_verified": true
+    },
+    "evidence/README.md": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/evidence/README.md",
+      "sha256": "7ea45b91136b5aac35d18204e102d7dc810211fee6644fc1b0c73f7396d49968",
+      "bytes": 2425,
+      "anonymous_verified": true
+    },
+    "evidence/manifest.json": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/evidence/manifest.json",
+      "sha256": "01c73f21c163cdbbcdc91f44805f5491ee78bfdfed9a7fcd31533214f88297a1",
+      "bytes": 4872,
+      "anonymous_verified": true
+    },
+    "evidence/predictions.csv": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/evidence/predictions.csv",
+      "sha256": "62fc390ebf24126140be658be920e2d62168bfa10cfa4e31d01ba680e1d99c31",
+      "bytes": 337716,
+      "anonymous_verified": true
+    },
+    "evidence/scores-all-horizons.csv": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/evidence/scores-all-horizons.csv",
+      "sha256": "a7847035e33341fc2ace5fe8e5c80945b91ff2afcb93860743c416335a91229a",
+      "bytes": 296295,
+      "anonymous_verified": true
+    },
+    "evidence/portfolio-scenarios.csv": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/evidence/portfolio-scenarios.csv",
+      "sha256": "3374a6b22a27bd84aa2b06ff613b7a1d0a87d7ba30ec0e4893ba92974dbe8982",
+      "bytes": 124076,
+      "anonymous_verified": true
+    },
+    "evidence/source-coverage.csv": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/evidence/source-coverage.csv",
+      "sha256": "b1e07ed466fbd5078c51c2c8fc01f3952a0e353aca74d3816e9aba06e35c9b3c",
+      "bytes": 10251,
+      "anonymous_verified": true
+    },
+    "evidence/assistant-reviews.csv": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/evidence/assistant-reviews.csv",
+      "sha256": "59c896265bbe10eecc14f44de4fba87b05a413d5857ee4ae12017df5d23bc0bc",
+      "bytes": 2144,
+      "anonymous_verified": true
+    },
+    "evidence/paired-comparisons.csv": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/evidence/paired-comparisons.csv",
+      "sha256": "cdd7ff65df3d81e71fd947ed4d178ef9f1e80f2131e8ee883e3d80343a06a2d8",
+      "bytes": 1519,
+      "anonymous_verified": true
+    },
+    "evidence/selected-examples.csv": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/evidence/selected-examples.csv",
+      "sha256": "f8567392171cc0d8288859a860c014e0980e7890b5798541b08a76559177c2e8",
+      "bytes": 1523,
+      "anonymous_verified": true
+    },
+    "evidence/method-summaries.csv": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/evidence/method-summaries.csv",
+      "sha256": "d50a97452d5803fe569a59c18fc1ebe83ea79d48a6c3f6885fdbf4fd857c550e",
+      "bytes": 2170,
+      "anonymous_verified": true
+    },
+    "evidence/directional-denominators.csv": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/evidence/directional-denominators.csv",
+      "sha256": "235402c7b02a76b9730fc01ba7f57cc3329837cdb706118b0cbc844543b0c56a",
+      "bytes": 292,
+      "anonymous_verified": true
+    },
+    "evidence/fee-sensitivity.csv": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/evidence/fee-sensitivity.csv",
+      "sha256": "b58094e7ea3519dc14c8e4b0f5060b78178d2c454f7bee45b6159e5985acf76f",
+      "bytes": 1821,
+      "anonymous_verified": true
+    },
+    "evidence/tradingagents-public-evidence.zip": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/evidence/tradingagents-public-evidence.zip",
+      "sha256": "7040cee1d1cf7a3f46a3a259a7d7d3bc527deb1656cafc866e3ce82bc71c5971",
+      "bytes": 96444,
+      "anonymous_verified": true
+    },
+    "evidence/verification-receipts.json": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/evidence/verification-receipts.json",
+      "sha256": "c74650940ac2308421786c71c3049a392d564d7f65ea201419f28a81c06dd734",
+      "bytes": 2983,
+      "anonymous_verified": true
+    },
+    "evidence/study-design-and-budget.json": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/evidence/study-design-and-budget.json",
+      "sha256": "3dffd7c6760575c8c9156eb85549e9322fa4f80de36d12e37d625ddb227d4967",
+      "bytes": 1233,
+      "anonymous_verified": true
+    }
+  },
+  "run_id": "hllta000"
+}
