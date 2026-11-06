@@ -76,3 +76,13 @@ def test_redaction_and_url(monkeypatch):
     monkeypatch.setenv("EXAMPLE_API_KEY", "private-example-key")
     assert lens.redact({"api_key": "x", "report": "private-example-key"}) == {"report": "[REDACTED]"}
     assert lens.conversation_url("wandb/project", "a/b").endswith("/a%2Fb")
+
+
+def test_responses_messages_show_visible_text_and_actual_tool_arguments():
+    message = AIMessage(content=[{"type": "reasoning", "encrypted_content": "opaque"},
+                                 {"type": "text", "text": "Evidence supports caution."}],
+                        tool_calls=[{"name": "FinalDecision", "args": {"rating": "Hold"}, "id": "call-1", "type": "tool_call"}])
+    text = lens._text(message)
+    assert "Evidence supports caution." in text
+    assert "Hold" in text
+    assert "opaque" not in text and "reasoning" not in text

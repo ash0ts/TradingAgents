@@ -31,6 +31,7 @@ from urllib.request import Request, urlopen
 
 from tradingagents.dataflows.date_window import coverage_gap, in_window
 from tradingagents.dataflows.symbols import crypto_base
+from tradingagents.observability.agent_lens import trace_data
 
 logger = logging.getLogger(__name__)
 
@@ -245,6 +246,7 @@ def _fetch_subreddit_rss(
     return posts
 
 
+@trace_data
 def fetch_reddit_posts(
     ticker: str,
     subreddits: Iterable[str] | None = None,

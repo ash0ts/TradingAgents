@@ -24,6 +24,7 @@ from urllib.request import Request, urlopen
 
 from tradingagents.dataflows.date_window import coverage_gap, in_window
 from tradingagents.dataflows.symbols import crypto_base
+from tradingagents.observability.agent_lens import trace_data
 
 logger = logging.getLogger(__name__)
 
@@ -71,6 +72,7 @@ def _stocktwits_symbol(ticker: str) -> str:
     return f"{base}.X" if base else ticker.strip().upper()
 
 
+@trace_data
 def fetch_stocktwits_messages(
     ticker: str,
     limit: int = 30,
