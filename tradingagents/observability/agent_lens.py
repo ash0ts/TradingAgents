@@ -7,6 +7,7 @@ import json
 import logging
 import os
 import re
+import time
 from contextlib import contextmanager
 from contextvars import ContextVar, copy_context
 from functools import wraps
@@ -48,7 +49,14 @@ def _text(value):
     if isinstance(value, str):
         return redact(value)
     if hasattr(value, "content"):
-        return _text(value.content)
+        content = value.content
+        if isinstance(content, list):
+            content = "\n".join(part if isinstance(part, str) else part.get("text", "")
+                                for part in content if isinstance(part, str) or part.get("type") in {"text", "output_text"})
+        calls = getattr(value, "tool_calls", None)
+        if calls:
+            content += "\nTool calls: " + json.dumps(redact(calls), ensure_ascii=False)
+        return _text(content)
     return json.dumps(redact(value), ensure_ascii=False, default=str)
 
 
@@ -96,7 +104,7 @@ class AgentLensCallback(BaseCallbackHandler):
             context = self._root_context.copy()
             span = context.run(getattr(parent, f"start_{kind}"), **kwargs)
             span.set_attributes(self.attributes)
-            self._spans[run_id] = (span, context, kind)
+            self._spans[run_id] = (span, context, kind, time.monotonic())
             self._owners[run_id] = span if kind == "subagent" else parent
             return span
 
@@ -136,6 +144,7 @@ class AgentLensCallback(BaseCallbackHandler):
                 )
             span.set_attributes({"tradingagents.usage_known": bool(usage)})
             self.events.append({"kind": "llm", "model": span.model,
+                                "run_id": str(run_id), "response": _text(messages[-1]) if messages else "",
                                 "usage": dict(span.usage) if usage else None})
         self._finish(run_id)
 
@@ -152,10 +161,9 @@ class AgentLensCallback(BaseCallbackHandler):
 
     def on_chain_end(self, outputs, *, run_id, **kwargs):
         if item := self._spans.get(run_id):
-            visible = {k: v for k, v in (outputs or {}).items()
-                       if k.endswith("_report") or k in {"investment_plan", "trader_investment_plan",
-                                                         "final_trade_decision"}} if isinstance(outputs, dict) else outputs
-            item[0].output_messages = [self.sdk.Message(role="assistant", content=_text(visible))]
+            visible = {k: v for k, v in (outputs or {}).items() if k != "messages"} if isinstance(outputs, dict) else outputs
+            if visible:
+                item[0].output_messages = [self.sdk.Message(role="assistant", content=_text(visible))]
         self._finish(run_id)
 
     def _error(self, error, *, run_id, **kwargs):
@@ -171,7 +179,11 @@ class AgentLensCallback(BaseCallbackHandler):
             item = self._spans.pop(run_id, None)
             self._owners.pop(run_id, None)
         if item:
-            span, context, _ = item
+            span, context, kind, started = item
+            self.events.append({"kind": kind + "_end", "run_id": str(run_id),
+                                "latency_s": time.monotonic() - started,
+                                "name": getattr(span, "name", ""),
+                                "result": _text(getattr(span, "result", "")) if kind == "tool" else None})
             if error:
                 span.record_error(error)
             context.run(span.end)
@@ -280,4 +292,31 @@ def trace_stream(func):
                 yield step
         finally:
             context.run(stream.close)
+    return wrapped
+
+
+def trace_data(func):
+    """Capture direct data reads that bypass LangChain's ToolNode callbacks."""
+    @wraps(func)
+    def wrapped(*args, **kwargs):
+        handler = _active.get()
+        if handler is None:
+            return func(*args, **kwargs)
+        from langchain_core.runnables.config import var_child_runnable_config
+        config = var_child_runnable_config.get() or {}
+        parent = getattr(config.get("callbacks"), "parent_run_id", None)
+        # ToolNode already owns a complete tool span for ordinary tools.
+        item = handler._spans.get(parent)
+        if item and item[2] == "tool":
+            return func(*args, **kwargs)
+        run_id = uuid4()
+        handler.on_tool_start({"name": func.__name__}, _text({"args": args, "kwargs": kwargs}),
+                              run_id=run_id, parent_run_id=parent)
+        try:
+            result = func(*args, **kwargs)
+        except Exception as exc:
+            handler.on_tool_error(exc, run_id=run_id)
+            raise
+        handler.on_tool_end(result, run_id=run_id)
+        return result
     return wrapped
