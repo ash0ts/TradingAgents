@@ -1,0 +1,6 @@
+{
+  "public_checkout_rebuild_passed": true,
+  "private_audit_directory_present": false,
+  "byte_identical_csv_and_png_files": 23,
+  "new_model_calls": 0
+}
