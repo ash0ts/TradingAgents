@@ -57,4 +57,4 @@ def paired_blocks(rows, a, b, metric="signed_excess_return", seed=2026):
     draws = [np.mean([v for i in rng.integers(0, len(arrays), len(arrays)) for v in arrays[i]]) for _ in range(2000)]
     return {"pairs": sum(map(len, arrays)), "blocks": len(arrays),
             "mean": float(np.mean([v for values in arrays for v in values])),
-            "interval": np.quantile(draws, [.025, .975]).tolist(), "method": "paired cohort-block bootstrap; exploratory with five blocks"}
+            "interval": np.quantile(draws, [.025, .975]).tolist(), "method": f"paired cohort-block bootstrap; exploratory with {len(arrays)} matured blocks"}
