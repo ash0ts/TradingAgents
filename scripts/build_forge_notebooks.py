@@ -190,6 +190,10 @@ mo.md("""# Did it beat doing nothing?
 Cash, SPY, and an equal-weight basket are portfolio controls. Momentum, mean reversion,
 AR(5), ridge, XGBoost, DLinear, and Chronos are numerical comparisons. Agents receive text
 as well as prices; the numerical methods receive prices and corporate actions only.
+
+**Prompt scope differs.** The committees retain the repository's original recommendation
+prompts; the single analyst explicitly targets five-session performance versus SPY.
+These are system comparisons, not a controlled experiment isolating deliberation.
 """)
 return
 ''') + cell(r'''
