@@ -17,6 +17,7 @@ from tradingagents.default_config import DEFAULT_CONFIG
 from tradingagents.llm_clients import create_tier_client, tier_provider
 from tradingagents.memory import TradingMemoryLog, settlement
 from tradingagents.memory.reflection import Reflector
+from tradingagents.observability.agent_lens import graph_args, trace_decision, trace_stream
 from tradingagents.reporting import write_report_tree
 
 from .checkpointer import checkpoint_step, clear_checkpoint, get_checkpointer, thread_id
@@ -147,7 +148,8 @@ class TradingAgentsGraph:
         resume must not carry reports that other settings produced. Only where
         the run keeps its files and how it retries are left out.
         """
-        settings = {k: v for k, v in self.config.items() if k not in _NOT_IN_SIGNATURE}
+        settings = {k: v for k, v in self.config.items()
+                    if k not in _NOT_IN_SIGNATURE and not k.startswith("forge_")}
         digest = hashlib.sha256(json.dumps(settings, sort_keys=True, default=str).encode()).hexdigest()[:12]
         return "|".join([
             "analysts=" + ",".join(self.selected_analysts),
@@ -298,13 +300,17 @@ class TradingAgentsGraph:
         and loads them alongside the analysts (see ``_memory_step``).
         """
         trade_date = _validate_trade_date(trade_date)
-        return self.propagator.create_initial_state(
+        state = self.propagator.create_initial_state(
             company_name,
             trade_date,
             asset_type=asset_type,
             instrument_context=self.resolve_instrument_context(company_name, asset_type, trade_date),
             portfolio_context=portfolio.render(company_name) if portfolio is not None else "",
         )
+        self._forge_input = state
+        if self.config.get("forge_project"):
+            self._forge_signature = self._run_signature(asset_type, portfolio)
+        return state
 
     def _memory_step(self, state):
         """The graph's Memory Log step, alongside the analysts (#1428): settle every
@@ -370,11 +376,12 @@ class TradingAgentsGraph:
             rating=run_rating(final_state),
         )
 
+    @trace_decision
     def _run_graph(self, company_name, trade_date, asset_type: str = "stock",
                    checkpoint_thread_id: str | None = None, portfolio=None):
         """Execute the graph and write the resulting state to disk and memory log."""
         init_agent_state = self.create_run_state(company_name, trade_date, asset_type, portfolio)
-        args = self.propagator.get_graph_args()
+        args = graph_args(self.propagator.get_graph_args())
 
         # Inject the checkpoint thread_id (from checkpoint_scope) so the same
         # ticker+date+graph-shape resumes; a different one starts fresh (#1089).
@@ -404,6 +411,7 @@ class TradingAgentsGraph:
 
         return final_state, run_rating(final_state)
 
+    @trace_stream
     def stream_run(self, graph_input, **args):
         """Stream a run as ``(messages, state)`` pairs.
 
