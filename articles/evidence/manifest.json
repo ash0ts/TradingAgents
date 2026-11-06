@@ -1,0 +1,81 @@
+{
+  "schema": "article-evidence-v1",
+  "source": "notebooks/data/showcase.json",
+  "public_data_sha256": "f565efe5b288eaf93540484801b2f79e5f5bf8b2242ed9a3223428b797c10096",
+  "source_file_sha256": "843580ed4cccc7d38f5d3e868c0263e12a5347112d68e646d4937e09ea3e1104",
+  "evidence_manifest_sha256": "92623c2d0bf66b9c698f158e1374359303469a214dbcc110583e907abec4f6ef",
+  "paid_execution_revision": "edaa0e68895b8f671c05d3ca382751148c784801",
+  "freeze_through": "2026-11-05",
+  "counts": {
+    "predictions": 960,
+    "scores_all_horizons": 2880,
+    "portfolios": 640,
+    "coverage_cases": 60,
+    "assistant_reviews": 6
+  },
+  "figures": [
+    {
+      "path": "meet-the-investment-committee/assets/evidence-chain",
+      "question": "How does a result resolve to its evidence?",
+      "limits": "Diagram of this implementation; not a claim that observability improves financial performance.",
+      "source": "notebooks/data/showcase.json",
+      "public_data_sha256": "f565efe5b288eaf93540484801b2f79e5f5bf8b2242ed9a3223428b797c10096"
+    },
+    {
+      "path": "meet-the-investment-committee/assets/coverage-and-maturity",
+      "question": "Which inputs and outcomes were available?",
+      "limits": "Availability does not guarantee correctness. Global news and Stocktwits are also missing; the CSV lists every source.",
+      "source": "notebooks/data/showcase.json",
+      "public_data_sha256": "f565efe5b288eaf93540484801b2f79e5f5bf8b2242ed9a3223428b797c10096"
+    },
+    {
+      "path": "confident-expensive-and-wrong/assets/latency-and-model-cost",
+      "question": "How much elapsed time and API cost did each agent use?",
+      "limits": "Means over 120 runs per treatment; excludes local hardware and infrastructure. Does not isolate a causal effect of debate.",
+      "source": "notebooks/data/showcase.json",
+      "public_data_sha256": "f565efe5b288eaf93540484801b2f79e5f5bf8b2242ed9a3223428b797c10096"
+    },
+    {
+      "path": "confident-expensive-and-wrong/assets/reviewed-candidates",
+      "question": "What did inspection change about the candidate labels?",
+      "limits": "Selected assistant reviews; not expert adjudication or a representative accuracy estimate.",
+      "source": "notebooks/data/showcase.json",
+      "public_data_sha256": "f565efe5b288eaf93540484801b2f79e5f5bf8b2242ed9a3223428b797c10096"
+    },
+    {
+      "path": "did-it-beat-doing-nothing/assets/directional-denominators",
+      "question": "What is the denominator of directional accuracy?",
+      "limits": "Pending takes precedence over Hold, so the three groups partition requested records. Passives make no directional forecasts and are omitted.",
+      "source": "notebooks/data/showcase.json",
+      "public_data_sha256": "f565efe5b288eaf93540484801b2f79e5f5bf8b2242ed9a3223428b797c10096"
+    },
+    {
+      "path": "did-it-beat-doing-nothing/assets/paired-uncertainty",
+      "question": "How uncertain are matched differences from momentum?",
+      "limits": "Four matured blocks; exploratory bootstrap, no multiple-comparison correction. Different methods have different paired subsets.",
+      "source": "notebooks/data/showcase.json",
+      "public_data_sha256": "f565efe5b288eaf93540484801b2f79e5f5bf8b2242ed9a3223428b797c10096"
+    },
+    {
+      "path": "did-it-beat-doing-nothing/assets/fee-sensitivity",
+      "question": "How much does the fee assumption change P&L?",
+      "limits": "Selected methods for readability; all 13 in CSV. Separate y-axis scales; independent scenarios, model expense excluded.",
+      "source": "notebooks/data/showcase.json",
+      "public_data_sha256": "f565efe5b288eaf93540484801b2f79e5f5bf8b2242ed9a3223428b797c10096"
+    }
+  ],
+  "files": {
+    "assistant-reviews.csv": "59c896265bbe10eecc14f44de4fba87b05a413d5857ee4ae12017df5d23bc0bc",
+    "directional-denominators.csv": "235402c7b02a76b9730fc01ba7f57cc3329837cdb706118b0cbc844543b0c56a",
+    "fee-sensitivity.csv": "b58094e7ea3519dc14c8e4b0f5060b78178d2c454f7bee45b6159e5985acf76f",
+    "method-summaries.csv": "d50a97452d5803fe569a59c18fc1ebe83ea79d48a6c3f6885fdbf4fd857c550e",
+    "paired-comparisons.csv": "cdd7ff65df3d81e71fd947ed4d178ef9f1e80f2131e8ee883e3d80343a06a2d8",
+    "portfolio-scenarios.csv": "3374a6b22a27bd84aa2b06ff613b7a1d0a87d7ba30ec0e4893ba92974dbe8982",
+    "predictions.csv": "62fc390ebf24126140be658be920e2d62168bfa10cfa4e31d01ba680e1d99c31",
+    "scores-all-horizons.csv": "a7847035e33341fc2ace5fe8e5c80945b91ff2afcb93860743c416335a91229a",
+    "selected-examples.csv": "f8567392171cc0d8288859a860c014e0980e7890b5798541b08a76559177c2e8",
+    "source-coverage.csv": "b1e07ed466fbd5078c51c2c8fc01f3952a0e353aca74d3816e9aba06e35c9b3c",
+    "study-design-and-budget.json": "3dffd7c6760575c8c9156eb85549e9322fa4f80de36d12e37d625ddb227d4967",
+    "verification-receipts.json": "c74650940ac2308421786c71c3049a392d564d7f65ea201419f28a81c06dd734"
+  }
+}
