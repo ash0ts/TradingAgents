@@ -32,9 +32,15 @@ def test_future_prices_do_not_change_training_fit(tmp_path):
     np.testing.assert_equal(before[0], after[0])
     np.testing.assert_equal(before[1], after[1])
     assert before[-1]['data_sha256'] == after[-1]['data_sha256']
-    for name in ['momentum-20', 'mean-reversion-5', 'AR-5', 'ridge']:
+    for name in ['momentum-20', 'mean-reversion-5', 'AR-5']:
         result = NumericPredictor(name, tmp_path).predict(data, dates[350])
         assert np.isfinite(result.forecast)
+
+
+def test_optional_ridge_predictor(tmp_path):
+    pytest.importorskip("sklearn")
+    data, dates = fixture()
+    assert np.isfinite(NumericPredictor("ridge", tmp_path).predict(data, dates[350]).forecast)
 
 
 @pytest.mark.parametrize(('value','rating'), [(-.02,'Sell'),(-.005,'Underweight'),(0,'Hold'),(.005,'Overweight'),(.02,'Buy')])
