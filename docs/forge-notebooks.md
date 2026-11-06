@@ -88,3 +88,39 @@ amounts**. Model charges plus holds must stay below $250 and each phase cap. Kee
 unreconciled infrastructure holds until billing is known. Runtime termination
 and source/trace readback receipts document the hosted work; local training
 hardware is unmetered. LLM judging is disabled in this initial release.
+
+## Native Forge dashboards
+
+The published [campaign report](https://forge.coreweave.com/wandb/wandb/tradingagents-election-lab/reports/Would-you-give-this-investment-committee-money--VmlldzoxODI2MzIwNQ==)
+connects the [financial dashboard](https://forge.coreweave.com/wandb/wandb/tradingagents-election-lab?nw=0q277wzs5up)
+and [behavior/cost dashboard](https://forge.coreweave.com/wandb/wandb/tradingagents-election-lab?nw=oc6zwblxo0y)
+to the three notebooks and authenticated Agent Lens examples. These are native
+W&B workspace/report records inside Forge, published to the `wandb` team.
+
+Thirteen derived runs contain metrics and sanitized case-link tables. Each run
+uses the immutable public-results artifact. No agent is rerun by this publisher.
+All methods stay visible, including passive portfolios and unsuccessful financial
+outcomes. Passive methods have no directional forecast; absent values are never
+filled with zero. Charts show scored and pending trial counts, while notebooks
+provide paired case comparisons and cohort-block uncertainty. Candidate behavior
+flags remain separate from reviewed findings and financial performance.
+
+```sh
+pip install -e '.[dashboards]'
+python scripts/reconcile_campaign.py
+python scripts/publish_forge_dashboards.py
+```
+
+The first command in the workflow checks fingerprints, persisted predictions,
+all outcome horizons, and all 640 portfolio sensitivity scenarios. The publisher
+reconciles aggregate values, saves stable workspace/report identities in
+`notebooks/dashboards.json`, and reads back all 13 run summaries and panel specs.
+Subsequent invocations update those same records. It uses `summary_metrics` for
+hosted readback; the SDK's separate summary-file wrapper can lag the API.
+
+The original paid campaign executed locally with hosted traces/evaluations.
+Saved notebook cells executed in native Forge runtimes. The optional paid-run
+button has not been exercised inside a hosted notebook; do not describe the
+campaign itself as having run on Forge compute. Publishing dashboards incurs no
+additional model calls, and publication storage remains covered by the existing
+infrastructure reservation.
