@@ -15,81 +15,31 @@
   },
   "agent_lens_examples_reverified": [
     {
-      "conversation_id": "215c5ea3-5569-593e-872f-baafe69f1dfa",
+      "case_id": "control-2023-before-AAPL",
+      "treatment": "default-committee",
       "span_count": 63,
       "model_calls": 17,
       "tool_calls": 32,
-      "agents": [
-        "Aggressive Analyst",
-        "Bear Researcher",
-        "Bull Researcher",
-        "Conservative Analyst",
-        "Fundamentals Analyst",
-        "Market Analyst",
-        "Memory Log",
-        "Neutral Analyst",
-        "News Analyst",
-        "Portfolio Manager",
-        "Research Manager",
-        "Sentiment Analyst",
-        "Trader",
-        "default-committee"
-      ],
       "all_spans_linked": true,
-      "usage_reconciled": true,
-      "trace_ids": [
-        "812ad6a9105e7c02b107fdf5f40e3c0a"
-      ],
-      "case_id": "control-2023-before-AAPL",
-      "treatment": "default-committee",
-      "readback_json_bytes": 2302803
+      "usage_reconciled": true
     },
     {
-      "conversation_id": "0ba851b8-c335-5fc1-a886-00c08b210faa",
+      "case_id": "midterms-2022-before-UNH",
+      "treatment": "default-committee",
       "span_count": 62,
       "model_calls": 17,
       "tool_calls": 31,
-      "agents": [
-        "Aggressive Analyst",
-        "Bear Researcher",
-        "Bull Researcher",
-        "Conservative Analyst",
-        "Fundamentals Analyst",
-        "Market Analyst",
-        "Memory Log",
-        "Neutral Analyst",
-        "News Analyst",
-        "Portfolio Manager",
-        "Research Manager",
-        "Sentiment Analyst",
-        "Trader",
-        "default-committee"
-      ],
       "all_spans_linked": true,
-      "usage_reconciled": true,
-      "trace_ids": [
-        "ecab89ce66ae68b55111ac652a651f93"
-      ],
-      "case_id": "midterms-2022-before-UNH",
-      "treatment": "default-committee",
-      "readback_json_bytes": 2246802
+      "usage_reconciled": true
     },
     {
-      "conversation_id": "c7bf0da8-8ca8-5642-8a3b-b1d751b32abb",
+      "case_id": "control-2023-after-NVDA",
+      "treatment": "single-luna",
       "span_count": 2,
       "model_calls": 1,
       "tool_calls": 0,
-      "agents": [
-        "single-luna"
-      ],
       "all_spans_linked": true,
-      "usage_reconciled": true,
-      "trace_ids": [
-        "e2d3b9b6d66e4b7e5a30a7362a491236"
-      ],
-      "case_id": "control-2023-after-NVDA",
-      "treatment": "single-luna",
-      "readback_json_bytes": 658664
+      "usage_reconciled": true
     }
   ],
   "notebook_versions_reverified": [
