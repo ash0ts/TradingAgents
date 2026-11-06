@@ -10,6 +10,7 @@ from urllib.parse import urlparse
 
 from tradingagents.dataflows.config import get_config
 from tradingagents.lab.evidence import EvidenceStore, cutoff, timestamp
+from tradingagents.observability.agent_lens import trace_data
 
 
 @lru_cache(maxsize=32)
@@ -32,6 +33,7 @@ def unavailable(source):
     return f"DATA_UNAVAILABLE: {source} is absent from this frozen evidence bundle. Do not infer or invent it."
 
 
+@trace_data
 def read(method, *args, **kwargs):
     data = bundle()
     if data is None:
@@ -69,7 +71,8 @@ def read(method, *args, **kwargs):
                            "notice": "Only this common decision brief is available. No hidden raw history, news or event calendar may be inferred."})
     if method == "get_stock_data":
         start, end = args[1:3]
-        return json.dumps([r for r in rows if start <= r["date"] <= end]) or unavailable(method)
+        selected = [r for r in rows if start <= r["date"] <= end]
+        return json.dumps(selected) if selected else unavailable(method)
     if method in {"get_indicators", "get_verified_market_snapshot"}:
         import pandas as pd
         from stockstats import StockDataFrame
@@ -77,7 +80,9 @@ def read(method, *args, **kwargs):
             return unavailable(method)
         requested = args[2] if method == "get_indicators" else args[1]
         frame = pd.DataFrame([r for r in rows if r["date"] <= requested]).set_index("date")
-        # Indicators use a continuous total-return series through the cutoff.
+        if frame.empty:
+            return unavailable(method)
+        # Indicators use a split-adjusted series through the cutoff.
         # The raw last row is separately shown for exact current-price claims.
         raw = frame.iloc[-1].to_dict()
         closes = frame["close"]
@@ -103,6 +108,10 @@ def read(method, *args, **kwargs):
         "get_prediction_markets": "prediction_markets", "reddit": "reddit", "stocktwits": "stocktwits",
     }
     records = [r for r in data["records"] if r["kind"] == kinds.get(method, method)]
+    if method == "get_macro_indicators":
+        aliases = {"cpi": "CPIAUCSL", "fed_funds_rate": "DFF"}
+        requested = aliases.get(args[0], args[0])
+        records = [r for r in records if r["content"]["series"] == requested]
     return json.dumps(records, ensure_ascii=False) if records else unavailable(method)
 
 

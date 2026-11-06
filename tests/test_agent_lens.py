@@ -103,3 +103,13 @@ def test_cache_write_usage_and_error_events_survive_scope_exit(spans):
     assert len([e for e in events if e["kind"] == "llm"]) == 1
     assert any(e["kind"] == "error" and e["run_id"] == str(failed) for e in events)
     assert all(s.end_time is not None for s in spans.get_finished_spans())
+
+
+def test_responses_messages_show_visible_text_and_actual_tool_arguments():
+    message = AIMessage(content=[{"type": "reasoning", "encrypted_content": "opaque"},
+                                 {"type": "text", "text": "Evidence supports caution."}],
+                        tool_calls=[{"name": "FinalDecision", "args": {"rating": "Hold"}, "id": "call-1", "type": "tool_call"}])
+    text = lens._text(message)
+    assert "Evidence supports caution." in text
+    assert "Hold" in text
+    assert "opaque" not in text and "reasoning" not in text

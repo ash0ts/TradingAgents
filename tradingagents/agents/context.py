@@ -7,6 +7,7 @@ from typing import Any
 
 from tradingagents.dataflows.date_window import is_historical
 from tradingagents.dataflows.vendors.yahoo.fundamentals import get_company_profile
+from tradingagents.observability.agent_lens import trace_data
 
 logger = logging.getLogger(__name__)
 
@@ -58,6 +59,7 @@ def _clean_identity_value(value: Any) -> str | None:
     return cleaned
 
 
+@trace_data
 def resolve_instrument_identity(ticker: str) -> dict:
     """Resolve deterministic identity metadata (company name, sector, …) for a ticker.
 
