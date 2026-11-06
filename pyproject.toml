@@ -87,6 +87,7 @@ ignore = ["E501"]
 "**/__init__.py" = ["F401"]   # intentional re-exports
 
 [tool.ruff.lint.isort]
+known-third-party = ["wandb"]  # SDK output creates an ignored local wandb/ directory.
 # Keep multiple aliased names from one module in a single combined import block
 # (e.g. the vendor imports in router.py) instead of one statement per name.
 combine-as-imports = true

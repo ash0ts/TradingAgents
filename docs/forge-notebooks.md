@@ -6,7 +6,7 @@
 
 See [the initial findings](election-results.md) for denominators and limitations.
 The published result artifact is
-`wandb/tradingagents-election-lab/election-lab-public-results:v0`; the private
+`wandb/tradingagents-election-lab/election-lab-public-results:v1`; the private
 source artifact is
 `wandb/tradingagents-election-lab-evidence/election-lab-frozen-evidence:v0`.
 Exact saved notebook versions, source/static hashes, anonymous-access checks,

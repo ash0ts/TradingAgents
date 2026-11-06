@@ -30,6 +30,10 @@ cohort-block interval was [−1.25, +0.74] percentage points. Only four cohorts 
 matured outcomes. This does not establish an advantage from additional debate,
 and it cannot establish an election effect. Neural pretraining may contain
 historical knowledge; agents receive text that numerical baselines do not.
+The committees also retain the repository's original recommendation prompts,
+whereas the single analyst explicitly targets five-session performance versus
+SPY. These comparisons therefore do not isolate the causal effect of debate:
+the prompt objective and evidence-delivery method differ as well.
 
 At 10 basis points per side, the mean independent $100,000 five-session scenario
 P&L was $11.67 for the default committee, −$66.29 for all-Luna, and $16.49 for the
