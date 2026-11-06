@@ -29,3 +29,11 @@ def test_seeded_selection_includes_extremes():
     assert showcase_examples(rows) == showcase_examples(list(reversed(rows)))
     assert showcase_examples(rows)["strongest"] == "4"
     assert showcase_examples(rows)["weakest"] == "0"
+
+
+def test_hosted_tags_use_supported_slug_format():
+    from tradingagents.lab.lens import LensClient
+    client = LensClient.__new__(LensClient)
+    client.request = lambda method, path, body: body
+    body = client.tag('conversation', 'trace', 'reviewed:assistant:false-positive')
+    assert body['tag_name'] == 'reviewed-assistant-false-positive'

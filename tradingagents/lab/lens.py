@@ -4,6 +4,7 @@ from __future__ import annotations
 import json
 import netrc
 import os
+import re
 from urllib.parse import urlencode
 
 import requests
@@ -35,6 +36,9 @@ class LensClient:
     def tag(self, conversation_id, trace_id, name):
         # Explicit tag names disclose provenance; deterministic candidates are
         # never passed off as a reviewed human judgment.
+        name = re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
+        if not name:
+            raise ValueError("A nonempty tag name is required")
         return self.request("POST", "/conversation-tags", {
             "conversation_id": conversation_id, "trace_id": trace_id, "tag_name": name})
 
@@ -42,7 +46,7 @@ class LensClient:
         base = f"/agent-lens/{self.project}/conversations"
         views = [("Election lab · all conversations", []),
                  ("Election lab · tool failures", [{"id": "errors", "value": {"operator": "gt", "value": 0}}]),
-                 ("Election lab · reviewed cases", [{"id": "tags", "value": {"operator": "contains", "value": "reviewed:"}}])]
+                 ("Election lab · reviewed cases", [{"id": "tags", "value": {"operator": "contains", "value": "reviewed-"}}])]
         for name in ["default-committee", "luna-committee", "single-luna"]:
             views.append(("Election lab · " + name, [{"id": "agent", "value": {"operator": "eq", "value": [name]}}]))
         existing = {v["name"]: v for v in self.request("GET", "/views")["data"]}
