@@ -56,16 +56,16 @@
       "version": {
         "artifactTypeName": "notebook",
         "artifactCollectionName": "Did-it-beat-doing-nothing",
-        "versionIndex": 6,
+        "versionIndex": 9,
         "sourceFileName": "notebook.py"
       },
-      "source_sha256": "705aa0571216cb86800e4076157fd1950aaa450976373f5c85153e59ab84ef8b",
+      "source_sha256": "3fd6c0daba058b5b7671e7237e38bbede195a5ef25e54d43788bd7569b883256",
       "last_source_edited_at": "2026-11-06T07:25:16Z",
       "last_static_output_at": null,
       "has_static_output": true,
       "url": "https://forge.coreweave.com/notebooks/Tm90ZWJvb2s6MTUyNzI=",
-      "static_sha256": "d328d6feb9db7af27e2ff1c18da5b0c249d90525e985350f1941ed297c657891",
-      "static_bytes": 4643685,
+      "static_sha256": "c5188fa37ad7c28a2753210bfaa2457631f255c90d4bee4e8576c496c8601fe7",
+      "static_bytes": 4644610,
       "public_data_sha256": "f565efe5b288eaf93540484801b2f79e5f5bf8b2242ed9a3223428b797c10096",
       "runtime_versions": {
         "marimo": "0.25.1",
@@ -103,9 +103,9 @@
       "anonymous_permissions": [
         "VIEW_STATIC"
       ],
-      "version": 6,
-      "static_sha256": "d328d6feb9db7af27e2ff1c18da5b0c249d90525e985350f1941ed297c657891",
-      "static_bytes": 4643685
+      "version": 9,
+      "static_sha256": "c5188fa37ad7c28a2753210bfaa2457631f255c90d4bee4e8576c496c8601fe7",
+      "static_bytes": 4644610
     }
   ],
   "agent_lens_audit": {
