@@ -191,39 +191,46 @@ write_csv(
     ],
 )
 write_csv("method-summaries.csv", [{"treatment": k, **v} for k, v in P["summaries"].items()])
-audit = json.loads((REPO / "lab-runs/election-v1/hosted-audit.json").read_text())
-verification = {
-    "hosted_readback": {
-        k: audit[k]
-        for k in [
-            "conversations",
-            "spans",
-            "model_calls",
-            "all_evaluation_links_verified",
-            "all_usage_reconciled",
-        ]
-    },
-    "offline_reconciliation": json.loads(
-        (REPO / "lab-runs/election-v1/e2e-reconciliation.json").read_text()
-    ),
-    "notebook_versions": [
-        {
-            k: row[k]
+audit_path = REPO / "lab-runs/election-v1/hosted-audit.json"
+if audit_path.exists():
+    audit = json.loads((REPO / "lab-runs/election-v1/hosted-audit.json").read_text())
+    verification = {
+        "hosted_readback": {
+            k: audit[k]
             for k in [
-                "name",
-                "version",
-                "source_sha256",
-                "static_sha256",
-                "static_bytes",
-                "has_static_output",
-                "url",
-                "runtime_versions",
+                "conversations",
+                "spans",
+                "model_calls",
+                "all_evaluation_links_verified",
+                "all_usage_reconciled",
             ]
-        }
-        for row in json.loads((REPO / "notebooks/publication.json").read_text())["notebooks"]
-    ],
-    "scope": "Readback verifies recorded execution and source/output versions, not semantic correctness. Hosted paid-run button was not exercised.",
-}
+        },
+        "offline_reconciliation": json.loads(
+            (REPO / "lab-runs/election-v1/e2e-reconciliation.json").read_text()
+        ),
+        "notebook_versions": [
+            {
+                k: row[k]
+                for k in [
+                    "name",
+                    "version",
+                    "source_sha256",
+                    "static_sha256",
+                    "static_bytes",
+                    "has_static_output",
+                    "url",
+                    "runtime_versions",
+                ]
+            }
+            for row in json.loads((REPO / "notebooks/publication.json").read_text())["notebooks"]
+        ],
+        "scope": "Readback verifies recorded execution and source/output versions, not semantic correctness. Hosted paid-run button was not exercised.",
+    }
+else:
+    # A public checkout can rebuild tables/figures from the frozen payload.
+    # Retain the published receipt; this is not a new hosted verification.
+    verification = json.loads((OUT / "verification-receipts.json").read_text())
+    assert verification["offline_reconciliation"]["public_data_sha256"] == P["public_data_sha256"]
 (OUT / "verification-receipts.json").write_text(json.dumps(verification, indent=2) + "\n")
 (OUT / "study-design-and-budget.json").write_text(
     json.dumps(
@@ -237,6 +244,7 @@ verification = {
     )
     + "\n"
 )
+(ROOT / "private-evidence").mkdir(exist_ok=True)
 (ROOT / "private-evidence/authenticated-case-index.json").write_text(
     json.dumps(
         [
