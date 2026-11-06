@@ -75,6 +75,10 @@ def resolve_instrument_identity(ticker: str) -> dict:
     Identity resolves for the same instrument the price path fetches
     (``XAUUSD`` -> ``GC=F``, #983).
     """
+    from tradingagents.dataflows.config import get_config
+    if get_config().get("replay_evidence"):
+        from tradingagents.lab.replay import read
+        return read("identity", ticker)
     try:
         return _identity(ticker)
     except Exception as exc:  # noqa: BLE001 — fail open, never block the run

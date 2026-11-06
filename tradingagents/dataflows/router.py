@@ -199,6 +199,9 @@ def no_data_available(error: NoMarketDataError) -> str:
 
 def route_to_vendor(method: str, *args, **kwargs):
     """Route method calls to appropriate vendor implementation with fallback support."""
+    if get_config().get("replay_evidence"):
+        from tradingagents.lab.replay import read
+        return read(method, *args, **kwargs)
     category = get_category_for_method(method)
     vendor_config = get_vendor(category, method)
     primary_vendors = [v.strip() for v in vendor_config.split(',')]
