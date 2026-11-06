@@ -1,0 +1,104 @@
+{
+  "screenshots": [
+    {
+      "file": "meet-the-investment-committee/assets/lens-timeline.png",
+      "sha256": "5a8ec5a08b2f42c3524ed3ee8e96a9d17e58c0b9b32d136aeb5ad768ba6a762b",
+      "capture_at_utc": "2026-11-06T16:06:05.372862+00:00",
+      "surface": "Agent Lens timeline",
+      "selection": "UNH, midterms-2026-before, default-committee, trial 0",
+      "viewport": [
+        1280,
+        720
+      ],
+      "clip_xywh": [
+        220,
+        109,
+        1050,
+        251
+      ],
+      "transformation": "Direct browser screenshot clip; no pixel editing or synthetic UI. Original retained privately.",
+      "private_original_sha256": "508209c05b59b449e08a9d1495fb0dca6fe1036253243c66f21e2693f4047501",
+      "privacy": "Public clip excludes account header and private trace identifiers; only derived results or unavailable-evidence response shown."
+    },
+    {
+      "file": "confident-expensive-and-wrong/assets/lens-missing-news.png",
+      "sha256": "8c6996879e7d71cab5bfe13a14a3196893ebba69b9ab40bc2df4a9ff1a616b39",
+      "capture_at_utc": "2026-11-06T16:05:40.751179+00:00",
+      "surface": "Agent Lens Spans, get_news",
+      "selection": "UNH, midterms-2026-before, default-committee, trial 0",
+      "viewport": [
+        1280,
+        720
+      ],
+      "clip_xywh": [
+        240,
+        277,
+        1030,
+        415
+      ],
+      "transformation": "Direct browser screenshot clip; no pixel editing or synthetic UI. Original retained privately.",
+      "private_original_sha256": "dc543e81886ff8755acbc875d56c7b05556c56730b34a5fbf23b01cc3ecbaf5f",
+      "privacy": "Public clip excludes account header and private trace identifiers; only derived results or unavailable-evidence response shown."
+    },
+    {
+      "file": "did-it-beat-doing-nothing/assets/forge-financial-dashboard.png",
+      "sha256": "c21cd0279a3ea2fb44038483d1db6fe766f5afa679cfdca9221cc486eccf74e6",
+      "capture_at_utc": "2026-11-06T16:06:36.867345+00:00",
+      "surface": "Forge saved workspace",
+      "selection": "Financial outcomes, nw=0q277wzs5up; unchanged 13-run filter",
+      "viewport": [
+        1280,
+        720
+      ],
+      "clip_xywh": [
+        360,
+        174,
+        905,
+        462
+      ],
+      "transformation": "Direct browser screenshot clip; no pixel editing or synthetic UI. Original retained privately.",
+      "private_original_sha256": "1b1e6ada219418b7b310e9b5078ddcc203c23971919d23ef441fa2b3d83f4506",
+      "privacy": "Public clip excludes account header and private trace identifiers; only derived results or unavailable-evidence response shown."
+    },
+    {
+      "file": "confident-expensive-and-wrong/assets/forge-behavior-dashboard.png",
+      "sha256": "5c5c1beb4ae5e511affe7eeab7a9ba5861a8851201b7a636ad7b1991f0c2acc1",
+      "capture_at_utc": "2026-11-06T16:09:28.021019+00:00",
+      "surface": "Forge saved workspace",
+      "selection": "Behavior/cost, nw=oc6zwblxo0y; unchanged 13-run filter",
+      "viewport": [
+        1280,
+        720
+      ],
+      "clip_xywh": [
+        360,
+        190,
+        905,
+        460
+      ],
+      "transformation": "Direct browser screenshot clip; no pixel editing or synthetic UI. Original retained privately.",
+      "private_original_sha256": "8361f936ef896b92d8acf281b111619e229a80b5811ccab854b95b66bb026862",
+      "privacy": "Public clip excludes account header and private trace identifiers; only derived results or unavailable-evidence response shown."
+    },
+    {
+      "file": "meet-the-investment-committee/assets/forge-notebook-roles.png",
+      "sha256": "729acd7c5e82046d568ca07e1c3ab9a5c67e28b14f4183b7e8ecd650197188db",
+      "capture_at_utc": "2026-11-06T16:10:04.095100+00:00",
+      "surface": "Forge Notebook presentation view",
+      "selection": "Meet the investment committee; introductory output, no model dispatch",
+      "viewport": [
+        1280,
+        720
+      ],
+      "clip_xywh": [
+        74,
+        64,
+        1100,
+        621
+      ],
+      "transformation": "Direct browser screenshot clip; no pixel editing or synthetic UI. Original retained privately.",
+      "private_original_sha256": "cde878bf81f3fe4179ba2ccbad2266f3811a925e0d713ea65df1b28d9d9ceff4",
+      "privacy": "Public clip excludes account header and private trace identifiers; only derived results or unavailable-evidence response shown."
+    }
+  ]
+}

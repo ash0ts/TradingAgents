@@ -1,0 +1,156 @@
+{
+  "notebooks": [
+    {
+      "notebook_id": "Tm90ZWJvb2s6MTUyNjA=",
+      "name": "Meet the investment committee.",
+      "version": {
+        "artifactTypeName": "notebook",
+        "artifactCollectionName": "Meet-the-investment-committee.",
+        "versionIndex": 13,
+        "sourceFileName": "notebook.py"
+      },
+      "source_sha256": "5966f000e38d4002885926717cfa22396881b5a769f4c140902c153d7c8ef89b",
+      "last_source_edited_at": "2026-11-06T07:15:36Z",
+      "last_static_output_at": null,
+      "has_static_output": true,
+      "url": "https://forge.coreweave.com/notebooks/Tm90ZWJvb2s6MTUyNjA=",
+      "static_sha256": "24c7c84ee34c4a5cf7b93ed7ce3db3d18dab19e74e147629aaab851acd0171eb",
+      "static_bytes": 571831,
+      "public_data_sha256": "f565efe5b288eaf93540484801b2f79e5f5bf8b2242ed9a3223428b797c10096",
+      "runtime_versions": {
+        "marimo": "0.25.1",
+        "numpy": "2.5.4",
+        "pandas": "3.1.1",
+        "matplotlib": "3.11.2",
+        "wandb": "0.30.0"
+      }
+    },
+    {
+      "notebook_id": "Tm90ZWJvb2s6MTUyNzE=",
+      "name": "Confident, expensive, and wrong?",
+      "version": {
+        "artifactTypeName": "notebook",
+        "artifactCollectionName": "Confident-expensive-and-wrong",
+        "versionIndex": 6,
+        "sourceFileName": "notebook.py"
+      },
+      "source_sha256": "45ead88cd58a757906036ea6f229a08cc7ffd37bc90d9c05b2824097e370a800",
+      "last_source_edited_at": "2026-11-06T07:25:15Z",
+      "last_static_output_at": null,
+      "has_static_output": true,
+      "url": "https://forge.coreweave.com/notebooks/Tm90ZWJvb2s6MTUyNzE=",
+      "static_sha256": "275a07955c95c5975d2b58fc3b8403165f3d623d26686e9ef4a9fbe770bf1c27",
+      "static_bytes": 548058,
+      "public_data_sha256": "f565efe5b288eaf93540484801b2f79e5f5bf8b2242ed9a3223428b797c10096",
+      "runtime_versions": {
+        "marimo": "0.25.1",
+        "numpy": "2.5.4",
+        "pandas": "3.1.1",
+        "matplotlib": "3.11.2",
+        "wandb": "0.30.0"
+      }
+    },
+    {
+      "notebook_id": "Tm90ZWJvb2s6MTUyNzI=",
+      "name": "Did it beat doing nothing?",
+      "version": {
+        "artifactTypeName": "notebook",
+        "artifactCollectionName": "Did-it-beat-doing-nothing",
+        "versionIndex": 9,
+        "sourceFileName": "notebook.py"
+      },
+      "source_sha256": "3fd6c0daba058b5b7671e7237e38bbede195a5ef25e54d43788bd7569b883256",
+      "last_source_edited_at": "2026-11-06T07:25:16Z",
+      "last_static_output_at": null,
+      "has_static_output": true,
+      "url": "https://forge.coreweave.com/notebooks/Tm90ZWJvb2s6MTUyNzI=",
+      "static_sha256": "c5188fa37ad7c28a2753210bfaa2457631f255c90d4bee4e8576c496c8601fe7",
+      "static_bytes": 4644610,
+      "public_data_sha256": "f565efe5b288eaf93540484801b2f79e5f5bf8b2242ed9a3223428b797c10096",
+      "runtime_versions": {
+        "marimo": "0.25.1",
+        "numpy": "2.5.4",
+        "pandas": "3.1.1",
+        "matplotlib": "3.11.2",
+        "wandb": "0.30.0"
+      }
+    }
+  ],
+  "anonymous_access_verified": [
+    {
+      "id": "Tm90ZWJvb2s6MTUyNjA=",
+      "name": "Meet the investment committee.",
+      "anonymous_permissions": [
+        "VIEW_STATIC"
+      ],
+      "version": 13,
+      "static_sha256": "24c7c84ee34c4a5cf7b93ed7ce3db3d18dab19e74e147629aaab851acd0171eb",
+      "static_bytes": 571831
+    },
+    {
+      "id": "Tm90ZWJvb2s6MTUyNzE=",
+      "name": "Confident, expensive, and wrong?",
+      "anonymous_permissions": [
+        "VIEW_STATIC"
+      ],
+      "version": 6,
+      "static_sha256": "275a07955c95c5975d2b58fc3b8403165f3d623d26686e9ef4a9fbe770bf1c27",
+      "static_bytes": 548058
+    },
+    {
+      "id": "Tm90ZWJvb2s6MTUyNzI=",
+      "name": "Did it beat doing nothing?",
+      "anonymous_permissions": [
+        "VIEW_STATIC"
+      ],
+      "version": 9,
+      "static_sha256": "c5188fa37ad7c28a2753210bfaa2457631f255c90d4bee4e8576c496c8601fe7",
+      "static_bytes": 4644610
+    }
+  ],
+  "agent_lens_audit": {
+    "conversations": 360,
+    "spans": 15058,
+    "model_calls": 4149,
+    "all_evaluation_links_verified": true,
+    "all_usage_reconciled": true,
+    "readback_json_bytes": 567714665
+  },
+  "private_artifact": {
+    "artifact": "wandb/tradingagents-election-lab-evidence/election-lab-frozen-evidence:v0",
+    "digest": "c50332fc50210c20a567d9ec75bc8704",
+    "project": "wandb/tradingagents-election-lab-evidence",
+    "evidence_version": "92623c2d0bf66b9c698f158e1374359303469a214dbcc110583e907abec4f6ef",
+    "manifest_readback_verified": true
+  },
+  "evaluation_audit": {
+    "calls": 1456,
+    "operations": {
+      "Evaluation.evaluate": 364,
+      "Evaluation.predict_and_score": 364,
+      "Model.predict": 364,
+      "Evaluation.summarize": 364
+    },
+    "unfinished": 0,
+    "native_model_calls_not_duplicated": true
+  },
+  "project_access": {
+    "public": {
+      "name": "tradingagents-election-lab",
+      "access": "USER_READ"
+    },
+    "private": {
+      "name": "tradingagents-election-lab-evidence",
+      "access": "PRIVATE"
+    }
+  },
+  "validation": {
+    "pytest_passed": 1442,
+    "pytest_skipped": 1,
+    "pytest_deselected": 1,
+    "subtests_passed": 100,
+    "ruff": "passed",
+    "clean_pinned_notebook_exports": "passed",
+    "hosted_runtimes_stopped": true
+  }
+}
