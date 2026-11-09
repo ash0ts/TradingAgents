@@ -449,6 +449,84 @@
       "sha256": "41571878edce2dc781585a3148bde512412ad029a8325c29fbc10ec788e40bb5",
       "bytes": 242206,
       "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/internals-contract-checks.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/internals-contract-checks.png",
+      "sha256": "dd84a0e9d662979554753405b2ba248e5a76b9f1e5195f5733315bb3671c8470",
+      "bytes": 105643,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/internals-contract-checks.svg": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/internals-contract-checks.svg",
+      "sha256": "a024065dbfbb215f2bc93eed94fabcceb5a438fbb43507db7340fd89047b6fa5",
+      "bytes": 9077,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/lens-insights-eligibility.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/lens-insights-eligibility.png",
+      "sha256": "ba2fd6d54e44a7db29b6c46696725840a339f51d649fa340423bda3037d7d98a",
+      "bytes": 60549,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/lens-reviewed-handoffs.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/lens-reviewed-handoffs.png",
+      "sha256": "e4812a17fdbad9c8d059d63ecfe633a0d13f9b6c7518cb5f15bf2c36717d5d9d",
+      "bytes": 60372,
+      "anonymous_verified": true
+    },
+    "internals/README.md": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/internals/README.md",
+      "sha256": "e872a23919fa1033ac03b2cef882f3d08900102c01c446ff5f919e25da24cdc7",
+      "bytes": 2722,
+      "anonymous_verified": true
+    },
+    "internals/protocol.json": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/internals/protocol.json",
+      "sha256": "13f1fd8cec663ebc50e1505dcfacb2e4f68d5068bc8010685427b7e221bcb398",
+      "bytes": 2669,
+      "anonymous_verified": true
+    },
+    "internals/manifest.json": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/internals/manifest.json",
+      "sha256": "8a3142fd96bfa6b721703ed2478be17f55d3119403feea18dcdeb35ccc4ccae7",
+      "bytes": 1188,
+      "anonymous_verified": true
+    },
+    "internals/observations.json": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/internals/observations.json",
+      "sha256": "9ac63bd9c3e4555b035c96a2c7a4c0a431d04ccd4565a1f24e94af3444c5bd4d",
+      "bytes": 358869,
+      "anonymous_verified": true
+    },
+    "internals/observations.csv": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/internals/observations.csv",
+      "sha256": "b598f01c62da35f091903250cb9082a55e0a8291260f70254a6d76d383262e5b",
+      "bytes": 163967,
+      "anonymous_verified": true
+    },
+    "internals/summaries.json": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/internals/summaries.json",
+      "sha256": "98db534fb0e0f64a87547ee36b2298386f66990e9bac6c762c19c04e2abe4f55",
+      "bytes": 895,
+      "anonymous_verified": true
+    },
+    "internals/summaries.csv": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/internals/summaries.csv",
+      "sha256": "3c4f66758e27b526162e8eb8a2fc95d5d89386ea1287287ed79e966ca69a1bd1",
+      "bytes": 298,
+      "anonymous_verified": true
+    },
+    "internals/reviews.json": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/internals/reviews.json",
+      "sha256": "efef6c10bf21d6dca90d43a34c558b7ee32c9ef32c9838554d28c2201703d776",
+      "bytes": 9278,
+      "anonymous_verified": true
+    },
+    "internals/insights-status.json": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/internals/insights-status.json",
+      "sha256": "3d143a4dcdaea9e94643a726793de8c948f2bbb6ac217ae116b0123edafe327a",
+      "bytes": 624,
+      "anonymous_verified": true
     }
   },
   "run_id": "hllta000"
