@@ -1,10 +1,16 @@
 {
-  "anonymous_report_readable": true,
   "report_id": "VmlldzoxODI2MzIwNQ==",
-  "image_blocks": 13,
-  "native_panel_grids": 2,
-  "width": "fluid",
-  "updated_at": "2026-11-06T16:22:13Z",
-  "spec_sha256": "784a62e2ce326e07becc924b1db6f2f4f4c69345c383b4005f912472ae4c42e8",
-  "new_model_runs": 0
+  "anonymous_read": true,
+  "title": "vtpsvc6ulv",
+  "updated_at": "2026-11-09T16:11:35Z",
+  "report_spec_sha256": "2d12a6f6ed45bef461eade213acf1a5c4e39c3d7e50d2de0e1f2a45120f4190e",
+  "images": 15,
+  "panel_grids": 3,
+  "original_native_panels": 10,
+  "scenario_native_panels": 2,
+  "excluded_use_case_absent": true,
+  "anonymous_scenario_runs": 13,
+  "anonymous_scenario_tables": 39,
+  "original_prediction_crosswalk_rows": 960,
+  "scenario_account_rows": 1120
 }
