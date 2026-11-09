@@ -8,7 +8,7 @@ import random
 from collections import Counter, defaultdict
 from statistics import mean
 
-from run_evidence_campaign import (
+from run_repaired_evidence_campaign import (
     CAP,
     LEDGER,
     MODES,
@@ -219,7 +219,7 @@ def export():
     with ledger.connect() as db:
         costs = dict(
             db.execute(
-                "SELECT phase,sum(coalesce(charged,reserve))/1000000.0 FROM calls WHERE run_key LIKE 'election-evidence-v3/%' GROUP BY phase"
+                "SELECT phase,sum(coalesce(charged,reserve))/1000000.0 FROM calls WHERE run_key LIKE 'election-evidence-v3/repaired/%' GROUP BY phase"
             ).fetchall()
         )
     assert sum(costs.values()) <= CAP
