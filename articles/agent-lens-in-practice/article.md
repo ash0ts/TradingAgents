@@ -2,7 +2,7 @@
 
 We gave an AI investment committee a simulated $100,000, several analysts, opposing researchers, a trader, a risk discussion, and a portfolio manager. Across the eight decision dates with completed five-session outcomes, the default committee averaged **$11.67 in trading profit after fees**. Buying SPY averaged **$458.44**. The committee did produce considerably more meeting notes.
 
-Those dollars measure our fixed rule for turning a rating into a position. When we opened the worst recommendation, we found something the headline misses: the committee had attached a condition to buying, and our simulator did not execute that condition. The investigation below holds us responsible for that translation as well as the agents for their advice.
+Those dollars measure our fixed rule for turning a rating into a position. When we opened the worst recommendation, we found something the headline misses: the committee had attached a condition to buying, and our simulator did not execute that condition. The investigation below holds us responsible for that translation as well as the agents for their advice. We then fixed the execution contract and ran 360 new decisions: the default committee made $130.56 on average while putting much less money to work. The cheaper committee mostly chose cash. Its explanation exposed another problem in our setup.
 
 I wanted to be able to open one of those recommendations and check what happened: which analyst supplied the evidence, what a tool actually returned, whether the discussion changed the decision, and how the final position performed. We built that route in a [TradingAgents fork](https://github.com/ash0ts/TradingAgents). Agent Lens holds the readable conversations and execution history. Forge holds the comparisons, saved notebooks, dashboards, and versioned evidence.
 
@@ -156,7 +156,7 @@ The [investigation notebook](https://forge.coreweave.com/notebooks/Tm90ZWJvb2s6M
 
 ## Use Insights when it has evidence; keep investigating when it does not
 
-We checked the project's native Insights page on November 9. It had **no completed clustering run**, and its API returned no classified weeks. The UI says Insights runs daily after a project accumulates **1,000 new turns**. Our campaign has 360. We did not manufacture more conversations to obtain a populated chart.
+We checked the project's native Insights page on November 9. It had **no completed clustering run**, and its API returned no classified weeks. The UI says Insights runs daily after a project accumulates **1,000 new turns**. The original campaign has 360; even the 360-execution rerun below leaves this study below that threshold. We did not manufacture more conversations to obtain a populated chart.
 
 ![The actual Agent Lens Insights onboarding page states that Insights runs daily once a project has 1,000 new turns since the last run.](assets/lens-insights-eligibility.png)
 
@@ -170,7 +170,7 @@ For this release, we added three native saved views: **conditional wording candi
 
 *The saved handoff view, captured November 9. Each row opens the original conversation and its span tree. The five cases are selected examples, not a representative failure-rate estimate. [Full-size image](assets/lens-reviewed-handoffs.png).*
 
-The investigation now has a concrete next action for each finding. Preserve an entry condition in structured output or reject execution when it cannot be evaluated. Give every role the same as-of date, five-session mandate and benchmark. Provide actual starting holdings, or explicitly request a fresh-account allocation. Keep cash P&L, relative direction and abstention separate. Those contracts can be tested before spending money on another campaign; whether they improve investment decisions requires a new, registered forward window.
+The investigation gave us a concrete intervention for each finding. Preserve an entry condition in structured output or reject execution when it cannot be evaluated. Give every role the same as-of date, five-session mandate and benchmark. Provide actual starting holdings, or explicitly request a fresh-account allocation. Keep cash P&L, relative direction and abstention separate. We implemented and tested those contracts, then ran the development comparison below. Whether they improve future investment decisions still requires a registered forward window.
 
 ## Make the result and execution agree
 
@@ -206,7 +206,7 @@ Our locally trained DLinear adaptation separates a moving-average component and 
 
 For fitted models, labels must mature before the cohort's first decision. Validation is chronological, with the final 20% held out and six examples purged at the boundary. Scaling uses training data only; hyperparameters are fixed before the evaluation cohort. The delayed entry also changes the forecast target: six future daily steps are needed, and the first step's return is excluded.
 
-The agent comparison has a material confound. The single analyst receives an explicit five-session, SPY-relative objective, while the committees retain the repository's recommendation prompts. Agents also receive SEC and macro evidence that numerical models do not, and the single analyst gets its bundle directly instead of retrieving it. We can compare these systems as configured. We cannot attribute their performance difference to the number of agents.
+The original agent comparison has a material confound. The single analyst receives an explicit five-session, SPY-relative objective, while the committees retain the repository's recommendation prompts. Agents also receive SEC and macro evidence that numerical models do not, and the single analyst gets its bundle directly instead of retrieving it. We can compare these systems as configured. We cannot attribute their performance difference to the number of agents.
 
 Buy and Overweight predict positive excess return; Underweight and Sell predict negative excess return. Hold abstains from directional accuracy. Signed excess return multiplies the direction by stock-minus-SPY return, so an Underweight can be correct even if the stock rose, provided SPY rose more.
 
@@ -267,14 +267,44 @@ The [scenario dashboard](https://forge.coreweave.com/wandb/wandb/tradingagents-e
 
 <!-- native-panel:scenarios -->
 
+## We fixed the contract and ran it again
+
+This time, every role received the same historical cutoff, exact entry and exit dates, five-session horizon, SPY benchmark and fresh-cash account. The final model call had to return an explicit allocation or abstain. An unsupported condition, wrong date or inconsistent weight leaves cash and receives no directional grade. The simulator checks the contract again before opening a position. The simulator executes that explicit order, so a rating alone can no longer authorize a position.
+
+We froze that change before qualification, then ran all **60 cases × three treatments × two trials**. All 360 executions completed: 215 produced accepted orders and 145 explicitly chose cash. None failed or produced a rejected contract. Hosted readback verified **14,829 spans and 4,194 model calls**, including the common mandate in every recorded model request. The [frozen protocol, paired records and verification receipt](https://github.com/ash0ts/TradingAgents/tree/codex/tradingagents-forge-notebooks/studies/execution-contract-v2) preserve the original comparison alongside the new one. These are previously inspected development cases, not an untouched test.
+
+![Original and corrected mean trading P&L: default committee $11.67 to $130.56, all-Luna minus $66.29 to minus $10.59, single analyst $16.49 to $57.04.](assets/corrected-portfolio-pnl.png)
+
+*Fresh $100,000 scenarios, eight matured dates, two trials per date and 10 basis points per side. Model expense is separate. The original numerical and passive baselines are unchanged. [Exact values and exposure](assets/corrected-portfolio-pnl.csv). [Full-size image](assets/corrected-portfolio-pnl.png).*
+
+The default committee's average invested fraction fell from **45.0% to 20.3%**. Its directional accuracy rose from 36.4% on 77 graded predictions to 58.3% on 48. That is a smaller, different selection of calls, not the same predictions suddenly becoming more accurate. Its paired profit change is +$118.90 per account; the exploratory 95% cohort-block interval runs from **−$439.67 to +$677.46**. There are only four matured cohort blocks. All three treatments' intervals include zero, and all three still trail the fully invested SPY mean of $458.44 at different exposure levels.
+
+The all-Luna committee's response was more revealing: **92 of its 120 decisions explicitly chose cash**. In several reviewed reports, it explained that the evidence did not establish a five-session edge over SPY. We opened the inputs. Our committee price tool is bound to the case ticker; it does not expose SPY prices. The single analyst gets SPY directly in its bundle. Asking the committees to defend a benchmark-relative trade made that inherited information-access difference harder to overlook. We cannot call their missing comparison an invented excuse, or attribute the treatment gap to the number of agents.
+
+![Corrected order counts out of 120 per treatment: default committee 72 accepted and 48 cash abstentions; all-Luna 28 accepted and 92 cash; single analyst 115 accepted and five cash.](assets/corrected-execution-status.png)
+
+*Accepted means the typed execution contract passed. It does not certify the explanation or forecast. Cash choices still incur model charges, and pending outcomes are included in these operational counts. [Full-size image](assets/corrected-execution-status.png).*
+
+Return to the original weakest UNH example. In the first corrected default trial, the final manager now explicitly allocates 25% at the November 8 close and exits November 15, without waiting for a breakout. It also corrects the trader's “Sell” label for that 25% sizing to “Underweight.” The other trial allocates 50%. Both are executable fresh-account decisions; neither tells us what the old, underspecified conditional strategy would have earned.
+
+We reviewed the five discovered cases across both trials and all three treatments: **30 final outputs, reviewed by Codex rather than a domain expert**. Twenty-nine had consistent mandate/order prose within that review's scope. One single-analyst UNH report called its approximately $4,167 allocation “before entry fees,” although the 25% budget includes them. The simulator correctly invests about $4,162.50 plus $4.16 in fees. The typed order passed; that sentence still needs correction. We also did not certify every numerical or event claim in these reports. The [review records](https://github.com/ash0ts/TradingAgents/blob/codex/tradingagents-forge-notebooks/studies/execution-contract-v2/reviews.json) preserve those limits and the mismatch.
+
+The [corrected-execution dashboard](https://forge.coreweave.com/wandb/wandb/tradingagents-election-lab?nw=zvy3sfqxpnd) separates profit, exposure, graded-call counts and model expense. Open a corrected run's `paired_decisions` table for the old and new Agent Lens conversations, or the updated [financial notebook](https://forge.coreweave.com/notebooks/Tm90ZWJvb2s6MTUyNzI%3D) to filter and download the pairs. Three native Agent Lens views isolate the new treatments. This gives us a repeatable loop: find a mismatch in an actual conversation, encode the contract, run the same cases again, and inspect what still fails.
+
+![Actual Forge dashboard comparing the six original and corrected treatment summaries, filtered to the paired development runs.](assets/forge-corrected-dashboard.png)
+
+*The saved native profit panel, captured November 9 after the rerun. Horizontal values are mean dollars per fresh $100,000 scenario; the paired figure above gives exact amounts. [Full-size image](assets/forge-corrected-dashboard.png).*
+
+<!-- native-panel:corrected -->
+
 ## Open the evidence, then decide what to change
 
 The [trading evidence package](../evidence/tradingagents-public-evidence.zip) contains 960 predictions, 2,880 horizon scores, 640 portfolio scenarios, source coverage, paired comparisons, selected reviews, and a hash manifest. The [reproduction guide](../evidence/README.md) defines the joins, units, and access limits. The [scenario extension](../trading-scenarios/README.md) supplies another 1,120 reconciled accounts and the inputs required to rebuild them without a model call or licensed raw quotes.
 
 The [internals audit](../internals/README.md) adds 360 derived observation rows and five selected reviews without changing those original records. Its native dashboard contains the result-to-conversation links, and its public exports contain the check definitions, short reviewed excerpts and source hashes. This pass made no new model or judge calls.
 
-The trading qualification and campaign recorded **$7.683182 in model charges**. The budget ledger also retains $0.001853 from an excluded prototype, for $7.685035 in total known charges. A separate **$175 infrastructure reservation** remains held against the **$250 cap**, awaiting invoice reconciliation. Known or reserved spend is $182.685035. Local training hardware is unmetered. Publication reuses saved results.
+The original trading qualification and campaign recorded **$7.683182 in model charges**. The corrected qualification and campaign add **$7.783134**. Including $0.001853 from an excluded prototype, total known model charges are **$15.468169**. A separate **$175 infrastructure reservation** remains held against the **$250 cap**, awaiting invoice reconciliation. Known or reserved spend is **$190.468169**. Local training hardware is unmetered. Publication reuses saved results.
 
 The three Forge Notebooks remain practical workspaces: [meet the committee](https://forge.coreweave.com/notebooks/Tm90ZWJvb2s6MTUyNjA%3D), [investigate its behavior](https://forge.coreweave.com/notebooks/Tm90ZWJvb2s6MTUyNzE%3D), and [compare financial outcomes](https://forge.coreweave.com/notebooks/Tm90ZWJvb2s6MTUyNzI%3D). This single article supplies the narrative across them. The code remains in six dependent draft PRs in the personal fork, with no Forge or Agent Lens product changes.
 
-Before the next comparison, we need an execution contract that can distinguish “buy now” from “buy only if,” and a test that rejects a five-session score for a response to a different mandate. Then we can hold the evidence and portfolio context constant across treatments and register a forward window. We have identified those changes; we have not yet measured their effect on returns.
+The execution contract is now implemented and its development results are visible. Before a forward study, we still need matched benchmark access, an explicit policy for missing event evidence, and broader factual review. The useful outcome is a trading experiment whose instructions, orders and scores can be challenged all the way down to the recorded request. Eight historical dates still do not tell me to hand it the money.

@@ -56,17 +56,22 @@
       "version": {
         "artifactTypeName": "notebook",
         "artifactCollectionName": "Did-it-beat-doing-nothing",
-        "versionIndex": 12,
+        "versionIndex": 23,
         "sourceFileName": "notebook.py"
       },
-      "source_sha256": "928604e24ab6ba03446e81e8f45aa74fb7fb667c291373d2148ad175c834b1b6",
+      "source_sha256": "4c988015279bb129c176738bb212e86b96bc2b004ae1076e5b3219e281a3ef66",
       "last_source_edited_at": "2026-11-06T07:25:16Z",
       "last_static_output_at": null,
       "has_static_output": true,
       "url": "https://forge.coreweave.com/notebooks/Tm90ZWJvb2s6MTUyNzI=",
-      "static_sha256": "8abc00ca614a0139a0ce54732db82f58b8dfb9cdb6bb7bfa481d370d5a12bf9b",
-      "static_bytes": 5166206,
-      "public_data_sha256": "f565efe5b288eaf93540484801b2f79e5f5bf8b2242ed9a3223428b797c10096",
+      "static_sha256": "533beeee5861d313b6d266d1829e7907c27a87ce56a98560852c8e9d60940c2d",
+      "static_bytes": 6087632,
+      "local_source_sha256": "e98980edd46304cd6f7cd813dee9029c088a0693ce611893733de82152bbd249",
+      "source_equivalence": "Python AST identical after generated Marimo version normalization; editor reformats dependency comments",
+      "corrected_executions": 360,
+      "corrected_result_sha256": "f36363670f04ed8900fc9482520d026915b25a3ece1d56663e004ee798499ed3",
+      "new_model_calls": 0,
+      "scenario_rows": 1120,
       "runtime_versions": {
         "marimo": "0.25.1",
         "numpy": "2.5.4",
@@ -74,11 +79,6 @@
         "matplotlib": "3.11.2",
         "wandb": "0.30.0"
       },
-      "local_source_sha256": "994c8f7aad362b7ca312af670ed1faa68d717c8ec1647a13d8c72910e5249436",
-      "source_equivalence": "Python AST identical after generated Marimo version normalization; editor reformats dependency comments",
-      "scenario_rows": 1120,
-      "scenario_selector_verified": "Second close displays default committee -193.51; restored original before saving",
-      "new_model_calls": 0,
       "runtime_stopped_after_verification": true
     }
   ],
@@ -109,9 +109,9 @@
       "anonymous_permissions": [
         "VIEW_STATIC"
       ],
-      "version": 9,
-      "static_sha256": "c5188fa37ad7c28a2753210bfaa2457631f255c90d4bee4e8576c496c8601fe7",
-      "static_bytes": 4644610
+      "version": 23,
+      "static_sha256": "533beeee5861d313b6d266d1829e7907c27a87ce56a98560852c8e9d60940c2d",
+      "static_bytes": 6087632
     }
   ],
   "agent_lens_audit": {
@@ -158,5 +158,62 @@
     "ruff": "passed",
     "clean_pinned_notebook_exports": "passed",
     "hosted_runtimes_stopped": true
+  },
+  "corrected_campaign_audit": {
+    "2026_five_session_outcomes_pending": true,
+    "actor_code_revisions": [
+      "4eb79a67a1e64b3945c5d219b7ea92ad49313c8b"
+    ],
+    "all_prediction_hashes_match": true,
+    "budget": {
+      "calls": 8447,
+      "campaign_cap_usd": 250,
+      "cost_known_usd": 15.468169,
+      "cost_upper_usd": 190.468169,
+      "infrastructure_reserved_usd": 175.0,
+      "infrastructure_status": "Conservative holds; invoice reconciliation pending. Not recorded spend.",
+      "model_unknown_calls": 0,
+      "unknown_calls": 3
+    },
+    "campaign_id": "election-contract-v2",
+    "contract_counts": {
+      "abstained": 145,
+      "accepted": 215
+    },
+    "evidence_and_outcome_hashes_match_frozen_protocol": true,
+    "executions": 360,
+    "hosted": {
+      "all_evaluation_links_verified": true,
+      "all_model_requests_have_mandate": true,
+      "all_usage_reconciled": true,
+      "conversations": 360,
+      "model_calls": 4194,
+      "spans": 14829
+    },
+    "new_model_cost_upper_usd_including_qualification": 7.783134,
+    "nonmandate_horizons_unscored": true,
+    "original_controls_unchanged_sha256": "843580ed4cccc7d38f5d3e868c0263e12a5347112d68e646d4937e09ea3e1104",
+    "portfolio_counts": {
+      "matured": 192,
+      "pending": 48
+    },
+    "protocol_sha256": "49e573790f8c31854a5fe075fd2c51f1ed6a5fa6ef87afb8c2a0d9b55846a3ba",
+    "qualification_executions": 3,
+    "result_sha256": "f36363670f04ed8900fc9482520d026915b25a3ece1d56663e004ee798499ed3",
+    "scores_and_original_portfolios_recomputed_by_exporter": true,
+    "selected_assistant_reviews": 30,
+    "semantic_boundary": "Typed validation and numeric reconciliation do not certify factual or investment quality. See 30 selected Codex assistant reviews.",
+    "source_hashes_match_frozen_protocol": true,
+    "status_counts": {
+      "success": 360
+    },
+    "unique_conversations": 360
+  },
+  "corrected_public_artifact": {
+    "artifact": "wandb/tradingagents-election-lab/execution-contract-v2-results:v0",
+    "digest": "d1335d9fc3a6db45514fea527135bf5a",
+    "project": "wandb/tradingagents-election-lab",
+    "protocol_sha256": "49e573790f8c31854a5fe075fd2c51f1ed6a5fa6ef87afb8c2a0d9b55846a3ba",
+    "public": true
   }
 }
