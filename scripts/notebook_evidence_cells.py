@@ -18,6 +18,9 @@ def extensions(cell):
     for name in ("reviews", "dashboard"):
         source = path.parent / (name + ".json")
         data[name] = json.loads(source.read_text()) if source.exists() else {}
+    handoff = ROOT / "studies/trader-handoff-v4/results.json"
+    if handoff.exists():
+        data["handoff"] = json.loads(handoff.read_text())
     payload = base64.b64encode(zlib.compress(json.dumps(data).encode(), 9)).decode()
     common = cell(f"""
 evidence3 = json.loads(zlib.decompress(base64.b64decode({payload!r})))
@@ -44,6 +47,7 @@ _receipt = latest_decision['execution_receipt']
 mo.vstack([mo.md(f"**{latest_decision['rating']} · {latest_decision['contract_status']}**\n\n[Open its Agent Lens conversation (team access)]({latest_decision['conversation_url']})"),
     mo.ui.table([{'Case':latest_decision['case_id'], 'Brief digest':latest_decision['brief_sha256'],
                  'Evidence digest':latest_decision['evidence_sha256'], 'Model calls':latest_decision['model_calls'],
+                 'Complete native trace':latest_decision['trace_complete'],
                  'Stale filing facts supplied':latest_decision['stale_facts_available'],
                  'Citation check':latest_decision['citation_check']['valid'] if latest_decision['citation_check'] else 'not required'}],selection=None,show_data_types=False),
     mo.md("### Computed execution receipt\nThis is the harness's planned accounting, separate from model prose and actual fills. Entry price and shares are unknown at decision time."),
@@ -56,11 +60,22 @@ return latest_decision,
     second = (
         common
         + cell(r"""
+_pilot3 = evidence3['stopped_pilot']
+_pilot_rows3 = [{'Case':r['case_id'],'System':r['treatment'],'Arm':r['arm'],
+                 'Contract':r['contract_status'],'Cost ($)':r['cost_known_usd'],
+                 'Agent Lens':mo.md(f"[Inspect (team access)]({r['conversation_url']})")} for r in _pilot3['rows']]
+mo.vstack([mo.md("### Our checker failed qualification in the wild\nAn ambiguous instruction put a brief hash into the missing-source list. We stopped new launches, saved all 40 started executions, repaired the instruction, and reran qualification including the exact MSFT regression. These partial-schedule rows are excluded from financial comparisons; their costs still count. This was a harness-induced rejection, not evidence of a fabricated market fact."),
+    mo.accordion({'Preserved stopped pilot · all 40 executions':mo.ui.table(_pilot_rows3,selection=None,show_data_types=False,page_size=8)}),
+    mo.download(data=json.dumps(_pilot3,indent=2).encode(),filename='stopped-pilot.json',label='Download the stopped pilot')])
+return
+""")
+        + cell(r"""
 _gate_rows = []
 for _s in evidence3['summaries']:
     _gate_rows.append({'Arm':_s['arm'],'System':_s['treatment'],'Requested':_s['requested'],
         'Accepted':_s['contract_counts'].get('accepted',0),'Chose cash':_s['contract_counts'].get('abstained',0),
         'Rejected citations':_s['contract_counts'].get('invalid_citations',0),'Actor failures':_s['failed'],
+        'Complete native conversations':_s['complete_native_conversations'],
         'Citation decisions checked':_s['citation_decisions_checked'],
         'Exact citation matches':_s['citation_decisions_valid'] if _s['arm']=='cited-evidence' else None})
 mo.ui.table(_gate_rows,selection=None,show_data_types=False,label="Execution gates · missing citation tests are not zeros")
@@ -122,13 +137,48 @@ mo.vstack([mo.md("### Accounts, costs and pending horizons\nThe download include
     mo.download(data=json.dumps(_accounts3,indent=2).encode(),filename="common-evidence-accounts.json",label="Download all selected accounts")])
 return
 """)
+        + cell(r"""
+_examples3 = []
+for _e in evidence3['examples']:
+    _sources = [r for r in evidence3['rows'] if (r['arm'],r['treatment'],r['decision_date'],r['trial'])==(_e['arm'],_e['treatment'],_e['decision_date'],_e['trial'])]
+    _examples3.append({'Selection':_e['selection'],'Arm':_e['arm'],'System':_e['treatment'],
+                      'Decision date':_e['decision_date'],'P&L ($)':_e['trading_pnl'],
+                      'Selection difference ($)':_e['selection_pnl'],
+                      'Source conversations':mo.md(' · '.join(f"[{r['ticker']}]({r['conversation_url']})" for r in _sources))})
+mo.vstack([mo.md("### Inspect a winner, a loser and a random account\nSelected separately for each arm and system by account P&L, with seed 20261109 for the random account. These examples describe the observed development sample; they do not determine the prespecified explanation-review set. Conversation links require team access."),
+           mo.ui.table(_examples3,selection=None,show_data_types=False,page_size=9)])
+return
+""")
     )
+    trace_health = cell(r"""
+_trace3 = evidence3['hosted']
+_gap3 = _trace3['incomplete_conversations'][0]
+_trace_text3 = (f"**Native trace readback:** {_trace3['complete_conversations']}/{_trace3['conversations']} conversations reconcile all recorded model, tool and subagent activity. "
+    "One Bull Researcher subagent and its model span were lost after an export timeout. Its response and charge remain in the local record and financial results; its exact request cannot be recovered. "
+    f"[Inspect the incomplete conversation (team access)](https://forge.coreweave.com/agent-lens/wandb/tradingagents-election-lab-evidence/conversations/{_gap3['conversation_id']}). "
+    "No span was reconstructed and no model was rerun to replace it.")
+mo.md(_trace_text3)
+return
+""")
+    handoff_cells = cell(r"""
+_handoff3 = evidence3.get('handoff',{})
+_handoff_rows3 = [{'Case':r['case_id'],'Arm':r['arm'],'System':r['treatment'],
+                   'Previous trader action':r['previous_trader_action'],'Repaired trader action':r['trader_action'],
+                   'Proposed weight':r['proposed_weight'],'Final weight':r['final_target_weight'],
+                   'Final gate':r['final_contract_status'],
+                   'Original conversation':mo.md(f"[Before (team access)]({r['previous_conversation_url']})"),
+                   'Repaired conversation':mo.md(f"[After (team access)]({r['conversation_url']})")} for r in _handoff3.get('rows',[])]
+mo.vstack([mo.md("### Repair the instruction before blaming the trader\nThe old trader explicitly translated Underweight into Sell, although the fresh-cash mandate maps those to 25% and 0%. A separate eight-case engineering regression gives trader and manager one five-rating vocabulary. These selected runs do not supply another financial comparison. Actual ended spans are now journaled privately before process exit; that cannot recover the earlier unjournaled loss."),
+           mo.ui.table(_handoff_rows3,selection=None,show_data_types=False,page_size=8,label="Separate handoff regressions · exact original and repaired executions"),
+           mo.download(data=json.dumps(_handoff3,indent=2).encode(),filename="handoff-engineering-regressions.json",label="Download handoff checks")])
+return
+""")
     budget = cell(r"""
-_b3 = evidence3['budget']
+_b3 = evidence3.get('handoff',{}).get('budget',evidence3['budget'])
 _budget3 = (f"**Latest shared ledger:** ${_b3['cost_known_usd']:.6f} known model charges plus "
             f"${_b3['infrastructure_reserved_usd']:.2f} infrastructure reservations = ${_b3['cost_upper_usd']:.6f} known or reserved against $250. "
             "Infrastructure awaits invoice reconciliation; local training hardware is unmetered. Earlier budget tables are dated release snapshots.")
 mo.md(_budget3)
 return
 """)
-    return first + budget, second + budget, third + budget
+    return first + trace_health + budget, second + handoff_cells + trace_health + budget, third + trace_health + budget

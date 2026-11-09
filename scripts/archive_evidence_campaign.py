@@ -14,7 +14,11 @@ def archive(public):
     result = json.loads((PUBLIC / "results.json").read_text())
     audit = json.loads((OUT / "campaign-hosted-audit.json").read_text())
     assert len(result["rows"]) == audit["conversations"]
-    name = "common-evidence-v3-repaired-results" if public else "common-evidence-v3-repaired-executions"
+    name = (
+        "common-evidence-v3-repaired-results"
+        if public
+        else "common-evidence-v3-repaired-executions"
+    )
     project = "tradingagents-election-lab" + ("" if public else "-evidence")
     artifact = wandb.Artifact(
         name,
@@ -42,16 +46,25 @@ def archive(public):
             "verification.json",
             "dashboard.json",
             "figure-provenance.json",
+            "unit-account-factors.json",
+            "public-reproduction.json",
+            "publication-budget.json",
             "README.md",
         ):
             artifact.add_file(str(PUBLIC / name), name=name)
-        for name in ('protocol.json', 'pilot-results.json', 'README.md'):
-            artifact.add_file(str(REPO / 'studies/common-evidence-v3' / name), name='stopped-pilot/' + name)
+        artifact.add_file(
+            str(REPO / "scripts/reproduce_evidence_accounts.py"),
+            name="reproduce_evidence_accounts.py",
+        )
+        for name in ("protocol.json", "pilot-results.json", "README.md"):
+            artifact.add_file(
+                str(REPO / "studies/common-evidence-v3" / name), name="stopped-pilot/" + name
+            )
     else:
         for mode in result["design"]["arms"]:
             for directory in ("campaign", "qualification"):
                 artifact.add_dir(str(OUT / mode / directory), name=mode + "/" + directory)
-        for directory in ("briefs", "hosted-readback"):
+        for directory in ("briefs", "hosted-readback", "native-spans"):
             artifact.add_dir(str(OUT / directory), name=directory)
         for name in (
             "design.json",
@@ -60,6 +73,8 @@ def archive(public):
             "campaign-hosted-audit.json",
             "qualification-hosted-audit.json",
             "account-audit.json",
+            "native-view-verification.json",
+            "lens-views.json",
         ):
             artifact.add_file(str(OUT / name), name=name)
         with (
@@ -69,13 +84,21 @@ def archive(public):
             source.backup(target)
         artifact.add_file(str(OUT / "budget-backup.sqlite"), name="shared-budget.sqlite")
         artifact.add_file(str(PUBLIC / "protocol.json"), name="protocol.json")
-        pilot = REPO / 'lab-runs/election-evidence-v3'
-        for mode in result['design']['arms']:
-            for directory in ('campaign', 'qualification'):
-                artifact.add_dir(str(pilot / mode / directory), name='stopped-pilot/' + mode + '/' + directory)
-        artifact.add_dir(str(pilot / 'hosted-readback'), name='stopped-pilot/hosted-readback')
-        for name in ('pilot-stop.json', 'design.json', 'campaign-hosted-audit.json', 'qualification-hosted-audit.json'):
-            artifact.add_file(str(pilot / name), name='stopped-pilot/' + name)
+        pilot = REPO / "lab-runs/election-evidence-v3"
+        for mode in result["design"]["arms"]:
+            for directory in ("campaign", "qualification"):
+                artifact.add_dir(
+                    str(pilot / mode / directory), name="stopped-pilot/" + mode + "/" + directory
+                )
+        artifact.add_dir(str(pilot / "hosted-readback"), name="stopped-pilot/hosted-readback")
+        artifact.add_dir(str(pilot / "native-spans"), name="stopped-pilot/native-spans")
+        for name in (
+            "pilot-stop.json",
+            "design.json",
+            "campaign-hosted-audit.json",
+            "qualification-hosted-audit.json",
+        ):
+            artifact.add_file(str(pilot / name), name="stopped-pilot/" + name)
     with wandb.init(
         entity="wandb",
         project=project,
