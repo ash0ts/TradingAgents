@@ -1,0 +1,167 @@
+[
+  {
+    "case_id": "midterms-2022-before-UNH",
+    "treatment": "default-committee",
+    "trial": 0,
+    "selection": "Original weakest signed-excess-return example",
+    "reviewer": "Codex assistant (not human/domain-expert review)",
+    "reviewed_at": "2026-11-09",
+    "finding": "reviewed-assistant-execution-contract",
+    "excerpts": [
+      {
+        "locator": "state/trader_investment_plan",
+        "text": "favor adding only on confirmation above that zone",
+        "field_sha256": "470204e7d9d4c52be43bcfa3fe91675c339d41a41198669034397fb0865c16cc"
+      },
+      {
+        "locator": "report",
+        "text": "favor a modest, conditional increase rather than an immediate full-size buy",
+        "field_sha256": "769f05eb386fd2ae9a7a4fe271b25604f20629da02d91faa6bf3fdb6716ae541"
+      },
+      {
+        "locator": "report",
+        "text": "**Time Horizon**: not provided",
+        "field_sha256": "769f05eb386fd2ae9a7a4fe271b25604f20629da02d91faa6bf3fdb6716ae541"
+      }
+    ],
+    "observed": "The trader and final report condition the addition on a breakout. The simulator maps Overweight directly to 75% of a sleeve at the next close. The measured loss belongs to that fixed rule; it does not establish execution of the conditional strategy.",
+    "limitation": "No conditional order was simulated and no counterfactual profit is claimed. The supplied sources and portfolio context are incomplete.",
+    "regression_expectation": "An execution adapter must preserve an entry condition as a structured requirement or explicitly reject execution. A rating alone cannot certify the condition was met.",
+    "split": "study-discovered-development-regression",
+    "source_prediction_sha256": "875257c48c0c3ad0532fcbdcdeed26430b316cd11f07cc49121bc7d633cbbb81",
+    "evidence_sha256": "c2cc9785c601730d25a5608e3c62b9ed88aa8e1aaf315b72a33dd53122e42cc2"
+  },
+  {
+    "case_id": "presidential-2024-after-NVDA",
+    "treatment": "default-committee",
+    "trial": 1,
+    "selection": "One of both observed research-to-final rating changes",
+    "reviewer": "Codex assistant (not human/domain-expert review)",
+    "reviewed_at": "2026-11-09",
+    "finding": "reviewed-assistant-replay-mandate",
+    "excerpts": [
+      {
+        "locator": "state/investment_plan",
+        "text": "**Recommendation**: Overweight",
+        "field_sha256": "d690c63e64142ca81a2113d1e0829bf8de79657968ed7849aba53362cbbe4ad6"
+      },
+      {
+        "locator": "report",
+        "text": "**Rating**: Hold",
+        "field_sha256": "0ba5f6522604a2ccfa2eed8fd371eae84170cdb1e9454f059f7a394921180ab5"
+      },
+      {
+        "locator": "report",
+        "text": "the debate supplies no current price, valuation, subsequent results, or portfolio holdings to establish today's risk-reward or justify overweight sizing",
+        "field_sha256": "0ba5f6522604a2ccfa2eed8fd371eae84170cdb1e9454f059f7a394921180ab5"
+      }
+    ],
+    "observed": "The final response argues about today and subsequent results while the case asks for a decision at the historical cutoff. It changes Overweight to Hold.",
+    "limitation": "This identifies a mismatch in the visible rationale, not a hidden mental cause or proof that an explicit date instruction would improve returns.",
+    "regression_expectation": "Every role must use the case cutoff as its decision-time reference and retain the same horizon and benchmark; future results must remain unavailable.",
+    "split": "study-discovered-development-regression",
+    "source_prediction_sha256": "bf65741f2d831d920b8a462fe6bcbe6424fc58398d62bb94fb6befe94e16c859",
+    "evidence_sha256": "020e62d2eb287832035e2a63a1f4f051f9350bb9de96f9ec7490e448239d3ade"
+  },
+  {
+    "case_id": "control-2023-after-UNH",
+    "treatment": "default-committee",
+    "trial": 0,
+    "selection": "The other observed research-to-final rating change",
+    "reviewer": "Codex assistant (not human/domain-expert review)",
+    "reviewed_at": "2026-11-09",
+    "finding": "reviewed-assistant-replay-mandate",
+    "excerpts": [
+      {
+        "locator": "state/investment_plan",
+        "text": "**Recommendation**: Underweight",
+        "field_sha256": "cc44cf5ad4907eec0a84687f951b395dc05de53317f4085f3ecc2438659560c8"
+      },
+      {
+        "locator": "report",
+        "text": "**Rating**: Hold",
+        "field_sha256": "159cdb5fb1ede08a35ce534a3b69eef043bdeb6a8e4cbe8a8e93577c8e5b913d"
+      },
+      {
+        "locator": "report",
+        "text": "cannot establish current downside risk",
+        "field_sha256": "159cdb5fb1ede08a35ce534a3b69eef043bdeb6a8e4cbe8a8e93577c8e5b913d"
+      },
+      {
+        "locator": "report",
+        "text": "not selling a within-limits UNH position on stale signals",
+        "field_sha256": "159cdb5fb1ede08a35ce534a3b69eef043bdeb6a8e4cbe8a8e93577c8e5b913d"
+      }
+    ],
+    "observed": "The final response treats the September 2023 technical evidence as stale for a current decision. It changes Underweight to Hold in a September 2023 replay.",
+    "limitation": "Unspecified actual holdings are an additional constraint; this is a mixed mandate/portfolio-context problem, not a validated single-cause diagnosis.",
+    "regression_expectation": "An as-of decision must not reject evidence merely because the software executes later. Existing holdings must be supplied or the output must define a fresh-account target.",
+    "split": "study-discovered-development-regression",
+    "source_prediction_sha256": "229d9c164276952eec1a02d0909cb0eada63209be6cba78ca332cbc8adb594ed",
+    "evidence_sha256": "726ad39613c512a7c5029c24c28781ba859ee6bec8129b73eeaa8b04198da81c"
+  },
+  {
+    "case_id": "control-2025-after-UNH",
+    "treatment": "default-committee",
+    "trial": 0,
+    "selection": "Strongest default-committee signed-excess-return example",
+    "reviewer": "Codex assistant (not human/domain-expert review)",
+    "reviewed_at": "2026-11-09",
+    "finding": "reviewed-assistant-horizon-and-score",
+    "excerpts": [
+      {
+        "locator": "report",
+        "text": "target 0.5\u20130.75\u00d7 your standard UNH allocation over the coming earnings cycle",
+        "field_sha256": "a1122dd200b36ebd435a241e32d529534daac24892a6afb6800ed5dcbe637cb3"
+      },
+      {
+        "locator": "report",
+        "text": "**Time Horizon**: Through the next earnings and guidance update",
+        "field_sha256": "a1122dd200b36ebd435a241e32d529534daac24892a6afb6800ed5dcbe637cb3"
+      }
+    ],
+    "observed": "The best directional committee example uses an earnings-cycle horizon. Its Underweight is directionally correct, yet the fixed 25%-invested sleeve loses money because the stock falls. Correct relative direction and cash-account profit differ.",
+    "limitation": "A correct short-window direction does not validate the stated earnings-cycle recommendation. This is a contrast case, not a failure inferred from losing money.",
+    "regression_expectation": "Expose the intended horizon, benchmark, final target weight and directional abstention separately; show both signed excess return and cash P&L.",
+    "split": "study-discovered-development-regression",
+    "source_prediction_sha256": "fe13d72d2cfdd98d219f912496c4cb91b6a3c36dc142570e2a049b23aa8d867c",
+    "evidence_sha256": "a9a116d20e7bcb4d45749f187c198e8619ba862c1e42e44af2a7d769e043bbc1"
+  },
+  {
+    "case_id": "control-2023-before-AAPL",
+    "treatment": "default-committee",
+    "trial": 0,
+    "selection": "Original seed-2026 random committee example",
+    "reviewer": "Codex assistant (not human/domain-expert review)",
+    "reviewed_at": "2026-11-09",
+    "finding": "reviewed-assistant-sizing-contract",
+    "excerpts": [
+      {
+        "locator": "state/trader_investment_plan",
+        "text": "**Action**: Sell",
+        "field_sha256": "0bdd0d458c4d1f6181f000a4a67fa3dd5f2807c158285e3a40c8cefa35296ea6"
+      },
+      {
+        "locator": "state/trader_investment_plan",
+        "text": "rather than exiting outright",
+        "field_sha256": "0bdd0d458c4d1f6181f000a4a67fa3dd5f2807c158285e3a40c8cefa35296ea6"
+      },
+      {
+        "locator": "report",
+        "text": "**Rating**: Underweight",
+        "field_sha256": "9860ad205f7cf5ac1afe869737c0c034edeeaa810aafb7352558b42e75e68df4"
+      },
+      {
+        "locator": "report",
+        "text": "do not force a sale if exposure is already modest and within limits",
+        "field_sha256": "9860ad205f7cf5ac1afe869737c0c034edeeaa810aafb7352558b42e75e68df4"
+      }
+    ],
+    "observed": "The trader says Sell but explains a partial trim. The final Underweight retains a position-dependent instruction. Those labels are not interchangeable with the simulator\u2019s fresh-account 25% target.",
+    "limitation": "This is not a contradictory full-exit recommendation: its qualifier is explicit. A string-only disagreement check would overstate the issue.",
+    "regression_expectation": "Distinguish transaction action, target allocation, reference allocation and current holdings; inspect qualifiers before assigning contradiction labels.",
+    "split": "study-discovered-development-regression",
+    "source_prediction_sha256": "74bd14a0817bb40b043d420bdddd059976d070b234854e251de76bada5fb3b93",
+    "evidence_sha256": "14be32448f8f52b9281f91857d87277b43446aff109413a17c4944934381ea1b"
+  }
+]

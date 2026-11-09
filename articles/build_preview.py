@@ -34,4 +34,5 @@ for path in [ROOT / "agent-lens-in-practice/article.md"]:
     )
 shutil.copytree(ROOT / "evidence", OUT / "evidence", dirs_exist_ok=True)
 shutil.copytree(ROOT / "trading-scenarios", OUT / "trading-scenarios", dirs_exist_ok=True)
+shutil.copytree(ROOT / "internals", OUT / "internals", dirs_exist_ok=True)
 print(OUT)
