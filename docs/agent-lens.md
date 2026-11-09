@@ -25,3 +25,22 @@ parallel activity and latency. Missing token usage is marked unknown locally;
 the product's cost chart alone is not an accounting ledger.
 
 SDK contract: https://docs.coreweave.com/products/agent-lens/tracing/instrument
+
+### Preserve exact spans for recovery
+
+For private evaluation runs, set `TRADINGAGENTS_TRACE_JOURNAL` to a writable local
+directory before the first traced call. The integration adds a standard
+OpenTelemetry span processor to the native Forge session. It writes each ended
+span as an OTLP payload under `<directory>/<entity>/<project>/`, with original
+span/trace IDs, parentage, timestamps and already-redacted visible content.
+Files use owner-only permissions and atomic replacement after flushing to disk.
+This adds local disk work; it does not instrument a second model call or export a
+second copy to the service. Keep these files private with the original evidence.
+
+The native exporter still handles transmission. A successful `force_flush()`
+means its queue was processed, not that every span reached the service. Compare
+hosted span IDs and usage with local records. A journal permits retrying the exact
+missing payload without a paid model rerun; it cannot reconstruct spans lost
+before journaling was enabled. Disk failures are logged and make journal flush
+report failure, while the existing decision path continues. With the environment
+variable unset, the optional journal is not imported or created.

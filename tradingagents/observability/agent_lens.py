@@ -61,11 +61,16 @@ def _sdk(project):
     global _project
     try:
         from coreweave.forge.agentlens import tracing
+        from coreweave.forge.agentlens.tracing.tracing import is_enabled
     except ImportError as exc:
         raise RuntimeError('Agent Lens requires pip install "tradingagents[forge]"') from exc
     with _session_lock:
-        if _project != project or not tracing.is_enabled():
-            tracing.init(project, autopatch_integrations=False)
+        if _project != project or not is_enabled():
+            session = tracing.init(project, autopatch_integrations=False)
+            if directory := os.environ.get("TRADINGAGENTS_TRACE_JOURNAL"):
+                from tradingagents.observability.trace_journal import TraceJournal
+
+                session.provider.add_span_processor(TraceJournal(directory, project))
             _project = project
     return tracing
 
