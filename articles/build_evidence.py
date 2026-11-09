@@ -26,9 +26,9 @@ assert (
 )
 OUT = ROOT / "evidence"
 OUT.mkdir(exist_ok=True)
-A = ROOT / "meet-the-investment-committee/assets"
-B = ROOT / "confident-expensive-and-wrong/assets"
-C = ROOT / "did-it-beat-doing-nothing/assets"
+A = ROOT / "agent-lens-in-practice/assets"
+B = ROOT / "agent-lens-in-practice/assets"
+C = ROOT / "agent-lens-in-practice/assets"
 AGENTS = ["default-committee", "luna-committee", "single-luna"]
 METHODS = AGENTS + [
     "momentum-20",
