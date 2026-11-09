@@ -1,0 +1,245 @@
+{
+  "type": "panel-grid",
+  "children": [
+    {
+      "text": "",
+      "inline_code": null,
+      "inline_comments": null
+    }
+  ],
+  "metadata": {
+    "open_viz": true,
+    "open_run_set": 0,
+    "name": "unused-name",
+    "run_sets": [
+      {
+        "id": "1n6mniagoa5",
+        "run_feed": {
+          "version": 2,
+          "column_visible": {},
+          "column_pinned": {},
+          "column_widths": {},
+          "column_order": [],
+          "page_size": 10,
+          "only_show_selected": false,
+          "lock_columns": null
+        },
+        "enabled": true,
+        "project": {
+          "name": "tradingagents-election-lab",
+          "entity_name": "wandb",
+          "id": "UHJvamVjdEludGVybmFsSWQ6NDU0NTI5MjU="
+        },
+        "name": "Original and corrected · same development cases",
+        "search": {
+          "query": "",
+          "is_regex": null
+        },
+        "filters": {
+          "filterFormat": "filterV2",
+          "filters": [
+            {
+              "key": {
+                "section": "run",
+                "name": "name"
+              },
+              "op": "IN",
+              "value": [
+                "contract-v2-782ee0cacae7dacd",
+                "contract-v2-c8fa61102261390f",
+                "contract-v2-fa07beafbd5456e3",
+                "contract-v2-d4366c20d983ecb9",
+                "contract-v2-096fd3b5cb67035b",
+                "contract-v2-baa835774b79d8d2"
+              ],
+              "disabled": false
+            }
+          ]
+        },
+        "grouping": [],
+        "sort": {
+          "keys": [
+            {
+              "key": {
+                "section": "run",
+                "name": "createdAt"
+              },
+              "ascending": false
+            }
+          ]
+        },
+        "selections": {
+          "root": 1,
+          "bounds": [],
+          "tree": []
+        },
+        "expanded_row_addresses": [],
+        "baseline_run_id": null,
+        "pinned_run_ids": null
+      }
+    ],
+    "hide_run_sets": false,
+    "panels": {
+      "views": {
+        "0": {
+          "name": "Panels",
+          "defaults": [],
+          "config": []
+        }
+      },
+      "tabs": [
+        "0"
+      ]
+    },
+    "panel_bank_config": {
+      "state": 0,
+      "settings": {
+        "auto_organize_prefix": 2,
+        "show_empty_sections": false,
+        "sort_alphabetically": false,
+        "search_query": null,
+        "search_history": null,
+        "auto_expand_search_results": null
+      },
+      "sections": [
+        {
+          "id": null,
+          "name": "Hidden Panels",
+          "is_open": false,
+          "type": "flow",
+          "flow_config": {
+            "snap_to_columns": true,
+            "columns_per_page": 3,
+            "rows_per_page": 2,
+            "gutter_width": 16,
+            "box_width": 460,
+            "box_height": 300
+          },
+          "sorted": 0,
+          "local_panel_settings": {
+            "smoothing_weight": 0,
+            "smoothing_type": "exponential",
+            "x_axis": "_step",
+            "ignore_outliers": false,
+            "use_runs_table_grouping_in_panels": true,
+            "x_axis_min": null,
+            "x_axis_max": null,
+            "color_run_names": null,
+            "max_runs": null,
+            "point_visualization_method": null,
+            "suppress_legends": null,
+            "tooltip_number_of_runs": null,
+            "smoothing_active": true,
+            "x_axis_active": false
+          },
+          "panels": [],
+          "pinned": null,
+          "is_panels_auto": null,
+          "default_name": null
+        }
+      ],
+      "panel_config_overrides": null,
+      "panel_placement_overrides": null
+    },
+    "panel_bank_section_config": {
+      "name": "Report Panels",
+      "is_open": false,
+      "panels": [
+        {
+          "id": "7f1psfsg9yg",
+          "layout": {
+            "x": 0,
+            "y": 0,
+            "w": 24,
+            "h": 10
+          },
+          "is_auto": null,
+          "view_type": "Bar Chart",
+          "config": {
+            "chart_title": "Did the new contract change trading profit?",
+            "metrics": [
+              "rerun/mean_trading_pnl"
+            ],
+            "vertical": false,
+            "x_axis_min": null,
+            "x_axis_max": null,
+            "x_axis_title": "Mean USD per fresh $100,000 scenario · 8 matured dates",
+            "y_axis_title": null,
+            "group_by": null,
+            "group_agg": null,
+            "group_area": null,
+            "limit": 6,
+            "bar_limit": 6,
+            "expressions": null,
+            "legend_template": "${run:displayName}",
+            "font_size": null,
+            "override_series_titles": null,
+            "override_colors": null,
+            "aggregate": null
+          }
+        },
+        {
+          "id": "2bcy1fhe6tg",
+          "layout": {
+            "x": 0,
+            "y": 10,
+            "w": 24,
+            "h": 10
+          },
+          "is_auto": null,
+          "view_type": "Bar Chart",
+          "config": {
+            "chart_title": "How much of the account was invested?",
+            "metrics": [
+              "rerun/mean_exposure"
+            ],
+            "vertical": false,
+            "x_axis_min": null,
+            "x_axis_max": null,
+            "x_axis_title": "Mean fraction at entry · 8 matured dates",
+            "y_axis_title": null,
+            "group_by": null,
+            "group_agg": null,
+            "group_area": null,
+            "limit": 6,
+            "bar_limit": 6,
+            "expressions": null,
+            "legend_template": "${run:displayName}",
+            "font_size": null,
+            "override_series_titles": null,
+            "override_colors": null,
+            "aggregate": null
+          }
+        }
+      ],
+      "type": "grid",
+      "flow_config": {
+        "snap_to_columns": true,
+        "columns_per_page": 3,
+        "rows_per_page": 2,
+        "gutter_width": 16,
+        "box_width": 460,
+        "box_height": 300
+      },
+      "sorted": 0,
+      "local_panel_settings": {
+        "smoothing_weight": 0,
+        "smoothing_type": "exponential",
+        "x_axis": "_step",
+        "ignore_outliers": false,
+        "use_runs_table_grouping_in_panels": true,
+        "x_axis_min": null,
+        "x_axis_max": null,
+        "color_run_names": null,
+        "max_runs": null,
+        "point_visualization_method": null,
+        "suppress_legends": null,
+        "tooltip_number_of_runs": null,
+        "smoothing_active": true,
+        "x_axis_active": false
+      },
+      "pinned": null
+    },
+    "custom_run_colors": {}
+  }
+}
