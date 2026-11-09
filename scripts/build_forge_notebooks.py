@@ -85,7 +85,7 @@ The decision cutoff is 23:59:59 New York time; entry is the following trading se
 | Portfolio manager | Deliver the final recommendation |
 
 Default TradingAgents uses Luna for the quick tier and Sol for the managers. All-Luna
-keeps the same committee; single-Luna receives the same frozen evidence in one request.
+keeps the same committee; single-Luna receives a direct bundle that includes SPY. The original committee tool access omitted SPY; the later common-brief comparison repairs that difference.
 All use a 4096-token output ceiling per call and no automatic SDK retries.
 """)
 return
@@ -374,6 +374,11 @@ mo.vstack([mo.md(f"### Inspect the changed decisions · {len(corrected_cases)} e
     mo.download(data=json.dumps(corrected_filtered, indent=2).encode(), filename="corrected-paired-decisions.json", label="Download selected paired decisions")])
 return
 ''')
+    from notebook_evidence_cells import extensions
+    first_addition, second_addition, third_addition = extensions(cell)
+    first += first_addition
+    second += second_addition
+    third += third_addition
     for name, source in [("01_meet_the_committee.py", first), ("02_confident_expensive_wrong.py", second), ("03_beat_doing_nothing.py", third)]:
         source += '\n\nif __name__ == "__main__":\n    app.run()\n'
         # Resolve cell signatures from the dependency graph; don't hand-maintain them.
