@@ -56,16 +56,16 @@
       "version": {
         "artifactTypeName": "notebook",
         "artifactCollectionName": "Did-it-beat-doing-nothing",
-        "versionIndex": 9,
+        "versionIndex": 12,
         "sourceFileName": "notebook.py"
       },
-      "source_sha256": "3fd6c0daba058b5b7671e7237e38bbede195a5ef25e54d43788bd7569b883256",
+      "source_sha256": "928604e24ab6ba03446e81e8f45aa74fb7fb667c291373d2148ad175c834b1b6",
       "last_source_edited_at": "2026-11-06T07:25:16Z",
       "last_static_output_at": null,
       "has_static_output": true,
       "url": "https://forge.coreweave.com/notebooks/Tm90ZWJvb2s6MTUyNzI=",
-      "static_sha256": "c5188fa37ad7c28a2753210bfaa2457631f255c90d4bee4e8576c496c8601fe7",
-      "static_bytes": 4644610,
+      "static_sha256": "8abc00ca614a0139a0ce54732db82f58b8dfb9cdb6bb7bfa481d370d5a12bf9b",
+      "static_bytes": 5166206,
       "public_data_sha256": "f565efe5b288eaf93540484801b2f79e5f5bf8b2242ed9a3223428b797c10096",
       "runtime_versions": {
         "marimo": "0.25.1",
@@ -73,7 +73,13 @@
         "pandas": "3.1.1",
         "matplotlib": "3.11.2",
         "wandb": "0.30.0"
-      }
+      },
+      "local_source_sha256": "994c8f7aad362b7ca312af670ed1faa68d717c8ec1647a13d8c72910e5249436",
+      "source_equivalence": "Python AST identical after generated Marimo version normalization; editor reformats dependency comments",
+      "scenario_rows": 1120,
+      "scenario_selector_verified": "Second close displays default committee -193.51; restored original before saving",
+      "new_model_calls": 0,
+      "runtime_stopped_after_verification": true
     }
   ],
   "anonymous_access_verified": [

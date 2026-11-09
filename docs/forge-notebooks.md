@@ -124,3 +124,11 @@ button has not been exercised inside a hosted notebook; do not describe the
 campaign itself as having run on Forge compute. Publishing dashboards incurs no
 additional model calls, and publication storage remains covered by the existing
 infrastructure reservation.
+
+The financial notebook now also embeds the post-hoc trading-scenario extension:
+seven profiles across all original cases and methods, with cohort filtering,
+exact account tables and a download. It makes no new model calls. Case IDs join
+to the notebook's authenticated Agent Lens links and evidence hashes. The
+separate scenario dashboard preserves the original financial and behavior
+workspace filters. Public replay inputs and provenance live under
+`articles/trading-scenarios`; raw vendor prices remain private.

@@ -285,6 +285,46 @@ mo.vstack([mo.md("### Limits on the conclusion\n" + "\n".join("- " + s for s in 
            mo.download(data=json.dumps(public, indent=2).encode(), filename="tradingagents-public-results.json", label="Download the sanitized results")])
 return
 ''')
+    scenario_path = ROOT / "articles/trading-scenarios/scenario-results.json"
+    if scenario_path.exists():
+        scenario_data = [{k: v for k, v in r.items() if k != "equity_curve"}
+                         for r in json.loads(scenario_path.read_text())]
+        scenario_payload = base64.b64encode(zlib.compress(json.dumps(scenario_data).encode(), 9)).decode()
+        third += cell(f'''
+import base64 as scenario_base64
+import zlib as scenario_zlib
+scenario_accounts = json.loads(scenario_zlib.decompress(scenario_base64.b64decode({scenario_payload!r})))
+mo.md("### Realistic trading constraints · post-hoc extension\\n"
+      "1,120 account replays use every original case and method, with no new forecasts. "
+      "Eight matured dates; the November 2026 cases remain pending at the November 5 freeze. "
+      "Select an execution or allocation profile below. The cohort filter above also applies. "
+      "The same-exposure controls match invested capital, not beta or volatility. "
+      "Requiring archived news is an external cash gate, not observed agent abstention. "
+      "Original prompt and evidence-delivery differences remain. These accounts start in cash; they do not model existing holdings or taxes.")
+return scenario_accounts,
+''') + cell(r'''
+scenario_profile = mo.ui.dropdown({"Original · next close, 10 bp": "original", "One session late · second close": "one-session-late", "Higher friction · 25 bp per side": "higher-friction", "Cap exposure at 50%": "half-exposure-cap", "SPY at same invested fraction": "matched-SPY", "Stock basket at same invested fraction": "matched-basket", "Require archived news": "require-archived-news"}, value="Original · next close, 10 bp", label="Trading scenario")
+scenario_profile
+return scenario_profile,
+''') + cell(r'''
+scenario_filtered = [r for r in scenario_accounts if r["profile"] == scenario_profile.value and (cohort.value == "All cohorts" or r["cohort"] == cohort.value)]
+scenario_comparison = []
+for _method in sorted({r["treatment"] for r in scenario_filtered}):
+    _group = [r for r in scenario_filtered if r["treatment"] == _method]
+    _mature = [r for r in _group if r["status"] == "matured"]
+    _dates = sorted({r["decision_date"] for r in _mature})
+    _date_means = [float(np.mean([r["trading_pnl"] for r in _mature if r["decision_date"] == d])) for d in _dates]
+    scenario_comparison.append({"Method": _method, "Matured dates": len(_dates), "Matured accounts": len(_mature), "Pending accounts": sum(r["status"] == "pending" for r in _group), "Mean P&L ($)": float(np.mean(_date_means)) if _date_means else None,
+                                "Mean exposure": float(np.mean([r["exposure_at_entry"] for r in _mature])) if _mature else None,
+                                "Mean fees ($)": float(np.mean([r["transaction_costs"] for r in _mature])) if _mature else None})
+mo.ui.table(scenario_comparison, selection=None, show_data_types=False, label="Scenario comparison · trial means within date; trading P&L excludes model charges", format_mapping={"Mean P&L ($)": "${:,.2f}", "Mean fees ($)": "${:,.2f}", "Mean exposure": "{:.1%}"})
+return scenario_comparison, scenario_filtered
+''') + cell(r'''
+scenario_detail = [{"Method": r["treatment"], "Decision": r["decision_date"], "Trial": r["trial"]+1, "Entry": r["entry_date"], "Exit": r["exit_date"], "Status": r["status"], "Trading P&L ($)": r["trading_pnl"], "Case IDs": ", ".join(r["case_ids"])} for r in scenario_filtered]
+mo.vstack([mo.ui.table(scenario_detail, selection=None, show_data_types=False, page_size=10, label="Exact scenario accounts · join case IDs to the Agent Lens links above", format_mapping={"Trading P&L ($)": "${:,.2f}"}),
+           mo.download(data=json.dumps(scenario_filtered, indent=2).encode(), filename="trading-scenario-accounts.json", label="Download selected scenario accounts")])
+return scenario_detail,
+''')
     for name, source in [("01_meet_the_committee.py", first), ("02_confident_expensive_wrong.py", second), ("03_beat_doing_nothing.py", third)]:
         source += '\n\nif __name__ == "__main__":\n    app.run()\n'
         # Resolve cell signatures from the dependency graph; don't hand-maintain them.
