@@ -20,7 +20,7 @@ assert PAYLOAD["public_data_sha256"] == EXPECTED
 body = {key: value for key, value in PAYLOAD.items() if key != "public_data_sha256"}
 encoded = json.dumps(body, sort_keys=True, separators=(",", ":"), allow_nan=False).encode()
 assert hashlib.sha256(encoded).hexdigest() == EXPECTED
-ASSETS = ROOT / "did-it-beat-doing-nothing/assets"
+ASSETS = ROOT / "agent-lens-in-practice/assets"
 METHODS = [
     ("equal-weight", "Equal-weight basket"),
     ("SPY", "SPY"),
@@ -107,5 +107,5 @@ receipt = {
         for file in ASSETS.glob("portfolio-pnl.*")
     },
 }
-(ROOT / "did-it-beat-doing-nothing/figure-provenance.json").write_text(json.dumps(receipt, indent=2) + "\n")
+(ROOT / "agent-lens-in-practice/figure-provenance.json").write_text(json.dumps(receipt, indent=2) + "\n")
 print(f"Rendered {len(rows)} methods from {EXPECTED}")

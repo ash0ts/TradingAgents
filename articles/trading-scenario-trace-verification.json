@@ -1,0 +1,31 @@
+{
+  "span_count": 63,
+  "model_calls": 16,
+  "tool_calls": 33,
+  "agents": [
+    "Aggressive Analyst",
+    "Bear Researcher",
+    "Bull Researcher",
+    "Conservative Analyst",
+    "Fundamentals Analyst",
+    "Market Analyst",
+    "Memory Log",
+    "Neutral Analyst",
+    "News Analyst",
+    "Portfolio Manager",
+    "Research Manager",
+    "Sentiment Analyst",
+    "Trader",
+    "default-committee"
+  ],
+  "all_spans_linked": true,
+  "usage_reconciled": true,
+  "case_id": "presidential-2024-before-MSFT",
+  "treatment": "default-committee",
+  "trial": 0,
+  "evidence_sha256": "cbbfc6c15a0d96fea98fec16388d3ac2ff19138cfd2bdc943c848b9bdbc91652",
+  "checked_at": "2026-11-09",
+  "scenario_dashboard_run": "scenario-29b85518f96994d2",
+  "path": "scenario_accounts.case_ids -> case_links -> Agent Lens conversation -> evidence_sha256",
+  "source_prediction_sha256": "790d1290816cab0dd8d7293ad5edae69125762495e8bd71c4e584de9cde18783"
+}

@@ -15,49 +15,49 @@
   },
   "figures": [
     {
-      "path": "meet-the-investment-committee/assets/evidence-chain",
+      "path": "agent-lens-in-practice/assets/evidence-chain",
       "question": "How does a result resolve to its evidence?",
       "limits": "Diagram of this implementation; not a claim that observability improves financial performance.",
       "source": "notebooks/data/showcase.json",
       "public_data_sha256": "f565efe5b288eaf93540484801b2f79e5f5bf8b2242ed9a3223428b797c10096"
     },
     {
-      "path": "meet-the-investment-committee/assets/coverage-and-maturity",
+      "path": "agent-lens-in-practice/assets/coverage-and-maturity",
       "question": "Which inputs and outcomes were available?",
       "limits": "Availability does not guarantee correctness. Global news and Stocktwits are also missing; the CSV lists every source.",
       "source": "notebooks/data/showcase.json",
       "public_data_sha256": "f565efe5b288eaf93540484801b2f79e5f5bf8b2242ed9a3223428b797c10096"
     },
     {
-      "path": "confident-expensive-and-wrong/assets/latency-and-model-cost",
+      "path": "agent-lens-in-practice/assets/latency-and-model-cost",
       "question": "How much elapsed time and API cost did each agent use?",
       "limits": "Means over 120 runs per treatment; excludes local hardware and infrastructure. Does not isolate a causal effect of debate.",
       "source": "notebooks/data/showcase.json",
       "public_data_sha256": "f565efe5b288eaf93540484801b2f79e5f5bf8b2242ed9a3223428b797c10096"
     },
     {
-      "path": "confident-expensive-and-wrong/assets/reviewed-candidates",
+      "path": "agent-lens-in-practice/assets/reviewed-candidates",
       "question": "What did inspection change about the candidate labels?",
       "limits": "Selected assistant reviews; not expert adjudication or a representative accuracy estimate.",
       "source": "notebooks/data/showcase.json",
       "public_data_sha256": "f565efe5b288eaf93540484801b2f79e5f5bf8b2242ed9a3223428b797c10096"
     },
     {
-      "path": "did-it-beat-doing-nothing/assets/directional-denominators",
+      "path": "agent-lens-in-practice/assets/directional-denominators",
       "question": "What is the denominator of directional accuracy?",
       "limits": "Pending takes precedence over Hold, so the three groups partition requested records. Passives make no directional forecasts and are omitted.",
       "source": "notebooks/data/showcase.json",
       "public_data_sha256": "f565efe5b288eaf93540484801b2f79e5f5bf8b2242ed9a3223428b797c10096"
     },
     {
-      "path": "did-it-beat-doing-nothing/assets/paired-uncertainty",
+      "path": "agent-lens-in-practice/assets/paired-uncertainty",
       "question": "How uncertain are matched differences from momentum?",
       "limits": "Four matured blocks; exploratory bootstrap, no multiple-comparison correction. Different methods have different paired subsets.",
       "source": "notebooks/data/showcase.json",
       "public_data_sha256": "f565efe5b288eaf93540484801b2f79e5f5bf8b2242ed9a3223428b797c10096"
     },
     {
-      "path": "did-it-beat-doing-nothing/assets/fee-sensitivity",
+      "path": "agent-lens-in-practice/assets/fee-sensitivity",
       "question": "How much does the fee assumption change P&L?",
       "limits": "Selected methods for readability; all 13 in CSV. Separate y-axis scales; independent scenarios, model expense excluded.",
       "source": "notebooks/data/showcase.json",

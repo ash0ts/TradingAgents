@@ -17,7 +17,7 @@ th,td{padding:10px;border-bottom:1px solid #cbd5d4;text-align:left}th{background
 code{font-size:.88em;overflow-wrap:anywhere}a:focus-visible,.table-scroll:focus-visible{outline:3px solid #b68730;outline-offset:3px}
 @media(max-width:600px){main{margin-top:30px;padding:0 18px 60px}h1{font-size:32px}body{font-size:17px}th,td{min-width:105px}em{font-size:14px}}
 """
-for path in ROOT.glob("*/article.md"):
+for path in [ROOT / "agent-lens-in-practice/article.md"]:
     dest = OUT / path.parent.name
     dest.mkdir(exist_ok=True)
     shutil.copytree(path.parent / "assets", dest / "assets", dirs_exist_ok=True)
@@ -33,4 +33,5 @@ for path in ROOT.glob("*/article.md"):
         f'<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{path.parent.name}</title><style>{CSS}</style><main>{html}</main></html>'
     )
 shutil.copytree(ROOT / "evidence", OUT / "evidence", dirs_exist_ok=True)
+shutil.copytree(ROOT / "trading-scenarios", OUT / "trading-scenarios", dirs_exist_ok=True)
 print(OUT)

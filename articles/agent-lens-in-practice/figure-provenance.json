@@ -1,0 +1,13 @@
+{
+  "source": "notebooks/data/showcase.json",
+  "public_data_sha256": "f565efe5b288eaf93540484801b2f79e5f5bf8b2242ed9a3223428b797c10096",
+  "source_file_sha256": "843580ed4cccc7d38f5d3e868c0263e12a5347112d68e646d4937e09ea3e1104",
+  "matplotlib_version": "3.11.2",
+  "question": "How much did each method earn under the specified portfolio rule?",
+  "limits": "Descriptive independent-scenario means; unequal exposure; no significance or compounded performance claim.",
+  "assets": {
+    "portfolio-pnl.csv": "356ab4609604b2da73c8f66215819a592bda217d039bbceff4465765fc13de2f",
+    "portfolio-pnl.png": "edbf760367a43dc5a0de4d35a757aa644fcac25ec7c40e7a19b49b7ca65462fb",
+    "portfolio-pnl.svg": "59e1d94df5535f21e6b0b1c8035583bd1022dda19b691a69cca940dc73aecab1"
+  }
+}
