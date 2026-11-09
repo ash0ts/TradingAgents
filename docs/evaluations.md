@@ -107,3 +107,21 @@ as rejected contracts, not successful abstentions. The checker validates only th
 cited observations; it does not establish that every sentence is true or that the
 observations support the forecast. Original modes and saved predictions remain
 unchanged.
+
+### Keep the trader's proposed allocation in the same vocabulary
+
+Execution-contract mode uses `ContractTraderProposal`: Buy/Overweight/Hold/
+Underweight/Sell mean 100%/75%/50%/25%/0% of a fresh-cash sleeve, including entry
+fees. The exact historical mandate and explicit order conditions survive the
+handoff to risk review. A next-close weight that disagrees with its action is
+rejected; an abstention has zero weight. Structured-output failure does not fall
+back to an untyped paid call. The final manager also receives these definitions,
+without the generic Hold/trim-existing-holdings scale.
+
+The legacy trader explicitly translated Underweight to Sell and Overweight to
+Buy. Those translations are retained in ordinary repository execution but are
+incompatible with this evaluation's five allocation buckets. The repair changes
+the contract at the trader boundary; it does not infer an executable order from
+free text or silently remove a proposed confirmation or stop requirement. Its
+selected eight-run development regression is separate from the already-frozen
+matched-evidence campaign and makes no new financial-performance claim.

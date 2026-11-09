@@ -47,6 +47,19 @@ def create_portfolio_manager(llm):
             else ""
         )
 
+        rating_scale = (
+            "Buy=100%, Overweight=75%, Hold=50%, Underweight=25%, Sell=0% of the "
+            "fresh-cash sleeve, inclusive of entry fees. These are new unconditional "
+            "allocations; Hold does not retain an unknown holding, and Sell does not "
+            "trim or short. Unsupported conditions require an explicit cash abstention."
+            if contracted else
+            "- **Buy**: Strong conviction to enter or add to position\n"
+            "- **Overweight**: Favorable outlook, gradually increase exposure\n"
+            "- **Hold**: Maintain current position, no action needed\n"
+            "- **Underweight**: Reduce exposure, take partial profits\n"
+            "- **Sell**: Exit position or avoid entry"
+        )
+
         prompt = f"""As the Portfolio Manager, synthesize the risk analysts' debate and deliver the final trading decision.
 
 {instrument_context}
@@ -56,11 +69,7 @@ def create_portfolio_manager(llm):
 ---
 
 **Rating Scale** (use exactly one):
-- **Buy**: Strong conviction to enter or add to position
-- **Overweight**: Favorable outlook, gradually increase exposure
-- **Hold**: Maintain current position, no action needed
-- **Underweight**: Reduce exposure, take partial profits
-- **Sell**: Exit position or avoid entry
+{rating_scale}
 
 **Context:**
 - Research Manager's investment plan: **{research_plan}**
