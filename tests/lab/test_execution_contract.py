@@ -18,7 +18,10 @@ from tradingagents.lab.execution import (
 
 @pytest.fixture
 def decision():
-    mandate = make_mandate("UNH", "2022-11-07").model_dump()
+    mandate = make_mandate("UNH", "2022-11-07", sessions=[
+        "2022-11-07", "2022-11-08", "2022-11-09", "2022-11-10",
+        "2022-11-11", "2022-11-14", "2022-11-15",
+    ]).model_dump()
     return {
         "rating": "Overweight", "executive_summary": "Allocate 75% at the stated close.",
         "investment_thesis": "Illustrative regression fixture, not a new model response.",
