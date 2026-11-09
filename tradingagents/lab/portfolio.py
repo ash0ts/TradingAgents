@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import math
 from collections import defaultdict
 from pathlib import Path
 
@@ -12,16 +13,24 @@ WEIGHTS = {"Buy": 1.0, "Overweight": .75, "Hold": .5, "Underweight": .25, "Sell"
 
 
 def simulate(decision_date, predictions, prices, sessions, *, initial_cash=100_000.0,
-             bps=10, horizon=5, freeze=FREEZE):
+             bps=10, horizon=5, freeze=FREEZE, entry_delay=1, target_weights=None):
     if initial_cash <= 0 or bps < 0 or not predictions:
         raise ValueError("Invalid portfolio inputs")
+    if not isinstance(entry_delay, int) or entry_delay < 1:
+        raise ValueError("Entry delay must be a positive number of sessions")
+    if target_weights is not None and (
+        set(target_weights) != {p["ticker"] for p in predictions} or any(
+            not math.isfinite(w) or not 0 <= w <= 1 for w in target_weights.values()
+        )
+    ):
+        raise ValueError("Every sleeve requires a finite target weight in [0, 1]")
     i = sessions.index(decision_date)
-    entry, exit_day = sessions[i + 1], sessions[i + horizon + 1]
+    entry, exit_day = sessions[i + entry_delay], sessions[i + horizon + entry_delay]
     identity = {"decision_date": decision_date, "entry_date": entry, "exit_date": exit_day,
                 "horizon": horizon, "bps_per_side": bps, "initial_cash": initial_cash}
     if exit_day > freeze:
         return {**identity, "status": "pending", "return": None, "trading_pnl": None}
-    window = sessions[i+1:i+horizon+2]
+    window = sessions[i+entry_delay:i+horizon+entry_delay+1]
     tables = {ticker: {r["date"]: r for r in rows} for ticker, rows in prices.items()}
     assets = {"SPY" if p["treatment"] == "SPY" else p["ticker"] for p in predictions}
     if any(any(day not in tables.get(asset, {}) for day in window) for asset in assets):
@@ -34,6 +43,8 @@ def simulate(decision_date, predictions, prices, sessions, *, initial_cash=100_0
     for p in predictions:
         asset = "SPY" if p["treatment"] == "SPY" else p["ticker"]
         weight = WEIGHTS.get(p.get("rating"), 0.0) if p["status"] == "success" else 0.0
+        if target_weights is not None and p["status"] == "success" and p.get("rating") in WEIGHTS:
+            weight = target_weights[p["ticker"]]
         failures += p["status"] != "success" or p.get("rating") not in WEIGHTS
         # Target allocation is total cash deployed including entry fee, so
         # a 100% sleeve never borrows cash to pay transaction costs.
