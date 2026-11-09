@@ -27,12 +27,21 @@ python scripts/run_repaired_evidence_campaign.py select
 python scripts/run_repaired_evidence_campaign.py run
 python scripts/audit_evidence_campaign.py
 python scripts/export_evidence_campaign.py
+python scripts/reproduce_evidence_accounts.py
+python scripts/verify_evidence_campaign.py
 ```
 
 The original and contract-only campaigns remain unchanged. A four-version table
 keeps each earlier trial and its source conversation visible. The new portfolio
 comparison includes SPY at each decision's exact invested fraction, with matching
 fees and timing. Matching capital does not match beta or volatility.
+
+`reproduce_evidence_accounts.py` uses only Python's standard library and public
+files. It scales per-dollar account factors by each accepted allocation, then
+independently reconciles P&L, fees, dividends, final cash, exposure, turnover,
+drawdown and the matched-SPY comparison to a $0.0000001 tolerance. It preserves
+pending accounts. This verifies arithmetic without credentials or raw quotes;
+it does not independently verify the underlying market-data vendor.
 
 Public exports are allowlisted derived data; raw prices, reports and detailed
 briefs remain in the private evidence project. Agent Lens conversation links

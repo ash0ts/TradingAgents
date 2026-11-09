@@ -110,24 +110,33 @@ mo.md("""## Run one deliberately
 The saved example is the default. To launch a new traced committee locally, install the
 fork's pinned environment, collect or download the private evidence artifact, set
 `OPENAI_API_KEY`, and set `TRADINGAGENTS_LAB_ROOT` and `TRADINGAGENTS_LAB_OUTPUT` to
-that campaign's directories. The button uses the same durable $25 publication-phase
-cap and returns an already saved result instead of spending again.
+that campaign's directories. Also set `TRADINGAGENTS_LAB_BUDGET` to its **existing**
+shared budget database. The control uses the common brief, required citations and
+the current five-rating trader contract. It preserves the $250 overall cap, $25
+publication-phase cap and combined $30 evidence-study model subcap. An exhausted
+reservation stops dispatch; choosing a new output directory cannot reset the ledger.
+An already saved result is returned instead of spending again.
 
 The hosted public notebook has no model key. Configure your own runtime before using
 this control; the campaign's credentials are never embedded in notebook source.
 """)
-run_button = mo.ui.run_button(label="Run this committee with native Agent Lens tracing", kind="warn")
+run_button = mo.ui.run_button(label="Run a cited-evidence committee with native tracing", kind="warn")
 run_button
 return run_button,
 ''') + cell(r'''
 mo.stop(not run_button.value, mo.md("Saved results loaded. No new model call launched."))
 import os
+from pathlib import Path
 _live_root = os.getenv("TRADINGAGENTS_LAB_ROOT")
 _live_output = os.getenv("TRADINGAGENTS_LAB_OUTPUT")
-mo.stop(not (_live_root and _live_output and os.getenv("OPENAI_API_KEY")),
-        mo.md("Configure OPENAI_API_KEY, TRADINGAGENTS_LAB_ROOT, and TRADINGAGENTS_LAB_OUTPUT in your runtime to run this cell."))
+_live_budget = os.getenv("TRADINGAGENTS_LAB_BUDGET")
+mo.stop(not (_live_root and _live_output and _live_budget and os.getenv("OPENAI_API_KEY")),
+        mo.md("Configure the model key, evidence/output directories and TRADINGAGENTS_LAB_BUDGET in your runtime to run this cell."))
+mo.stop(not Path(_live_budget).is_file(), mo.md("The shared campaign budget database must already exist. This control does not start a fresh ledger."))
 from tradingagents.lab.runner import run_one
-live_result = run_one(_live_root, _live_output, selected["case_id"], "default-committee", phase="publication")
+live_result = run_one(_live_root, _live_output, selected["case_id"], "default-committee", phase="publication",
+    campaign_id="election-evidence-v3/notebook-followup/cited-evidence", execution_contract=True,
+    evidence_mode="cited-evidence", budget_path=_live_budget, budget_prefix="election-evidence-v3/", campaign_cap_usd=30)
 mo.md(f"**{live_result['status']} · {live_result.get('rating')}** [Inspect the new conversation]({live_result['conversation_url']})")
 return live_result,
 ''')
