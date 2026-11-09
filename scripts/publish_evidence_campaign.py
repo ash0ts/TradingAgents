@@ -10,7 +10,7 @@ import requests
 import wandb
 import wandb_workspaces.reports.v2 as wr
 import wandb_workspaces.workspaces as ws
-from run_evidence_campaign import MODES, OUT, PUBLIC, REPO, sha
+from run_repaired_evidence_campaign import MODES, OUT, PUBLIC, REPO, sha
 
 from tradingagents.lab.lens import LensClient
 
@@ -83,7 +83,7 @@ def save_views(result, audit):
         assert len(traces[cid]) == 1
         receipts = [
             LensClient().tag(cid, traces[cid][0], name)
-            for name in ["common-evidence-v3", row["arm"], "v3-" + row["contract_status"]]
+            for name in ["common-evidence-v3-repaired", row["arm"], "v3-" + row["contract_status"]]
         ]
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(json.dumps(receipts) + "\n")
@@ -97,7 +97,7 @@ def save_views(result, audit):
             name = ARMS[mode] + " · " + label
             filters = [
                 {"id": "agent", "value": {"operator": "eq", "value": [t + "/" + mode]}},
-                {"id": "tags", "value": {"operator": "contains", "value": "common-evidence-v3"}},
+                {"id": "tags", "value": {"operator": "contains", "value": "common-evidence-v3-repaired"}},
             ]
             body = {
                 "name": name,
@@ -132,7 +132,7 @@ def publish():
         mode, t = row["arm"], row["treatment"]
         import hashlib
 
-        run_id = "evidence-v3-" + hashlib.sha256((digest + mode + t).encode()).hexdigest()[:16]
+        run_id = "evidence-v3-repaired-" + hashlib.sha256((digest + mode + t).encode()).hexdigest()[:16]
         ids.append(run_id)
         metrics = {
             "evidence/" + k: row[k]
@@ -172,7 +172,7 @@ def publish():
                 project=PROJECT,
                 id=run_id,
                 name=LABELS[t] + " · " + ARMS[mode],
-                group="common-evidence-v3",
+                group="common-evidence-v3-repaired",
                 job_type="common-evidence-publication",
                 config={
                     "arm": mode,

@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 from matplotlib.ticker import FuncFormatter
 
 ROOT = Path(__file__).resolve().parents[1]
-PUBLIC = ROOT / "studies/common-evidence-v3"
+PUBLIC = ROOT / "studies/common-evidence-v3-repaired"
 ASSETS = ROOT / "articles/agent-lens-in-practice/assets"
 BG, INK = "#fcfaf6", "#172633"
 LABELS = {
