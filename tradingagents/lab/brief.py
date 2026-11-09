@@ -17,7 +17,7 @@ from tradingagents.lab.evidence import cutoff, digest, timestamp
 from tradingagents.lab.execution import ExecutionDecision
 
 MODES = ("shared-evidence", "cited-evidence")
-MISSING = ["news", "social", "event_calendar", "insiders", "prediction_markets"]
+MISSING = ("news", "social", "event_calendar", "insiders", "prediction_markets")
 
 
 def total_return(rows, sessions):
@@ -109,7 +109,7 @@ def build_brief(data, source_hash):
     if len({f['id'] for f in facts}) != len(facts):
         raise ValueError('Duplicate brief fact identifiers')
     view = {"schema": 1, "case_id": data['case']['case_id'], "source_evidence_sha256": source_hash,
-                "decision_date": day, "facts": facts, "missing_sources": MISSING,
+                "decision_date": day, "facts": facts, "missing_sources": list(MISSING),
                 "scope": 'Prescribed numeric features only; excludes raw histories. Not a news-driven event study.',
                 "limitations": ['Historical vendor corrections remain possible.',
                              'SEC tags may be obsolete; inspect reporting period and age.',
