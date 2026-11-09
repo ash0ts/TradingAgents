@@ -126,7 +126,11 @@ class TradingAgentsGraph:
         graph regardless of entry point.
         """
         identity = resolve_instrument_identity(ticker)
-        return build_instrument_context(ticker, asset_type, identity, trade_date)
+        context = build_instrument_context(ticker, asset_type, identity, trade_date)
+        if mandate := self.config.get("evaluation_mandate"):
+            from tradingagents.lab.execution import mandate_prompt
+            context += mandate_prompt(mandate)
+        return context
 
     def _memory_as_of(self, trade_date) -> str | None:
         """Point-in-time cutoff for past-context lessons (#1251).

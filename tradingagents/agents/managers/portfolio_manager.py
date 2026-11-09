@@ -21,7 +21,11 @@ from tradingagents.agents.structured import NO_EXTERNAL_TOOLS, bind_structured, 
 
 
 def create_portfolio_manager(llm):
-    structured_llm = bind_structured(llm, PortfolioDecision, "Portfolio Manager")
+    from tradingagents.dataflows.config import get_config
+    from tradingagents.lab.execution import ExecutionDecision, render_execution_decision
+
+    contracted = bool(get_config().get("evaluation_mandate"))
+    structured_llm = bind_structured(llm, ExecutionDecision if contracted else PortfolioDecision, "Portfolio Manager")
 
     def portfolio_manager_node(state) -> dict:
         instrument_context = get_instrument_context_from_state(state)
@@ -77,9 +81,16 @@ Write these sections, in this order, starting with the rating on its own line:
 
         # The typed rating is the decision; the rendered text only carries it.
         # Read back from text, a rating the thesis quotes could replace it.
-        decision = invoke_structured(structured_llm, prompt, "Portfolio Manager")
+        if contracted:
+            if structured_llm is None:
+                raise RuntimeError("The evaluation contract requires structured output")
+            decision = structured_llm.invoke(prompt)
+            if not isinstance(decision, ExecutionDecision):
+                raise ValueError("The final actor did not return an execution decision")
+        else:
+            decision = invoke_structured(structured_llm, prompt, "Portfolio Manager")
         if decision is not None:
-            final_trade_decision = render_pm_decision(decision)
+            final_trade_decision = render_execution_decision(decision) if contracted else render_pm_decision(decision)
             final_rating = decision.rating.value
         else:
             final_trade_decision = llm.invoke(prompt).content
@@ -101,6 +112,7 @@ Write these sections, in this order, starting with the rating on its own line:
             "risk_debate_state": new_risk_debate_state,
             "final_trade_decision": final_trade_decision,
             "final_rating": final_rating,
+            **({"execution_decision": decision.model_dump(mode="json")} if contracted else {}),
         }
 
     return portfolio_manager_node

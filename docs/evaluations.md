@@ -58,3 +58,28 @@ results are reported without selecting new hyperparameters. The same frozen
 cohort fit serves both decision dates. Forecast MAE is reported only at its
 five-session forecast horizon. Passive cash/SPY/basket comparisons belong in the
 portfolio view, not the directional forecasting leaderboard.
+
+## Corrected execution contract
+
+`run_one(..., campaign_id="election-contract-v2", execution_contract=True,
+budget_path="lab-runs/election-v1/budget.sqlite", campaign_cap_usd=30)` is a
+separate development rerun. Use a new output directory. It preserves the old
+campaign and shares its durable ledger, including outstanding infrastructure
+reservations. The additional campaign cap applies across qualification and
+campaign calls, including uncertain usage.
+
+Every role receives the historical cutoff, exact entry/exit dates, SPY
+benchmark, five-session horizon and a fresh cash sleeve with zero holdings.
+The final committee actor and single analyst use the same typed decision
+schema in their original model call. A next-close order must match that mandate
+and the rating's explicit allocation bucket. Missing/mismatched contracts and
+unsupported conditional orders are rejected and held in cash. An explicit
+abstention remains distinguishable from rejection and provider failure. No
+free-text fallback can authorize a trade. A rejected contract receives no
+directional score; one- and twenty-session outcomes do not grade a five-session
+forecast. The original v1 behavior remains the default.
+
+This fixes the executable interface, not every possible contradiction in prose.
+Schema compliance is not a semantic or financial-quality judgment. Historical
+cases already inspected are development evidence; any before/after return
+comparison is exploratory and does not establish forward performance.
