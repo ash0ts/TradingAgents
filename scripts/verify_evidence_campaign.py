@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 from collections import Counter
 
-from run_evidence_campaign import CAP, OUT, PROTOCOL, PUBLIC, REPO, sha, validate
+from run_repaired_evidence_campaign import CAP, OUT, PROTOCOL, PUBLIC, REPO, sha, validate
 
 from tradingagents.lab.evidence import canonical
 

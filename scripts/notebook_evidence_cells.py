@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def extensions(cell):
-    path = ROOT / "studies/common-evidence-v3/results.json"
+    path = ROOT / "studies/common-evidence-v3-repaired/results.json"
     if not path.exists():
         return "", "", ""
     data = json.loads(path.read_text())
