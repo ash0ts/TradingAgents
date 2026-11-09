@@ -43,15 +43,22 @@ def single_analyst(config, data, budget):
             from tradingagents.lab.execution import (
                 ExecutionDecision,
                 mandate_prompt,
-                render_execution_decision,
+                render_evaluated_decision,
             )
-            decision = model.with_structured_output(ExecutionDecision).invoke([
+            decision_schema = ExecutionDecision
+            evidence_text = compact_evidence(data)
+            if mode := config.get("evidence_mode"):
+                from tradingagents.lab.brief import CitedDecision, brief_prompt
+                evidence_text = brief_prompt(config["replay_view"], mode)
+                if mode == "cited-evidence":
+                    decision_schema = CitedDecision
+            decision = model.with_structured_output(decision_schema).invoke([
                 SystemMessage(content="You are a single investment analyst. Use only supplied evidence; identify missing sources and uncertainty. Do not fabricate numerical evidence or invoke external tools." + mandate_prompt(mandate)),
-                HumanMessage(content=compact_evidence(data)),
+                HumanMessage(content=evidence_text),
             ])
             if not isinstance(decision, ExecutionDecision):
                 raise ValueError("Single analyst did not return an execution decision")
-            text = render_execution_decision(decision)
+            text = render_evaluated_decision(decision, config)
             handler.turn.output_messages = [handler.sdk.Message(role="assistant", content=text)]
             return {"rating": decision.rating.value, "report": text,
                     "execution_decision": decision.model_dump(mode="json"),
@@ -71,7 +78,7 @@ def single_analyst(config, data, budget):
 
 def run_one(root, output, case_id, treatment, trial=0, phase="campaign", publish=True, *,
             campaign_id="election-replay-v1", execution_contract=False, budget_path=None,
-            campaign_cap_usd=None, sleeves=6):
+            campaign_cap_usd=None, sleeves=6, evidence_mode=None, budget_prefix=None):
     from dotenv import load_dotenv
     if credentials := os.getenv("TRADINGAGENTS_MODELS_ENV"):
         load_dotenv(credentials, override=False)
@@ -84,6 +91,10 @@ def run_one(root, output, case_id, treatment, trial=0, phase="campaign", publish
     evidence_hash = manifest["cases"][case_id]
     data = EvidenceStore(root).get(evidence_hash)
     case = data["case"]
+    if evidence_mode:
+        from tradingagents.lab.brief import MODES
+        if evidence_mode not in MODES or not execution_contract:
+            raise ValueError("A common evidence mode requires a supported execution contract")
     if execution_contract and campaign_id == "election-replay-v1":
         raise ValueError("A corrected contract needs a new campaign identity")
     key = f"{campaign_id}/{phase}/{case_id}/{treatment}/{trial}/attempt-0"
@@ -92,11 +103,12 @@ def run_one(root, output, case_id, treatment, trial=0, phase="campaign", publish
     result_path = run_dir / "prediction.json"
     if result_path.exists():
         saved = json.loads(result_path.read_text())
-        if saved["run_key"] != key or bool(saved.get("execution_mandate")) != execution_contract:
+        if (saved["run_key"] != key or bool(saved.get("execution_mandate")) != execution_contract
+                or saved.get("evidence_mode") != evidence_mode):
             raise ValueError("Output belongs to a different campaign or contract")
         return saved
     ledger = Ledger(budget_path or output / "budget.sqlite",
-                    campaign_prefix=campaign_id + "/" if campaign_cap_usd is not None else None,
+                    campaign_prefix=(budget_prefix or campaign_id + "/") if campaign_cap_usd is not None else None,
                     campaign_cap_usd=campaign_cap_usd)
     started_path = run_dir / "started.json"
     if started_path.exists():
@@ -107,7 +119,7 @@ def run_one(root, output, case_id, treatment, trial=0, phase="campaign", publish
     cid = str(uuid5(NAMESPACE_URL, key))
     revision = os.getenv("TRADINGAGENTS_LAB_CODE_REVISION") or subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()
     meta = {"campaign_id": campaign_id, "case_id": case_id,
-            "treatment": treatment + "/contract-v2" if execution_contract else treatment,
+            "treatment": treatment + "/" + (evidence_mode or "contract-v2") if execution_contract else treatment,
             "trial": trial, "attempt": 0, "cohort": case["cohort"], "dataset_version": evidence_hash,
             "code_revision": revision, "outcome_status": "not_scored"}
     config = deepcopy(DEFAULT_CONFIG)
@@ -126,6 +138,12 @@ def run_one(root, output, case_id, treatment, trial=0, phase="campaign", publish
         mandate = make_mandate(case["ticker"], case["decision_date"], sleeves=sleeves)
         config["evaluation_mandate"] = mandate.model_dump()
         portfolio = PortfolioContext(cash=mandate.sleeve_cash_usd, currency="USD", positions=[])
+    if evidence_mode:
+        from tradingagents.lab.brief import build_brief
+        config["evidence_mode"] = evidence_mode
+        config["replay_view"] = build_brief(data, evidence_hash)
+        config["forge_metadata"].update(evidence_mode=evidence_mode,
+                                        evidence_view_sha256=config["replay_view"]["view_sha256"])
     bridge = EvaluationBridge(project, campaign_id + "/" + phase, treatment, manifest["version"]) if publish else None
     from contextlib import nullcontext
     context = bridge.prediction(case, trial, evidence_hash) if bridge else nullcontext((None, {}))
@@ -137,6 +155,9 @@ def run_one(root, output, case_id, treatment, trial=0, phase="campaign", publish
            "started_at": datetime.now(UTC).isoformat()}
     if execution_contract:
         row["execution_mandate"] = config["evaluation_mandate"]
+    if evidence_mode:
+        row.update(evidence_mode=evidence_mode, evidence_view=config["replay_view"],
+                   information_access="Identical frozen numeric decision brief; tools restricted to its facts. Archived news and event calendars unavailable.")
     with context as (prediction, attrs):
         config["forge_metadata"].update(attrs)
         row["evaluation_ids"] = attrs
@@ -164,6 +185,12 @@ def run_one(root, output, case_id, treatment, trial=0, phase="campaign", publish
             from tradingagents.lab.execution import execution_check, score_execution
             row["execution_check"] = execution_check(row)
             row["scores_by_horizon"] = {h: score_execution(row, value, h) for h, value in outcomes.items()}
+            if evidence_mode:
+                from tradingagents.lab.execution import execution_receipt
+                row["execution_receipt"] = execution_receipt(row)
+                if evidence_mode == "cited-evidence" and row["status"] == "success":
+                    from tradingagents.lab.brief import assess_citations
+                    row["citation_check"] = assess_citations(row["execution_decision"], row["evidence_view"])
         else:
             row["scores_by_horizon"] = {h: score(row, value) for h, value in outcomes.items()}
         row["scores"] = row["scores_by_horizon"]["5"]
