@@ -527,6 +527,42 @@
       "sha256": "3d143a4dcdaea9e94643a726793de8c948f2bbb6ac217ae116b0123edafe327a",
       "bytes": 624,
       "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/corrected-execution-status.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/corrected-execution-status.png",
+      "sha256": "a5e82eb51056cc3dc205d4a1e9a870d147a2507504e65183c666dc8a9644e89b",
+      "bytes": 86523,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/corrected-execution-status.svg": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/corrected-execution-status.svg",
+      "sha256": "02285b640d8386d31f0d6909bf43c3a073ca869eec3a2b17abaae69bb8ac735f",
+      "bytes": 9004,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/corrected-portfolio-pnl.csv": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/corrected-portfolio-pnl.csv",
+      "sha256": "5ec57c259b57ad5ddd272d4aaaa2660e87392e8e1cabaef8cc7b7f299880c602",
+      "bytes": 497,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/corrected-portfolio-pnl.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/corrected-portfolio-pnl.png",
+      "sha256": "b1f26e4b09fa81a052762c3c1b6dfd56e81a0af80e50336a4968fa3303ff0004",
+      "bytes": 90247,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/corrected-portfolio-pnl.svg": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/corrected-portfolio-pnl.svg",
+      "sha256": "c33035b6cdf3ec8cc390ae6d3265858c41e29fd9e6ea00c18b679ddcd1fa0baf",
+      "bytes": 9592,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/forge-corrected-dashboard.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/forge-corrected-dashboard.png",
+      "sha256": "0227c9715137220efff605e3dee00c628c20e58d098f1d93620eaf6700ca7959",
+      "bytes": 64391,
+      "anonymous_verified": true
     }
   },
   "run_id": "hllta000"
