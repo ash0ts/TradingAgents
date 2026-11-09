@@ -155,11 +155,11 @@ class DemoBudget(BudgetCallback):
             raise BudgetExceeded("Support demo reservation would exceed $1")
 
 
-def execute_one(data, case, treatment, trial, ledger, frozen):
+def execute_one(data, case, treatment, trial, ledger, frozen, sdk):
     from tradingagents.lab.evaluation import EvaluationBridge
-    from tradingagents.observability.agent_lens import AgentLensCallback, _sdk, conversation_url
+    from tradingagents.observability.agent_lens import AgentLensCallback, conversation_url
 
-    key = f"support-refunds-v1/{case['case_id']}/{treatment}/{trial}"
+    key = f"support-refunds-v1/{case['case_id']}/{treatment}/{trial}/attempt-1"
     path = OUTPUT / case["case_id"] / treatment / str(trial)
     path.mkdir(parents=True, exist_ok=True)
     result_path = path / "prediction.json"
@@ -175,7 +175,6 @@ def execute_one(data, case, treatment, trial, ledger, frozen):
            "started_at": datetime.now(UTC).isoformat(), "fixture_sha256": frozen["fixture_sha256"],
            "runner_sha256": frozen["runner_sha256"], "code_revision": frozen["code_revision"]}
     bridge = EvaluationBridge("wandb/tradingagents-election-lab", "support-refunds-v1", treatment, data["version"])
-    sdk = _sdk(PROJECT)
     store = Store(case)
     tools = tools_for(store)
     start = time.monotonic()
@@ -222,6 +221,8 @@ def execute_one(data, case, treatment, trial, ledger, frozen):
 
 def execute():
     from dotenv import load_dotenv
+
+    from tradingagents.observability.agent_lens import _sdk
     if credentials := os.getenv("TRADINGAGENTS_MODELS_ENV"):
         load_dotenv(credentials, override=False)
     OUTPUT.mkdir(parents=True, exist_ok=True)
@@ -238,10 +239,12 @@ def execute():
     else:
         frozen.update(budget_before_upper_usd=ledger.totals()["cost_upper_usd"], frozen_at=datetime.now(UTC).isoformat())
         manifest.write_bytes(canonical(frozen))
+    # One initialization per process, matching the original campaign workers.
+    sdk = _sdk(PROJECT)
     for case in data["cases"]:
         for treatment, trials in [("support-policy", 1), ("support-luna", 2)]:
             for trial in range(trials):
-                row = execute_one(data, case, treatment, trial, ledger, frozen)
+                row = execute_one(data, case, treatment, trial, ledger, frozen, sdk)
                 print(json.dumps({k: row[k] for k in ["case_id", "treatment", "trial", "status", "scores", "cost_known_usd"]}), flush=True)
 
 
