@@ -48,3 +48,14 @@ Run `python articles/build_trading_scenarios.py` on the notebook/publication lay
 to reconstruct the figures and 1,120 accounts from public inputs. Its 160 original
 10-bp accounts reconcile against the frozen study within 1e-7 dollars. Repeated
 trials are averaged within date, and overlapping accounts are never compounded.
+
+## Corrected typed orders
+
+A prediction carrying an execution mandate is revalidated against the actual
+simulation dates and starting cash. Missing, mismatched or conditional orders
+hold cash, incur no trading fees and create no buy/sell transactions. Cached
+eligibility and the rating alone cannot override that check. Explicit abstention,
+contract rejection and actor failure remain separate statuses. Entry-delay,
+horizon and target-allocation overrides are refused for these contracted
+predictions; fee sensitivities remain explicitly labeled replay sensitivities.
+The original uncontracted v1 simulator remains unchanged.

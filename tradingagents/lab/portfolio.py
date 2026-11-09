@@ -7,6 +7,7 @@ from collections import defaultdict
 from pathlib import Path
 
 from tradingagents.lab.evidence import canonical
+from tradingagents.lab.execution import execution_check, make_mandate
 from tradingagents.lab.protocol import FREEZE, STOCKS, calendar_sessions
 
 WEIGHTS = {"Buy": 1.0, "Overweight": .75, "Hold": .5, "Underweight": .25, "Sell": 0.0}
@@ -25,9 +26,19 @@ def simulate(decision_date, predictions, prices, sessions, *, initial_cash=100_0
     ):
         raise ValueError("Every sleeve requires a finite target weight in [0, 1]")
     i = sessions.index(decision_date)
+    contracted = any("execution_mandate" in p or "execution_decision" in p for p in predictions)
+    if contracted and (entry_delay != 1 or horizon != 5 or target_weights is not None):
+        raise ValueError("Cannot override the entry, horizon or allocation of a contracted decision")
     entry, exit_day = sessions[i + entry_delay], sessions[i + horizon + entry_delay]
     identity = {"decision_date": decision_date, "entry_date": entry, "exit_date": exit_day,
                 "horizon": horizon, "bps_per_side": bps, "initial_cash": initial_cash}
+    checks = {}
+    if contracted:
+        for p in predictions:
+            expected = make_mandate(p["ticker"], decision_date, sleeves=len(predictions), sessions=sessions)
+            expected.sleeve_cash_usd = initial_cash / len(predictions)
+            checks[p["ticker"]] = execution_check({**p, "execution_mandate": expected.model_dump()})
+        identity["execution_checks"] = checks
     if exit_day > freeze:
         return {**identity, "status": "pending", "return": None, "trading_pnl": None}
     window = sessions[i+entry_delay:i+horizon+entry_delay+1]
@@ -43,6 +54,10 @@ def simulate(decision_date, predictions, prices, sessions, *, initial_cash=100_0
     for p in predictions:
         asset = "SPY" if p["treatment"] == "SPY" else p["ticker"]
         weight = WEIGHTS.get(p.get("rating"), 0.0) if p["status"] == "success" else 0.0
+        if contracted:
+            # Revalidate the actual simulation mandate. A cached eligibility flag
+            # or the headline rating cannot authorize a conditional/misdated order.
+            weight = checks[p["ticker"]]["target_weight"]
         if target_weights is not None and p["status"] == "success" and p.get("rating") in WEIGHTS:
             weight = target_weights[p["ticker"]]
         failures += p["status"] != "success" or p.get("rating") not in WEIGHTS
@@ -55,8 +70,9 @@ def simulate(decision_date, predictions, prices, sessions, *, initial_cash=100_0
         buy_notional += notional
         total_fees += charge
         positions.append({"sleeve": p["ticker"], "asset": asset, "shares": shares, "target_weight": weight})
-        transactions.append({"date": entry, "sleeve": p["ticker"], "asset": asset, "side": "buy",
-                             "shares": shares, "price": tables[asset][entry]["close"], "notional": notional, "fee": charge})
+        if shares or not contracted:
+            transactions.append({"date": entry, "sleeve": p["ticker"], "asset": asset, "side": "buy",
+                                 "shares": shares, "price": tables[asset][entry]["close"], "notional": notional, "fee": charge})
     curve = [{"date": decision_date, "equity": initial_cash, "cash": initial_cash, "exposure": 0.0}]
     for day in window:
         if day != entry:
@@ -78,8 +94,9 @@ def simulate(decision_date, predictions, prices, sessions, *, initial_cash=100_0
                 cash += notional - charge
                 sell_notional += notional
                 total_fees += charge
-                transactions.append({"date": day, "sleeve": pos["sleeve"], "asset": pos["asset"], "side": "sell",
-                                     "shares": pos["shares"], "price": tables[pos["asset"]][day]["close"], "notional": notional, "fee": charge})
+                if pos["shares"] or not contracted:
+                    transactions.append({"date": day, "sleeve": pos["sleeve"], "asset": pos["asset"], "side": "sell",
+                                         "shares": pos["shares"], "price": tables[pos["asset"]][day]["close"], "notional": notional, "fee": charge})
                 pos["shares"] = 0.0
             marked = 0.0
         equity = cash + marked
