@@ -18,7 +18,8 @@
       ],
       "transformation": "Direct browser screenshot clip; no pixel editing or synthetic UI. Original retained privately.",
       "private_original_sha256": "508209c05b59b449e08a9d1495fb0dca6fe1036253243c66f21e2693f4047501",
-      "privacy": "Public clip excludes account header and private trace identifiers; only derived results or unavailable-evidence response shown."
+      "privacy": "Public clip excludes account header and private trace identifiers; only derived results or unavailable-evidence response shown.",
+      "retained_in_unified_article": "agent-lens-in-practice/assets/lens-timeline.png"
     },
     {
       "file": "confident-expensive-and-wrong/assets/lens-missing-news.png",
@@ -38,7 +39,8 @@
       ],
       "transformation": "Direct browser screenshot clip; no pixel editing or synthetic UI. Original retained privately.",
       "private_original_sha256": "dc543e81886ff8755acbc875d56c7b05556c56730b34a5fbf23b01cc3ecbaf5f",
-      "privacy": "Public clip excludes account header and private trace identifiers; only derived results or unavailable-evidence response shown."
+      "privacy": "Public clip excludes account header and private trace identifiers; only derived results or unavailable-evidence response shown.",
+      "retained_in_unified_article": "agent-lens-in-practice/assets/lens-missing-news.png"
     },
     {
       "file": "did-it-beat-doing-nothing/assets/forge-financial-dashboard.png",
@@ -58,7 +60,8 @@
       ],
       "transformation": "Direct browser screenshot clip; no pixel editing or synthetic UI. Original retained privately.",
       "private_original_sha256": "1b1e6ada219418b7b310e9b5078ddcc203c23971919d23ef441fa2b3d83f4506",
-      "privacy": "Public clip excludes account header and private trace identifiers; only derived results or unavailable-evidence response shown."
+      "privacy": "Public clip excludes account header and private trace identifiers; only derived results or unavailable-evidence response shown.",
+      "retained_in_unified_article": "agent-lens-in-practice/assets/forge-financial-dashboard.png"
     },
     {
       "file": "confident-expensive-and-wrong/assets/forge-behavior-dashboard.png",
@@ -78,7 +81,8 @@
       ],
       "transformation": "Direct browser screenshot clip; no pixel editing or synthetic UI. Original retained privately.",
       "private_original_sha256": "8361f936ef896b92d8acf281b111619e229a80b5811ccab854b95b66bb026862",
-      "privacy": "Public clip excludes account header and private trace identifiers; only derived results or unavailable-evidence response shown."
+      "privacy": "Public clip excludes account header and private trace identifiers; only derived results or unavailable-evidence response shown.",
+      "retained_in_unified_article": "agent-lens-in-practice/assets/forge-behavior-dashboard.png"
     },
     {
       "file": "meet-the-investment-committee/assets/forge-notebook-roles.png",
@@ -98,7 +102,8 @@
       ],
       "transformation": "Direct browser screenshot clip; no pixel editing or synthetic UI. Original retained privately.",
       "private_original_sha256": "cde878bf81f3fe4179ba2ccbad2266f3811a925e0d713ea65df1b28d9d9ceff4",
-      "privacy": "Public clip excludes account header and private trace identifiers; only derived results or unavailable-evidence response shown."
+      "privacy": "Public clip excludes account header and private trace identifiers; only derived results or unavailable-evidence response shown.",
+      "retained_in_unified_article": "agent-lens-in-practice/assets/forge-notebook-roles.png"
     }
   ]
 }
