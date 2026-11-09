@@ -97,8 +97,11 @@ access fix alone.
 
 Both arms preserve the five-session execution contract and display a computed
 cash/fee receipt, explicitly separate from model prose and actual fills. The cited
-arm additionally requires exact fact references, values, units and dates, a brief
-hash, and explicit missing-source identifiers. Executable decisions must include
+arm additionally requires exact fact references, values, units and dates, and
+explicit missing-source identifiers. The harness records the brief hash; asking
+the actor to copy it caused an ambiguous-instruction failure in a stopped pilot.
+Missing-source fields now use an enum, excluding arbitrary hash strings.
+Executable decisions must include
 stock and SPY price citations. Failed citation checks hold cash and are reported
 as rejected contracts, not successful abstentions. The checker validates only the
 cited observations; it does not establish that every sentence is true or that the

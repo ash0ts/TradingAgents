@@ -39,7 +39,7 @@ def row(bundle):
     decision = {'rating': 'Underweight', 'executive_summary': 'Allocate 25%.', 'investment_thesis': 'Fixture.',
                 'price_target': None, 'time_horizon': '5 trading sessions', 'mandate': mandate,
                 'order': {'kind': 'next_close', 'target_weight': .25, 'conditions': [], 'reason': 'Fixture.'},
-                'view_sha256': view['view_sha256'], 'citations': citations, 'evidence_gaps': view['missing_sources']}
+                'citations': citations, 'evidence_gaps': view['missing_sources']}
     return {'status': 'success', 'rating': 'Underweight', 'execution_mandate': mandate,
             'evidence_mode': 'cited-evidence', 'evidence_view': view, 'execution_decision': decision}
 
@@ -86,6 +86,17 @@ def test_benchmark_and_gap_citations_required_but_no_fake_abstention(row):
     assert execution_check(row)['status'] == 'abstained'
     row['execution_decision']['evidence_gaps'] = []
     assert execution_check(row)['status'] == 'invalid_citations'
+
+
+def test_provenance_hash_is_harness_metadata_not_an_actor_copy_task(row):
+    schema = CitedDecision.model_json_schema()
+    assert 'view_sha256' not in schema['properties']
+    assert set(schema['properties']['evidence_gaps']['items']['enum']) == set(row['evidence_view']['missing_sources'])
+    assert execution_check(row)['eligible']
+    # Regression from the stopped pilot: its ambiguous prompt requested this
+    # extra string. The repaired structured schema cannot generate that value.
+    row['execution_decision']['evidence_gaps'].append('view_sha256=' + row['evidence_view']['view_sha256'])
+    assert assess_citations(row['execution_decision'], row['evidence_view'])['reasons'] == ['invalid_citation_schema']
 
 
 def test_receipt_resolves_the_reviewed_fee_error(row):
