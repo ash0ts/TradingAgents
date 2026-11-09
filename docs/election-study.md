@@ -38,3 +38,11 @@ uncertainty estimates and no evidence of election causality.
 Public examples contain derived metrics and reviewed excerpts only. Raw source
 material goes to `wandb/tradingagents-election-lab-evidence`; public results and
 notebooks go to `wandb/tradingagents-election-lab`. Credentials stay outside git.
+
+A precomputed `replay_view` can restrict an experiment to one common decision
+brief. Its source hash and case must match the frozen bundle; every fact carries
+an availability time and observation date checked against the cutoff. All data
+tools respect that view, including direct snapshot, news and sentiment paths.
+They return only the prescribed facts or explicit unavailability, never hidden
+raw history from the larger archive. Identity remains the archived identity.
+The experiment owns the feature calculation and freezes its view digest.

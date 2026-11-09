@@ -49,6 +49,24 @@ def read(method, *args, **kwargs):
     if method == "identity":
         matches = [r for r in data["records"] if r["kind"] == "identity"]
         return matches[-1]["content"] if matches else {}
+    if view := get_config().get("replay_view"):
+        # A frozen experiment may expose a smaller common information set.
+        # Every data path must respect it; never fall through to the full bundle.
+        if (view["source_evidence_sha256"] != get_config()["replay_evidence"]
+                or view["case_id"] != data["case"]["case_id"]):
+            raise ValueError("Replay view belongs to different evidence")
+        if any(timestamp(f["available_at"]) > cutoff(day) or f["as_of"] > day
+               for f in view["facts"]):
+            raise ValueError("Future evidence in replay view")
+        kinds = {"get_stock_data": "prices", "get_indicators": "prices",
+                 "get_verified_market_snapshot": "prices", "get_fundamentals": "sec",
+                 "get_balance_sheet": "sec", "get_cashflow": "sec",
+                 "get_income_statement": "sec", "get_macro_indicators": "fred"}
+        selected = [f for f in view["facts"] if f["kind"] == kinds.get(method)]
+        return json.dumps({"requested_tool": method, "view_sha256": view["view_sha256"],
+                           "status": "prescribed_features_only" if selected else "DATA_UNAVAILABLE",
+                           "facts": selected, "missing_sources": view["missing_sources"],
+                           "notice": "Only this common decision brief is available. No hidden raw history, news or event calendar may be inferred."})
     if method == "get_stock_data":
         start, end = args[1:3]
         return json.dumps([r for r in rows if start <= r["date"] <= end]) or unavailable(method)

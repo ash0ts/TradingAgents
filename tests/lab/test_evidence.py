@@ -47,3 +47,26 @@ def test_entry_delay_dividend_split_and_pending():
     result = outcome(rows, sessions[0], 1, sessions, sessions[-1])
     assert result["return"] == pytest.approx(.02)
     assert outcome(rows, sessions[0], 5, sessions, sessions[2])["status"] == "pending"
+
+
+def test_common_view_cannot_fall_back_to_hidden_history_or_news(tmp_path):
+    from tradingagents.dataflows.config import run_config
+    from tradingagents.lab.replay import read
+    case = {'case_id': 'fixture', 'ticker': 'AAPL', 'decision_date': '2022-11-07'}
+    key = EvidenceStore(tmp_path).bundle(case, [], {'AAPL': [{'date': '2022-11-07', 'close': 12345}]})
+    fact = {'id': 'SPY.return20', 'kind': 'prices', 'value': .02,
+            'available_at': cutoff(case['decision_date']).isoformat(), 'as_of': case['decision_date']}
+    view = {'source_evidence_sha256': key, 'view_sha256': 'fixture', 'case_id': 'fixture',
+            'facts': [fact], 'missing_sources': ['news', 'event_calendar']}
+    config = {'replay_root': str(tmp_path), 'replay_evidence': key, 'replay_view': view}
+    with run_config(config):
+        result = json.loads(read('get_stock_data', 'AAPL', '2022-01-01', '2022-11-07'))
+        assert result['facts'] == [fact]  # Benchmark is visible to stock tools, too.
+        assert '12345' not in str(result)
+        assert json.loads(read('get_news', 'AAPL', '2022-01-01', '2022-11-07'))['status'] == 'DATA_UNAVAILABLE'
+    view['facts'][0]['as_of'] = '2022-11-08'
+    with run_config(config), pytest.raises(ValueError, match='Future'):
+        read('get_fundamentals', 'AAPL', '2022-11-07')
+    view['case_id'] = 'another-case'
+    with run_config(config), pytest.raises(ValueError, match='different evidence'):
+        read('get_news', 'AAPL', '2022-01-01', '2022-11-07')
