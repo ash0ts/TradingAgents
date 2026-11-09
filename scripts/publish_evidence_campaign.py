@@ -274,7 +274,10 @@ def publish():
         except wandb.errors.CommError as exc:
             if "Could not find run" not in str(exc):
                 raise
+            run = None
+        if run is None or not all(field in run.summary for field in payloads):
             with wandb.init(
+                resume="allow",
                 entity=ENTITY,
                 project=PROJECT,
                 id=run_id,
@@ -296,7 +299,7 @@ def publish():
                 logged.summary.update(metrics)
                 logged.log(
                     {
-                        k: wandb.Table(columns=list(v[0]), data=[list(r.values()) for r in v])
+                        k: wandb.Table(columns=list(v[0]), data=[list(r.values()) for r in v], allow_mixed_types=True)
                         for k, v in payloads.items()
                     }
                 )
@@ -344,6 +347,7 @@ def publish():
             logged.log(
                 {
                     "preserved_pilot_decisions": wandb.Table(
+                        allow_mixed_types=True,
                         columns=list(pilot["rows"][0]),
                         data=[list(r.values()) for r in pilot["rows"]],
                     )
