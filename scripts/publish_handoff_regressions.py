@@ -34,7 +34,7 @@ def publish():
             logged.summary.update({"handoff/executions": 8, "handoff/valid_proposals": 8,
                                    "handoff/complete_conversations": 8,
                                    "handoff/model_cost_usd": result["cost_upper_usd"]})
-            logged.log({"paired_handoff_checks": wandb.Table(columns=list(rows[0]), data=[list(r.values()) for r in rows])})
+            logged.log({"paired_handoff_checks": wandb.Table(columns=list(rows[0]), data=[list(r.values()) for r in rows], allow_mixed_types=True)})
         run = api.run("wandb/tradingagents-election-lab/" + run_id)
     anonymous = requests.Session()
     anonymous.trust_env = False

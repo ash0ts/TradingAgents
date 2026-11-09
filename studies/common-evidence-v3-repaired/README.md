@@ -47,3 +47,23 @@ Public exports are allowlisted derived data; raw prices, reports and detailed
 briefs remain in the private evidence project. Agent Lens conversation links
 require team access. Read `verification.json`, the selected assistant reviews,
 and publication receipts before treating an execution as a demonstrated result.
+
+The completed grid contains 360 successful executions: 302 accepted orders and
+58 cash choices. All 180 citation-arm checks pass (1,737 referenced observations).
+The 36 prespecified assistant reviews include one ambiguous reporting-period
+phrase; these are not expert labels or exhaustive narrative checks.
+
+Native readback is deliberately reported as **359/360 complete**. One Bull
+Researcher subagent and its model span were lost after an exporter timeout in
+`midterms-2022-before-AAPL`, cited evidence, all-Luna. Local response and usage
+remain; the actual request cannot be recovered. This row remains in every
+appropriate financial denominator. `trace_complete`, `trace_incident`, and the
+verification receipt expose the gap. All observed model requests carry the exact
+brief; that does not certify the absent request.
+
+Paid execution used tag `tradingagents-evidence-v3-repaired-execution`; analysis
+and export used `tradingagents-evidence-v3-analysis` with unchanged actor sources.
+Check out the analysis tag before rerunning its source-validated export after
+restoring private snapshots. Later handoff repairs deliberately fail this
+campaign's actor-source check. The standard-library public reproduction can be
+run from any later checkout without actor execution or credentials.
