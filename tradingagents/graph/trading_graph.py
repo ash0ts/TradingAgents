@@ -130,6 +130,9 @@ class TradingAgentsGraph:
         if mandate := self.config.get("evaluation_mandate"):
             from tradingagents.lab.execution import mandate_prompt
             context += mandate_prompt(mandate)
+        if mode := self.config.get("evidence_mode"):
+            from tradingagents.lab.brief import brief_prompt
+            context += brief_prompt(self.config["replay_view"], mode)
         return context
 
     def _memory_as_of(self, trade_date) -> str | None:

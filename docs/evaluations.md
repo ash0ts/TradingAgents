@@ -83,3 +83,24 @@ This fixes the executable interface, not every possible contradiction in prose.
 Schema compliance is not a semantic or financial-quality judgment. Historical
 cases already inspected are development evidence; any before/after return
 comparison is exploratory and does not establish forward performance.
+
+## Common-evidence development arms
+
+The opt-in `shared-evidence` and `cited-evidence` modes give every role the same
+hashed brief: stock and SPY closes, trailing 5/20/60-session total returns,
+20-session daily volatility, excess historical returns, latest eligible SEC
+facts with reporting-period age, and latest frozen FRED observations. These are
+observations, not forecasts. Raw histories are intentionally excluded from these
+arms, and replay tools cannot recover them. This changes information delivery
+relative to the older campaigns; it is not a clean causal estimate of the SPY
+access fix alone.
+
+Both arms preserve the five-session execution contract and display a computed
+cash/fee receipt, explicitly separate from model prose and actual fills. The cited
+arm additionally requires exact fact references, values, units and dates, a brief
+hash, and explicit missing-source identifiers. Executable decisions must include
+stock and SPY price citations. Failed citation checks hold cash and are reported
+as rejected contracts, not successful abstentions. The checker validates only the
+cited observations; it does not establish that every sentence is true or that the
+observations support the forecast. Original modes and saved predictions remain
+unchanged.

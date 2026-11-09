@@ -110,7 +110,49 @@ def execution_check(row):
     if row.get("status") != "success":
         return {"version": VERSION, "eligible": False, "target_weight": 0.0,
                 "status": "actor_failed", "reasons": ["actor_did_not_complete"]}
-    return assess_execution(row.get("execution_decision"), row.get("execution_mandate"), row.get("rating"))
+    result = assess_execution(row.get("execution_decision"), row.get("execution_mandate"), row.get("rating"))
+    if row.get("evidence_mode") == "cited-evidence":
+        from tradingagents.lab.brief import assess_citations
+        view = row.get("evidence_view")
+        if not view:
+            return {**result, "eligible": False, "target_weight": 0.0,
+                    "status": "invalid_citations", "reasons": ["missing_evidence_view"]}
+        citations = assess_citations(row.get("execution_decision"), view)
+        if not citations["valid"]:
+            return {**result, "eligible": False, "target_weight": 0.0,
+                    "status": "invalid_citations", "reasons": citations["reasons"]}
+    return result
+
+
+def execution_receipt(row):
+    """Authoritative planned cash arithmetic, never an assertion of an actual fill."""
+    check = execution_check(row)
+    mandate = Mandate.model_validate(row["execution_mandate"])
+    cash_used = mandate.sleeve_cash_usd * check["target_weight"]
+    principal = cash_used / 1.001
+    return {"basis": "computed order plan; entry price and shares not yet known",
+            "contract_status": check["status"], "target_weight": check["target_weight"],
+            "sleeve_cash_usd": mandate.sleeve_cash_usd, "cash_deployed_usd": cash_used,
+            "stock_principal_usd": principal, "entry_fee_usd": cash_used - principal,
+            "remaining_cash_usd": mandate.sleeve_cash_usd - cash_used,
+            "entry_bps": 10, "exit_fee": "10 bps of actual liquidation notional; unknown until exit",
+            "entry_date": mandate.entry_date, "exit_date": mandate.exit_date}
+
+
+def render_evaluated_decision(decision, config):
+    import json
+    text = render_execution_decision(decision)
+    if mode := config.get("evidence_mode"):
+        row = {"status": "success", "rating": decision.rating.value,
+               "execution_decision": decision.model_dump(mode="json"),
+               "execution_mandate": config["evaluation_mandate"],
+               "evidence_mode": mode, "evidence_view": config["replay_view"]}
+        if mode == "cited-evidence":
+            text += "\n\n**Cited observations (model output)**\n```json\n" + json.dumps(
+                {"citations": row["execution_decision"]["citations"],
+                 "evidence_gaps": decision.evidence_gaps}, indent=2) + "\n```"
+        text += "\n\n**Computed execution receipt (harness; not model reasoning or an actual fill)**\n```json\n" + json.dumps(execution_receipt(row), indent=2) + "\n```"
+    return text
 
 
 def score_execution(row, outcome, horizon):
@@ -125,6 +167,6 @@ def score_execution(row, outcome, horizon):
     result = score(adapted, outcome)
     # Rejected contracts are distinct from an actor's explicit abstention.
     result.update(contract_status=check["status"], mandate_horizon=applicable,
-                  contract_rejected=check["status"] in {"blocked_condition", "invalid_contract"},
+                  contract_rejected=check["status"] in {"blocked_condition", "invalid_contract", "invalid_citations"},
                   explicit_abstention=check["status"] == "abstained")
     return result
