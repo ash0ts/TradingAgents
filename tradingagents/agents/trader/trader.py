@@ -18,7 +18,12 @@ from tradingagents.agents.structured import (
 
 
 def create_trader(llm):
-    structured_llm = bind_structured(llm, TraderProposal, "Trader")
+    from tradingagents.dataflows.config import get_config
+    from tradingagents.lab.handoff import ContractTraderProposal, render_contract_proposal
+
+    contracted = bool(get_config().get("evaluation_mandate"))
+    schema = ContractTraderProposal if contracted else TraderProposal
+    structured_llm = bind_structured(llm, schema, "Trader")
 
     def trader_node(state):
         company_name = state["company_of_interest"]
@@ -82,13 +87,42 @@ def create_trader(llm):
             },
         ]
 
-        trader_plan = invoke_structured_or_freetext(
-            structured_llm,
-            llm,
-            messages,
-            render_trader_proposal,
-            "Trader",
-        )
+        if contracted:
+            # The legacy trader intentionally maps Underweight -> Sell. That is
+            # incompatible with the fresh-cash mandate's Sell=0% allocation.
+            # Replace its instructions and schema rather than asking the final
+            # manager to reconcile mutually inconsistent action definitions.
+            messages = [
+                {"role": "system", "content": (
+                    "Turn the supplied research into a proposal for the exact fresh-cash mandate. "
+                    "Use all five allocation ratings: Buy=100%, Overweight=75%, Hold=50%, "
+                    "Underweight=25%, Sell=0%. Do not translate Underweight into Sell or "
+                    "Overweight into Buy. These are new allocations, not trims of existing positions. "
+                    "Copy the mandate exactly. State any required confirmation, stop or staging "
+                    "in order.conditions; unsupported conditions must remain visible for the final "
+                    "manager, never be silently removed. No unprovided entry price is known. "
+                    "The allocation includes entry fees; deterministic accounting is supplied by "
+                    "the harness. Preserve evidence references and missing sources. "
+                    + NO_EXTERNAL_TOOLS + get_language_instruction()
+                )},
+                {"role": "user", "content": (
+                    f"{instrument_context}\n\n{portfolio_context}\n\n"
+                    f"{report_section}Research plan:\n{investment_plan}\n\n"
+                    "Return the typed proposal with action, reasoning, mandate and order. "
+                    "Your proposal is reviewed by the risk participants and final manager; "
+                    "it is not itself an executed trade."
+                )},
+            ]
+            if structured_llm is None:
+                raise RuntimeError("The evaluation trader contract requires structured output")
+            proposal = structured_llm.invoke(messages)
+            if not isinstance(proposal, ContractTraderProposal):
+                raise ValueError("The trader did not return a contracted proposal")
+            trader_plan = render_contract_proposal(proposal)
+        else:
+            trader_plan = invoke_structured_or_freetext(
+                structured_llm, llm, messages, render_trader_proposal, "Trader",
+            )
 
         return {
             "messages": [AIMessage(content=trader_plan)],
