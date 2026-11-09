@@ -325,6 +325,55 @@ mo.vstack([mo.ui.table(scenario_detail, selection=None, show_data_types=False, p
            mo.download(data=json.dumps(scenario_filtered, indent=2).encode(), filename="trading-scenario-accounts.json", label="Download selected scenario accounts")])
 return scenario_detail,
 ''')
+    corrected_path = ROOT / "studies/execution-contract-v2/results.json"
+    if corrected_path.exists():
+        corrected_payload = base64.b64encode(zlib.compress(corrected_path.read_bytes(), 9)).decode()
+        third += cell(f'''
+corrected = json.loads(zlib.decompress(base64.b64decode({corrected_payload!r})))
+mo.md("## We fixed the mandate and ran it again\\n"
+      "360 new executions on the same 60 cases: two trials for each treatment. Every role now receives the historical cutoff, five-session horizon, SPY benchmark and fresh-cash account. "
+      "The final decision must give an unconditional next-close allocation or explicitly abstain. Unsupported conditions and invalid contracts hold cash. "
+      "**This is a development rerun of inspected cases, not an untouched or forward test.** Typed acceptance does not validate the prose or forecast. "
+      "The original results above are preserved; the 2026 five-session outcomes remain pending at the November 5 freeze. "
+      "The committee price tool is bound to the case ticker and does not expose SPY prices; the single analyst receives SPY directly. This inherited access difference remains, so these results cannot isolate agent count.")
+return corrected,
+''') + cell(r'''
+corrected_summary = []
+for _method in corrected["summaries"]:
+    for _version in ("original", "corrected"):
+        _s = _method[_version]
+        corrected_summary.append({"Method": _method["treatment"], "Version": _version,
+            "Mean P&L ($)": _s["mean_trading_pnl"], "Mean exposure": _s["mean_exposure"],
+            "Matured dates": _s["independent_dates"], "Scored directions": _s["directional_correct"]["n"],
+            "Directional accuracy": _s["directional_correct"]["mean"], "Pending": _s["pending"],
+            "Model expense ($)": _s["total_model_cost_usd"]})
+mo.ui.table(corrected_summary, selection=None, show_data_types=False,
+    label="Before and after · all cohorts · 8 matured dates · 10 bps/side · model costs separate",
+    format_mapping={"Mean P&L ($)": "${:,.2f}", "Mean exposure": "{:.1%}", "Directional accuracy": "{:.1%}", "Model expense ($)": "${:.4f}"})
+return
+''') + cell(r'''
+_budget_note = (f"**Updated shared budget:** ${corrected['budget']['cost_known_usd']:.6f} known model charges plus "
+               f"${corrected['budget']['infrastructure_reserved_usd']:.2f} in outstanding infrastructure reservations; "
+               f"${corrected['budget']['cost_upper_usd']:.6f} known or reserved against the $250 cap. "
+               f"The corrected qualification and campaign add ${corrected['new_campaign_cost_upper_usd']:.6f}. "
+               "The ledger table above remains the original release snapshot; local training hardware is unmetered.")
+mo.md(_budget_note)
+return
+''') + cell(r'''
+corrected_case_ids = {r["case_id"] for r in corrected["rows"] if cohort.value == "All cohorts" or r["cohort"] == cohort.value}
+corrected_filtered = [r for r in corrected["paired_rows"] if r["case_id"] in corrected_case_ids]
+corrected_cases = [{"Case": r["case_id"], "Method": r["treatment"], "Trial": r["trial"]+1,
+    "Original rating": r["original_rating"], "Corrected rating": r["corrected_rating"],
+    "Contract": r["contract_status"], "Target weight": r["target_weight"], "Outcome": r["outcome_status"],
+    "Original Agent Lens": mo.md(f"[Open authenticated conversation]({r['original_conversation_url']})"),
+    "Corrected Agent Lens": mo.md(f"[Open authenticated conversation]({r['corrected_conversation_url']})")}
+    for r in corrected_filtered]
+mo.vstack([mo.md(f"### Inspect the changed decisions · {len(corrected_cases)} executions in the selected cohort(s)"),
+    mo.ui.table(corrected_cases, selection=None, show_data_types=False, page_size=10,
+        label="Both conversations, the order gate, and the pending outcome stay distinct", format_mapping={"Target weight": "{:.0%}"}),
+    mo.download(data=json.dumps(corrected_filtered, indent=2).encode(), filename="corrected-paired-decisions.json", label="Download selected paired decisions")])
+return
+''')
     for name, source in [("01_meet_the_committee.py", first), ("02_confident_expensive_wrong.py", second), ("03_beat_doing_nothing.py", third)]:
         source += '\n\nif __name__ == "__main__":\n    app.run()\n'
         # Resolve cell signatures from the dependency graph; don't hand-maintain them.

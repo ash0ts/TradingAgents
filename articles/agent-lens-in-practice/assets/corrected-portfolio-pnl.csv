@@ -1,0 +1,7 @@
+treatment,version,mean_trading_pnl,mean_exposure,matured_accounts,independent_dates
+default-committee,original,11.66659735378289,0.4500707625707626,16,8
+default-committee,corrected,130.56444350892616,0.20292207792207795,16,8
+luna-committee,original,-66.28815376690545,0.3356018981018981,16,8
+luna-committee,corrected,-10.58620527765379,0.09625790875790877,16,8
+single-luna,original,16.491995293228683,0.3980394605394606,16,8
+single-luna,corrected,57.04069853573219,0.40844572094572096,16,8
