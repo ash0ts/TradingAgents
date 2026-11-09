@@ -6,7 +6,7 @@ import argparse
 import json
 from concurrent.futures import ThreadPoolExecutor
 
-from run_evidence_campaign import OUT, sha
+from run_repaired_evidence_campaign import OUT, sha
 
 from tradingagents.lab.lens import LensClient, audit_spans
 
