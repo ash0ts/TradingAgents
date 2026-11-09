@@ -1,7 +1,7 @@
 {
   "report_id": "VmlldzoxODI2MzIwNQ==",
   "anonymous_read": true,
-  "title": "vtpsvc6ulv",
+  "title": "Would you give this investment committee money?",
   "updated_at": "2026-11-09T16:11:35Z",
   "report_spec_sha256": "2d12a6f6ed45bef461eade213acf1a5c4e39c3d7e50d2de0e1f2a45120f4190e",
   "images": 15,
@@ -12,5 +12,6 @@
   "anonymous_scenario_runs": 13,
   "anonymous_scenario_tables": 39,
   "original_prediction_crosswalk_rows": 960,
-  "scenario_account_rows": 1120
+  "scenario_account_rows": 1120,
+  "report_record_name": "vtpsvc6ulv"
 }
