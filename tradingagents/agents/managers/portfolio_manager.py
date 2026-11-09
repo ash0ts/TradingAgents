@@ -22,10 +22,14 @@ from tradingagents.agents.structured import NO_EXTERNAL_TOOLS, bind_structured, 
 
 def create_portfolio_manager(llm):
     from tradingagents.dataflows.config import get_config
-    from tradingagents.lab.execution import ExecutionDecision, render_execution_decision
+    from tradingagents.lab.execution import ExecutionDecision, render_evaluated_decision
 
     contracted = bool(get_config().get("evaluation_mandate"))
-    structured_llm = bind_structured(llm, ExecutionDecision if contracted else PortfolioDecision, "Portfolio Manager")
+    decision_schema = ExecutionDecision if contracted else PortfolioDecision
+    if get_config().get("evidence_mode") == "cited-evidence":
+        from tradingagents.lab.brief import CitedDecision
+        decision_schema = CitedDecision
+    structured_llm = bind_structured(llm, decision_schema, "Portfolio Manager")
 
     def portfolio_manager_node(state) -> dict:
         instrument_context = get_instrument_context_from_state(state)
@@ -90,7 +94,7 @@ Write these sections, in this order, starting with the rating on its own line:
         else:
             decision = invoke_structured(structured_llm, prompt, "Portfolio Manager")
         if decision is not None:
-            final_trade_decision = render_execution_decision(decision) if contracted else render_pm_decision(decision)
+            final_trade_decision = render_evaluated_decision(decision, get_config()) if contracted else render_pm_decision(decision)
             final_rating = decision.rating.value
         else:
             final_trade_decision = llm.invoke(prompt).content
