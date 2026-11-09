@@ -65,6 +65,20 @@ def files():
             "trading-scenarios-evidence.zip",
         ]
     ]
+    paths += [
+        ROOT / "internals" / name
+        for name in [
+            "README.md",
+            "protocol.json",
+            "manifest.json",
+            "observations.json",
+            "observations.csv",
+            "summaries.json",
+            "summaries.csv",
+            "reviews.json",
+            "insights-status.json",
+        ]
+    ]
     for p in paths:
         assert p.suffix in {".png", ".svg", ".csv", ".json", ".md", ".zip"}
         if p.suffix in {".svg", ".csv", ".json", ".md"}:
@@ -179,9 +193,14 @@ def publish(receipt):
             json.loads((ROOT / "trading-scenarios-panel-grid.json").read_text())
         )
     )
+    panels["internals"] = wr.PanelGrid._from_model(
+        type(original_panels[0]._to_model()).model_validate(
+            json.loads((ROOT / "internals-panel-grid.json").read_text())
+        )
+    )
     panel_models = [
         panels[k]._to_model().model_dump(mode="json")
-        for k in ["financial", "behavior", "scenarios"]
+        for k in ["financial", "internals", "behavior", "scenarios"]
     ]
     title, body = article_blocks(SLUGS[0], receipt, panels)
     blocks = [wr.TableOfContents(), *body]
@@ -218,6 +237,9 @@ def publish(receipt):
         "article_count": 1,
         "trading_scenario_panels_added": 2,
         "trading_scenario_rows": 1120,
+        "internals_panels_added": 2,
+        "internals_observations": 360,
+        "internals_assistant_reviews": 5,
         "panel_layout": "Fluid width; financial panels h=11 so all 13 method labels fit. Data, filters and IDs preserved.",
         "source_sha256": {s: sha((ROOT / s / "article.md").read_bytes()) for s in SLUGS},
         "before_sha256": sha(backup.read_bytes()),

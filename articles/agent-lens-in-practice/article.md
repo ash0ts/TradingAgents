@@ -2,6 +2,8 @@
 
 We gave an AI investment committee a simulated $100,000, several analysts, opposing researchers, a trader, a risk discussion, and a portfolio manager. Across the eight decision dates with completed five-session outcomes, the default committee averaged **$11.67 in trading profit after fees**. Buying SPY averaged **$458.44**. The committee did produce considerably more meeting notes.
 
+Those dollars measure our fixed rule for turning a rating into a position. When we opened the worst recommendation, we found something the headline misses: the committee had attached a condition to buying, and our simulator did not execute that condition. The investigation below holds us responsible for that translation as well as the agents for their advice.
+
 I wanted to be able to open one of those recommendations and check what happened: which analyst supplied the evidence, what a tool actually returned, whether the discussion changed the decision, and how the final position performed. We built that route in a [TradingAgents fork](https://github.com/ash0ts/TradingAgents). Agent Lens holds the readable conversations and execution history. Forge holds the comparisons, saved notebooks, dashboards, and versioned evidence.
 
 This article follows a TradingAgents recommendation from its financial result into the analyst reports and tool calls behind it, then tests it against simpler methods and the practical decisions an investor would face. The practical questions are less glamorous than predicting an election: did the stock selection help, did cash protect the account, would a later entry erase the result, and should missing news have stopped the trade?
@@ -29,6 +31,45 @@ To investigate a result, open its saved notebook row, follow the Agent Lens conv
 <!-- native-panel:financial -->
 
 The election supplied the premise, with an awkward but useful deadline. This release freezes market data through **November 5, 2026**. Its current-midterm five-session outcomes remain pending, including in this November 9 article revision. The opening results come from older cohorts. Keeping that freeze lets readers reproduce the original comparison.
+
+## Open the worst trade before blaming the committee
+
+We started with UNH on November 7, 2022, trial 1 of the default committee: the original weakest example by signed excess return. Its Overweight was on the wrong side of a **13.36-percentage-point** move relative to SPY. Under our fixed allocation rule, the UNH sleeve lost **$1,153.72** after fees. That is one sleeve within the $100,000 account, not a loss on the whole account.
+
+The [internals dashboard](https://forge.coreweave.com/wandb/wandb/tradingagents-election-lab?nw=dufjini1rvb) links this result to the original Agent Lens conversation. Follow the Research Manager, Trader and Portfolio Manager in its span tree. The handoff looks like this:
+
+| Stage | What the saved output says or does |
+|---|---|
+| Research Manager | Overweight; build a modest position gradually and seek more evidence before increasing it |
+| Trader | Buy, but “favor adding only on confirmation above that zone” |
+| Portfolio Manager | Overweight; “favor a modest, conditional increase rather than an immediate full-size buy” |
+| Our simulator | Invest 75% of a fresh sleeve at the next session's close, then hold five sessions |
+
+The final report preserves the breakout requirement. The simulator consumes the rating and drops that requirement. It also ignores the proposed stop and staged entry. We can reproduce the $1,153.72 loss exactly while still having failed to simulate the strategy described in the prose. Accounting tests do not catch that mismatch; reading the recommendation does.
+
+This does **not** tell us the conditional strategy would have made money or avoided the trade. “Confirmed breakout” needs an executable definition, an expiry and a policy for missing inputs before we can test it. We have kept the original result unchanged and recorded the mismatch as a development regression case.
+
+There is another mismatch in the recorded input. The portfolio manager is told that holdings and cash were not provided and to “not assume a flat book.” Our simulator starts every account entirely in cash. The agent's “trim an existing position” and our “open a smaller new position” can share an Underweight label while describing different trades. In the original seeded-random AAPL example, the trader's Sell explicitly means a partial trim “rather than exiting outright.” Calling that a contradiction based on two labels would throw away the instruction that explains it.
+
+We then checked every saved output, not just the bad example. A deliberately simple phrase search finds conditional wording in **81/120 default-committee** and **45/120 all-Luna** reports. These are candidates: “only if” can constrain a sale or a portfolio limit rather than an entry. Separately, the final horizon field literally says “not provided” in **58/120** and **16/120** reports respectively. We have not converted those counts into failure rates.
+
+![Counts of conditional-wording candidates and explicitly unspecified horizon fields in 120 executions per treatment. Default committee: 81 and 58; all-Luna: 45 and 16; single analyst: zero matches for both checks.](assets/internals-contract-checks.png)
+
+*Checks on original saved outputs, with [all 360 rows and exact definitions](../internals/README.md). The single analyst has a different mandate and output format; its zeros do not establish higher quality. [Full-size image](assets/internals-contract-checks.png).*
+
+<!-- native-panel:internals -->
+
+## Did the risk discussion change its mind?
+
+We compared the Research Manager's recommendation with the final Portfolio Manager rating within each committee execution. They matched in **238 of 240 runs**: 118/120 for the default committee and 120/120 for all-Luna. This starts *after* the bull/bear debate. It says nothing about whether that earlier debate helped, and it misses changes to sizing, conditions and explanations. UNH shows why unchanged labels can conceal substantive discussion.
+
+Both changed ratings are worth opening. For NVDA immediately after the 2024 election, the second default trial moves from Overweight to Hold. The final report says the evidence cannot establish “today's risk-reward.” For UNH after the 2023 control date, the first trial moves from Underweight to Hold because the historical readings “cannot establish current downside risk.” Both are responses inside a historical replay. They contain a visible shift toward advising someone trading today.
+
+That gives us a specific instruction problem to investigate: the decision date, holding period, benchmark and portfolio state must survive every handoff. The two examples do not establish how much return this drift cost, or that adding another date reminder will fix it. We also cannot call the remaining discussions wasted simply because the rating survived them. The [five selected reviews](../internals/reviews.json) retain the short source excerpts, evidence hashes, selection rules and proposed checks; they are **Codex assistant reviews**, not domain-expert labels.
+
+We inspected a success too. The strongest default-committee directional example is UNH after the 2025 control date. Its Underweight correctly anticipates underperformance, scoring **+5.39 percentage points** of signed excess return. Its quarter-invested sleeve nevertheless loses **$203.27**. A correct relative call can still lose cash when the stock falls. The report also names “the next earnings and guidance update” as its horizon, while we grade five sessions. A favorable score does not make that mismatch disappear.
+
+Cash explains part of the weak headline, but it does not explain all of it. Substituting SPY at the committee's own invested fraction produces $156.15 rather than $11.67. That descriptive comparison points us toward the allocation as well as the amount invested; it is not risk matching or proof of a faulty forecasting mechanism. Missing news is a separate observed limitation. Because that source is missing throughout the study, these data cannot isolate its effect on returns.
 
 ## Test the decisions people actually face
 
@@ -112,6 +153,24 @@ Six selected findings received a **Codex assistant review**, explicitly labeled 
 *Selected assistant reviews, not a human-labeled benchmark or an estimate of the population false-positive rate. The [review export](../evidence/assistant-reviews.csv) preserves the rationales and evidence digests. [Full-size image](assets/reviewed-candidates.png).*
 
 The [investigation notebook](https://forge.coreweave.com/notebooks/Tm90ZWJvb2s6MTUyNzE%3D) keeps candidate tags separate from reviewed findings and exports the confirmed case into a versioned regression dataset. We did not enable an uncalibrated LLM judge. Anthropic's [agent-evaluation guide](https://www.anthropic.com/research/demystifying-evals-for-ai-agents) provides useful context for combining code, model, and human graders. Here, the next review should include a domain expert and unflagged cases too. Once a discovered case informs a fix, it becomes development evidence; we cannot sell it back to ourselves as an untouched test.
+
+## Use Insights when it has evidence; keep investigating when it does not
+
+We checked the project's native Insights page on November 9. It had **no completed clustering run**, and its API returned no classified weeks. The UI says Insights runs daily after a project accumulates **1,000 new turns**. Our campaign has 360. We did not manufacture more conversations to obtain a populated chart.
+
+![The actual Agent Lens Insights onboarding page states that Insights runs daily once a project has 1,000 new turns since the last run.](assets/lens-insights-eligibility.png)
+
+*Actual project state on November 9. The chart on the right is the product's onboarding illustration, not results from this study. [Recorded availability check](../internals/insights-status.json). [Full-size image](assets/lens-insights-eligibility.png).*
+
+The [documented Insights workflow](https://docs.coreweave.com/products/agent-lens/insights) groups turns by intent or failure and provides example conversations to inspect. Once eligible, we would examine categories such as task misunderstanding and missed requirements, then compare their examples with the actual request. A category or generated cluster name would still need that review. Financial loss alone cannot establish a behavioral failure, and the agent trace cannot reveal a simulator's discarded condition unless we also inspect the execution rule.
+
+For this release, we added three native saved views: **conditional wording candidates**, **explicit missing horizon**, and **assistant-reviewed handoffs**. Open them from the [internals dashboard](https://forge.coreweave.com/wandb/wandb/tradingagents-election-lab?nw=dufjini1rvb). The first two use deterministic tags; the third contains the five reviewed examples above. These are our checks and reviews, not findings produced by native Insights clustering. The public dashboard exposes the derived tables; conversation links require team access.
+
+![Actual Agent Lens saved view showing the five assistant-reviewed TradingAgents conversations, their tags and span counts.](assets/lens-reviewed-handoffs.png)
+
+*The saved handoff view, captured November 9. Each row opens the original conversation and its span tree. The five cases are selected examples, not a representative failure-rate estimate. [Full-size image](assets/lens-reviewed-handoffs.png).*
+
+The investigation now has a concrete next action for each finding. Preserve an entry condition in structured output or reject execution when it cannot be evaluated. Give every role the same as-of date, five-session mandate and benchmark. Provide actual starting holdings, or explicitly request a fresh-account allocation. Keep cash P&L, relative direction and abstention separate. Those contracts can be tested before spending money on another campaign; whether they improve investment decisions requires a new, registered forward window.
 
 ## Make the result and execution agree
 
@@ -212,8 +271,10 @@ The [scenario dashboard](https://forge.coreweave.com/wandb/wandb/tradingagents-e
 
 The [trading evidence package](../evidence/tradingagents-public-evidence.zip) contains 960 predictions, 2,880 horizon scores, 640 portfolio scenarios, source coverage, paired comparisons, selected reviews, and a hash manifest. The [reproduction guide](../evidence/README.md) defines the joins, units, and access limits. The [scenario extension](../trading-scenarios/README.md) supplies another 1,120 reconciled accounts and the inputs required to rebuild them without a model call or licensed raw quotes.
 
+The [internals audit](../internals/README.md) adds 360 derived observation rows and five selected reviews without changing those original records. Its native dashboard contains the result-to-conversation links, and its public exports contain the check definitions, short reviewed excerpts and source hashes. This pass made no new model or judge calls.
+
 The trading qualification and campaign recorded **$7.683182 in model charges**. The budget ledger also retains $0.001853 from an excluded prototype, for $7.685035 in total known charges. A separate **$175 infrastructure reservation** remains held against the **$250 cap**, awaiting invoice reconciliation. Known or reserved spend is $182.685035. Local training hardware is unmetered. Publication reuses saved results.
 
 The three Forge Notebooks remain practical workspaces: [meet the committee](https://forge.coreweave.com/notebooks/Tm90ZWJvb2s6MTUyNjA%3D), [investigate its behavior](https://forge.coreweave.com/notebooks/Tm90ZWJvb2s6MTUyNzE%3D), and [compare financial outcomes](https://forge.coreweave.com/notebooks/Tm90ZWJvb2s6MTUyNzI%3D). This single article supplies the narrative across them. The code remains in six dependent draft PRs in the personal fork, with no Forge or Agent Lens product changes.
 
-The next agent comparison needs the same investment mandate, portfolio context, and evidence presentation for every treatment, followed by a registered forward window. Historical replays can expose mistakes now; they cannot establish that this committee will make money next week.
+Before the next comparison, we need an execution contract that can distinguish “buy now” from “buy only if,” and a test that rejects a five-session score for a response to a different mandate. Then we can hold the evidence and portfolio context constant across treatments and register a forward window. We have identified those changes; we have not yet measured their effect on returns.

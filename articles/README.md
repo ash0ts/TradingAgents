@@ -13,3 +13,18 @@ with 1,120 independent accounts. `publish_trading_scenarios.py` publishes five
 native dashboard panels and case/evidence/Agent Lens crosswalk tables. The
 financial Marimo notebook embeds the same results with an interactive selector.
 These are explicitly post-hoc stress tests, not new earnings or crash forecasts.
+
+The [internals audit](internals/README.md) follows five selected recommendations
+through the Research Manager, Trader, risk discussion and Portfolio Manager.
+It distinguishes conditional advice from the fixed allocation rule used in the
+original backtest. `build_internals.py` rebuilds the 360-row audit and figure;
+`publish_internals.py` publishes its dashboard and tables. Add `--tags` to apply
+the candidate and assistant-review tags and update the three native Lens views.
+The publisher never triggers inference. Original predictions and scores remain
+unchanged; discovered cases belong to a development regression split.
+
+The [internals dashboard](https://forge.coreweave.com/wandb/wandb/tradingagents-election-lab?nw=dufjini1rvb)
+contains three panels and authenticated conversation links. The article report
+adds two of those panels alongside the original ten and two scenario panels.
+Native Insights was below its displayed 1,000-new-turn threshold when inspected;
+the audit does not claim native clustering generated these findings.
