@@ -186,6 +186,10 @@ def publish(receipt):
     if not rerun_backup.exists():
         rerun_backup.parent.mkdir(parents=True, exist_ok=True)
         rerun_backup.write_text(json.dumps(current_obj, indent=2) + "\n")
+    evidence_backup = ROOT / "private-evidence/common-evidence/forge-report-before.json"
+    if not evidence_backup.exists():
+        evidence_backup.parent.mkdir(parents=True, exist_ok=True)
+        evidence_backup.write_text(json.dumps(current_obj, indent=2) + "\n")
     original = json.loads(backup.read_text())
     original_report = wr.Report._from_model(type(report._to_model()).model_validate(original))
     original_panels = [b for b in original_report.blocks if isinstance(b, wr.PanelGrid)]
@@ -207,9 +211,14 @@ def publish(receipt):
             json.loads((ROOT / "corrected-panel-grid.json").read_text())
         )
     )
+    panels["evidence"] = wr.PanelGrid._from_model(
+        type(original_panels[0]._to_model()).model_validate(
+            json.loads((ROOT / "evidence-panel-grid.json").read_text())
+        )
+    )
     panel_models = [
         panels[k]._to_model().model_dump(mode="json")
-        for k in ["financial", "internals", "behavior", "scenarios", "corrected"]
+        for k in ["financial", "internals", "behavior", "scenarios", "corrected", "evidence"]
     ]
     title, body = article_blocks(SLUGS[0], receipt, panels)
     blocks = [wr.TableOfContents(), *body]
@@ -251,6 +260,9 @@ def publish(receipt):
         "internals_assistant_reviews": 5,
         "corrected_campaign_panels_added": 2,
         "corrected_campaign_executions": 360,
+        "common_evidence_panels_added": 2,
+        "common_evidence_executions": 360,
+        "stopped_pilot_executions_preserved": 40,
         "panel_layout": "Fluid width; financial panels h=11 so all 13 method labels fit. Data, filters and IDs preserved.",
         "source_sha256": {s: sha((ROOT / s / "article.md").read_bytes()) for s in SLUGS},
         "before_sha256": sha(backup.read_bytes()),

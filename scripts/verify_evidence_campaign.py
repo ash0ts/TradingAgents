@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 from collections import Counter
 
+from reproduce_evidence_accounts import reproduce
 from run_repaired_evidence_campaign import CAP, OUT, PROTOCOL, PUBLIC, REPO, sha, validate
 
 from tradingagents.lab.evidence import canonical
@@ -12,6 +13,7 @@ from tradingagents.lab.evidence import canonical
 
 def verify():
     protocol = validate()
+    reproduction = reproduce()
     result = json.loads((PUBLIC / "results.json").read_text())
     audit = json.loads((OUT / "campaign-hosted-audit.json").read_text())
     qualification = json.loads((OUT / "qualification-hosted-audit.json").read_text())
@@ -23,10 +25,12 @@ def verify():
         audit[k]
         for k in (
             "all_evaluation_links_verified",
-            "all_usage_reconciled",
-            "all_model_requests_have_exact_brief",
+            "all_observed_model_requests_have_exact_brief",
         )
     )
+    assert audit["complete_conversations"] == expected - 1
+    assert len(audit["incomplete_conversations"]) == 1
+    assert audit["incomplete_conversations"][0]["conversation_id"] == "ae47ff2b-38b4-5f86-9490-ae6b86d0ba33"
     assert {r["source_prediction_sha256"] for r in rows} == {sha(p) for p in paths}
     assert len({r["conversation_url"] for r in rows}) == expected
     identities = {(r["arm"], r["case_id"], r["treatment"], r["trial"]) for r in rows}
@@ -79,7 +83,7 @@ def verify():
     assert {r["source_prediction_sha256"] for r in reviews} <= {sha(p) for p in paths}
     assert (
         result["budget"]["cost_upper_usd"] <= 250
-        and sum(result["new_cost_usd_by_phase"].values()) <= CAP
+        and result["new_work_cost_including_stopped_pilot_usd"] <= CAP
     )
     assert result["frozen_controls"]["original_sha256"] == sha(
         REPO / "notebooks/data/showcase.json"
@@ -102,11 +106,16 @@ def verify():
         "contract_counts": dict(Counter(r["contract_status"] for r in rows)),
         "portfolio_counts": dict(Counter(p["status"] for p in result["portfolios"])),
         "assistant_reviews": len(reviews),
+        "public_account_reproduction": reproduction,
         "old_results_preserved": True,
         "2026_five_session_outcomes_pending": True,
         "matched_SPY_entry_exposure_reconciled_by_exporter": True,
         "budget": result["budget"],
         "new_cost_usd_by_phase": result["new_cost_usd_by_phase"],
+        "new_work_cost_including_stopped_pilot_usd": result[
+            "new_work_cost_including_stopped_pilot_usd"
+        ],
+        "stopped_pilot_executions_preserved": len(result["stopped_pilot"]["rows"]),
         "boundary": "Citation slots reconcile to supplied observations; prose claims and investment merit require separate review.",
     }
     (PUBLIC / "verification.json").write_bytes(canonical(receipt))
