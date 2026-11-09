@@ -67,6 +67,7 @@ def export():
             "source_evidence_sha256": view["source_evidence_sha256"],
             "brief_sha256": view["view_sha256"],
             "fact_id": fact["id"],
+            "reporting_period_start": fact["period_start"],
             "reporting_period_end": fact["as_of"],
             "filed": fact["filed"],
             "age_days": fact["age_days"],
@@ -76,6 +77,9 @@ def export():
         for fact in view["facts"]
         if fact["kind"] == "sec"
     ]
+    hosted = json.loads((OUT / "campaign-hosted-audit.json").read_text())
+    assert hosted["conversations"] == len(rows)
+    trace_by_id = {r["conversation_id"]: r for r in hosted["rows"]}
     public = []
     for row, path in zip(rows, paths, strict=True):
         view = views[row["case_id"]]
@@ -91,6 +95,9 @@ def export():
             assert row["citation_check"] == check
         clean = {k: row.get(k) for k in ROW_FIELDS}
         clean.update(
+            trace_complete=trace_by_id[row["conversation_id"]]["trace_complete"],
+            trace_incident=trace_by_id[row["conversation_id"]]["incident"],
+            native_span_export_sha256=trace_by_id[row["conversation_id"]]["native_span_export_sha256"],
             arm=row["evidence_mode"],
             brief_sha256=view["view_sha256"],
             contract_status=row["execution_check"]["status"],
@@ -131,11 +138,35 @@ def export():
                 # not beta, risk, causal skill or the value of the information.
             else:
                 delta = None
-            clean = {k: p.get(k) for k in PORTFOLIO_FIELDS}
+            clean = {
+                k: p.get(k) for k in [*PORTFOLIO_FIELDS, "initial_cash", "final_cash", "price_pnl"]
+            }
             clean.update(arm=mode, matched_SPY_pnl=control.get("trading_pnl"), selection_pnl=delta)
             accounts.append(clean)
             private_accounts.append({"arm": mode, "actor": p, "matched_SPY": control})
     (OUT / "account-audit.json").write_bytes(canonical(private_accounts))
+    # Per-dollar accounts permit independent public arithmetic without redistributing
+    # raw quotes. They are derived once from the same immutable outcome snapshot.
+    factors = []
+    for date in sorted({r["decision_date"] for r in rows}):
+        for asset in [*stocks, "SPY"]:
+            for bps in (0, 5, 10, 25):
+                unit = simulate(
+                    date,
+                    [{"ticker": asset, "treatment": "unit", "rating": "Buy", "status": "success"}],
+                    outcomes["prices"],
+                    sessions,
+                    initial_cash=1,
+                    bps=bps,
+                    freeze=outcomes["freeze_through"],
+                )
+                factors.append(
+                    {
+                        "asset": asset,
+                        **{k: v for k, v in unit.items() if k not in ("positions", "transactions")},
+                    }
+                )
+    (PUBLIC / "unit-account-factors.json").write_bytes(canonical(factors))
     summaries = []
     for mode in MODES:
         for treatment in protocol["treatments"]:
@@ -168,6 +199,7 @@ def export():
                     "citation_decisions_valid": sum(c["valid"] for c in checked),
                     "citations_checked": sum(c["checked_citations"] for c in checked),
                     "model_calls": sum(r["model_calls"] for r in selected),
+                    "complete_native_conversations": sum(r["trace_complete"] for r in selected),
                 }
             )
     paired = {}
@@ -248,6 +280,7 @@ def export():
         "protocol_sha256": sha(PROTOCOL),
         "design": design,
         "rows": public,
+        "hosted": {k: v for k, v in hosted.items() if k != "rows"},
         "portfolios": accounts,
         "summaries": summaries,
         "paired_comparisons": paired,
@@ -263,6 +296,16 @@ def export():
         "limitations": protocol["limitations"],
         "raw_reports_public": False,
     }
+    pilot_path = REPO / "studies/common-evidence-v3/pilot-results.json"
+    assert sha(pilot_path) == protocol["stopped_pilot_sha256"]
+    report["stopped_pilot"] = json.loads(pilot_path.read_text())
+    report["stopped_pilot_sha256"] = sha(pilot_path)
+    report["new_work_cost_including_stopped_pilot_usd"] = (
+        sum(costs.values())
+        + report["stopped_pilot"]["campaign_cost_usd"]
+        + report["stopped_pilot"]["qualification_cost_usd"]
+    )
+    assert report["new_work_cost_including_stopped_pilot_usd"] <= CAP
     (PUBLIC / "results.json").write_bytes(canonical(report))
     (PUBLIC / "summaries.json").write_bytes(canonical(summaries))
     for name, values in [

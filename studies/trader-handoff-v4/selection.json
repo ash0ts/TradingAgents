@@ -1,0 +1,49 @@
+{
+  "selected_at": "2026-11-09T23:36:15.978609+00:00",
+  "selection_basis": "Repeated final managers corrected a trader Sell/25% proposal. Source inspection found an explicit legacy Underweight-to-Sell instruction. No new campaign financial summaries have been computed or inspected.",
+  "jobs": [
+    [
+      "control-2023-after-UNH",
+      "shared-evidence",
+      "default-committee"
+    ],
+    [
+      "control-2023-after-UNH",
+      "shared-evidence",
+      "luna-committee"
+    ],
+    [
+      "control-2023-after-UNH",
+      "cited-evidence",
+      "default-committee"
+    ],
+    [
+      "control-2023-after-UNH",
+      "cited-evidence",
+      "luna-committee"
+    ],
+    [
+      "control-2025-after-UNH",
+      "shared-evidence",
+      "default-committee"
+    ],
+    [
+      "control-2025-after-UNH",
+      "shared-evidence",
+      "luna-committee"
+    ],
+    [
+      "control-2025-after-UNH",
+      "cited-evidence",
+      "default-committee"
+    ],
+    [
+      "control-2025-after-UNH",
+      "cited-evidence",
+      "luna-committee"
+    ]
+  ],
+  "scope": "Eight engineering regressions, one execution each; no financial performance claim.",
+  "planned_change": "Five-rating typed trader proposal in execution-contract mode; preserve mandate and conditions; remove conflicting existing-holding rating prose from final manager.",
+  "main_campaign_policy": "Keep all 360 current executions frozen and publish them under their actual source revision; apply this repair only after they complete."
+}
