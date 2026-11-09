@@ -1,0 +1,24 @@
+{
+  "wandb_url": "https://forge.coreweave.com/wandb/tradingagents-election-lab?nw=71cv89hjh9u",
+  "forge_url": "https://forge.coreweave.com/wandb/wandb/tradingagents-election-lab?nw=71cv89hjh9u",
+  "run_ids": [
+    "scenario-a90083bdb6fa3327",
+    "scenario-d9efd2b774c3b9cd",
+    "scenario-ee9b58119cff9155",
+    "scenario-a68d52d0e1626cac",
+    "scenario-701aa2428d6f13d1",
+    "scenario-89ab2834905eb8a9",
+    "scenario-29b85518f96994d2",
+    "scenario-2bf574c08199ba97",
+    "scenario-05b557e1f1361151",
+    "scenario-c3ba68e3c51f0c3e",
+    "scenario-c6e7bd2794304d75",
+    "scenario-b92a8dde93689ccd",
+    "scenario-4624c06412736f98"
+  ],
+  "evidence_manifest_sha256": "7d455d63b0c62c48b01146f0d443c5bd8b791a970247fcb5060e7c8eec258456",
+  "metrics_verified": true,
+  "native_panels": 5,
+  "report_panels": 2,
+  "model_calls": 0
+}
