@@ -27,7 +27,13 @@ def cost_micros(model, input_tokens, output_tokens, cached=0):
 
 
 class Ledger:
-    def __init__(self, path):
+    def __init__(self, path, *, campaign_prefix=None, campaign_cap_usd=None):
+        if (campaign_prefix is None) != (campaign_cap_usd is None):
+            raise ValueError("Campaign prefix and cap must be supplied together")
+        if campaign_cap_usd is not None and (not campaign_prefix or not math.isfinite(campaign_cap_usd) or campaign_cap_usd <= 0):
+            raise ValueError("Invalid campaign budget")
+        self.campaign_prefix = campaign_prefix
+        self.campaign_cap = round(campaign_cap_usd * 1e6) if campaign_cap_usd else None
         self.path = str(path)
         Path(path).parent.mkdir(parents=True, exist_ok=True)
         with self.connect() as db:
@@ -44,6 +50,13 @@ class Ledger:
             total, subtotal = db.execute("SELECT COALESCE(SUM(COALESCE(charged,reserve)),0), COALESCE(SUM(CASE WHEN phase=? THEN COALESCE(charged,reserve) ELSE 0 END),0) FROM calls", (phase,)).fetchone()
             if total + micros > sum(CAPS.values()) or subtotal + micros > CAPS[phase]:
                 raise BudgetExceeded(f"Budget exhausted before dispatch: {phase}")
+            if self.campaign_prefix is not None:
+                if not run_key.startswith(self.campaign_prefix):
+                    raise ValueError("Run does not belong to the capped campaign")
+                spent = db.execute("SELECT COALESCE(SUM(COALESCE(charged,reserve)),0) FROM calls WHERE substr(run_key,1,length(?))=?",
+                                   (self.campaign_prefix, self.campaign_prefix)).fetchone()[0]
+                if spent + micros > self.campaign_cap:
+                    raise BudgetExceeded("Campaign-specific cap exhausted before dispatch")
             db.execute("INSERT INTO calls VALUES (?,?,?,?,?,NULL,NULL,'reserved')", (str(call_id), run_key, phase, model, micros))
 
     def settle(self, call_id, usage):
