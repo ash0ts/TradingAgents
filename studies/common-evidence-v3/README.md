@@ -1,4 +1,13 @@
-# Same facts, two decision contracts
+# Stopped common-evidence pilot
+
+**Stopped after 40 saved campaign executions.** The citation prompt ambiguously
+asked the actor to place the brief hash in its evidence-gap list. One observed
+response followed that instruction and was rejected despite matching facts.
+All in-flight work drained; no attempt was replaced. See `pilot-results.json`.
+This unbalanced partial schedule is excluded from headline financial comparisons.
+The repaired experiment receives its own protocol and execution namespace.
+
+## Original frozen design
 
 This is a frozen **development** experiment on previously inspected retrospective
 cases. `protocol.json` fixes the two arms, model settings, case grid, cost-only
