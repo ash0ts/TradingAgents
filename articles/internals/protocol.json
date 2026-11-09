@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "question": "Which observed handoffs make a five-session portfolio score an incomplete account of the committee's recommendation?",
+  "decision": "Identify contracts to fix and regression cases to test before another registered forward comparison.",
+  "analysis_kind": "Post-hoc descriptive analysis of unchanged election-replay-v1 outputs, discovered November 9, 2026.",
+  "source_revision": "5eafe336a5e01e8d77554f0d3ef1b1c44046176a",
+  "actor_revision": "edaa0e68895b8f671c05d3ca382751148c784801",
+  "membership": "All 360 campaign executions: 60 stock/date cases, three treatments, two trials. No qualification runs, retracted prototypes, or new inference.",
+  "measurements": {
+    "rating_change": "Compare the Research Manager's Recommendation field with final rating on the same execution. Denominator: parseable committee pairs. This excludes the earlier bull/bear debate, prose changes and sizing changes.",
+    "conditional_wording": "Regex in build_internals.py matches only after/if/on/above/upon, wait for, conditional on/increase, or subject to in final reports. Candidate for review, not a validated trade-entry condition or a failure label.",
+    "missing_horizon": "Literal rendered Time Horizon field equal to not provided. Not a semantic audit of all time references. Single-analyst outputs use a different schema and mandate.",
+    "returns": "Retain original five-session scores and original 10-bp-per-side sleeve P&L. Pending remains null. Do not simulate inferred conditional orders.",
+    "aggregation": "Counts are executions, not independent market observations. No p-values, causal claims or estimated correction gain."
+  },
+  "case_selection": "Original weakest directional result; both research-to-final rating changes; strongest default-committee directional result; original seeded-random committee case. Selection and outcome known before review.",
+  "reviewer": "Codex assistant; no human or financial-domain expert review claimed.",
+  "privacy": "Export allowlisted flags, hashes and selected short model-output excerpts. Raw sources, prompts and complete traces stay in the private evidence project. Native drilldowns remain authenticated.",
+  "insights": "Read the existing native Insights status and UI. No manufactured turns, paid judge, or clustering trigger. Separate native clustering from deterministic checks and assistant review.",
+  "reproduce": "python articles/build_internals.py; private extraction adds --campaign lab-runs/election-v1/campaign",
+  "stop": "Do not change trading prompts, original scores or published campaign denominators. Keep discovered cases in a development regression split."
+}
