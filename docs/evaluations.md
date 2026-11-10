@@ -125,3 +125,17 @@ the contract at the trader boundary; it does not infer an executable order from
 free text or silently remove a proposed confirmation or stop requirement. Its
 selected eight-run development regression is separate from the already-frozen
 matched-evidence campaign and makes no new financial-performance claim.
+
+### Accounting and partial failures
+
+The ledger prices regular input, cache reads, cache writes (a 25% input-price
+premium), and output separately using decimal arithmetic, then rounds up to a
+whole microdollar. Long-context multipliers apply before rounding. Invalid token
+category totals fail closed; missing usage keeps the original reservation, and
+repeated settlement does not charge twice. The native model spans also retain
+cache-write counts, although product cost charts may not recognize every model.
+
+Each attempt owns a fresh callback-event list. If an actor raises, its partial
+model/tool events are saved with the failed prediction before scoring or upload.
+These fixes apply to future executions. Frozen study tags and original outputs
+remain unchanged; retrospective accounting corrections are separate artifacts.

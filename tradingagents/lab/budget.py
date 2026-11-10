@@ -4,6 +4,7 @@ from __future__ import annotations
 import json
 import math
 import sqlite3
+from decimal import ROUND_CEILING, Decimal
 from pathlib import Path
 
 from langchain_core.callbacks import BaseCallbackHandler
@@ -19,11 +20,15 @@ class BudgetExceeded(RuntimeError):
     pass
 
 
-def cost_micros(model, input_tokens, output_tokens, cached=0):
-    inp, cache, out = PRICES[model]  # Unknown model is an error, never free.
+def cost_micros(model, input_tokens, output_tokens, cached=0, created=0):
+    inp, cache, out = (Decimal(str(v)) for v in PRICES[model])
+    if min(input_tokens, output_tokens, cached, created) < 0 or cached + created > input_tokens:
+        raise ValueError("Inconsistent token categories")
     long = input_tokens > 272_000
-    return math.ceil((input_tokens - cached) * inp * (2 if long else 1)
-                     + cached * cache * (2 if long else 1) + output_tokens * out * (1.5 if long else 1))
+    inputs = ((input_tokens - cached - created) * inp
+              + cached * cache + created * inp * Decimal("1.25")) * (2 if long else 1)
+    total = inputs + output_tokens * out * (Decimal("1.5") if long else 1)
+    return int(total.to_integral_value(rounding=ROUND_CEILING))
 
 
 class Ledger:
@@ -68,7 +73,9 @@ class Ledger:
             if usage is None:
                 db.execute("UPDATE calls SET status='unknown' WHERE id=?", (str(call_id),))
                 return
-            charge = cost_micros(row[0], usage["input_tokens"], usage["output_tokens"], (usage.get("input_token_details") or {}).get("cache_read", 0))
+            details = usage.get("input_token_details") or {}
+            charge = cost_micros(row[0], usage["input_tokens"], usage["output_tokens"],
+                                 details.get("cache_read", 0), details.get("cache_creation", 0))
             if charge > row[1]:
                 raise RuntimeError("Cost exceeded conservative reserve; stop campaign and reconcile")
             db.execute("UPDATE calls SET charged=?,usage=?,status='settled' WHERE id=?", (charge, json.dumps(usage), str(call_id)))

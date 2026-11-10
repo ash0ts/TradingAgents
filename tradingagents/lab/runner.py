@@ -130,7 +130,9 @@ def run_one(root, output, case_id, treatment, trial=0, phase="campaign", publish
             "trial": trial, "attempt": 0, "cohort": case["cohort"], "dataset_version": evidence_hash,
             "code_revision": revision, "outcome_status": "not_scored"}
     config = deepcopy(DEFAULT_CONFIG)
+    events = []
     config.update({"forge_project": trace_project, "forge_conversation_id": cid,
+                   "forge_event_sink": events,
                    "forge_metadata": meta, "replay_root": str(root.resolve()), "replay_evidence": evidence_hash,
                    "results_dir": str(run_dir / "reports"), "data_cache_dir": str(run_dir / "cache"),
                    "memory_log_path": str(run_dir / "memory.md"), "checkpoint_enabled": False,
@@ -188,7 +190,8 @@ def run_one(root, output, case_id, treatment, trial=0, phase="campaign", publish
                         row["execution_decision"] = state.get("execution_decision")
             row["status"] = "success"
         except Exception as exc:
-            row.update(status="failed", rating=None, error=f"{type(exc).__name__}: {exc}", traceback=traceback.format_exc())
+            row.update(status="failed", rating=None, events=events,
+                       error=f"{type(exc).__name__}: {exc}", traceback=traceback.format_exc())
         row.update(latency_s=time.monotonic() - start, completed_at=datetime.now(UTC).isoformat(), **ledger.totals(key))
         # Paid outputs persist before reading outcomes or touching evaluation upload.
         result_path.write_bytes(canonical(row))
