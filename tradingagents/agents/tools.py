@@ -85,6 +85,10 @@ def get_verified_market_snapshot(
     price levels, Bollinger bands, RSI, MACD, moving averages, support /
     resistance, or historical comparisons, and treat it as the source of truth.
     """
+    from tradingagents.dataflows.config import get_config
+    if get_config().get("replay_evidence"):
+        from tradingagents.lab.replay import read
+        return read("get_verified_market_snapshot", symbol, as_of(curr_date, trade_date), look_back_days)
     # An exception out of a tool would end the run.
     try:
         return build_verified_market_snapshot(symbol, as_of(curr_date, trade_date), look_back_days)
