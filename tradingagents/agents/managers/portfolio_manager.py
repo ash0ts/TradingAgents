@@ -21,7 +21,15 @@ from tradingagents.agents.structured import NO_EXTERNAL_TOOLS, bind_structured, 
 
 
 def create_portfolio_manager(llm):
-    structured_llm = bind_structured(llm, PortfolioDecision, "Portfolio Manager")
+    from tradingagents.dataflows.config import get_config
+    from tradingagents.lab.execution import ExecutionDecision, render_evaluated_decision
+
+    contracted = bool(get_config().get("evaluation_mandate"))
+    decision_schema = ExecutionDecision if contracted else PortfolioDecision
+    if get_config().get("evidence_mode") == "cited-evidence":
+        from tradingagents.lab.brief import CitedDecision
+        decision_schema = CitedDecision
+    structured_llm = bind_structured(llm, decision_schema, "Portfolio Manager")
 
     def portfolio_manager_node(state) -> dict:
         instrument_context = get_instrument_context_from_state(state)
@@ -39,6 +47,19 @@ def create_portfolio_manager(llm):
             else ""
         )
 
+        rating_scale = (
+            "Buy=100%, Overweight=75%, Hold=50%, Underweight=25%, Sell=0% of the "
+            "fresh-cash sleeve, inclusive of entry fees. These are new unconditional "
+            "allocations; Hold does not retain an unknown holding, and Sell does not "
+            "trim or short. Unsupported conditions require an explicit cash abstention."
+            if contracted else
+            "- **Buy**: Strong conviction to enter or add to position\n"
+            "- **Overweight**: Favorable outlook, gradually increase exposure\n"
+            "- **Hold**: Maintain current position, no action needed\n"
+            "- **Underweight**: Reduce exposure, take partial profits\n"
+            "- **Sell**: Exit position or avoid entry"
+        )
+
         prompt = f"""As the Portfolio Manager, synthesize the risk analysts' debate and deliver the final trading decision.
 
 {instrument_context}
@@ -48,11 +69,7 @@ def create_portfolio_manager(llm):
 ---
 
 **Rating Scale** (use exactly one):
-- **Buy**: Strong conviction to enter or add to position
-- **Overweight**: Favorable outlook, gradually increase exposure
-- **Hold**: Maintain current position, no action needed
-- **Underweight**: Reduce exposure, take partial profits
-- **Sell**: Exit position or avoid entry
+{rating_scale}
 
 **Context:**
 - Research Manager's investment plan: **{research_plan}**
@@ -75,11 +92,23 @@ Write these sections, in this order, starting with the rating on its own line:
 
 {NO_EXTERNAL_TOOLS}{get_language_instruction()}"""
 
+        if get_config().get("lab_debate_ablation") == "no-risk":
+            prompt = prompt.replace(
+                "The risk debate always contains conflicting stances; deciding which is stronger is the job, so conflict alone is not a reason to Hold.",
+                "No risk debate was run. Evaluate the supplied research and trader plans directly; do not invent risk analyst statements.",
+            )
         # The typed rating is the decision; the rendered text only carries it.
         # Read back from text, a rating the thesis quotes could replace it.
-        decision = invoke_structured(structured_llm, prompt, "Portfolio Manager")
+        if contracted:
+            if structured_llm is None:
+                raise RuntimeError("The evaluation contract requires structured output")
+            decision = structured_llm.invoke(prompt)
+            if not isinstance(decision, ExecutionDecision):
+                raise ValueError("The final actor did not return an execution decision")
+        else:
+            decision = invoke_structured(structured_llm, prompt, "Portfolio Manager")
         if decision is not None:
-            final_trade_decision = render_pm_decision(decision)
+            final_trade_decision = render_evaluated_decision(decision, get_config()) if contracted else render_pm_decision(decision)
             final_rating = decision.rating.value
         else:
             final_trade_decision = llm.invoke(prompt).content
@@ -101,6 +130,7 @@ Write these sections, in this order, starting with the rating on its own line:
             "risk_debate_state": new_risk_debate_state,
             "final_trade_decision": final_trade_decision,
             "final_rating": final_rating,
+            **({"execution_decision": decision.model_dump(mode="json")} if contracted else {}),
         }
 
     return portfolio_manager_node

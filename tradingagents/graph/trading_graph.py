@@ -110,7 +110,10 @@ class TradingAgentsGraph:
         self.selected_analysts = tuple(selected_analysts)
 
         # Set up the graph: keep the workflow for recompilation with a checkpointer.
-        self.workflow = self.graph_setup.setup_graph(selected_analysts, memory_node=self._memory_step)
+        self.workflow = self.graph_setup.setup_graph(
+            selected_analysts, memory_node=self._memory_step,
+            debate_ablation=self.config.get("lab_debate_ablation"),
+        )
         self.graph = self.workflow.compile()
         self._checkpointer_ctx = None
         self._resuming = False
@@ -126,7 +129,14 @@ class TradingAgentsGraph:
         graph regardless of entry point.
         """
         identity = resolve_instrument_identity(ticker)
-        return build_instrument_context(ticker, asset_type, identity, trade_date)
+        context = build_instrument_context(ticker, asset_type, identity, trade_date)
+        if mandate := self.config.get("evaluation_mandate"):
+            from tradingagents.lab.execution import mandate_prompt
+            context += mandate_prompt(mandate)
+        if mode := self.config.get("evidence_mode"):
+            from tradingagents.lab.brief import brief_prompt
+            context += brief_prompt(self.config["replay_view"], mode)
+        return context
 
     def _memory_as_of(self, trade_date) -> str | None:
         """Point-in-time cutoff for past-context lessons (#1251).

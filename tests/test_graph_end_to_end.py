@@ -148,6 +148,33 @@ def test_a_full_run_reaches_a_logged_decision(tmp_path, monkeypatch, offline, st
 
 
 @pytest.mark.unit
+@pytest.mark.parametrize("ablation,removed_calls", [("no-research", 2), ("no-risk", 3)])
+def test_debate_ablation_executes_remaining_roles_and_preserves_reports(
+    tmp_path, monkeypatch, offline, ablation, removed_calls,
+):
+    full_model, reduced_model = ScriptedModel(), ScriptedModel()
+    full = _graph(tmp_path / "full", monkeypatch, full_model)
+    full.propagate("NVDA", TRADE_DATE)
+    reduced = _graph(tmp_path / "reduced", monkeypatch, reduced_model,
+                     lab_debate_ablation=ablation)
+    state, rating = reduced.propagate("NVDA", TRADE_DATE)
+    assert rating == "Overweight"
+    assert len(full_model.calls) - len(reduced_model.calls) == removed_calls
+    assert state["investment_plan"] and state["trader_investment_plan"]
+    assert all(state[k] for k in ("market_report", "sentiment_report", "news_report", "fundamentals_report"))
+    if ablation == "no-research":
+        assert state["investment_debate_state"]["count"] == 0
+        assert not state["investment_debate_state"]["bull_history"]
+        assert "Original analyst reports" in state["investment_debate_state"]["history"]
+        assert state["risk_debate_state"]["count"] == 3
+    else:
+        assert state["risk_debate_state"]["count"] == 0
+        assert state["risk_debate_state"]["history"] == ""
+        assert state["investment_debate_state"]["count"] == 2
+    assert full._run_signature("stock") != reduced._run_signature("stock")
+
+
+@pytest.mark.unit
 def test_an_interrupted_run_resumes_from_its_checkpoint(tmp_path, monkeypatch, offline):
     model = ScriptedModel(fail_at=12)            # past the analysts, before the decision
     graph = _graph(tmp_path, monkeypatch, model, checkpoint_enabled=True)
