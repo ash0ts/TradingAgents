@@ -19,6 +19,12 @@ treatment, trial, attempt, cohort, dataset_version, code_revision, outcome_statu
 and evaluation-link attributes beginning with `weave.eval.`. Historical market
 cutoffs are metadata, never substituted for actual span timestamps.
 
+For callers that must retain partial events after an exception, pass a fresh list
+as `config['forge_event_sink']` for each attempt. The callback appends to that
+caller-owned list even when no successful `forge_result` is returned. Model spans
+record cache-read and cache-creation input tokens separately when the provider
+reports them; repeated completion callbacks contribute usage only once.
+
 Inspect the run at https://forge.coreweave.com/agent-lens. Read Thread for the
 request and recommendation, Spans for agent/tool evidence, and Timeline for
 parallel activity and latency. Missing token usage is marked unknown locally;

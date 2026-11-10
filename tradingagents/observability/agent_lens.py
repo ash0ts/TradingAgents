@@ -131,6 +131,7 @@ class AgentLensCallback(BaseCallbackHandler):
                 span.usage = self.sdk.Usage(
                     input_tokens=sum(u.get("input_tokens", 0) for u in usage),
                     output_tokens=sum(u.get("output_tokens", 0) for u in usage),
+                    cache_creation_input_tokens=sum((u.get("input_token_details") or {}).get("cache_creation", 0) for u in usage),
                     cache_read_input_tokens=sum((u.get("input_token_details") or {}).get("cache_read", 0) for u in usage),
                     reasoning_tokens=sum((u.get("output_token_details") or {}).get("reasoning", 0) for u in usage),
                 )
@@ -223,6 +224,8 @@ def decision_scope(config, ticker, date, signature=""):
             with conversation.start_turn(user_message=f"Evaluate {ticker} using information available through {date}.") as turn:
                 turn.set_attributes(attrs)
                 handler = AgentLensCallback(sdk, turn, attrs)
+                if "forge_event_sink" in config:
+                    handler.events = config["forge_event_sink"]
                 handler.conversation_id = cid
                 handler.url = conversation_url(project, cid)
                 token = _active.set(handler)

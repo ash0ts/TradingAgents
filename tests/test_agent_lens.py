@@ -76,3 +76,30 @@ def test_redaction_and_url(monkeypatch):
     monkeypatch.setenv("EXAMPLE_API_KEY", "private-example-key")
     assert lens.redact({"api_key": "x", "report": "private-example-key"}) == {"report": "[REDACTED]"}
     assert lens.conversation_url("wandb/project", "a/b").endswith("/a%2Fb")
+
+
+def test_cache_write_usage_and_error_events_survive_scope_exit(spans):
+    events = []
+    config = {"forge_project": "wandb/test", "forge_event_sink": events}
+    with pytest.raises(RuntimeError, match="provider unavailable"), lens.decision_scope(config, "AAPL", "2024-11-04") as handler:
+        model = uuid4()
+        handler.on_chat_model_start({}, [[HumanMessage("Fixture request")]], run_id=model,
+                                    metadata={"ls_model_name": "test-model"})
+        response = LLMResult(generations=[[ChatGeneration(message=AIMessage(
+            "Fixture response", usage_metadata={"input_tokens": 1000, "output_tokens": 100,
+                "total_tokens": 1100, "input_token_details": {"cache_read": 200, "cache_creation": 500}}
+        ))]])
+        handler.on_llm_end(response, run_id=model)
+        handler.on_llm_end(response, run_id=model)
+        failed = uuid4()
+        handler.on_chat_model_start({}, [[HumanMessage("Failing request")]], run_id=failed)
+        error = RuntimeError("provider unavailable")
+        handler.on_llm_error(error, run_id=failed)
+        raise error
+    model_spans = [s for s in spans.get_finished_spans() if s.name.startswith("chat")]
+    assert len(model_spans) == 2
+    assert sum(s.attributes.get("gen_ai.usage.cache_creation.input_tokens", 0) for s in model_spans) == 500
+    assert sum(s.attributes.get("gen_ai.usage.cache_read.input_tokens", 0) for s in model_spans) == 200
+    assert len([e for e in events if e["kind"] == "llm"]) == 1
+    assert any(e["kind"] == "error" and e["run_id"] == str(failed) for e in events)
+    assert all(s.end_time is not None for s in spans.get_finished_spans())
