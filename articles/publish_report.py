@@ -80,7 +80,7 @@ def files():
         ]
     ]
     for p in paths:
-        assert p.suffix in {".png", ".svg", ".csv", ".json", ".md", ".zip"}
+        assert p.suffix in {".png", ".jpg", ".svg", ".csv", ".json", ".md", ".zip"}
         if p.suffix in {".svg", ".csv", ".json", ".md"}:
             body = p.read_text()
             assert not re.search(
@@ -190,6 +190,10 @@ def publish(receipt):
     if not evidence_backup.exists():
         evidence_backup.parent.mkdir(parents=True, exist_ok=True)
         evidence_backup.write_text(json.dumps(current_obj, indent=2) + "\n")
+    ablation_backup = ROOT / "private-evidence/debate-ablation/forge-report-before.json"
+    if not ablation_backup.exists():
+        ablation_backup.parent.mkdir(parents=True, exist_ok=True)
+        ablation_backup.write_text(json.dumps(current_obj, indent=2) + "\n")
     original = json.loads(backup.read_text())
     original_report = wr.Report._from_model(type(report._to_model()).model_validate(original))
     original_panels = [b for b in original_report.blocks if isinstance(b, wr.PanelGrid)]
@@ -216,9 +220,14 @@ def publish(receipt):
             json.loads((ROOT / "evidence-panel-grid.json").read_text())
         )
     )
+    panels["ablation"] = wr.PanelGrid._from_model(
+        type(original_panels[0]._to_model()).model_validate(
+            json.loads((ROOT / "ablation-panel-grid.json").read_text())
+        )
+    )
     panel_models = [
         panels[k]._to_model().model_dump(mode="json")
-        for k in ["financial", "internals", "behavior", "scenarios", "corrected", "evidence"]
+        for k in ["financial", "internals", "behavior", "scenarios", "corrected", "evidence", "ablation"]
     ]
     title, body = article_blocks(SLUGS[0], receipt, panels)
     blocks = [wr.TableOfContents(), *body]
@@ -266,6 +275,14 @@ def publish(receipt):
         "handoff_engineering_regressions": 8,
         "main_complete_native_conversations": 359,
         "handoff_complete_native_conversations": 8,
+        "ablation_panels_added": 2,
+        "ablation_executions": 720,
+        "ablation_market_dates": 8,
+        "ablation_complete_native_conversations": 720,
+        "ablation_actor_completions": 716,
+        "ablation_actor_failures_preserved": 4,
+        "ablation_spans": 24818,
+        "ablation_model_calls": 7804,
         "panel_layout": "Fluid width; financial panels h=11 so all 13 method labels fit. Data, filters and IDs preserved.",
         "source_sha256": {s: sha((ROOT / s / "article.md").read_bytes()) for s in SLUGS},
         "before_sha256": sha(backup.read_bytes()),

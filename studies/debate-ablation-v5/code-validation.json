@@ -1,0 +1,29 @@
+{
+  "checked_at": "2026-11-10",
+  "phase": "Post-study infrastructure fixes; no new paid execution",
+  "pytest": {
+    "passed": 1502,
+    "subtests_passed": 100,
+    "skipped": 1,
+    "deselected": 1,
+    "warnings": 24,
+    "skip_reason": "Optional langchain_aws dependency absent",
+    "deselected_reason": "Paid integration test excluded"
+  },
+  "ruff": "passed",
+  "public_reproduction": "public-reproduction.json",
+  "execution_revision": "7bda8894bc306af4f868bfcffbfd41c9f5064cdb",
+  "execution_tag": "tradingagents-debate-v5-main-execution",
+  "post_study_fixes": {
+    "native_integration_commit": "0666064",
+    "evaluation_commit": "7e380a5",
+    "scope": [
+      "Native cache-write usage field",
+      "Caller-owned partial trace events",
+      "Decimal cache-write pricing",
+      "Failed prediction event persistence"
+    ]
+  },
+  "frozen_result_sha256": "4b608feba9d1b3c7307bd5f769a1606806c3d89a611d1375f2e03ae484f34759",
+  "github_actions": "Pending remote verification"
+}

@@ -8,6 +8,7 @@ Opening those notes changed the question. Our simulator had discarded the condit
 
 This is the experiment, including the repairs. Agent Lens lets us follow a dollar result into the actual analyst reports, model requests and tool responses. Forge holds the comparisons, saved notebooks, dashboards and versioned evidence. Each rerun keeps the earlier trial visible. The questions are the ones an investor would recognize: did stock selection help, did cash protect the account, did the order match the advice, and was there enough evidence to trade at all?
 
+The final 720-attempt study changed the ranking again. The single analyst that looked promising in the earlier comparison fell behind the full committee. Yet the committee chose the same allocation across three fresh runs in only **22 of 60 cases**, and every planned performance comparison remained uncertain. We had made the orders inspectable and executable. We still had a fairly opinionated position-sizing machine.
 
 ![Five-step evidence chain: freeze one case, execute TradingAgents locally, inspect native Agent Lens spans, link the evaluation, and explore saved Forge Notebook results.](assets/evidence-chain.png)
 
@@ -31,7 +32,7 @@ To investigate a result, open its saved notebook row, follow the Agent Lens conv
 
 <!-- native-panel:financial -->
 
-The election supplied the premise, with an awkward but useful deadline. This release freezes market data through **November 5, 2026**. Its current-midterm five-session outcomes remain pending, including in this November 9 article revision. The opening results come from older cohorts. Keeping that freeze lets readers reproduce the original comparison.
+The election supplied the premise, with an awkward but useful deadline. This release freezes market data through **November 5, 2026**. Its current-midterm five-session outcomes remain pending, including in this November 10 article revision. The opening results come from older cohorts. Keeping that freeze lets readers reproduce the original comparison.
 
 ## Open the worst trade before blaming the committee
 
@@ -105,7 +106,7 @@ We have **not** run an earnings-surprise benchmark or a crash benchmark. Those n
 
 The [TradingAgents paper](https://arxiv.org/abs/2412.20138v7) describes specialists preparing reports, bull and bear researchers debating positions, and trading and risk roles working toward a recommendation. Our fork retains that inspectable structure. It changes the models, dates, evidence delivery, and evaluation procedure, so this study is a separate measurement rather than a reproduction of the paper's backtest.
 
-There are three LLM treatments: the repository-default Luna/Sol committee, an all-Luna committee, and a single Luna analyst receiving a compact evidence bundle. Each runs twice on every case. AAPL, MSFT, NVDA, JPM, XOM, and UNH appear on the trading sessions immediately before and after each anchor, with SPY as the benchmark:
+The original comparison has three LLM treatments: the repository-default Luna/Sol committee, an all-Luna committee, and a single Luna analyst receiving a compact evidence bundle. Each runs twice on every case. Later experiments change the instructions and repetition count explicitly. AAPL, MSFT, NVDA, JPM, XOM, and UNH appear on the trading sessions immediately before and after each anchor, with SPY as the benchmark:
 
 | Cohort | Anchor | Five-session outcomes at the freeze |
 |---|---|---|
@@ -153,17 +154,21 @@ Six selected findings received a **Codex assistant review**, explicitly labeled 
 
 *Selected assistant reviews, not a human-labeled benchmark or an estimate of the population false-positive rate. The [review export](../evidence/assistant-reviews.csv) preserves the rationales and evidence digests. [Full-size image](assets/reviewed-candidates.png).*
 
-The [investigation notebook](https://forge.coreweave.com/notebooks/Tm90ZWJvb2s6MTUyNzE%3D) keeps candidate tags separate from reviewed findings and exports the confirmed case into a versioned regression dataset. We did not enable an uncalibrated LLM judge. Anthropic's [agent-evaluation guide](https://www.anthropic.com/research/demystifying-evals-for-ai-agents) provides useful context for combining code, model, and human graders. Here, the next review should include a domain expert and unflagged cases too. Once a discovered case informs a fix, it becomes development evidence; we cannot sell it back to ourselves as an untouched test.
+The [investigation notebook](https://forge.coreweave.com/notebooks/Tm90ZWJvb2s6MTUyNzE%3D) keeps candidate tags separate from reviewed findings and exports the confirmed case into a versioned regression dataset. We did not enable an uncalibrated LLM judge. Anthropic's [agent-evaluation guide](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents) provides useful context for combining code, model, and human graders. Here, the next review should include a domain expert and unflagged cases too. Once a discovered case informs a fix, it becomes development evidence; we cannot sell it back to ourselves as an untouched test.
 
 ## Use Insights when it has evidence; keep investigating when it does not
 
-We checked the project's native Insights page on November 9 and queried its status again after the matched-evidence campaign below. It still had **no completed clustering run** and no classified weeks. The UI says Insights runs daily after a project accumulates **1,000 new turns**. Our three completed 360-run campaigns now exceed that count, before qualification and the stopped pilot, so the count alone no longer explains the absence of results. Eligibility does not mean a completed daily job. We did not manufacture conversations or present the onboarding illustration as analysis.
+On November 9, the project's native Insights page had **no completed clustering run** and no classified weeks. Its onboarding screen said Insights runs daily after a project accumulates **1,000 new turns**. The trading campaigns subsequently exceeded that count; reaching the threshold did not establish that a daily clustering job had completed.
 
-![The actual Agent Lens Insights onboarding page states that Insights runs daily once a project has 1,000 new turns since the last run.](assets/lens-insights-eligibility.png)
+The [November 9 capture](assets/lens-insights-eligibility.png) preserves that earlier state. Its chart is the product's onboarding illustration, not results from this study.
 
-*Actual project state on November 9. The chart on the right is the product's onboarding illustration, not results from this study. [Latest recorded availability check](https://github.com/ash0ts/TradingAgents/blob/codex/tradingagents-forge-notebooks/studies/common-evidence-v3-repaired/insights-status.json). [Full-size image](assets/lens-insights-eligibility.png).*
+The November 10 check produced a more instructive trap. Insights displayed **“Missed requirement — 100% of turns.”** Its denominator was one turn: our synthetic arithmetic fixture for testing trace recovery, described below. It was not a TradingAgents decision. The page still reported no completed clustering run. We excluded that fixture from every trading count and recorded the [actual category and example](https://github.com/ash0ts/TradingAgents/blob/codex/tradingagents-forge-notebooks/studies/debate-ablation-v5/insights-status.json).
 
-The [documented Insights workflow](https://docs.coreweave.com/products/agent-lens/insights) groups turns by intent or failure and provides example conversations to inspect. Once eligible, we would examine categories such as task misunderstanding and missed requirements, then compare their examples with the actual request. A category or generated cluster name would still need that review. Financial loss alone cannot establish a behavioral failure, and the agent trace cannot reveal a simulator's discarded condition unless we also inspect the execution rule.
+![Actual Agent Lens Insights page on November 10: no completed clustering run, one classified turn, and a synthetic export-recovery fixture as its only example.](assets/lens-insights-fixture-only.jpg)
+
+*The denominator is visible: one turn and one conversation. The example asks for a local arithmetic export test. The displayed 100% is not a TradingAgents failure rate. [Full-size image](assets/lens-insights-fixture-only.jpg).*
+
+The [documented Insights workflow](https://docs.coreweave.com/products/agent-lens/insights) supplies categories and example conversations to inspect. We need that inspection before treating a category as a finding about the experiment. Financial loss alone cannot establish a behavioral failure; a trace also cannot reveal that our simulator discarded a condition unless we inspect the execution rule.
 
 For this release, we added three native saved views: **conditional wording candidates**, **explicit missing horizon**, and **assistant-reviewed handoffs**. Open them from the [internals dashboard](https://forge.coreweave.com/wandb/wandb/tradingagents-election-lab?nw=dufjini1rvb). The first two use deterministic tags; the third contains the five reviewed examples above. These are our checks and reviews, not findings produced by native Insights clustering. The public dashboard exposes the derived tables; conversation links require team access.
 
@@ -187,11 +192,11 @@ Hosted readback reconciled **360 trading conversations, 15,058 spans, and 4,149 
 
 *The native [committee notebook](https://forge.coreweave.com/notebooks/Tm90ZWJvb2s6MTUyNjA%3D), captured November 6. All three hosted notebooks were saved, executed on their stored results, and reopened for verification. The campaign itself ran locally; the notebook button for starting a new paid agent run was not exercised. [Full-size image](assets/forge-notebook-roles.png).*
 
-Cost and latency help decide which conversations deserve attention. The default committee averaged roughly 120 seconds and $0.038 in model charges per execution. All-Luna took about 118 seconds and $0.015; the single analyst about 18 seconds and $0.011. Those differences include changes in model, prompt objective, and evidence delivery, so they cannot isolate the cost of debate alone.
+Cost and latency help decide which conversations deserve attention. The default committee averaged roughly 120 seconds, with an initial model-cost estimate of $0.038 per execution. All-Luna took about 118 seconds and $0.015; the single analyst about 18 seconds and $0.011. Those differences include changes in model, prompt objective, and evidence delivery, so they cannot isolate the cost of debate alone.
 
 ![Mean elapsed time and model charge per run: default committee about 120 seconds and $0.038, all-Luna about 118 seconds and $0.015, and single analyst about 18 seconds and $0.011.](assets/latency-and-model-cost.png)
 
-*120 executions per treatment. Model charges exclude infrastructure and unmetered local hardware. [Full-size image](assets/latency-and-model-cost.png).*
+*120 executions per treatment. These preserved original estimates omit the cache-write premium corrected in the final accounting below; they exclude infrastructure and unmetered local hardware. [Full-size image](assets/latency-and-model-cost.png).*
 
 ![Real Forge dashboard panels comparing recorded model charges and decision latency for the three agent treatments.](assets/forge-behavior-dashboard.png)
 
@@ -246,7 +251,7 @@ Entry is at the next session's close, followed by liquidation five sessions late
 
 *Separate vertical scales; selected methods for readability. [All 13 fee sensitivities](../evidence/fee-sensitivity.csv) use the same matured scenarios. These fee assumptions do not estimate every historical spread or market impact. [Full-size image](assets/fee-sensitivity.png).*
 
-I would take the promising simpler methods into a new window, rather than keep retuning this one. [Backtest-overfitting research](https://www.davidhbailey.com/dhbpapers/backtest-prob.pdf) explains why choosing a winner after inspecting many historical alternatives creates its own optimism. We did not estimate that paper's probability-of-overfitting measure. The practical consequence here is to keep this release frozen and register the next comparison before seeing its outcomes.
+I would take the promising simpler methods into a new window, rather than keep retuning this one. [Backtest-overfitting research](https://doi.org/10.21314/jcf.2016.322) explains why choosing a winner after inspecting many historical alternatives creates its own optimism. We did not estimate that paper's probability-of-overfitting measure. The practical consequence here is to keep this release frozen and register the next comparison before seeing its outcomes.
 
 ## Ask whether the result survives the trade
 
@@ -306,7 +311,7 @@ The mandate is deliberately narrower than an election analyst's job. News, socia
 
 We froze two arms. **Shared brief** uses that evidence and the execution contract. **Required citations** additionally asks the final decision to name its supporting fact IDs, exact values, units and observation dates, and list the missing sources. Invalid references block the trade. A deterministic receipt calculates stock principal, entry fees and remaining cash, separately from the model's explanation and any future fill.
 
-Our first attempt promptly found a bug in our own instructions. We had told the model to copy a brief hash and a missing-source list into a field intended for missing sources. One MSFT response supplied 13 correct citations and put the hash in that list. The checker rejected it. We stopped new launches, let started work finish and preserved all **40 pilot decisions**. Their $1.247739 cost, including qualification, still counts. Their incomplete schedule does not enter the financial comparison. The repaired instruction leaves provenance hashes to the harness and constrains the five missing-source names; qualification includes the exact failed MSFT case.
+Our first attempt promptly found a bug in our own instructions. We had told the model to copy a brief hash and a missing-source list into a field intended for missing sources. One MSFT response supplied 13 correct citations and put the hash in that list. The checker rejected it. We stopped new launches, let started work finish and preserved all **40 pilot decisions**. Their initial $1.247739 cost estimate, including qualification, remains in the record; the final accounting below adds the omitted cache-write premium. Their incomplete schedule does not enter the financial comparison. The repaired instruction leaves provenance hashes to the harness and constrains the five missing-source names; qualification includes the exact failed MSFT case.
 
 The completed comparison is **60 stock/date cases × three systems × two arms × one trial: 360 executions**. Qualification cost selected that balanced design before the full run. All five cohorts remain; the 2026 five-session outcomes are still pending at the November 5 freeze. The [protocol and all individual trials](https://github.com/ash0ts/TradingAgents/tree/codex/tradingagents-forge-notebooks/studies/common-evidence-v3-repaired) retain the original and contract-only executions too. An unscheduled second trial is a null, not a zero or a failure.
 
@@ -353,7 +358,7 @@ We left the completed 360-run campaign frozen and repaired the handoff separatel
 
 We selected two already-reviewed UNH cases, both evidence arms and both committees: **eight separate engineering regressions**. All eight returned a valid five-rating trader proposal, with the same mandate and consistent action/weight fields. Hosted readback verified **378 spans and 124 model calls**; every span ID also exists in the private journal. The [paired before/after records](https://github.com/ash0ts/TradingAgents/tree/codex/tradingagents-forge-notebooks/studies/trader-handoff-v4) link each new proposal to its previous conversation.
 
-Those checks cost **$0.300438**. They establish that the repaired handoff works on these selected cases. They do not establish improved returns, and we did not blend them into the completed financial comparison. Recommendations can change between stochastic executions; the test checks the contract, not whether the new run repeats an old opinion.
+Those checks initially recorded **$0.300438**, before the cache-write correction below. They establish that the repaired handoff works on these selected cases. They do not establish improved returns, and we did not blend them into the completed financial comparison. Recommendations can change between stochastic executions; the test checks the contract, not whether the new run repeats an old opinion.
 
 ![Actual Forge investigation notebook displaying all eight original and repaired trader actions, proposed weights, final weights and accepted gates.](assets/forge-handoff-notebook.png)
 
@@ -361,7 +366,7 @@ Those checks cost **$0.300438**. They establish that the repaired handoff works 
 
 There was a separate observability failure. Native readback found **11,822 spans and 3,910 model calls**, one fewer model call than the local records. An export timeout lost the Bull Researcher subagent and its model span in one AAPL conversation. The local response and charge survive; its exact request does not. The dashboard therefore reports **359/360 complete traces**. That execution remains in the financial results. We neither reconstructed a request nor reran the model to make the trace look complete.
 
-The follow-up adds an optional private journal of actual ended native spans, retaining their original IDs, parentage and timestamps. A failed-export fixture verifies that the payload survives; the eight engineering runs compare the journal's span IDs with hosted readback. A flush is a request to finish export work, not a substitute for checking delivery. The journal can recover a future missing export without another model call. It cannot repair the unjournaled gap in this campaign.
+The follow-up adds a private journal of actual ended native spans, retaining their original IDs, parentage and timestamps. We tested it against an HTTP server that deliberately rejected export with **503**. `force_flush()` returned true; hosted storage contained **zero spans**. Replaying the saved payloads restored both original spans, including the tool's arguments and result, with **zero model calls**. The [recovery receipt](https://github.com/ash0ts/TradingAgents/blob/codex/tradingagents-forge-notebooks/studies/debate-ablation-v5/trace-recovery-probe.json) records these checks. This verifies recovery when the journal survives. It cannot recover the earlier unjournaled request or a payload lost before it reaches disk.
 
 The [matched-evidence dashboard](https://forge.coreweave.com/wandb/wandb/tradingagents-election-lab?nw=94cw9owsbt4) separates accepted orders, stock-selection P&L, total trading P&L, invested capital, model expense, citation checks and trace completeness. Its run tables retain every trial, the 36 reviews and the stopped pilot. The financial notebook adds the strongest, weakest and fixed-seed random account for each arm and system, with all six constituent conversation links.
 
@@ -371,16 +376,82 @@ The [matched-evidence dashboard](https://forge.coreweave.com/wandb/wandb/trading
 
 <!-- native-panel:evidence -->
 
+## Give each meeting a chance to earn its place
+
+An unchanged recommendation after a debate tells us very little about what would happen without that debate. We tested the omission directly, after repairing the trader handoff. Every role used Luna, every system received the same frozen brief and mandate, and every case ran three times with fresh state. The [protocol](https://github.com/ash0ts/TradingAgents/tree/codex/tradingagents-forge-notebooks/studies/debate-ablation-v5) fixed all three comparisons before the main run. These remain previously inspected development dates.
+
+| Workflow | What ran |
+|---|---|
+| Full committee | Analysts, bull/bear research debate, trader, risk debate and final manager |
+| No research debate | Original analyst reports went straight to the Research Manager; risk debate remained |
+| No risk debate | Research and trader plans went straight to the Portfolio Manager |
+| Single analyst | One structured decision from the same evidence and mandate |
+
+Removing a stage changes its messages and its computation together. We did not give the shorter workflows an equal token budget, or include a committee with both debates removed. This tests those specific pipeline changes; it cannot isolate a universal effect of collaboration. [Smit and colleagues](https://arxiv.org/abs/2311.17371v3) found debate performance sensitive to its configuration, while [recent reasoning research](https://arxiv.org/abs/2610.04686v1) reports gains under proposal and verification controls. Neither is an investment study or a reason to assume our committee benefits from another meeting.
+
+Agent Lens lets us verify the intervention before interpreting its score. The recorded manager request below has an empty risk history and an explicit instruction that no risk debate ran. Hosted span readback checks that the omitted roles really are absent and the retained roles ran. A configuration flag alone would be weaker evidence.
+
+![Actual Agent Lens request to the Portfolio Manager: no risk debate was run, evaluate the supplied research and trader plans directly, and do not invent risk analyst statements.](assets/lens-no-risk-instruction.jpg)
+
+*AAPL after the 2023 control date, trial zero: part of the prespecified review sample, selected before financial analysis. This is the actual request, not an illustration of the intended prompt. [Full-size image](assets/lens-no-risk-instruction.jpg).*
+
+We finished **720 scheduled attempts**: 651 accepted execution contracts, 65 explicit cash abstentions and four provider HTTP 520 failures. Seven accepted contracts also allocate zero. The failures stay as cash, with unknown call charges reserved; none was retried. Hosted readback verified all **720 conversations, 24,818 spans and 7,804 model calls**, including the original journal IDs and evaluation links. That is trace completeness, not 720 successful investment decisions.
+
+The financial question is whether selecting these stocks helped relative to putting the same allocations into SPY. We average three executions within each date, then compare the eight matured dates. Each row below still represents independent $100,000 scenarios, never a concatenated equity curve.
+
+| Workflow | Mean trading P&L | Mean selection P&L above same-allocation SPY | Model-cost upper estimate for 180 attempts |
+|---|---:|---:|---:|
+| Full committee | $105.66 | +$32.42 | $3.379940 |
+| No research debate | $183.73 | +$38.64 | $2.751820 |
+| No risk debate | $65.52 | −$33.10 | $2.421843 |
+| Single analyst | $98.01 | −$83.95 | $0.139322 |
+
+*Eight matured dates, three trials per date, 10 basis points per side. Model expense is separate from trading P&L. Cost includes cache-write corrections and four unknown-call reserves, explained below. The 2026 outcomes remain pending. [Exact summaries](assets/debate-summaries.csv).*
+
+Dropping research debate changed selection P&L by **+$6.22** per account, with an exploratory interval from **−$48.32 to +$60.77**. Dropping risk debate changed it by **−$65.51**; using one analyst changed it by **−$116.37**. All three intervals include zero. The cohort markers show why I would hesitate to put a winner's badge on any of these bars.
+
+![All three planned selection-P&L contrasts against the full committee, with every historical cohort shown: no research plus $6, no risk minus $66, single analyst minus $116. All exploratory intervals cross zero.](assets/debate-paired-cohorts.png)
+
+*Three trials averaged within date; four before/after cohort blocks resampled together. The intervals describe this small development sample. [Every date difference and exclusion sensitivity](assets/debate-contrasts.csv). [Full-size image](assets/debate-paired-cohorts.png).*
+
+Leave out the 2022 cohort and the single analyst's deficit shrinks from **$116.37 to $13.96**. Removing risk debate helps in the 2025 control cohort and hurts in the other three. The exact four-block sign-flip sensitivity cannot produce a two-sided value below 0.125; all three Holm-adjusted values are 1.0. That does not establish equality. It tells us how little independent market evidence sits behind 720 agent executions.
+
+The repeated decisions are more immediately actionable. The full committee returned one allocation across all three runs in **22/60 cases**. Without research debate that count was **31/60**; without risk debate, **16/60**. The single analyst was the most consistent at **37/60**, while having the lowest mean selection P&L in this iteration. Consistency alone would have picked the wrong financial leader in this sample.
+
+![Across three fresh executions of every frozen case, the allocation stayed the same in 22 of 60 full-committee cases, 31 without research debate, 16 without risk debate, and 37 for the single analyst.](assets/debate-repeatability.png)
+
+*All 60 cases per workflow, including pending outcomes and failures held as cash. These are observed allocation agreements, not accuracy estimates. [Full-size image](assets/debate-repeatability.png).*
+
+In the prespecified AAPL example above, the full committee chose cash while the other three workflows allocated 25%. Their reports all discussed weak historical relative returns, higher volatility and missing near-term evidence. The disagreement was over how much exposure those facts justified. One example cannot prove that debate caused a particular allocation, but the trace makes the decision boundary available to review instead of hiding it behind a rating.
+
+We inspected **40 prespecified cases**: AAPL, trial zero, every cohort and side, all four workflows. The 39 completed decisions had consistent summaries and typed orders within that review's scope; one had no final decision because of the provider error. This was a Codex assistant contract review, not independent financial adjudication. It also exposed a separate arithmetic error: the single analyst called **0.1084 percentage points** smaller than a **10-basis-point fee on one side**. Ten basis points is 0.10 percentage points. The single-side comparison is false, even though the 50% order is encoded correctly. We saved the [original claim and unit check](https://github.com/ash0ts/TradingAgents/blob/codex/tradingagents-forge-notebooks/studies/debate-ablation-v5/regressions.json) as a development regression case and a reviewed native tag. We do not infer its effect on returns, or an overall factual-error rate, from that finding.
+
+For another study, the full committee versus no research debate is a concrete comparison to carry forward. Omitting research reduced mean latency from **119 to 85 seconds** and model expense from **$3.38 to $2.75 across 180 attempts**, with a small observed mean selection difference. We have not established noninferiority. A new window, sealed decisions and a declared acceptable loss margin would be needed to make that judgment. More prompt adjustments on these same eight dates would mainly make us better at this backtest.
+
+The [repeated-study dashboard](https://forge.coreweave.com/wandb/wandb/tradingagents-election-lab?nw=tmuo3ynvgek) contains six native panels and 20 public tables. Its saved Agent Lens views isolate each workflow, the four failed attempts, the 40 assistant-reviewed cases and the numerical-comparison finding. Every decision retains its evidence hash and authenticated conversation link.
+
+![Actual Forge dashboard showing selection P&L for all four workflows: positive bars for the full committee and no research debate, negative bars for no risk debate and the single analyst.](assets/forge-debate-dashboard.jpg)
+
+*The saved native selection panel, November 10. Horizontal values are mean dollars per $100,000 scenario above the same-allocation SPY control. The cohort figure supplies the uncertainty this bar chart cannot show. [Full-size image](assets/forge-debate-dashboard.jpg).*
+
+<!-- native-panel:ablation -->
+
 ## Open the evidence, then decide what to change
 
 The [trading evidence package](../evidence/tradingagents-public-evidence.zip) contains 960 predictions, 2,880 horizon scores, 640 portfolio scenarios, source coverage, paired comparisons, selected reviews, and a hash manifest. The [reproduction guide](../evidence/README.md) defines the joins, units, and access limits. The [scenario extension](../trading-scenarios/README.md) supplies another 1,120 reconciled accounts and the inputs required to rebuild them without a model call or licensed raw quotes.
 
 The [internals audit](../internals/README.md) adds 360 derived observation rows and five selected reviews without changing those original records. Its native dashboard contains the result-to-conversation links, and its public exports contain the check definitions, short reviewed excerpts and source hashes. This pass made no new model or judge calls.
 
-The original and contract-only campaigns, including qualification and an excluded prototype, cost **$15.468169** in known model charges. The stopped pilot, matched-evidence campaign, qualification and eight handoff checks add **$10.710423**, for **$26.178592** total. A separate **$179.99 infrastructure reservation** remains held against the **$250 cap**, awaiting invoice reconciliation; it is not recorded spend. Known charges plus reservations are **$206.168592**. Local training hardware is unmetered. Publication reuses saved results.
+The cost audit found one more bug in our own measurement: the ledger retained cache-write usage but priced it as ordinary input. Correcting that premium added **$4.535997** across the study history. Original predictions and older exported estimates remain unchanged; the new results expose the correction. The frozen native integration also omitted the cache-write field, so its cost charts cannot replace the corrected independent ledger. Input, output and cache-read reconciliation are narrower checks.
+
+We disclosed an [accounting and audit amendment](https://github.com/ash0ts/TradingAgents/blob/codex/tradingagents-forge-notebooks/studies/debate-ablation-v5/analysis-amendment.json) during execution, before inspecting final financial results. Correct pricing would have pushed the original twofold qualification projection above the $30 follow-up subcap and selected two trials. We retained the already-running three-trial schedule with an extra $6 accounting hold and the same hard caps. That is a design-selection deviation, even though the eventual cost fit. The hold has now been released; the amendment also documents how failed-call traces were audited when their prediction files lacked callback events.
+
+The final main ablation used **$8.640683** in known-usage model estimates plus **$0.052242** reserved for four unknown calls. Across all iterations, known-usage model estimates total **$38.527203**. Add those unknown calls and the existing **$179.99 infrastructure hold**, and the ledger upper estimate is **$218.569445 against $250**. The combined follow-up upper estimate is **$21.006446 against $30**. These are list-price calculations and reservations; invoice reconciliation remains pending. Local training hardware is unmetered. Publication reuses saved results and launches no new notebook compute.
 
 The [matched-evidence package](https://github.com/ash0ts/TradingAgents/tree/codex/tradingagents-forge-notebooks/studies/common-evidence-v3-repaired) adds every new decision, 240 account scenarios across four fee settings, 36 reviews, the stopped pilot, and a standard-library reproduction script. Its 280 per-dollar account factors reproduce all 192 matured scenarios without raw licensed quotes; 48 scenarios remain pending. The eight handoff regressions have their own frozen protocol and export. Raw reports and native payloads stay in the private companion project.
 
-The three Forge Notebooks remain practical workspaces: [meet the committee](https://forge.coreweave.com/notebooks/Tm90ZWJvb2s6MTUyNjA%3D), [investigate its behavior](https://forge.coreweave.com/notebooks/Tm90ZWJvb2s6MTUyNzE%3D), and [compare financial outcomes](https://forge.coreweave.com/notebooks/Tm90ZWJvb2s6MTUyNzI%3D). This single article supplies the narrative across them. The code remains in six dependent draft PRs in the personal fork, with no Forge or Agent Lens product changes.
+The [repeated-ablation package](https://github.com/ash0ts/TradingAgents/tree/codex/tradingagents-forge-notebooks/studies/debate-ablation-v5) adds all 720 attempts, the three planned contrasts, repeated-allocation records, 40 reviews and strongest, weakest and fixed-seed random accounts. Public per-dollar factors independently reproduce **384 matured accounts**, with **96 pending** across four fee settings. Raw reports, requests, the ledger snapshot and original span journal remain in the private companion project.
 
-The execution contract is now implemented and its development results are visible. The matched-evidence follow-up addresses benchmark access and the missing-source policy; a forward study still needs richer event evidence and broader factual review. The useful outcome is a trading experiment whose instructions, orders and scores can be challenged all the way down to the recorded request. Eight historical dates still do not tell me to hand it the money.
+The three Forge Notebooks preserve the earlier saved studies: [meet the committee](https://forge.coreweave.com/notebooks/Tm90ZWJvb2s6MTUyNjA%3D), [investigate its behavior](https://forge.coreweave.com/notebooks/Tm90ZWJvb2s6MTUyNzE%3D), and [compare financial outcomes](https://forge.coreweave.com/notebooks/Tm90ZWJvb2s6MTUyNzI%3D). They were not rerun for this final ablation; its new results live in the dashboard, native panels and evidence package. This single article supplies the narrative across the iterations. The code remains in six dependent draft PRs in the personal fork, with no Forge or Agent Lens product changes.
+
+I would keep the repaired execution contract, the common evidence brief and the trace-to-account checks. They let us find a condition the simulator ignored, a conflicting trader instruction, a missing exported request and a numerical explanation that passed its order schema. I would take the full committee, the shorter research workflow and simpler controls into a forward study with timestamped event evidence and independent domain review. The remaining uncertainty needs new market dates. Another agreeable committee transcript will not supply them.

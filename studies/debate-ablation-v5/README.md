@@ -132,12 +132,60 @@ combined follow-up model subcap stay in the same durable SQLite ledger. Reserve
 each call before dispatch; preserve unknown charges at their reserved amount.
 Publication uses saved results and launches no notebook compute or model judge.
 
+### Disclosed analysis and accounting amendment
+
+At 243 completed executions, before inspecting the main financial results, we
+published `analysis-amendment.json` and its implementation to the existing Forge
+project. Provider HTTP 520 errors exposed an audit assumption: failed predictions
+do not contain the callback events that successful predictions save. The separate
+failure audit checks original journal IDs, native parentage and requests, and
+the durable ledger's dispatched-call counts and reported usage. Error calls keep
+unknown usage and reserved charges. They remain cash outcomes, without retries.
+
+The original ledger also omitted the 25% premium on cache-write tokens. A $6 hold
+was added within the existing caps while execution continued. The final accounting
+corrects settled calls from their recorded usage and releases that hold. Original
+predictions and historical exports remain immutable. The new derived rows expose
+their original estimate and correction; financial P&L before model expense and
+all primary contrasts are unchanged.
+
+The frozen native integration recorded input, output and cache-read tokens but
+omitted the cache-write usage field. Native span reconciliation therefore does
+not establish that native cost charts include every pricing category. The raw
+ledger usage retains cache-write counts; the corrected independent ledger is
+the cost authority for this release. Future-code fixes are separate from the
+execution tag and do not rewrite the original spans.
+
+This pricing error affected the qualification-margin rule. Corrected qualification
+costs would project $31.129641 including the earlier follow-up costs at the original
+twofold margin, above the $30 subcap; that rule would select six stocks/two trials.
+We retained the already-running six-stock/three-trial schedule under the unchanged
+hard caps and additional accounting hold. This is a recorded design-selection
+deviation. We do not present the original qualification estimate as correct or
+hide the deviation because actual charges may be lower than that projection.
+
+Use `scripts/finalize_debate_ablation.py` for the amended private re-audit. It wraps
+the unchanged frozen exporter, applies the separate failure audit and updates only
+derived cost accounting. `analysis-amendment-publication.json` identifies the
+timestamped Forge artifact containing its exact source. Full raw re-audit requires
+the actor code at `tradingagents-debate-v5-main-execution`, those amendment files,
+the recorded environment, private predictions, ledger and journal. The public
+standard-library arithmetic reproduction above needs none of those credentials.
+
 ## Relationship to prior work
 
 [TradingAgents (Xiao et al., v7)](https://arxiv.org/abs/2412.20138v7) motivates the
 role architecture. Our restricted evidence, independent short-horizon accounts,
 models and development sample differ from its experiments; our findings neither
 replicate nor refute its reported performance.
+[Smit et al., Should we be going MAD?](https://arxiv.org/abs/2311.17371v3)
+reports that default debate protocols do not consistently outperform simpler
+prompting strategies, while tuning can improve some debate protocols. This
+motivates testing a specific workflow rather than treating debate as inherently
+helpful or pointless. The newer [Zhao et al. preprint](https://arxiv.org/abs/2610.04686v1)
+reports gains under proposal-coverage and verification controls on reasoning
+benchmarks. Neither paper is an investment study. Our omission comparisons do not
+match their compute controls or identify their proposed mechanisms.
 [Anthropic's evaluation guidance](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents)
 informs the separation of transcript, outcome, grader and repeated execution.
 [Bailey et al., The Probability of Backtest Overfitting](https://doi.org/10.21314/jcf.2016.322)
@@ -147,3 +195,43 @@ selection. We do not estimate PBO from this small collection of cohorts.
 A forward study with richer timestamped evidence, decisions sealed before outcomes,
 many independent dates and independent domain review remains necessary for stronger
 claims about investment skill. It has not been completed by rerunning these dates.
+
+## Completed result
+
+All **720 scheduled attempts** are preserved: 716 actors completed, four returned
+provider HTTP 520 errors without retries. There are 651 accepted execution
+contracts (seven allocate zero), 65 explicit abstentions, and four actor failures.
+Hosted readback verified **720 conversations, 24,818 spans and 7,804 model calls**.
+Four failed calls have unreported usage and retain their reserved charges. Every
+original journal span is present; cache-write usage is an independent-ledger field
+for these frozen executions, as disclosed above.
+
+| Workflow | Mean selection P&L | Alternative minus full | Same allocation in 3 runs | Model cost upper estimate, 180 attempts |
+|---|---:|---:|---:|---:|
+| Full all-Luna committee | $32.42 | — | 22/60 | $3.379940 |
+| No research debate | $38.64 | +$6.22 | 31/60 | $2.751820 |
+| No risk debate | −$33.10 | −$65.51 | 16/60 | $2.421843 |
+| Single Luna | −$83.95 | −$116.37 | 37/60 | $0.139322 |
+
+Selection P&L is dollars per independent $100,000 account after trading fees,
+relative to the same-allocation SPY control, with repetitions averaged within each
+of eight matured dates. All three exploratory block-bootstrap intervals include
+zero. All three Holm-adjusted sign-flip values equal 1.0. These do not establish
+absence of an effect. Removing the 2022 cohort changes the single-versus-full
+estimate from −$116.37 to −$13.96; every exclusion sensitivity is exported.
+
+The public arithmetic reproduction reconciles 384 matured accounts to less than
+$0.0000001 and preserves 96 pending accounts across the four fee settings. Forty
+prespecified assistant reviews cover 39 final summaries/orders and one failed
+attempt without a final decision. The completed decisions agree within that
+contract-review scope. One additionally observed unit-comparison error is retained
+in `regressions.json`: 0.1084 percentage points is greater than a 10bp single-side
+fee, contrary to the recorded explanation. This is not exhaustive factuality review.
+
+The main study's known-usage price estimate is $8.640683, with $0.052242 reserved
+for four unknown calls ($8.692925 upper estimate). The combined follow-up upper
+estimate is $21.006446 against its $30 cap. The whole ledger contains $38.527203
+in known-usage model estimates, $0.052242 in unknown model-call reserves and
+$179.99 in infrastructure holds: $218.569445 against $250. These are list-price
+estimates and reservations, not reconciled invoices. The cache-write correction
+adds $4.535997 across 15,876 calls; the temporary $6 accounting hold is released.
