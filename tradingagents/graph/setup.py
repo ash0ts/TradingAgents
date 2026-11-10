@@ -107,7 +107,8 @@ class GraphSetup:
         self.max_tool_rounds = max_tool_rounds
 
     def setup_graph(
-        self, selected_analysts=("market", "social", "news", "fundamentals"), memory_node=None
+        self, selected_analysts=("market", "social", "news", "fundamentals"), memory_node=None,
+        debate_ablation=None,
     ):
         """Set up and compile the agent workflow graph.
 
@@ -120,6 +121,8 @@ class GraphSetup:
             memory_node: Node that settles past decisions and returns the run's
                 ``past_context``. It runs alongside the analysts.
         """
+        if debate_ablation not in (None, "no-research", "no-risk"):
+            raise ValueError("Unknown debate ablation")
         plan = build_analyst_execution_plan(selected_analysts)
 
         analyst_factories = {
@@ -163,7 +166,16 @@ class GraphSetup:
             first_steps.append("Memory Log")
         for node in first_steps:
             workflow.add_edge(START, node)
-        workflow.add_edge(first_steps, "Bull Researcher")
+        if debate_ablation == "no-research":
+            def research_packet(state):
+                history = "Research debate omitted by the experiment. Original analyst reports follow; these are not debate statements.\n"
+                history += "\n\n".join(f"{spec.agent_node}:\n{state.get(spec.report_key, '')}" for spec in plan.specs)
+                return {"investment_debate_state": {**state["investment_debate_state"], "history": history}}
+            workflow.add_node("Research Packet", research_packet)
+            workflow.add_edge(first_steps, "Research Packet")
+            workflow.add_edge("Research Packet", "Research Manager")
+        else:
+            workflow.add_edge(first_steps, "Bull Researcher")
 
         # Both research-debate edges share the complete DEBATE_PATH_MAP (#1088).
         for debate_node in ("Bull Researcher", "Bear Researcher"):
@@ -173,7 +185,10 @@ class GraphSetup:
                 DEBATE_PATH_MAP,
             )
         workflow.add_edge("Research Manager", "Trader")
-        workflow.add_edge("Trader", "Aggressive Analyst")
+        if debate_ablation == "no-risk":
+            workflow.add_edge("Trader", "Portfolio Manager")
+        else:
+            workflow.add_edge("Trader", "Aggressive Analyst")
         # All three risk edges share the complete RISK_ANALYSIS_PATH_MAP (#1088).
         for risk_node in ("Aggressive Analyst", "Conservative Analyst", "Neutral Analyst"):
             workflow.add_conditional_edges(

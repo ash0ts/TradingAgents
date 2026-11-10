@@ -110,7 +110,10 @@ class TradingAgentsGraph:
         self.selected_analysts = tuple(selected_analysts)
 
         # Set up the graph: keep the workflow for recompilation with a checkpointer.
-        self.workflow = self.graph_setup.setup_graph(selected_analysts, memory_node=self._memory_step)
+        self.workflow = self.graph_setup.setup_graph(
+            selected_analysts, memory_node=self._memory_step,
+            debate_ablation=self.config.get("lab_debate_ablation"),
+        )
         self.graph = self.workflow.compile()
         self._checkpointer_ctx = None
         self._resuming = False

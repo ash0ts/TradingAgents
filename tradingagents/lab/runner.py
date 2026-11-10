@@ -78,7 +78,8 @@ def single_analyst(config, data, budget):
 
 def run_one(root, output, case_id, treatment, trial=0, phase="campaign", publish=True, *,
             campaign_id="election-replay-v1", execution_contract=False, budget_path=None,
-            campaign_cap_usd=None, sleeves=6, evidence_mode=None, budget_prefix=None):
+            campaign_cap_usd=None, sleeves=6, evidence_mode=None, budget_prefix=None,
+            debate_ablation=None):
     from dotenv import load_dotenv
     if credentials := os.getenv("TRADINGAGENTS_MODELS_ENV"):
         load_dotenv(credentials, override=False)
@@ -87,6 +88,11 @@ def run_one(root, output, case_id, treatment, trial=0, phase="campaign", publish
     from tradingagents.observability.agent_lens import conversation_url
 
     root, output = Path(root), Path(output)
+    if debate_ablation not in (None, "no-research", "no-risk"):
+        raise ValueError("Unknown debate ablation")
+    if debate_ablation and (not execution_contract or evidence_mode != "shared-evidence"
+                            or treatment != "luna-" + debate_ablation):
+        raise ValueError("Ablations require an identified Luna treatment and shared execution evidence")
     manifest = json.loads((root / "manifest.json").read_text())
     evidence_hash = manifest["cases"][case_id]
     data = EvidenceStore(root).get(evidence_hash)
@@ -104,7 +110,8 @@ def run_one(root, output, case_id, treatment, trial=0, phase="campaign", publish
     if result_path.exists():
         saved = json.loads(result_path.read_text())
         if (saved["run_key"] != key or bool(saved.get("execution_mandate")) != execution_contract
-                or saved.get("evidence_mode") != evidence_mode):
+                or saved.get("evidence_mode") != evidence_mode
+                or saved.get("debate_ablation") != debate_ablation):
             raise ValueError("Output belongs to a different campaign or contract")
         return saved
     ledger = Ledger(budget_path or output / "budget.sqlite",
@@ -131,6 +138,9 @@ def run_one(root, output, case_id, treatment, trial=0, phase="campaign", publish
                    "backend_url": "https://api.openai.com/v1", "llm_provider": "openai",
                    "quick_think_llm": "gpt-6-luna", "deep_think_llm": "gpt-6-sol" if treatment == "default-committee" else "gpt-6-luna"})
     budget = BudgetCallback(ledger, key, phase)
+    if debate_ablation:
+        config["lab_debate_ablation"] = debate_ablation
+        config["forge_metadata"]["debate_ablation"] = debate_ablation
     portfolio = None
     if execution_contract:
         from tradingagents.lab.execution import make_mandate
@@ -155,6 +165,8 @@ def run_one(root, output, case_id, treatment, trial=0, phase="campaign", publish
            "started_at": datetime.now(UTC).isoformat()}
     if execution_contract:
         row["execution_mandate"] = config["evaluation_mandate"]
+    if debate_ablation:
+        row["debate_ablation"] = debate_ablation
     if evidence_mode:
         row.update(evidence_mode=evidence_mode, evidence_view=config["replay_view"],
                    information_access="Identical frozen numeric decision brief; tools restricted to its facts. Archived news and event calendars unavailable.")
