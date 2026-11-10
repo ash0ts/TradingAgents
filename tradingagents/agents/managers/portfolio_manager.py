@@ -92,6 +92,11 @@ Write these sections, in this order, starting with the rating on its own line:
 
 {NO_EXTERNAL_TOOLS}{get_language_instruction()}"""
 
+        if get_config().get("lab_debate_ablation") == "no-risk":
+            prompt = prompt.replace(
+                "The risk debate always contains conflicting stances; deciding which is stronger is the job, so conflict alone is not a reason to Hold.",
+                "No risk debate was run. Evaluate the supplied research and trader plans directly; do not invent risk analyst statements.",
+            )
         # The typed rating is the decision; the rendered text only carries it.
         # Read back from text, a rating the thesis quotes could replace it.
         if contracted:

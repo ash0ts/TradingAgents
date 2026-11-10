@@ -50,6 +50,12 @@ Write these sections, in this order, starting with the recommendation on its own
 
 {NO_EXTERNAL_TOOLS}""" + get_language_instruction()
 
+        from tradingagents.dataflows.config import get_config
+        if get_config().get("lab_debate_ablation") == "no-research":
+            prompt = prompt.replace(
+                "The debate always contains conflicting arguments; deciding which side is stronger is the job, so conflict alone is not a reason to Hold.",
+                "No research debate was run. Evaluate the supplied original analyst reports directly; do not invent bull or bear statements.",
+            )
         investment_plan = invoke_structured_or_freetext(
             structured_llm,
             llm,
