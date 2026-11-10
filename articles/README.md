@@ -28,3 +28,19 @@ contains three panels and authenticated conversation links. The article report
 adds two of those panels alongside the original ten and two scenario panels.
 Native Insights was below its displayed 1,000-new-turn threshold when inspected;
 the audit does not claim native clustering generated these findings.
+
+The completed [repeated debate study](../studies/debate-ablation-v5/README.md)
+adds 720 attempts across four workflows and three executions per case. The article
+now includes 31 images and 20 native panels. Its new six-panel dashboard exposes
+20 public tables and seven Agent Lens views. All 720 conversations reconcile;
+four provider failures remain in the outcomes without retries. The public
+reproduction reconciles 384 matured accounts and preserves 96 pending accounts.
+The new study is in the article, dashboard and versioned artifacts; the three
+notebooks retain their previously verified studies and saved versions.
+
+`studies/debate-ablation-v5/publication-validation.json` records anonymous report,
+asset and repository-link readback, desktop/mobile inspection, and the native
+mobile label-truncation limitation. Full-size figures and adjacent tables provide
+complete labels. Raw source material and Agent Lens drilldowns require access.
+The article discloses the cache-write accounting correction, qualification-design
+deviation, small number of market blocks and unavailable current GitHub Actions.
