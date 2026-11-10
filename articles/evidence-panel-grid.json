@@ -1,0 +1,245 @@
+{
+  "type": "panel-grid",
+  "children": [
+    {
+      "text": "",
+      "inline_code": null,
+      "inline_comments": null
+    }
+  ],
+  "metadata": {
+    "open_viz": true,
+    "open_run_set": 0,
+    "name": "unused-name",
+    "run_sets": [
+      {
+        "id": "gqb8u159eoo",
+        "run_feed": {
+          "version": 2,
+          "column_visible": {},
+          "column_pinned": {},
+          "column_widths": {},
+          "column_order": [],
+          "page_size": 10,
+          "only_show_selected": false,
+          "lock_columns": null
+        },
+        "enabled": true,
+        "project": {
+          "name": "tradingagents-election-lab",
+          "entity_name": "wandb",
+          "id": "UHJvamVjdEludGVybmFsSWQ6NDU0NTI5MjU="
+        },
+        "name": "Shared brief versus required citations",
+        "search": {
+          "query": "",
+          "is_regex": null
+        },
+        "filters": {
+          "filterFormat": "filterV2",
+          "filters": [
+            {
+              "key": {
+                "section": "run",
+                "name": "name"
+              },
+              "op": "IN",
+              "value": [
+                "evidence-v3-repaired-d626b9d976017586",
+                "evidence-v3-repaired-b51ddcae038fcd49",
+                "evidence-v3-repaired-091398a3dfb75e41",
+                "evidence-v3-repaired-36abdfd745483449",
+                "evidence-v3-repaired-23d6af1d775204cd",
+                "evidence-v3-repaired-501825c4a6b3da32"
+              ],
+              "disabled": false
+            }
+          ]
+        },
+        "grouping": [],
+        "sort": {
+          "keys": [
+            {
+              "key": {
+                "section": "run",
+                "name": "createdAt"
+              },
+              "ascending": false
+            }
+          ]
+        },
+        "selections": {
+          "root": 1,
+          "bounds": [],
+          "tree": []
+        },
+        "expanded_row_addresses": [],
+        "baseline_run_id": null,
+        "pinned_run_ids": null
+      }
+    ],
+    "hide_run_sets": false,
+    "panels": {
+      "views": {
+        "0": {
+          "name": "Panels",
+          "defaults": [],
+          "config": []
+        }
+      },
+      "tabs": [
+        "0"
+      ]
+    },
+    "panel_bank_config": {
+      "state": 0,
+      "settings": {
+        "auto_organize_prefix": 2,
+        "show_empty_sections": false,
+        "sort_alphabetically": false,
+        "search_query": null,
+        "search_history": null,
+        "auto_expand_search_results": null
+      },
+      "sections": [
+        {
+          "id": null,
+          "name": "Hidden Panels",
+          "is_open": false,
+          "type": "flow",
+          "flow_config": {
+            "snap_to_columns": true,
+            "columns_per_page": 3,
+            "rows_per_page": 2,
+            "gutter_width": 16,
+            "box_width": 460,
+            "box_height": 300
+          },
+          "sorted": 0,
+          "local_panel_settings": {
+            "smoothing_weight": 0,
+            "smoothing_type": "exponential",
+            "x_axis": "_step",
+            "ignore_outliers": false,
+            "use_runs_table_grouping_in_panels": true,
+            "x_axis_min": null,
+            "x_axis_max": null,
+            "color_run_names": null,
+            "max_runs": null,
+            "point_visualization_method": null,
+            "suppress_legends": null,
+            "tooltip_number_of_runs": null,
+            "smoothing_active": true,
+            "x_axis_active": false
+          },
+          "panels": [],
+          "pinned": null,
+          "is_panels_auto": null,
+          "default_name": null
+        }
+      ],
+      "panel_config_overrides": null,
+      "panel_placement_overrides": null
+    },
+    "panel_bank_section_config": {
+      "name": "Report Panels",
+      "is_open": false,
+      "panels": [
+        {
+          "id": "2b73b6m67s",
+          "layout": {
+            "x": 0,
+            "y": 0,
+            "w": 24,
+            "h": 10
+          },
+          "is_auto": null,
+          "view_type": "Bar Chart",
+          "config": {
+            "chart_title": "Did it issue an executable decision?",
+            "metrics": [
+              "evidence/accepted"
+            ],
+            "vertical": false,
+            "x_axis_min": null,
+            "x_axis_max": null,
+            "x_axis_title": "Accepted contracts / 60 requested executions per arm and treatment",
+            "y_axis_title": null,
+            "group_by": null,
+            "group_agg": null,
+            "group_area": null,
+            "limit": 6,
+            "bar_limit": 6,
+            "expressions": null,
+            "legend_template": "${run:displayName}",
+            "font_size": null,
+            "override_series_titles": null,
+            "override_colors": null,
+            "aggregate": null
+          }
+        },
+        {
+          "id": "2lq7wg5z1ps",
+          "layout": {
+            "x": 0,
+            "y": 10,
+            "w": 24,
+            "h": 10
+          },
+          "is_auto": null,
+          "view_type": "Bar Chart",
+          "config": {
+            "chart_title": "Did stock selection beat the same allocation to SPY?",
+            "metrics": [
+              "evidence/mean_selection_pnl"
+            ],
+            "vertical": false,
+            "x_axis_min": null,
+            "x_axis_max": null,
+            "x_axis_title": "Mean USD per $100,000 scenario · 8 matured dates · 10 bps/side",
+            "y_axis_title": null,
+            "group_by": null,
+            "group_agg": null,
+            "group_area": null,
+            "limit": 6,
+            "bar_limit": 6,
+            "expressions": null,
+            "legend_template": "${run:displayName}",
+            "font_size": null,
+            "override_series_titles": null,
+            "override_colors": null,
+            "aggregate": null
+          }
+        }
+      ],
+      "type": "grid",
+      "flow_config": {
+        "snap_to_columns": true,
+        "columns_per_page": 3,
+        "rows_per_page": 2,
+        "gutter_width": 16,
+        "box_width": 460,
+        "box_height": 300
+      },
+      "sorted": 0,
+      "local_panel_settings": {
+        "smoothing_weight": 0,
+        "smoothing_type": "exponential",
+        "x_axis": "_step",
+        "ignore_outliers": false,
+        "use_runs_table_grouping_in_panels": true,
+        "x_axis_min": null,
+        "x_axis_max": null,
+        "color_run_names": null,
+        "max_runs": null,
+        "point_visualization_method": null,
+        "suppress_legends": null,
+        "tooltip_number_of_runs": null,
+        "smoothing_active": true,
+        "x_axis_active": false
+      },
+      "pinned": null
+    },
+    "custom_run_colors": {}
+  }
+}

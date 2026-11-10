@@ -1,0 +1,16 @@
+[
+  {
+    "artifact": "wandb/tradingagents-election-lab/debate-ablation-v5-results:v0",
+    "digest": "2d63ca1bd5bbc85f5c9953a279f2c48b",
+    "private": false,
+    "manifest_files": 25,
+    "downloaded_files_sha256_verified": 25
+  },
+  {
+    "artifact": "wandb/tradingagents-election-lab-evidence/debate-ablation-v5-executions:v0",
+    "digest": "0422f0e3ac3ddbd8d840c18a8a3d20c7",
+    "private": true,
+    "manifest_files": 27,
+    "downloaded_files_sha256_verified": 27
+  }
+]

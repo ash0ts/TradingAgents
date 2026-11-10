@@ -1,0 +1,683 @@
+{
+  "files": {
+    "meet-the-investment-committee/assets/coverage-and-maturity.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/meet-the-investment-committee/assets/coverage-and-maturity.png",
+      "sha256": "81024d7e579975ee1fbf6b743d4db43b5648ff5b907bc27cfd8c87e537271c17",
+      "bytes": 123932,
+      "anonymous_verified": true
+    },
+    "meet-the-investment-committee/assets/coverage-and-maturity.svg": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/meet-the-investment-committee/assets/coverage-and-maturity.svg",
+      "sha256": "d7bb2f33d24d32dd1e3177ea6748ff1f3f3e4936a4a604e208e8142cb0fa4959",
+      "bytes": 14246,
+      "anonymous_verified": true
+    },
+    "meet-the-investment-committee/assets/evidence-chain.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/meet-the-investment-committee/assets/evidence-chain.png",
+      "sha256": "6eda09411f85ef1c281dd176f3dfd20e941587e4b475ca8ffc0f41856aa9bcb7",
+      "bytes": 135199,
+      "anonymous_verified": true
+    },
+    "meet-the-investment-committee/assets/evidence-chain.svg": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/meet-the-investment-committee/assets/evidence-chain.svg",
+      "sha256": "e12613b920732375ad7edefcad5544d13005d1e764842b36bb84255f8b682ac0",
+      "bytes": 7982,
+      "anonymous_verified": true
+    },
+    "meet-the-investment-committee/assets/forge-notebook-roles.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/meet-the-investment-committee/assets/forge-notebook-roles.png",
+      "sha256": "729acd7c5e82046d568ca07e1c3ab9a5c67e28b14f4183b7e8ecd650197188db",
+      "bytes": 15473,
+      "anonymous_verified": true
+    },
+    "meet-the-investment-committee/assets/lens-timeline.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/meet-the-investment-committee/assets/lens-timeline.png",
+      "sha256": "5a8ec5a08b2f42c3524ed3ee8e96a9d17e58c0b9b32d136aeb5ad768ba6a762b",
+      "bytes": 26202,
+      "anonymous_verified": true
+    },
+    "confident-expensive-and-wrong/assets/forge-behavior-dashboard.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/confident-expensive-and-wrong/assets/forge-behavior-dashboard.png",
+      "sha256": "5c5c1beb4ae5e511affe7eeab7a9ba5861a8851201b7a636ad7b1991f0c2acc1",
+      "bytes": 14939,
+      "anonymous_verified": true
+    },
+    "confident-expensive-and-wrong/assets/latency-and-model-cost.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/confident-expensive-and-wrong/assets/latency-and-model-cost.png",
+      "sha256": "7592970c2b793180bcab082a7adbd15e03bb68a073d0676f22e514e8b32602fd",
+      "bytes": 44529,
+      "anonymous_verified": true
+    },
+    "confident-expensive-and-wrong/assets/latency-and-model-cost.svg": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/confident-expensive-and-wrong/assets/latency-and-model-cost.svg",
+      "sha256": "8675b64f001bc8ff82347d262bbef84e0e8c523bec146cf2d3e2e58973d839ca",
+      "bytes": 8778,
+      "anonymous_verified": true
+    },
+    "confident-expensive-and-wrong/assets/lens-missing-news.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/confident-expensive-and-wrong/assets/lens-missing-news.png",
+      "sha256": "8c6996879e7d71cab5bfe13a14a3196893ebba69b9ab40bc2df4a9ff1a616b39",
+      "bytes": 42731,
+      "anonymous_verified": true
+    },
+    "confident-expensive-and-wrong/assets/reviewed-candidates.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/confident-expensive-and-wrong/assets/reviewed-candidates.png",
+      "sha256": "d86d7844a8899afc810e7a38e2d56d23fb42e05967789e0e20851a83be8e8ea3",
+      "bytes": 118717,
+      "anonymous_verified": true
+    },
+    "confident-expensive-and-wrong/assets/reviewed-candidates.svg": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/confident-expensive-and-wrong/assets/reviewed-candidates.svg",
+      "sha256": "585c421fd9934fe5b820f8bfaabfd11883e66244f9feb6a3c0a4187c8aca2578",
+      "bytes": 5320,
+      "anonymous_verified": true
+    },
+    "did-it-beat-doing-nothing/assets/directional-denominators.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/did-it-beat-doing-nothing/assets/directional-denominators.png",
+      "sha256": "96f2c51ab3d31ce6b431d78866e919bb819595d6674562e9d983aa40ad113198",
+      "bytes": 109169,
+      "anonymous_verified": true
+    },
+    "did-it-beat-doing-nothing/assets/directional-denominators.svg": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/did-it-beat-doing-nothing/assets/directional-denominators.svg",
+      "sha256": "adc2b9ab81518c43eea42c96e8d8b03340aeb8a4de47e859d33c173eb2ae7b59",
+      "bytes": 20252,
+      "anonymous_verified": true
+    },
+    "did-it-beat-doing-nothing/assets/fee-sensitivity.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/did-it-beat-doing-nothing/assets/fee-sensitivity.png",
+      "sha256": "00e67640c24191b8e7184a304048e1fc9671ab41d47122e208f74240f613e37a",
+      "bytes": 150424,
+      "anonymous_verified": true
+    },
+    "did-it-beat-doing-nothing/assets/fee-sensitivity.svg": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/did-it-beat-doing-nothing/assets/fee-sensitivity.svg",
+      "sha256": "757b046628f88781670b1871b6a9f0327484f0c4d9ab76787196521d1f846f3b",
+      "bytes": 25492,
+      "anonymous_verified": true
+    },
+    "did-it-beat-doing-nothing/assets/forge-financial-dashboard.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/did-it-beat-doing-nothing/assets/forge-financial-dashboard.png",
+      "sha256": "c21cd0279a3ea2fb44038483d1db6fe766f5afa679cfdca9221cc486eccf74e6",
+      "bytes": 40096,
+      "anonymous_verified": true
+    },
+    "did-it-beat-doing-nothing/assets/paired-uncertainty.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/did-it-beat-doing-nothing/assets/paired-uncertainty.png",
+      "sha256": "f2f863c3140e850855573baf790e6a4ebe6a4c773fffd1191801e41f69e87ae0",
+      "bytes": 110324,
+      "anonymous_verified": true
+    },
+    "did-it-beat-doing-nothing/assets/paired-uncertainty.svg": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/did-it-beat-doing-nothing/assets/paired-uncertainty.svg",
+      "sha256": "38cac6b9b29c0bdcfe237c3e59c7ad684ea23ac4f6736abff1c2af3b2cf928b7",
+      "bytes": 13474,
+      "anonymous_verified": true
+    },
+    "did-it-beat-doing-nothing/assets/portfolio-pnl.csv": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/did-it-beat-doing-nothing/assets/portfolio-pnl.csv",
+      "sha256": "356ab4609604b2da73c8f66215819a592bda217d039bbceff4465765fc13de2f",
+      "bytes": 1160,
+      "anonymous_verified": true
+    },
+    "did-it-beat-doing-nothing/assets/portfolio-pnl.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/did-it-beat-doing-nothing/assets/portfolio-pnl.png",
+      "sha256": "edbf760367a43dc5a0de4d35a757aa644fcac25ec7c40e7a19b49b7ca65462fb",
+      "bytes": 123433,
+      "anonymous_verified": true
+    },
+    "did-it-beat-doing-nothing/assets/portfolio-pnl.svg": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/did-it-beat-doing-nothing/assets/portfolio-pnl.svg",
+      "sha256": "43146aa24daf16309b86af6c9953f982b6c42abf00ea9853d8f7efe2acdd7560",
+      "bytes": 13703,
+      "anonymous_verified": true
+    },
+    "evidence/README.md": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/evidence/README.md",
+      "sha256": "7ea45b91136b5aac35d18204e102d7dc810211fee6644fc1b0c73f7396d49968",
+      "bytes": 2425,
+      "anonymous_verified": true
+    },
+    "evidence/manifest.json": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/evidence/manifest.json",
+      "sha256": "365560832fc8a5eb2e1361cd17b6608473555f3439757162a0dd00631a0f9074",
+      "bytes": 4835,
+      "anonymous_verified": true
+    },
+    "evidence/predictions.csv": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/evidence/predictions.csv",
+      "sha256": "62fc390ebf24126140be658be920e2d62168bfa10cfa4e31d01ba680e1d99c31",
+      "bytes": 337716,
+      "anonymous_verified": true
+    },
+    "evidence/scores-all-horizons.csv": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/evidence/scores-all-horizons.csv",
+      "sha256": "a7847035e33341fc2ace5fe8e5c80945b91ff2afcb93860743c416335a91229a",
+      "bytes": 296295,
+      "anonymous_verified": true
+    },
+    "evidence/portfolio-scenarios.csv": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/evidence/portfolio-scenarios.csv",
+      "sha256": "3374a6b22a27bd84aa2b06ff613b7a1d0a87d7ba30ec0e4893ba92974dbe8982",
+      "bytes": 124076,
+      "anonymous_verified": true
+    },
+    "evidence/source-coverage.csv": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/evidence/source-coverage.csv",
+      "sha256": "b1e07ed466fbd5078c51c2c8fc01f3952a0e353aca74d3816e9aba06e35c9b3c",
+      "bytes": 10251,
+      "anonymous_verified": true
+    },
+    "evidence/assistant-reviews.csv": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/evidence/assistant-reviews.csv",
+      "sha256": "59c896265bbe10eecc14f44de4fba87b05a413d5857ee4ae12017df5d23bc0bc",
+      "bytes": 2144,
+      "anonymous_verified": true
+    },
+    "evidence/paired-comparisons.csv": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/evidence/paired-comparisons.csv",
+      "sha256": "cdd7ff65df3d81e71fd947ed4d178ef9f1e80f2131e8ee883e3d80343a06a2d8",
+      "bytes": 1519,
+      "anonymous_verified": true
+    },
+    "evidence/selected-examples.csv": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/evidence/selected-examples.csv",
+      "sha256": "f8567392171cc0d8288859a860c014e0980e7890b5798541b08a76559177c2e8",
+      "bytes": 1523,
+      "anonymous_verified": true
+    },
+    "evidence/method-summaries.csv": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/evidence/method-summaries.csv",
+      "sha256": "d50a97452d5803fe569a59c18fc1ebe83ea79d48a6c3f6885fdbf4fd857c550e",
+      "bytes": 2170,
+      "anonymous_verified": true
+    },
+    "evidence/directional-denominators.csv": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/evidence/directional-denominators.csv",
+      "sha256": "235402c7b02a76b9730fc01ba7f57cc3329837cdb706118b0cbc844543b0c56a",
+      "bytes": 292,
+      "anonymous_verified": true
+    },
+    "evidence/fee-sensitivity.csv": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/evidence/fee-sensitivity.csv",
+      "sha256": "b58094e7ea3519dc14c8e4b0f5060b78178d2c454f7bee45b6159e5985acf76f",
+      "bytes": 1821,
+      "anonymous_verified": true
+    },
+    "evidence/tradingagents-public-evidence.zip": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/evidence/tradingagents-public-evidence.zip",
+      "sha256": "8b944dfd8d8ac5e4d4055533c84ca77207aa65016312dab1c047e4e6ad3c1087",
+      "bytes": 96404,
+      "anonymous_verified": true
+    },
+    "evidence/verification-receipts.json": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/evidence/verification-receipts.json",
+      "sha256": "c74650940ac2308421786c71c3049a392d564d7f65ea201419f28a81c06dd734",
+      "bytes": 2983,
+      "anonymous_verified": true
+    },
+    "evidence/study-design-and-budget.json": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/evidence/study-design-and-budget.json",
+      "sha256": "3dffd7c6760575c8c9156eb85549e9322fa4f80de36d12e37d625ddb227d4967",
+      "bytes": 1233,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/coverage-and-maturity.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/coverage-and-maturity.png",
+      "sha256": "81024d7e579975ee1fbf6b743d4db43b5648ff5b907bc27cfd8c87e537271c17",
+      "bytes": 123932,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/coverage-and-maturity.svg": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/coverage-and-maturity.svg",
+      "sha256": "feb4e99f8c3b92a335a26a6d6a630e938fef1f916e566ee1abfb594cd796504f",
+      "bytes": 14246,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/directional-denominators.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/directional-denominators.png",
+      "sha256": "96f2c51ab3d31ce6b431d78866e919bb819595d6674562e9d983aa40ad113198",
+      "bytes": 109169,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/directional-denominators.svg": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/directional-denominators.svg",
+      "sha256": "d3cca41485bd6fca1dd4e3d99fa6ad02f535f29e66a57ee816ed9b988d1ff74c",
+      "bytes": 20252,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/evidence-chain.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/evidence-chain.png",
+      "sha256": "6eda09411f85ef1c281dd176f3dfd20e941587e4b475ca8ffc0f41856aa9bcb7",
+      "bytes": 135199,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/evidence-chain.svg": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/evidence-chain.svg",
+      "sha256": "df41bfb7a315943980c0fe17ca950d19505946c74641b2aba0681da431061387",
+      "bytes": 7982,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/fee-sensitivity.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/fee-sensitivity.png",
+      "sha256": "00e67640c24191b8e7184a304048e1fc9671ab41d47122e208f74240f613e37a",
+      "bytes": 150424,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/fee-sensitivity.svg": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/fee-sensitivity.svg",
+      "sha256": "df8b1215ae651b9c3b4aaecd57868238fbe79d870ec64388634d38103135102d",
+      "bytes": 25492,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/forge-behavior-dashboard.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/forge-behavior-dashboard.png",
+      "sha256": "5c5c1beb4ae5e511affe7eeab7a9ba5861a8851201b7a636ad7b1991f0c2acc1",
+      "bytes": 14939,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/forge-financial-dashboard.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/forge-financial-dashboard.png",
+      "sha256": "c21cd0279a3ea2fb44038483d1db6fe766f5afa679cfdca9221cc486eccf74e6",
+      "bytes": 40096,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/forge-notebook-roles.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/forge-notebook-roles.png",
+      "sha256": "729acd7c5e82046d568ca07e1c3ab9a5c67e28b14f4183b7e8ecd650197188db",
+      "bytes": 15473,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/latency-and-model-cost.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/latency-and-model-cost.png",
+      "sha256": "7592970c2b793180bcab082a7adbd15e03bb68a073d0676f22e514e8b32602fd",
+      "bytes": 44529,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/latency-and-model-cost.svg": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/latency-and-model-cost.svg",
+      "sha256": "744d344ba2fced04e3fc460167ce717f2dd382ca21f2bc5f0293d94f9cb2ba85",
+      "bytes": 8778,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/lens-missing-news.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/lens-missing-news.png",
+      "sha256": "8c6996879e7d71cab5bfe13a14a3196893ebba69b9ab40bc2df4a9ff1a616b39",
+      "bytes": 42731,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/lens-timeline.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/lens-timeline.png",
+      "sha256": "5a8ec5a08b2f42c3524ed3ee8e96a9d17e58c0b9b32d136aeb5ad768ba6a762b",
+      "bytes": 26202,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/paired-uncertainty.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/paired-uncertainty.png",
+      "sha256": "f2f863c3140e850855573baf790e6a4ebe6a4c773fffd1191801e41f69e87ae0",
+      "bytes": 110324,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/paired-uncertainty.svg": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/paired-uncertainty.svg",
+      "sha256": "c50892bf65e3f7a40695fc7796ebcb8dc54c774a9088bb44b4289ed2fe4a078f",
+      "bytes": 13474,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/portfolio-pnl.csv": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/portfolio-pnl.csv",
+      "sha256": "356ab4609604b2da73c8f66215819a592bda217d039bbceff4465765fc13de2f",
+      "bytes": 1160,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/portfolio-pnl.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/portfolio-pnl.png",
+      "sha256": "edbf760367a43dc5a0de4d35a757aa644fcac25ec7c40e7a19b49b7ca65462fb",
+      "bytes": 123433,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/portfolio-pnl.svg": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/portfolio-pnl.svg",
+      "sha256": "59e1d94df5535f21e6b0b1c8035583bd1022dda19b691a69cca940dc73aecab1",
+      "bytes": 13703,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/reviewed-candidates.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/reviewed-candidates.png",
+      "sha256": "d86d7844a8899afc810e7a38e2d56d23fb42e05967789e0e20851a83be8e8ea3",
+      "bytes": 118717,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/reviewed-candidates.svg": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/reviewed-candidates.svg",
+      "sha256": "86a55424510b0946cdfb23cd8339b357b4585055888672b5a6c904c80d145830",
+      "bytes": 5320,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/trading-cohort-results.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/trading-cohort-results.png",
+      "sha256": "bbdd1125a259be6ccd7e089aed46a3b70ad2d7d6dc39ec358b70d86a86d0ea31",
+      "bytes": 181885,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/trading-cohort-results.svg": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/trading-cohort-results.svg",
+      "sha256": "69460cfb22ba7dd3d78d6d9c5328ccbe469866402db55d21ffc17f796d6beb71",
+      "bytes": 93934,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/trading-scenario-sensitivity.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/trading-scenario-sensitivity.png",
+      "sha256": "f499eca36baa5aa72e045275c622eba138089949a11bdcdb652be9685916cbac",
+      "bytes": 119612,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/trading-scenario-sensitivity.svg": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/trading-scenario-sensitivity.svg",
+      "sha256": "f504963cba84321be969aa1f0209d2331e8371a8f99e3017a642591c658f636c",
+      "bytes": 70787,
+      "anonymous_verified": true
+    },
+    "trading-scenarios/README.md": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/trading-scenarios/README.md",
+      "sha256": "ffdd16b9190e475b66e6fb9b89b8148549e87438f9c496d033b8b65d0f22f01f",
+      "bytes": 1806,
+      "anonymous_verified": true
+    },
+    "trading-scenarios/manifest.json": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/trading-scenarios/manifest.json",
+      "sha256": "7d455d63b0c62c48b01146f0d443c5bd8b791a970247fcb5060e7c8eec258456",
+      "bytes": 1129,
+      "anonymous_verified": true
+    },
+    "trading-scenarios/protocol.json": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/trading-scenarios/protocol.json",
+      "sha256": "41a4abbc66ebd108c3103adb9cccd0a7c4edbb06dcd45a18347689c02c3c1277",
+      "bytes": 1700,
+      "anonymous_verified": true
+    },
+    "trading-scenarios/unit-account-factors.json": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/trading-scenarios/unit-account-factors.json",
+      "sha256": "fde64b6d78505383e35840da6bd8f7392af0c5c75d44e0ad63f3108c9ac3682e",
+      "bytes": 228091,
+      "anonymous_verified": true
+    },
+    "trading-scenarios/scenario-results.json": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/trading-scenarios/scenario-results.json",
+      "sha256": "bcc2f7012d13544c6be783f6743e1963f9a73297d6f2b84b766e241c1c2996d7",
+      "bytes": 1467180,
+      "anonymous_verified": true
+    },
+    "trading-scenarios/scenario-results.csv": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/trading-scenarios/scenario-results.csv",
+      "sha256": "d3a54b8fc4cbb666f35478ece5963d39b65e8a23cfe03117c322c3ec74317278",
+      "bytes": 590211,
+      "anonymous_verified": true
+    },
+    "trading-scenarios/summaries.json": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/trading-scenarios/summaries.json",
+      "sha256": "097ca66da6652a2b088626481ae1b92ab710dcbe5bc789c1483514faf57c23e8",
+      "bytes": 29032,
+      "anonymous_verified": true
+    },
+    "trading-scenarios/summaries.csv": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/trading-scenarios/summaries.csv",
+      "sha256": "e0c62bf86015c96375fcd64bee5231e8127475a15a029a2b5b038e5916b4eb0c",
+      "bytes": 12805,
+      "anonymous_verified": true
+    },
+    "trading-scenarios/cohort-breakdown.csv": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/trading-scenarios/cohort-breakdown.csv",
+      "sha256": "c5db3d4f71ee3c79b2dc303fc0a6b37f212ca86002ce3714b67362b399f446be",
+      "bytes": 3493,
+      "anonymous_verified": true
+    },
+    "trading-scenarios/stock-contributions.csv": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/trading-scenarios/stock-contributions.csv",
+      "sha256": "cfd51c852a5719133ed509a3bbdf755b381a9ddc409ef12e82049e4f57dad4e2",
+      "bytes": 70623,
+      "anonymous_verified": true
+    },
+    "trading-scenarios/verification.json": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/trading-scenarios/verification.json",
+      "sha256": "b5e104978cac25cce6a78bad8ab5661bfb9f0284b471f751a86501a8d533a1bc",
+      "bytes": 217,
+      "anonymous_verified": true
+    },
+    "trading-scenarios/trading-scenarios-evidence.zip": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/trading-scenarios/trading-scenarios-evidence.zip",
+      "sha256": "41571878edce2dc781585a3148bde512412ad029a8325c29fbc10ec788e40bb5",
+      "bytes": 242206,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/internals-contract-checks.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/internals-contract-checks.png",
+      "sha256": "dd84a0e9d662979554753405b2ba248e5a76b9f1e5195f5733315bb3671c8470",
+      "bytes": 105643,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/internals-contract-checks.svg": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/internals-contract-checks.svg",
+      "sha256": "a024065dbfbb215f2bc93eed94fabcceb5a438fbb43507db7340fd89047b6fa5",
+      "bytes": 9077,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/lens-insights-eligibility.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/lens-insights-eligibility.png",
+      "sha256": "ba2fd6d54e44a7db29b6c46696725840a339f51d649fa340423bda3037d7d98a",
+      "bytes": 60549,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/lens-reviewed-handoffs.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/lens-reviewed-handoffs.png",
+      "sha256": "e4812a17fdbad9c8d059d63ecfe633a0d13f9b6c7518cb5f15bf2c36717d5d9d",
+      "bytes": 60372,
+      "anonymous_verified": true
+    },
+    "internals/README.md": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/internals/README.md",
+      "sha256": "e872a23919fa1033ac03b2cef882f3d08900102c01c446ff5f919e25da24cdc7",
+      "bytes": 2722,
+      "anonymous_verified": true
+    },
+    "internals/protocol.json": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/internals/protocol.json",
+      "sha256": "13f1fd8cec663ebc50e1505dcfacb2e4f68d5068bc8010685427b7e221bcb398",
+      "bytes": 2669,
+      "anonymous_verified": true
+    },
+    "internals/manifest.json": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/internals/manifest.json",
+      "sha256": "8a3142fd96bfa6b721703ed2478be17f55d3119403feea18dcdeb35ccc4ccae7",
+      "bytes": 1188,
+      "anonymous_verified": true
+    },
+    "internals/observations.json": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/internals/observations.json",
+      "sha256": "9ac63bd9c3e4555b035c96a2c7a4c0a431d04ccd4565a1f24e94af3444c5bd4d",
+      "bytes": 358869,
+      "anonymous_verified": true
+    },
+    "internals/observations.csv": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/internals/observations.csv",
+      "sha256": "b598f01c62da35f091903250cb9082a55e0a8291260f70254a6d76d383262e5b",
+      "bytes": 163967,
+      "anonymous_verified": true
+    },
+    "internals/summaries.json": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/internals/summaries.json",
+      "sha256": "98db534fb0e0f64a87547ee36b2298386f66990e9bac6c762c19c04e2abe4f55",
+      "bytes": 895,
+      "anonymous_verified": true
+    },
+    "internals/summaries.csv": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/internals/summaries.csv",
+      "sha256": "3c4f66758e27b526162e8eb8a2fc95d5d89386ea1287287ed79e966ca69a1bd1",
+      "bytes": 298,
+      "anonymous_verified": true
+    },
+    "internals/reviews.json": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/internals/reviews.json",
+      "sha256": "efef6c10bf21d6dca90d43a34c558b7ee32c9ef32c9838554d28c2201703d776",
+      "bytes": 9278,
+      "anonymous_verified": true
+    },
+    "internals/insights-status.json": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/internals/insights-status.json",
+      "sha256": "3d143a4dcdaea9e94643a726793de8c948f2bbb6ac217ae116b0123edafe327a",
+      "bytes": 624,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/corrected-execution-status.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/corrected-execution-status.png",
+      "sha256": "a5e82eb51056cc3dc205d4a1e9a870d147a2507504e65183c666dc8a9644e89b",
+      "bytes": 86523,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/corrected-execution-status.svg": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/corrected-execution-status.svg",
+      "sha256": "02285b640d8386d31f0d6909bf43c3a073ca869eec3a2b17abaae69bb8ac735f",
+      "bytes": 9004,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/corrected-portfolio-pnl.csv": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/corrected-portfolio-pnl.csv",
+      "sha256": "5ec57c259b57ad5ddd272d4aaaa2660e87392e8e1cabaef8cc7b7f299880c602",
+      "bytes": 497,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/corrected-portfolio-pnl.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/corrected-portfolio-pnl.png",
+      "sha256": "b1f26e4b09fa81a052762c3c1b6dfd56e81a0af80e50336a4968fa3303ff0004",
+      "bytes": 90247,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/corrected-portfolio-pnl.svg": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/corrected-portfolio-pnl.svg",
+      "sha256": "c33035b6cdf3ec8cc390ae6d3265858c41e29fd9e6ea00c18b679ddcd1fa0baf",
+      "bytes": 9592,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/forge-corrected-dashboard.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/forge-corrected-dashboard.png",
+      "sha256": "0227c9715137220efff605e3dee00c628c20e58d098f1d93620eaf6700ca7959",
+      "bytes": 64391,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/evidence-comparison.csv": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/evidence-comparison.csv",
+      "sha256": "80566a3d329dc5ef1ffec1d7e674be3f4b5f5c5b177b1a8937b06b0c844e6370",
+      "bytes": 831,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/evidence-contract-status.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/evidence-contract-status.png",
+      "sha256": "a4caf912b04e3be0b7148013916576df0d6b44c8e0febd0a5c62f803fed0de4c",
+      "bytes": 119622,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/evidence-contract-status.svg": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/evidence-contract-status.svg",
+      "sha256": "cdfe5cc81f2bf73f0c911f02a65efe278a12c100c8d1f9b729815ce881e14c27",
+      "bytes": 14420,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/evidence-paired-uncertainty.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/evidence-paired-uncertainty.png",
+      "sha256": "4d1dfc0ca4578e568a6eb052a943c8d8385f9fd0405255a7520620254018c08e",
+      "bytes": 76210,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/evidence-paired-uncertainty.svg": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/evidence-paired-uncertainty.svg",
+      "sha256": "318f9804692519663ec7e69f9f83dd4e9fe366d576e6403ea03964e9a23a26b0",
+      "bytes": 7870,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/evidence-stock-selection.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/evidence-stock-selection.png",
+      "sha256": "805e3e633edffb10148c9e9bff17d0baef696f5be53b64cfe7f51eb502fcc623",
+      "bytes": 127266,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/evidence-stock-selection.svg": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/evidence-stock-selection.svg",
+      "sha256": "5f4ba325a92a51de656d2450c489e5e529c3ae757e6b2c809e225d87ae8a6157",
+      "bytes": 13927,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/forge-evidence-dashboard.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/forge-evidence-dashboard.png",
+      "sha256": "0fbf8fed5c9b5a1ab22b4ae463b766a368ff8989c0b1de1027bc10a293e42fd5",
+      "bytes": 66966,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/forge-handoff-notebook.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/forge-handoff-notebook.png",
+      "sha256": "7e00d8bff141277e3ec6406065cd09b36715d57a733de09c9979dc2bf0fab911",
+      "bytes": 110145,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/lens-cited-decision.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/lens-cited-decision.png",
+      "sha256": "e813287049cfcc738d2e86896e6e49a0f674245423aabfcbb5059870e2923c78",
+      "bytes": 67715,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/debate-contrasts.csv": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/debate-contrasts.csv",
+      "sha256": "db425167269eb95c7ed4e545a0b02d80d3e31494598f27621ba816c5d8f31cc3",
+      "bytes": 3978,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/debate-paired-cohorts.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/debate-paired-cohorts.png",
+      "sha256": "d9e3a9a8d555b023b47f96118aee31735294b35076a069cc78f740ebc31ab87f",
+      "bytes": 97151,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/debate-paired-cohorts.svg": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/debate-paired-cohorts.svg",
+      "sha256": "028a93f8756f261240ddefd6f86dd2699a7cc7f6dd5b082cb1f9924653c33b92",
+      "bytes": 12254,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/debate-repeatability.png": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/debate-repeatability.png",
+      "sha256": "b8bd3316a3a5957ebacd41b5086cc625494d33ea295122de2b901026a314061e",
+      "bytes": 100235,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/debate-repeatability.svg": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/debate-repeatability.svg",
+      "sha256": "7c04f44d5339244f12d08e9fcfc25558cae71e5785b85782188bdf77b7989f42",
+      "bytes": 9130,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/debate-summaries.csv": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/debate-summaries.csv",
+      "sha256": "ed1a044a3e90b60562259fec7f8e0e93bb3b5318297ac1757e7ac3c86e948ce4",
+      "bytes": 1958,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/forge-debate-dashboard.jpg": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/forge-debate-dashboard.jpg",
+      "sha256": "c399b2235ed95c6c9d6b7e0b263e4228b68a8ace9b5e4ea7c938ac1068beffa0",
+      "bytes": 47504,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/lens-insights-fixture-only.jpg": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/lens-insights-fixture-only.jpg",
+      "sha256": "14198eca70c7d886e17eb509f0f8d422d0e84b9b024656eb270b10301ff49242",
+      "bytes": 61862,
+      "anonymous_verified": true
+    },
+    "agent-lens-in-practice/assets/lens-no-risk-instruction.jpg": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/lens-no-risk-instruction.jpg",
+      "sha256": "c36a2ddb02e7e6b1b63c58a04dc7fd8e3ec9c6bff16747ebad6f1265aac6718d",
+      "bytes": 86065,
+      "anonymous_verified": true
+    }
+  },
+  "run_id": "hllta000"
+}

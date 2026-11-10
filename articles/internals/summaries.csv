@@ -1,0 +1,4 @@
+treatment,runs,comparable_research_final_ratings,rating_changed,rating_unchanged,condition_phrase_candidates,horizon_explicitly_not_provided,missing_tool_evidence,matured_runs
+default-committee,120,120,2,118,81,58,120,96
+luna-committee,120,120,0,120,45,16,120,96
+single-luna,120,0,0,0,0,0,0,96

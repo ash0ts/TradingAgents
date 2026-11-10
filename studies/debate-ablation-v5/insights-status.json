@@ -1,0 +1,30 @@
+{
+  "checked_at": "2026-11-10T08:21:43.758953+00:00",
+  "clustering_status": {
+    "$schema": "https://forge.coreweave.com/api/schemas/ClusteringStatusOutputBody.json",
+    "data": []
+  },
+  "latest_week": {
+    "$schema": "https://forge.coreweave.com/api/schemas/WeekOutputBody.json",
+    "data": {
+      "first_week": "2026-11-09",
+      "latest_week": "2026-11-09"
+    }
+  },
+  "ui_inspection": {
+    "checked_at": "2026-11-10T08:41:25.407408+00:00",
+    "status": "No completed clustering run",
+    "failure_category": "Missed requirement",
+    "turns": 1,
+    "conversations": 1,
+    "displayed_share": "100%",
+    "example_conversation_id": "eb83c373-910b-4655-93da-9917d0427503",
+    "example_kind": "Our synthetic arithmetic/export-recovery fixture, not a trading decision",
+    "excluded_from_trading_analysis": true,
+    "source_capture_sha256": "e1e1f9218263f3d5c682a280b1f2617bbdf47dc50dec00676173dc5606d96b5d",
+    "interpretation": "Classification exists for this engineering fixture. It does not establish an investment-agent failure rate or a discovered trading cluster."
+  },
+  "ui_rechecked_at": "2026-11-10T09:15:45.720036+00:00",
+  "latest_screenshot_sha256": "14198eca70c7d886e17eb509f0f8d422d0e84b9b024656eb270b10301ff49242",
+  "ui_recheck": "Unchanged: no completed clustering run; only synthetic engineering fixture classified, one turn in one conversation."
+}

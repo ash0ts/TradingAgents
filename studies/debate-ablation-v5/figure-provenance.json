@@ -1,0 +1,9 @@
+{
+  "source_sha256": "4b608feba9d1b3c7307bd5f769a1606806c3d89a611d1375f2e03ae484f34759",
+  "figures": {
+    "debate-paired-cohorts": "All three planned contrasts and all four cohort means; no significance or future-skill implication.",
+    "debate-repeatability": "Same-weight cases / all requested cases per treatment; agreement is not accuracy."
+  },
+  "renderer": "Matplotlib",
+  "no_generated_product_images": true
+}

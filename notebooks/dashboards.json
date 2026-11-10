@@ -1,0 +1,38 @@
+{
+  "outcomes": {
+    "wandb_url": "https://forge.coreweave.com/wandb/tradingagents-election-lab?nw=0q277wzs5up",
+    "forge_url": "https://forge.coreweave.com/wandb/wandb/tradingagents-election-lab?nw=0q277wzs5up"
+  },
+  "behavior": {
+    "wandb_url": "https://forge.coreweave.com/wandb/tradingagents-election-lab?nw=oc6zwblxo0y",
+    "forge_url": "https://forge.coreweave.com/wandb/wandb/tradingagents-election-lab?nw=oc6zwblxo0y"
+  },
+  "report": {
+    "wandb_url": "https://forge.coreweave.com/wandb/tradingagents-election-lab/reports/Would-you-give-this-investment-committee-money--VmlldzoxODI2MzIwNQ==",
+    "forge_url": "https://forge.coreweave.com/wandb/wandb/tradingagents-election-lab/reports/Would-you-give-this-investment-committee-money--VmlldzoxODI2MzIwNQ=="
+  },
+  "audit": {
+    "rows": 960,
+    "agent_runs": 360,
+    "baseline_predictions": 600,
+    "market_cases": 60,
+    "public_data_sha256": "f565efe5b288eaf93540484801b2f79e5f5bf8b2242ed9a3223428b797c10096"
+  },
+  "run_ids": [
+    "dash-37730290df2e65bf",
+    "dash-1ec96514e62a8f05",
+    "dash-fc1ba3d713960289",
+    "dash-2ad256102651d38f",
+    "dash-925751c2b6a8f313",
+    "dash-077ff5a5ae8c4cd5",
+    "dash-79afc5ee76a8ab06",
+    "dash-de63a1d99f812920",
+    "dash-a9cb19ec1a735bec",
+    "dash-a9a8d6efe13cac5d",
+    "dash-feae4411f1c101e0",
+    "dash-d3f61a651e0f4c89",
+    "dash-69c8a07d4c3482f1"
+  ],
+  "sdk": "wandb-workspaces==0.4.13",
+  "remote_readback_verified": true
+}

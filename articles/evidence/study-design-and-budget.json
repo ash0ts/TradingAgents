@@ -1,0 +1,31 @@
+{
+  "qualification_design": {
+    "estimated_upper_usd": 18.63216,
+    "margin": 2,
+    "qualification_costs": {
+      "default-committee": 0.039906,
+      "luna-committee": 0.018479,
+      "single-luna": 0.019249
+    },
+    "stocks": 6,
+    "trials": 2
+  },
+  "budget": {
+    "calls": 4187,
+    "campaign_cap_usd": 250,
+    "cost_known_usd": 7.683182,
+    "cost_upper_usd": 182.683182,
+    "infrastructure_reserved_usd": 175.0,
+    "infrastructure_status": "Conservative holds; invoice reconciliation pending. Not recorded spend.",
+    "model_unknown_calls": 0,
+    "unknown_calls": 3
+  },
+  "limits": [
+    "Retrospective replay cannot remove pretrained knowledge.",
+    "No archived news/social evidence: this is a prices, SEC, and macro evidence comparison.",
+    "Five-session 2026 outcomes are pending at the November 5 freeze.",
+    "Only four cohorts have matured five-session outcomes. Block intervals are exploratory, not an election-causality claim.",
+    "API dollars use recorded token usage; local hardware and hosted infrastructure are reported separately."
+  ],
+  "budget_note": "Infrastructure reservation is not recorded spend; local hardware is unmetered. No new inference was launched for article publication."
+}

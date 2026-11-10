@@ -1,0 +1,47 @@
+{
+  "checked_at": "2026-11-10",
+  "report_url": "https://forge.coreweave.com/wandb/wandb/tradingagents-election-lab/reports/Would-you-give-this-investment-committee-money--VmlldzoxODI2MzIwNQ==",
+  "same_report_identity": true,
+  "canonical_sha256": "d555886f2c84fe177f77644850f4ec80fbdbed4e9f728fa7bcb8eed4133299b3",
+  "saved_report_sha256": "a8207395b5676d9b1c1df98930640c8816dfc64ac1ed9bb8a32f9760f7938d48",
+  "anonymous_report_readback": {
+    "verified": true,
+    "image_blocks": 31,
+    "native_bar_panels": 20,
+    "updated_at": "2026-11-10T09:38:17Z"
+  },
+  "new_assets_anonymous_downloads": "All nine new figures, screenshots and CSVs matched local SHA256",
+  "public_github_article_links_http_200": 10,
+  "native_dashboard": {
+    "panels": 6,
+    "tables_anonymous_verified": 20,
+    "views": 7
+  },
+  "render_checks": [
+    {
+      "width": 1280,
+      "height": 900,
+      "page_scroll_width": 1280,
+      "loaded_article_images": 31,
+      "new_native_panels": "Both render four bars with matching signs/counts and run identities"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "page_scroll_width": 390,
+      "broken_article_images": 0,
+      "new_native_panels": "Both render bars and ticks; long native titles and positive-bar labels truncate. Adjacent full labels, values, captions and full-size images remain available."
+    }
+  ],
+  "screenshot_sha256": {
+    "debate-report-desktop.jpg": "778a36fd346608044f2ca91c806d58f27d7b01321eff1e9748d57264d2db3add",
+    "debate-report-mobile.jpg": "ac5a8fbf9cee091bb2604b0993affea82f1738c9b46bfacce499037be7e98d80",
+    "debate-report-mobile-repeatability.jpg": "15d365b9c483ecee9b79d9290f8441a242f668dc4b08e6a473b3d5581cc90e57"
+  },
+  "public_arithmetic_reproduction": "public-reproduction.json",
+  "native_trace_scope": "720 conversations, 24818 original spans, 7804 model calls; raw content and drilldowns require authenticated access",
+  "insights_scope": "No completed clustering run; displayed feedback covers one synthetic fixture, excluded from trading results",
+  "notebooks": "Earlier verified saved versions 20/10/27 retained; no new ablation notebook execution claimed",
+  "previous_report_revision": "Retained privately before this update",
+  "new_paid_calls_during_publication": 0
+}

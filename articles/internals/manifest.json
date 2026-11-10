@@ -1,0 +1,23 @@
+{
+  "analysis": "post-hoc descriptive handoff audit",
+  "figures": {
+    "internals-contract-checks.png": "dd84a0e9d662979554753405b2ba248e5a76b9f1e5195f5733315bb3671c8470",
+    "internals-contract-checks.svg": "a024065dbfbb215f2bc93eed94fabcceb5a438fbb43507db7340fd89047b6fa5"
+  },
+  "files": {
+    "README.md": "e872a23919fa1033ac03b2cef882f3d08900102c01c446ff5f919e25da24cdc7",
+    "insights-status.json": "3d143a4dcdaea9e94643a726793de8c948f2bbb6ac217ae116b0123edafe327a",
+    "observations.csv": "b598f01c62da35f091903250cb9082a55e0a8291260f70254a6d76d383262e5b",
+    "observations.json": "9ac63bd9c3e4555b035c96a2c7a4c0a431d04ccd4565a1f24e94af3444c5bd4d",
+    "protocol.json": "13f1fd8cec663ebc50e1505dcfacb2e4f68d5068bc8010685427b7e221bcb398",
+    "reviews.json": "efef6c10bf21d6dca90d43a34c558b7ee32c9ef32c9838554d28c2201703d776",
+    "summaries.csv": "3c4f66758e27b526162e8eb8a2fc95d5d89386ea1287287ed79e966ca69a1bd1",
+    "summaries.json": "98db534fb0e0f64a87547ee36b2298386f66990e9bac6c762c19c04e2abe4f55"
+  },
+  "independent_cases": 60,
+  "original_predictions_and_scores_changed": false,
+  "paid_model_calls": 0,
+  "review_date": "2026-11-09",
+  "rows": 360,
+  "schema": 1
+}

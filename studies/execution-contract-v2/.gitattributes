@@ -1,0 +1,2 @@
+# Preserve the standard CSV writer's CRLF bytes and artifact digests.
+*.csv linguist-generated=true whitespace=cr-at-eol
