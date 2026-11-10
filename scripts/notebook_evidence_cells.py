@@ -73,7 +73,7 @@ return
 _gate_rows = []
 for _s in evidence3['summaries']:
     _gate_rows.append({'Arm':_s['arm'],'System':_s['treatment'],'Requested':_s['requested'],
-        'Accepted':_s['contract_counts'].get('accepted',0),'Chose cash':_s['contract_counts'].get('abstained',0),
+        'Accepted':_s['contract_counts'].get('accepted',0),'Explicit abstentions':_s['contract_counts'].get('abstained',0),
         'Rejected citations':_s['contract_counts'].get('invalid_citations',0),'Actor failures':_s['failed'],
         'Complete native conversations':_s['complete_native_conversations'],
         'Citation decisions checked':_s['citation_decisions_checked'],

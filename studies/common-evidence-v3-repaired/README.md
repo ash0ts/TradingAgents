@@ -48,8 +48,8 @@ briefs remain in the private evidence project. Agent Lens conversation links
 require team access. Read `verification.json`, the selected assistant reviews,
 and publication receipts before treating an execution as a demonstrated result.
 
-The completed grid contains 360 successful executions: 302 accepted orders and
-58 cash choices. All 180 citation-arm checks pass (1,737 referenced observations).
+The completed grid contains 360 successful executions: 302 accepted execution contracts and
+58 explicit abstentions. Four accepted contracts also allocate zero. All 180 citation-arm checks pass (1,737 referenced observations).
 The 36 prespecified assistant reviews include one ambiguous reporting-period
 phrase; these are not expert labels or exhaustive narrative checks.
 

@@ -1,7 +1,7 @@
 {
   "report_url": "https://forge.coreweave.com/wandb/wandb/tradingagents-election-lab/reports/Would-you-give-this-investment-committee-money--VmlldzoxODI2MzIwNQ==",
   "same_report_identity": true,
-  "images": 21,
+  "images": 27,
   "native_panel_grids_preserved": 2,
   "native_panels_preserved": 10,
   "article_count": 1,
@@ -12,11 +12,17 @@
   "internals_assistant_reviews": 5,
   "corrected_campaign_panels_added": 2,
   "corrected_campaign_executions": 360,
+  "common_evidence_panels_added": 2,
+  "common_evidence_executions": 360,
+  "stopped_pilot_executions_preserved": 40,
+  "handoff_engineering_regressions": 8,
+  "main_complete_native_conversations": 359,
+  "handoff_complete_native_conversations": 8,
   "panel_layout": "Fluid width; financial panels h=11 so all 13 method labels fit. Data, filters and IDs preserved.",
   "source_sha256": {
-    "agent-lens-in-practice": "1a276f1df6c22f36e2a9be2c5e9fa7577aa121f4d1de4ef3e53dbafc71104cdb"
+    "agent-lens-in-practice": "41744265bf465b4cf00324d8aa3c8615ce07b48d4614a2c392ad288b1699ca10"
   },
   "before_sha256": "9b06eeeb48014f6f4170a36526b118ebe16702acaacde862f12aab4d17f55768",
-  "after_sha256": "243db7c1b046f59da696b8a8fc23b90595edeaefeef6085ce4fb954ce075d539",
+  "after_sha256": "e12df5ad166522922c99e221efae2c79bc812e8cccd91e9ef36c88d3b2b13663",
   "new_model_runs_during_publication": 0
 }
