@@ -157,11 +157,11 @@ The [investigation notebook](https://forge.coreweave.com/notebooks/Tm90ZWJvb2s6M
 
 ## Use Insights when it has evidence; keep investigating when it does not
 
-We checked the project's native Insights page on November 9. It had **no completed clustering run**, and its API returned no classified weeks. The UI says Insights runs daily after a project accumulates **1,000 new turns**. The original campaign has 360; even the 360-execution rerun below leaves this study below that threshold. We did not manufacture more conversations to obtain a populated chart.
+We checked the project's native Insights page on November 9 and queried its status again after the matched-evidence campaign below. It still had **no completed clustering run** and no classified weeks. The UI says Insights runs daily after a project accumulates **1,000 new turns**. Our three completed 360-run campaigns now exceed that count, before qualification and the stopped pilot, so the count alone no longer explains the absence of results. Eligibility does not mean a completed daily job. We did not manufacture conversations or present the onboarding illustration as analysis.
 
 ![The actual Agent Lens Insights onboarding page states that Insights runs daily once a project has 1,000 new turns since the last run.](assets/lens-insights-eligibility.png)
 
-*Actual project state on November 9. The chart on the right is the product's onboarding illustration, not results from this study. [Recorded availability check](../internals/insights-status.json). [Full-size image](assets/lens-insights-eligibility.png).*
+*Actual project state on November 9. The chart on the right is the product's onboarding illustration, not results from this study. [Latest recorded availability check](https://github.com/ash0ts/TradingAgents/blob/codex/tradingagents-forge-notebooks/studies/common-evidence-v3-repaired/insights-status.json). [Full-size image](assets/lens-insights-eligibility.png).*
 
 The [documented Insights workflow](https://docs.coreweave.com/products/agent-lens/insights) groups turns by intent or failure and provides example conversations to inspect. Once eligible, we would examine categories such as task misunderstanding and missed requirements, then compare their examples with the actual request. A category or generated cluster name would still need that review. Financial loss alone cannot establish a behavioral failure, and the agent trace cannot reveal a simulator's discarded condition unless we also inspect the execution rule.
 
@@ -298,14 +298,89 @@ The [corrected-execution dashboard](https://forge.coreweave.com/wandb/wandb/trad
 
 <!-- native-panel:corrected -->
 
+## Give everyone the same facts, then ask for receipts
+
+The next repair starts with the missing SPY comparison. Every analyst and committee member now receives the same compact brief: stock and SPY total returns over five, 20 and 60 sessions, their differences, observed volatility, dated SEC filing facts and frozen FRED observations. A filing's reporting period and age travel with its number. Tools can repeat those facts or report missing data; they cannot reveal a longer history to whichever agent asks the right question.
+
+The mandate is deliberately narrower than an election analyst's job. News, social posts, an event calendar, insiders and prediction markets remain unavailable. The agents must assess the supplied numerical scenario without inventing an earnings release, election outcome or catalyst. This repairs the information-access comparison; it does not conjure an archive. It also changes several things together—brief compression, benchmark access and the missing-source instruction—so a comparison with the earlier campaign cannot isolate the benefit of adding SPY.
+
+We froze two arms. **Shared brief** uses that evidence and the execution contract. **Required citations** additionally asks the final decision to name its supporting fact IDs, exact values, units and observation dates, and list the missing sources. Invalid references block the trade. A deterministic receipt calculates stock principal, entry fees and remaining cash, separately from the model's explanation and any future fill.
+
+Our first attempt promptly found a bug in our own instructions. We had told the model to copy a brief hash and a missing-source list into a field intended for missing sources. One MSFT response supplied 13 correct citations and put the hash in that list. The checker rejected it. We stopped new launches, let started work finish and preserved all **40 pilot decisions**. Their $1.247739 cost, including qualification, still counts. Their incomplete schedule does not enter the financial comparison. The repaired instruction leaves provenance hashes to the harness and constrains the five missing-source names; qualification includes the exact failed MSFT case.
+
+The completed comparison is **60 stock/date cases × three systems × two arms × one trial: 360 executions**. Qualification cost selected that balanced design before the full run. All five cohorts remain; the 2026 five-session outcomes are still pending at the November 5 freeze. The [protocol and all individual trials](https://github.com/ash0ts/TradingAgents/tree/codex/tradingagents-forge-notebooks/studies/common-evidence-v3-repaired) retain the original and contract-only executions too. An unscheduled second trial is a null, not a zero or a failure.
+
+![Accepted execution contracts and explicit abstentions for all six system-and-evidence combinations, with 60 requested executions each.](assets/evidence-contract-status.png)
+
+*302 accepted execution contracts and 58 explicit abstentions; four accepted contracts also allocate zero. No actor failed or returned a rejected final contract. All 180 citation checks passed, covering 1,737 cited observations. Cash abstentions may have empty citation lists. This checks references, not the merit of an investment. [Exact values](assets/evidence-comparison.csv). [Full-size image](assets/evidence-contract-status.png).*
+
+The citations resolved. The trades did not get better.
+
+| System and evidence | Mean trading P&L | Same-weight SPY | Difference from SPY | Invested fraction |
+|---|---:|---:|---:|---:|
+| Luna/Sol · shared brief | $109.05 | $162.99 | −$53.94 | 34.3% |
+| Luna/Sol · required citations | −$49.51 | $126.86 | −$176.37 | 33.8% |
+| All-Luna · shared brief | $61.31 | $118.61 | −$57.31 | 27.1% |
+| All-Luna · required citations | −$217.81 | $27.95 | −$245.76 | 24.5% |
+| Single Luna · shared brief | $212.48 | $140.28 | +$72.20 | 43.2% |
+| Single Luna · required citations | $169.98 | $153.92 | +$16.07 | 42.1% |
+
+*Mean dollars per independent $100,000 account, eight matured dates, 10 basis points per side. Model expense is separate. Each SPY control uses that execution's invested fraction, entry and exit. Matching capital does not match beta or volatility.*
+
+![For both committees, buying the selected stocks earns less than putting the same allocation into SPY; the single analyst has positive differences in both arms in this sample.](assets/evidence-stock-selection.png)
+
+*Each line joins an agent account mean with its own same-capital SPY control. These are observed development outcomes, not evidence of a dependable winner. [Full-size image](assets/evidence-stock-selection.png).*
+
+For Luna/Sol, requiring citations changed selection P&L by **−$122.43 per account**. Its exploratory cohort-block interval runs from **−$217.42 to −$28.84**. The other two selection-difference intervals include zero. There are only four matured cohort blocks and one execution per arm and case. These results give us a concrete negative development result; they do not establish that asking for citations generally harms investment decisions. More importantly, a copied observation can be perfectly correct while the inference drawn from it is unhelpful.
+
+![Paired changes in selection P&L from requiring citations: Luna/Sol minus $122, all-Luna minus $188, single Luna minus $56, with exploratory cohort-block intervals.](assets/evidence-paired-uncertainty.png)
+
+*Eight paired dates in four blocks. The units are dollars per account, not directional accuracy or a probability of future loss. [Full-size image](assets/evidence-paired-uncertainty.png).*
+
+Open the actual UNH decision below. Its dates, 25% allocation and cited return observations are inspectable in Agent Lens. The receipt then tells us exactly how much of the sleeve becomes stock and how much pays the entry fee. That is a useful improvement in accountability even when the resulting trade loses money.
+
+![Actual Agent Lens conversation showing the UNH order dates, 25 percent allocation, empty execution conditions and exact supporting observation fields.](assets/lens-cited-decision.png)
+
+*All-Luna, required-citations arm, UNH on September 13, 2023. These are the model's recorded fields. They establish what it returned; the execution gate and portfolio simulator perform the separate checks. The live drilldown requires team access. [Full-size image](assets/lens-cited-decision.png).*
+
+We also read **36 prespecified final outputs**, labeled as Codex assistant reviews. Thirty-five were consistent with the mandate and selected factual checks. In one shared-brief UNH report, the phrase “reported quarterly revenue” introduces a list containing revenue, net income and operating cash flow. The revenue and income cover April–June; the cash flow covers January–June. The dollar values are supplied correctly, but the grouping leaves the period ambiguous. The single analyst explicitly calls the same cash flow first-half. We retained that narrower finding rather than upgrading it into a claim that the model invented a quarterly figure. The [review records](https://github.com/ash0ts/TradingAgents/blob/codex/tradingagents-forge-notebooks/studies/common-evidence-v3-repaired/reviews.json) state what was checked; they are not a comprehensive factuality certification.
+
+## Fix the instruction before diagnosing the agent
+
+The trader's Sell/25% mismatch deserved the same scrutiny. Its recorded request says: **“Overweight is a Buy and Underweight is a Sell.”** Our evaluation says Underweight invests 25%, while Sell invests zero. We had given two stages different dictionaries, then admired the portfolio manager for translating between them.
+
+We left the completed 360-run campaign frozen and repaired the handoff separately. In evaluation mode, the trader now returns one of the same five ratings as the final manager, together with the exact mandate, target weight and explicit conditions. The schema rejects a next-close weight that disagrees with the rating. Ordinary TradingAgents execution keeps its existing trader behavior.
+
+We selected two already-reviewed UNH cases, both evidence arms and both committees: **eight separate engineering regressions**. All eight returned a valid five-rating trader proposal, with the same mandate and consistent action/weight fields. Hosted readback verified **378 spans and 124 model calls**; every span ID also exists in the private journal. The [paired before/after records](https://github.com/ash0ts/TradingAgents/tree/codex/tradingagents-forge-notebooks/studies/trader-handoff-v4) link each new proposal to its previous conversation.
+
+Those checks cost **$0.300438**. They establish that the repaired handoff works on these selected cases. They do not establish improved returns, and we did not blend them into the completed financial comparison. Recommendations can change between stochastic executions; the test checks the contract, not whether the new run repeats an old opinion.
+
+![Actual Forge investigation notebook displaying all eight original and repaired trader actions, proposed weights, final weights and accepted gates.](assets/forge-handoff-notebook.png)
+
+*The saved investigation notebook after hosted execution, November 9. All eight rows remain visible, including the Luna decision that changed from Sell to Hold. Before/after conversation links are in the table’s additional columns. This is a handoff regression check, not a return comparison. [Full-size image](assets/forge-handoff-notebook.png).*
+
+There was a separate observability failure. Native readback found **11,822 spans and 3,910 model calls**, one fewer model call than the local records. An export timeout lost the Bull Researcher subagent and its model span in one AAPL conversation. The local response and charge survive; its exact request does not. The dashboard therefore reports **359/360 complete traces**. That execution remains in the financial results. We neither reconstructed a request nor reran the model to make the trace look complete.
+
+The follow-up adds an optional private journal of actual ended native spans, retaining their original IDs, parentage and timestamps. A failed-export fixture verifies that the payload survives; the eight engineering runs compare the journal's span IDs with hosted readback. A flush is a request to finish export work, not a substitute for checking delivery. The journal can recover a future missing export without another model call. It cannot repair the unjournaled gap in this campaign.
+
+The [matched-evidence dashboard](https://forge.coreweave.com/wandb/wandb/tradingagents-election-lab?nw=94cw9owsbt4) separates accepted orders, stock-selection P&L, total trading P&L, invested capital, model expense, citation checks and trace completeness. Its run tables retain every trial, the 36 reviews and the stopped pilot. The financial notebook adds the strongest, weakest and fixed-seed random account for each arm and system, with all six constituent conversation links.
+
+![Actual Forge dashboard showing all six arm-and-system selection-P&L results, with four negative committee bars and two positive single-analyst bars.](assets/forge-evidence-dashboard.png)
+
+*The saved native selection panel in full-screen view. Horizontal values are mean dollars above or below the same-capital SPY control, after trading fees. The exact table and uncertainty figure above constrain its interpretation. [Full-size image](assets/forge-evidence-dashboard.png).*
+
+<!-- native-panel:evidence -->
+
 ## Open the evidence, then decide what to change
 
 The [trading evidence package](../evidence/tradingagents-public-evidence.zip) contains 960 predictions, 2,880 horizon scores, 640 portfolio scenarios, source coverage, paired comparisons, selected reviews, and a hash manifest. The [reproduction guide](../evidence/README.md) defines the joins, units, and access limits. The [scenario extension](../trading-scenarios/README.md) supplies another 1,120 reconciled accounts and the inputs required to rebuild them without a model call or licensed raw quotes.
 
 The [internals audit](../internals/README.md) adds 360 derived observation rows and five selected reviews without changing those original records. Its native dashboard contains the result-to-conversation links, and its public exports contain the check definitions, short reviewed excerpts and source hashes. This pass made no new model or judge calls.
 
-The original trading qualification and campaign recorded **$7.683182 in model charges**. The corrected qualification and campaign add **$7.783134**. Including $0.001853 from an excluded prototype, total known model charges are **$15.468169**. A separate **$175 infrastructure reservation** remains held against the **$250 cap**, awaiting invoice reconciliation. Known or reserved spend is **$190.468169**. Local training hardware is unmetered. Publication reuses saved results.
+The original and contract-only campaigns, including qualification and an excluded prototype, cost **$15.468169** in known model charges. The stopped pilot, matched-evidence campaign, qualification and eight handoff checks add **$10.710423**, for **$26.178592** total. A separate **$179.99 infrastructure reservation** remains held against the **$250 cap**, awaiting invoice reconciliation; it is not recorded spend. Known charges plus reservations are **$206.168592**. Local training hardware is unmetered. Publication reuses saved results.
+
+The [matched-evidence package](https://github.com/ash0ts/TradingAgents/tree/codex/tradingagents-forge-notebooks/studies/common-evidence-v3-repaired) adds every new decision, 240 account scenarios across four fee settings, 36 reviews, the stopped pilot, and a standard-library reproduction script. Its 280 per-dollar account factors reproduce all 192 matured scenarios without raw licensed quotes; 48 scenarios remain pending. The eight handoff regressions have their own frozen protocol and export. Raw reports and native payloads stay in the private companion project.
 
 The three Forge Notebooks remain practical workspaces: [meet the committee](https://forge.coreweave.com/notebooks/Tm90ZWJvb2s6MTUyNjA%3D), [investigate its behavior](https://forge.coreweave.com/notebooks/Tm90ZWJvb2s6MTUyNzE%3D), and [compare financial outcomes](https://forge.coreweave.com/notebooks/Tm90ZWJvb2s6MTUyNzI%3D). This single article supplies the narrative across them. The code remains in six dependent draft PRs in the personal fork, with no Forge or Agent Lens product changes.
 
-The execution contract is now implemented and its development results are visible. The matched-evidence follow-up below addresses benchmark access and the missing-source policy; a forward study still needs richer event evidence and broader factual review. The useful outcome is a trading experiment whose instructions, orders and scores can be challenged all the way down to the recorded request. Eight historical dates still do not tell me to hand it the money.
+The execution contract is now implemented and its development results are visible. The matched-evidence follow-up addresses benchmark access and the missing-source policy; a forward study still needs richer event evidence and broader factual review. The useful outcome is a trading experiment whose instructions, orders and scores can be challenged all the way down to the recorded request. Eight historical dates still do not tell me to hand it the money.

@@ -46,6 +46,7 @@ def archive(public):
             "verification.json",
             "dashboard.json",
             "figure-provenance.json",
+            "insights-status.json",
             "unit-account-factors.json",
             "public-reproduction.json",
             "publication-budget.json",

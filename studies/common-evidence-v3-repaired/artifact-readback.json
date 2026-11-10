@@ -1,0 +1,25 @@
+[
+  {
+    "artifact": "wandb/tradingagents-election-lab/common-evidence-v3-repaired-results:v1",
+    "digest_verified": true,
+    "files": 20,
+    "results_sha256": "50df369520db1f62a0c3c7b7aadcf16fb5036daa31432c3c404d41d62a640fd7"
+  },
+  {
+    "artifact": "wandb/tradingagents-election-lab-evidence/common-evidence-v3-repaired-executions:v0",
+    "digest_verified": true,
+    "files": 2554
+  },
+  {
+    "artifact": "wandb/tradingagents-election-lab/trader-handoff-v4-results:v0",
+    "digest_verified": true,
+    "files": 4,
+    "results_sha256": "9890d39b6e4914b3f55c6d18be6bd0441d395dea55a29c42405f9c2425d5c87f"
+  },
+  {
+    "artifact": "wandb/tradingagents-election-lab-evidence/trader-handoff-v4-executions:v0",
+    "digest_verified": true,
+    "files": 449,
+    "results_sha256": "9890d39b6e4914b3f55c6d18be6bd0441d395dea55a29c42405f9c2425d5c87f"
+  }
+]

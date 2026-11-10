@@ -104,6 +104,36 @@
       "private_original_sha256": "cde878bf81f3fe4179ba2ccbad2266f3811a925e0d713ea65df1b28d9d9ceff4",
       "privacy": "Public clip excludes account header and private trace identifiers; only derived results or unavailable-evidence response shown.",
       "retained_in_unified_article": "agent-lens-in-practice/assets/forge-notebook-roles.png"
+    },
+    {
+      "file": "agent-lens-in-practice/assets/lens-cited-decision.png",
+      "sha256": "e813287049cfcc738d2e86896e6e49a0f674245423aabfcbb5059870e2923c78",
+      "capture_at_utc": "2026-11-09T23:59:24.846829+00:00",
+      "surface": "Agent Lens conversation Thread",
+      "selection": "UNH 2023 after, all-Luna, required citations; dates, weight, conditions and references",
+      "transformation": "Direct native browser screenshot; no synthetic UI or pixel editing.",
+      "privacy": "Authorized study outputs and authenticated drilldown identity only; no credentials or restricted source documents.",
+      "boundary": "Observed model fields or saved financial summaries; neither establishes investment quality."
+    },
+    {
+      "file": "agent-lens-in-practice/assets/forge-evidence-dashboard.png",
+      "sha256": "0fbf8fed5c9b5a1ab22b4ae463b766a368ff8989c0b1de1027bc10a293e42fd5",
+      "capture_at_utc": "2026-11-10T00:02:51.084134+00:00",
+      "surface": "Forge saved workspace, fullscreen native panel",
+      "selection": "Matched evidence comparison; all six system/arm selection P&L means",
+      "transformation": "Direct native browser screenshot; no synthetic UI or pixel editing.",
+      "privacy": "Authorized study outputs and authenticated drilldown identity only; no credentials or restricted source documents.",
+      "boundary": "Observed model fields or saved financial summaries; neither establishes investment quality."
+    },
+    {
+      "file": "agent-lens-in-practice/assets/forge-handoff-notebook.png",
+      "sha256": "7e00d8bff141277e3ec6406065cd09b36715d57a733de09c9979dc2bf0fab911",
+      "capture_at_utc": "2026-11-10T00:18:29.962966+00:00",
+      "surface": "Forge investigation notebook, native executed presentation view",
+      "selection": "All eight engineering regression rows; actual before and after actions and weights",
+      "transformation": "Full direct browser screenshot; no pixel edits or synthetic UI.",
+      "privacy": "Public derived data only; no credentials or raw source documents.",
+      "boundary": "Contract consistency checks on selected development cases; no investment-performance claim."
     }
   ]
 }

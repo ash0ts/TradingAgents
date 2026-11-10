@@ -1,0 +1,30 @@
+{
+  "run_url": "https://forge.coreweave.com/wandb/wandb/tradingagents-election-lab/runs/handoff-v4-9890d39b6e4914b3",
+  "run_id": "handoff-v4-9890d39b6e4914b3",
+  "result_sha256": "9890d39b6e4914b3f55c6d18be6bd0441d395dea55a29c42405f9c2425d5c87f",
+  "anonymous_table_rows_verified": 8,
+  "native_tags_verified": 8,
+  "view": {
+    "id": "01a1c2cc-0609-7a53-bbbe-72643fec9c4d",
+    "name": "Trader handoff \u00b7 eight engineering regressions",
+    "description": "Selected development cases; five-rating proposal checks and exact span journaling. No financial-performance claim.",
+    "url": "/agent-lens/wandb/tradingagents-election-lab-evidence/conversations?filter=%5B%7B%22id%22%3A+%22tags%22%2C+%22value%22%3A+%7B%22operator%22%3A+%22contains%22%2C+%22value%22%3A+%22trader-handoff-v4-engineering-regression%22%7D%7D%5D",
+    "user_id": "VXNlcjo0MDAzNzQ5",
+    "project_id": "UHJvamVjdEludGVybmFsSWQ6NDU0NTI5MjY=",
+    "inserted_at": "2026-11-10T00:11:53.226Z",
+    "updated_at": "2026-11-10T00:11:53.226Z"
+  },
+  "workspace_url": "https://forge.coreweave.com/wandb/wandb/tradingagents-election-lab?nw=94cw9owsbt4",
+  "artifacts": [
+    {
+      "artifact": "wandb/tradingagents-election-lab/trader-handoff-v4-results:v0",
+      "digest": "76a1d7729a06342468a1c88f07933165",
+      "private": false
+    },
+    {
+      "artifact": "wandb/tradingagents-election-lab-evidence/trader-handoff-v4-executions:v0",
+      "digest": "b4fe496d942cea21128a4308049a2b55",
+      "private": true
+    }
+  ]
+}

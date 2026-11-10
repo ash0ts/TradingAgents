@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import time
 from urllib.parse import urlencode
 
 import requests
@@ -48,8 +49,13 @@ def publish():
     audits = json.loads((OUT / "campaign-hosted-audit.json").read_text())["rows"]
     for row in audits:
         client.tag(row["conversation_id"], row["trace_ids"][0], "trader-handoff-v4-engineering-regression")
-    tags = client.request("POST", "/conversation-tags/query", {"conversation_ids": [r["conversation_id"] for r in audits]})["data"]
-    assert len({t["conversation_id"] for t in tags if t["tag"] == "trader-handoff-v4-engineering-regression"}) == 8
+    for _attempt in range(10):
+        tags = client.request("POST", "/conversation-tags/query", {"conversation_ids": [r["conversation_id"] for r in audits]})["data"]
+        tagged = {t["conversation_id"] for t in tags if t["tag"] == "trader-handoff-v4-engineering-regression"}
+        if len(tagged) == 8:
+            break
+        time.sleep(2)
+    assert len(tagged) == 8, "Native tag index did not catch up within the bounded readback"
     body = {"name": "Trader handoff · eight engineering regressions",
             "description": "Selected development cases; five-rating proposal checks and exact span journaling. No financial-performance claim.",
             "url": "/agent-lens/wandb/tradingagents-election-lab-evidence/conversations?" + urlencode({"filter": json.dumps([{"id": "tags", "value": {"operator": "contains", "value": "trader-handoff-v4-engineering-regression"}}])})}

@@ -132,3 +132,39 @@ to the notebook's authenticated Agent Lens links and evidence hashes. The
 separate scenario dashboard preserves the original financial and behavior
 workspace filters. Public replay inputs and provenance live under
 `articles/trading-scenarios`; raw vendor prices remain private.
+
+## Matched evidence and handoff follow-up
+
+The November 9 revision adds 360 matched-evidence executions, every individual
+trial across the original/contract/shared/cited versions, 36 scoped assistant
+reviews, and the complete 40-run stopped pilot. The investigation notebook also
+shows eight separately frozen trader-handoff regressions with before/after
+conversation links. These development checks are excluded from financial means.
+
+The new comparison has 302 accepted execution contracts and 58 explicit
+abstentions; four accepted contracts also allocate zero. Its native trace audit
+is 359/360 complete, with the one unjournaled export gap retained in all financial
+denominators. The eight later engineering executions reconcile 378 hosted spans
+against their private OTLP journal. Citation matching, contract validation,
+reviewed explanation quality and trading outcomes remain separate measurements.
+
+The [matched-evidence workspace](https://forge.coreweave.com/wandb/wandb/tradingagents-election-lab?nw=94cw9owsbt4)
+has seven native metrics panels and the separate handoff result table. Public
+artifact `common-evidence-v3-repaired-results:v1` and the `trader-handoff-v4-results:v0`
+artifact live in the same public project. Their raw execution companions remain
+private. `studies/common-evidence-v3-repaired/artifact-readback.json` records
+manifest verification and exact published result-byte comparisons.
+
+All three notebooks were executed again in native Forge, checkpointed, and read
+back at versions **20, 10 and 27**. Anonymous static outputs were downloaded and
+matched byte-for-byte. Source ASTs match after normalizing only the generated
+Marimo version and leading/trailing Markdown whitespace. The portable 0.25.2
+lock also exported all three in a clean environment; the hosted runtime remains
+0.25.1. No model calls were made by those notebook executions. The optional paid
+button still requires explicit configuration and was not exercised.
+
+The latest ledger records $26.178592 in model charges and $179.99 in conservative
+infrastructure holds: $206.168592 known or reserved against $250. The added $4.99
+publication hold covers this follow-up's notebook work; invoices remain pending.
+Exact sources, static output hashes, package versions, and runtime termination
+receipts are in `notebooks/publication.json`.

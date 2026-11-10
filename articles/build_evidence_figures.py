@@ -136,7 +136,7 @@ def build():
     )
     styles = [
         ("accepted", "Accepted", "#226d86", ""),
-        ("abstained", "Chose cash", "#c0b598", "//"),
+        ("abstained", "Explicit abstentions", "#c0b598", "//"),
         ("invalid_citations", "Citation rejected", "#a9654b", "xx"),
         ("invalid_contract", "Contract rejected", "#805775", ".."),
         ("blocked_condition", "Condition blocked", "#8d6791", "\\"),
