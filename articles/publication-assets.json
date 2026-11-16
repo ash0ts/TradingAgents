@@ -470,8 +470,8 @@
     },
     "agent-lens-in-practice/assets/lens-reviewed-handoffs.png": {
       "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/lens-reviewed-handoffs.png",
-      "sha256": "e4812a17fdbad9c8d059d63ecfe633a0d13f9b6c7518cb5f15bf2c36717d5d9d",
-      "bytes": 60372,
+      "sha256": "5e7e34fdb9538c2cfebff7d2dd0fd0d07f6ae0aa6122780183a350906e8d54c0",
+      "bytes": 176352,
       "anonymous_verified": true
     },
     "internals/README.md": {
@@ -560,8 +560,8 @@
     },
     "agent-lens-in-practice/assets/forge-corrected-dashboard.png": {
       "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/forge-corrected-dashboard.png",
-      "sha256": "0227c9715137220efff605e3dee00c628c20e58d098f1d93620eaf6700ca7959",
-      "bytes": 64391,
+      "sha256": "0d08a0b294fdae366a19d2882cac15a7539e0b5abe925a6a2a7bb5e8d39b6133",
+      "bytes": 210554,
       "anonymous_verified": true
     },
     "agent-lens-in-practice/assets/evidence-comparison.csv": {
@@ -608,20 +608,20 @@
     },
     "agent-lens-in-practice/assets/forge-evidence-dashboard.png": {
       "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/forge-evidence-dashboard.png",
-      "sha256": "0fbf8fed5c9b5a1ab22b4ae463b766a368ff8989c0b1de1027bc10a293e42fd5",
-      "bytes": 66966,
+      "sha256": "c81d5451faa0ce2909875adc4c0a75570a8bc39553f111bdd34a494962d43c9e",
+      "bytes": 212421,
       "anonymous_verified": true
     },
     "agent-lens-in-practice/assets/forge-handoff-notebook.png": {
       "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/forge-handoff-notebook.png",
-      "sha256": "7e00d8bff141277e3ec6406065cd09b36715d57a733de09c9979dc2bf0fab911",
-      "bytes": 110145,
+      "sha256": "dd2050385dec631a7f31ecd11b78814713ea0b25b077fa3ae45512555cd37c8f",
+      "bytes": 314970,
       "anonymous_verified": true
     },
     "agent-lens-in-practice/assets/lens-cited-decision.png": {
       "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/lens-cited-decision.png",
-      "sha256": "e813287049cfcc738d2e86896e6e49a0f674245423aabfcbb5059870e2923c78",
-      "bytes": 67715,
+      "sha256": "c543cabd240b8abe33b5906bc772f112e23c64748e9dbe209a00a5ed1d2bffe7",
+      "bytes": 291183,
       "anonymous_verified": true
     },
     "agent-lens-in-practice/assets/debate-contrasts.csv": {
@@ -662,20 +662,20 @@
     },
     "agent-lens-in-practice/assets/forge-debate-dashboard.jpg": {
       "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/forge-debate-dashboard.jpg",
-      "sha256": "c399b2235ed95c6c9d6b7e0b263e4228b68a8ace9b5e4ea7c938ac1068beffa0",
-      "bytes": 47504,
+      "sha256": "40d4b786796cb84f894bfaa7aa671fb35e78baece85ea4ccdcacf356aa1924a9",
+      "bytes": 70924,
       "anonymous_verified": true
     },
     "agent-lens-in-practice/assets/lens-insights-fixture-only.jpg": {
       "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/lens-insights-fixture-only.jpg",
-      "sha256": "14198eca70c7d886e17eb509f0f8d422d0e84b9b024656eb270b10301ff49242",
-      "bytes": 61862,
+      "sha256": "c3af1e27a7ae8e51ec736eb8ed15a1548c75d8cd61ccbf5781a2cdf2f9ff96a9",
+      "bytes": 98031,
       "anonymous_verified": true
     },
     "agent-lens-in-practice/assets/lens-no-risk-instruction.jpg": {
       "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/agent-lens-in-practice/assets/lens-no-risk-instruction.jpg",
-      "sha256": "c36a2ddb02e7e6b1b63c58a04dc7fd8e3ec9c6bff16747ebad6f1265aac6718d",
-      "bytes": 86065,
+      "sha256": "2f110f2db283e97eb0e15b45e8565fe7b04864546ed56772dad461fd654ebeb4",
+      "bytes": 140967,
       "anonymous_verified": true
     }
   },

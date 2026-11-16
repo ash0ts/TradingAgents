@@ -156,6 +156,8 @@ def article_blocks(slug, receipt, panels):
             blocks.append(wr.MarkdownBlock(text=body))
         buffer.clear()
 
+    panel_map = json.loads((ROOT / slug / "report-panels.json").read_text())["workspace_nw_to_panel"]
+
     for line in text.splitlines():
         if line.startswith("## "):
             flush()
@@ -163,6 +165,11 @@ def article_blocks(slug, receipt, panels):
         elif marker := re.fullmatch(r"<!-- native-panel:(\w+) -->", line):
             flush()
             blocks.append(panels[marker[1]])
+        elif line.startswith("> **Interactive Forge Workspace view:**") and (
+            nw_match := re.search(r"\?nw=([a-z0-9]+)\)", line)
+        ):
+            flush()
+            blocks.append(panels[panel_map[nw_match.group(1)]])
         elif match := re.fullmatch(r"!\[([^\]]+)\]\(([^)]+)\)", line):
             flush()
             alt, target = match.groups()

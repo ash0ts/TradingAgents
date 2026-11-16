@@ -1,0 +1,12 @@
+{
+  "report_url": "https://forge.coreweave.com/wandb/wandb/tradingagents-election-lab/reports/Would-you-give-this-investment-committee-money--VmlldzoxODI2MzIwNQ==",
+  "workspace_nw_to_panel": {
+    "0q277wzs5up": "financial",
+    "dufjini1rvb": "internals",
+    "oc6zwblxo0y": "behavior",
+    "71cv89hjh9u": "scenarios",
+    "zvy3sfqxpnd": "corrected",
+    "94cw9owsbt4": "evidence",
+    "tmuo3ynvgek": "ablation"
+  }
+}
