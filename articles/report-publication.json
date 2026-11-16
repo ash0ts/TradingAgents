@@ -28,9 +28,9 @@
   "ablation_model_calls": 7804,
   "panel_layout": "Fluid width; financial panels h=11 so all 13 method labels fit. Data, filters and IDs preserved.",
   "source_sha256": {
-    "agent-lens-in-practice": "a9629dfa083962d6918a42a6ffcf09db3349182f5027812f353085c5434c8cdd"
+    "agent-lens-in-practice": "5c2916aa8152c595f333d307ebe8d079723e23c6f260a752f1c4e785531741da"
   },
   "before_sha256": "9b06eeeb48014f6f4170a36526b118ebe16702acaacde862f12aab4d17f55768",
-  "after_sha256": "44096fe7bba1e0e7627bee94383c99921f794d25160c56dc8910d1efa823a33c",
+  "after_sha256": "be8cc9af77314376e52681ce6f0c135d9618fd5de292b36deda2790318a0ee3e",
   "new_model_runs_during_publication": 0
 }
