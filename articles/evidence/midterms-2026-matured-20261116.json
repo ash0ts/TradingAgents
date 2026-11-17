@@ -1,0 +1,2283 @@
+{
+  "schema": "tradingagents.midterms-2026-forward-maturity/v1",
+  "evaluated_at_utc": "2026-11-17T00:42:57.702541+00:00",
+  "original_outcomes_freeze": "2026-11-05",
+  "forward_maturity_freeze": "2026-11-13",
+  "zero_leakage_guarantee": "All predictions were sealed, SHA-256 hashed, and exported to Agent Lens on or before 2026-11-10, prior to the 2026-11-10 ('before' window) and 2026-11-12 ('after' window) market closes. `lab-data/election-v1/outcomes.json` remains unmodified.",
+  "market_bars_nov_2026": {
+    "AAPL": {
+      "2026-11-02": {
+        "close": 338.32,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-03": {
+        "close": 331.9,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-04": {
+        "close": 349.51,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-05": {
+        "close": 344.17,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-06": {
+        "close": 342.37,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-09": {
+        "close": 350.69,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-10": {
+        "close": 348.51,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-11": {
+        "close": 355.63,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-12": {
+        "close": 354.88,
+        "dividend": 0.27,
+        "split": 1.0
+      },
+      "2026-11-13": {
+        "close": 356.27,
+        "dividend": 0.0,
+        "split": 1.0
+      }
+    },
+    "JPM": {
+      "2026-11-02": {
+        "close": 340.58,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-03": {
+        "close": 337.98,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-04": {
+        "close": 352.11,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-05": {
+        "close": 337.34,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-06": {
+        "close": 334.49,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-09": {
+        "close": 342.08,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-10": {
+        "close": 342.07,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-11": {
+        "close": 343.39,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-12": {
+        "close": 342.82,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-13": {
+        "close": 346.19,
+        "dividend": 0.0,
+        "split": 1.0
+      }
+    },
+    "MSFT": {
+      "2026-11-02": {
+        "close": 507.12,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-03": {
+        "close": 520.99,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-04": {
+        "close": 555.8,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-05": {
+        "close": 535.93,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-06": {
+        "close": 530.61,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-09": {
+        "close": 545.18,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-10": {
+        "close": 533.16,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-11": {
+        "close": 521.13,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-12": {
+        "close": 523.0,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-13": {
+        "close": 523.88,
+        "dividend": 0.0,
+        "split": 1.0
+      }
+    },
+    "NVDA": {
+      "2026-11-02": {
+        "close": 202.06,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-03": {
+        "close": 206.69,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-04": {
+        "close": 200.13,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-05": {
+        "close": 181.6,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-06": {
+        "close": 186.64,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-09": {
+        "close": 178.67,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-10": {
+        "close": 168.89,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-11": {
+        "close": 173.73,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-12": {
+        "close": 166.19,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-13": {
+        "close": 162.85,
+        "dividend": 0.0,
+        "split": 1.0
+      }
+    },
+    "SPY": {
+      "2026-11-02": {
+        "close": 752.1,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-03": {
+        "close": 754.35,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-04": {
+        "close": 766.81,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-05": {
+        "close": 733.0,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-06": {
+        "close": 735.29,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-09": {
+        "close": 752.69,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-10": {
+        "close": 749.92,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-11": {
+        "close": 759.81,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-12": {
+        "close": 757.12,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-13": {
+        "close": 754.37,
+        "dividend": 0.0,
+        "split": 1.0
+      }
+    },
+    "UNH": {
+      "2026-11-02": {
+        "close": 400.44,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-03": {
+        "close": 404.44,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-04": {
+        "close": 409.38,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-05": {
+        "close": 395.72,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-06": {
+        "close": 394.15,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-09": {
+        "close": 397.62,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-10": {
+        "close": 405.12,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-11": {
+        "close": 402.94,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-12": {
+        "close": 405.13,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-13": {
+        "close": 407.46,
+        "dividend": 0.0,
+        "split": 1.0
+      }
+    },
+    "XOM": {
+      "2026-11-02": {
+        "close": 179.67,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-03": {
+        "close": 177.46,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-04": {
+        "close": 169.27,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-05": {
+        "close": 165.3,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-06": {
+        "close": 165.87,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-09": {
+        "close": 164.73,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-10": {
+        "close": 164.47,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-11": {
+        "close": 166.71,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-12": {
+        "close": 169.78,
+        "dividend": 0.0,
+        "split": 1.0
+      },
+      "2026-11-13": {
+        "close": 170.59,
+        "dividend": 0.0,
+        "split": 1.0
+      }
+    }
+  },
+  "case_outcomes_5d": {
+    "midterms-2026-after-AAPL": {
+      "decision_date": "2026-11-04",
+      "ticker": "AAPL",
+      "entry_date": "2026-11-05",
+      "exit_date_5d": "2026-11-12",
+      "stock_return_5d": 0.031903,
+      "spy_return_5d": 0.032906,
+      "excess_return_5d": -0.001003,
+      "stock_return_1d": -0.00523,
+      "spy_return_1d": 0.003124,
+      "excess_return_1d": -0.008354
+    },
+    "midterms-2026-after-JPM": {
+      "decision_date": "2026-11-04",
+      "ticker": "JPM",
+      "entry_date": "2026-11-05",
+      "exit_date_5d": "2026-11-12",
+      "stock_return_5d": 0.016245,
+      "spy_return_5d": 0.032906,
+      "excess_return_5d": -0.016661,
+      "stock_return_1d": -0.008448,
+      "spy_return_1d": 0.003124,
+      "excess_return_1d": -0.011573
+    },
+    "midterms-2026-after-MSFT": {
+      "decision_date": "2026-11-04",
+      "ticker": "MSFT",
+      "entry_date": "2026-11-05",
+      "exit_date_5d": "2026-11-12",
+      "stock_return_5d": -0.024126,
+      "spy_return_5d": 0.032906,
+      "excess_return_5d": -0.057032,
+      "stock_return_1d": -0.009927,
+      "spy_return_1d": 0.003124,
+      "excess_return_1d": -0.013051
+    },
+    "midterms-2026-after-NVDA": {
+      "decision_date": "2026-11-04",
+      "ticker": "NVDA",
+      "entry_date": "2026-11-05",
+      "exit_date_5d": "2026-11-12",
+      "stock_return_5d": -0.084857,
+      "spy_return_5d": 0.032906,
+      "excess_return_5d": -0.117763,
+      "stock_return_1d": 0.027753,
+      "spy_return_1d": 0.003124,
+      "excess_return_1d": 0.024629
+    },
+    "midterms-2026-after-UNH": {
+      "decision_date": "2026-11-04",
+      "ticker": "UNH",
+      "entry_date": "2026-11-05",
+      "exit_date_5d": "2026-11-12",
+      "stock_return_5d": 0.023779,
+      "spy_return_5d": 0.032906,
+      "excess_return_5d": -0.009126,
+      "stock_return_1d": -0.003967,
+      "spy_return_1d": 0.003124,
+      "excess_return_1d": -0.007092
+    },
+    "midterms-2026-after-XOM": {
+      "decision_date": "2026-11-04",
+      "ticker": "XOM",
+      "entry_date": "2026-11-05",
+      "exit_date_5d": "2026-11-12",
+      "stock_return_5d": 0.027102,
+      "spy_return_5d": 0.032906,
+      "excess_return_5d": -0.005804,
+      "stock_return_1d": 0.003448,
+      "spy_return_1d": 0.003124,
+      "excess_return_1d": 0.000324
+    },
+    "midterms-2026-before-AAPL": {
+      "decision_date": "2026-11-02",
+      "ticker": "AAPL",
+      "entry_date": "2026-11-03",
+      "exit_date_5d": "2026-11-10",
+      "stock_return_5d": 0.050045,
+      "spy_return_5d": -0.005873,
+      "excess_return_5d": 0.055918,
+      "stock_return_1d": 0.053058,
+      "spy_return_1d": 0.016518,
+      "excess_return_1d": 0.036541
+    },
+    "midterms-2026-before-JPM": {
+      "decision_date": "2026-11-02",
+      "ticker": "JPM",
+      "entry_date": "2026-11-03",
+      "exit_date_5d": "2026-11-10",
+      "stock_return_5d": 0.012101,
+      "spy_return_5d": -0.005873,
+      "excess_return_5d": 0.017974,
+      "stock_return_1d": 0.041807,
+      "spy_return_1d": 0.016518,
+      "excess_return_1d": 0.02529
+    },
+    "midterms-2026-before-MSFT": {
+      "decision_date": "2026-11-02",
+      "ticker": "MSFT",
+      "entry_date": "2026-11-03",
+      "exit_date_5d": "2026-11-10",
+      "stock_return_5d": 0.023359,
+      "spy_return_5d": -0.005873,
+      "excess_return_5d": 0.029232,
+      "stock_return_1d": 0.066815,
+      "spy_return_1d": 0.016518,
+      "excess_return_1d": 0.050298
+    },
+    "midterms-2026-before-NVDA": {
+      "decision_date": "2026-11-02",
+      "ticker": "NVDA",
+      "entry_date": "2026-11-03",
+      "exit_date_5d": "2026-11-10",
+      "stock_return_5d": -0.182883,
+      "spy_return_5d": -0.005873,
+      "excess_return_5d": -0.17701,
+      "stock_return_1d": -0.031738,
+      "spy_return_1d": 0.016518,
+      "excess_return_1d": -0.048256
+    },
+    "midterms-2026-before-UNH": {
+      "decision_date": "2026-11-02",
+      "ticker": "UNH",
+      "entry_date": "2026-11-03",
+      "exit_date_5d": "2026-11-10",
+      "stock_return_5d": 0.001681,
+      "spy_return_5d": -0.005873,
+      "excess_return_5d": 0.007554,
+      "stock_return_1d": 0.012214,
+      "spy_return_1d": 0.016518,
+      "excess_return_1d": -0.004303
+    },
+    "midterms-2026-before-XOM": {
+      "decision_date": "2026-11-02",
+      "ticker": "XOM",
+      "entry_date": "2026-11-03",
+      "exit_date_5d": "2026-11-10",
+      "stock_return_5d": -0.0732,
+      "spy_return_5d": -0.005873,
+      "excess_return_5d": -0.067327,
+      "stock_return_1d": -0.046151,
+      "spy_return_1d": 0.016518,
+      "excess_return_1d": -0.062669
+    }
+  },
+  "campaigns": {
+    "election_v1_initial": {
+      "source_csv": "articles/evidence/predictions.csv",
+      "midterm_decisions_scored": 192,
+      "by_treatment": {
+        "AR-5": {
+          "decisions": 12,
+          "actionable": 5,
+          "coverage": 0.4167,
+          "abstained_or_rejected": 7,
+          "directional_accuracy": 0.4,
+          "mean_signed_excess_return": -0.060076,
+          "mean_target_weight": 0.5625,
+          "total_model_cost_usd": 0.0
+        },
+        "DLinear": {
+          "decisions": 12,
+          "actionable": 8,
+          "coverage": 0.6667,
+          "abstained_or_rejected": 4,
+          "directional_accuracy": 0.5,
+          "mean_signed_excess_return": -0.011332,
+          "mean_target_weight": 0.6458,
+          "total_model_cost_usd": 0.0
+        },
+        "SPY": {
+          "decisions": 12,
+          "actionable": 12,
+          "coverage": 1.0,
+          "abstained_or_rejected": 0,
+          "directional_accuracy": 0.3333,
+          "mean_signed_excess_return": -0.028421,
+          "mean_target_weight": 1.0,
+          "total_model_cost_usd": 0.0
+        },
+        "XGBoost": {
+          "decisions": 12,
+          "actionable": 7,
+          "coverage": 0.5833,
+          "abstained_or_rejected": 5,
+          "directional_accuracy": 0.4286,
+          "mean_signed_excess_return": -0.046004,
+          "mean_target_weight": 0.5625,
+          "total_model_cost_usd": 0.0
+        },
+        "cash": {
+          "decisions": 12,
+          "actionable": 12,
+          "coverage": 1.0,
+          "abstained_or_rejected": 0,
+          "directional_accuracy": 0.6667,
+          "mean_signed_excess_return": 0.028421,
+          "mean_target_weight": 0.0,
+          "total_model_cost_usd": 0.0
+        },
+        "chronos-bolt-small": {
+          "decisions": 12,
+          "actionable": 10,
+          "coverage": 0.8333,
+          "abstained_or_rejected": 2,
+          "directional_accuracy": 0.4,
+          "mean_signed_excess_return": -0.023641,
+          "mean_target_weight": 0.6042,
+          "total_model_cost_usd": 0.0
+        },
+        "default-committee": {
+          "decisions": 24,
+          "actionable": 18,
+          "coverage": 0.75,
+          "abstained_or_rejected": 6,
+          "directional_accuracy": 0.6111,
+          "mean_signed_excess_return": 0.016348,
+          "mean_target_weight": 0.3958,
+          "total_model_cost_usd": 0.9144
+        },
+        "equal-weight": {
+          "decisions": 12,
+          "actionable": 12,
+          "coverage": 1.0,
+          "abstained_or_rejected": 0,
+          "directional_accuracy": 0.3333,
+          "mean_signed_excess_return": -0.028421,
+          "mean_target_weight": 1.0,
+          "total_model_cost_usd": 0.0
+        },
+        "luna-committee": {
+          "decisions": 24,
+          "actionable": 20,
+          "coverage": 0.8333,
+          "abstained_or_rejected": 4,
+          "directional_accuracy": 0.6,
+          "mean_signed_excess_return": 0.03032,
+          "mean_target_weight": 0.2917,
+          "total_model_cost_usd": 0.3729
+        },
+        "mean-reversion-5": {
+          "decisions": 12,
+          "actionable": 11,
+          "coverage": 0.9167,
+          "abstained_or_rejected": 1,
+          "directional_accuracy": 0.5455,
+          "mean_signed_excess_return": -0.024115,
+          "mean_target_weight": 0.5,
+          "total_model_cost_usd": 0.0
+        },
+        "momentum-20": {
+          "decisions": 12,
+          "actionable": 11,
+          "coverage": 0.9167,
+          "abstained_or_rejected": 1,
+          "directional_accuracy": 0.4545,
+          "mean_signed_excess_return": 0.019933,
+          "mean_target_weight": 0.7917,
+          "total_model_cost_usd": 0.0
+        },
+        "ridge": {
+          "decisions": 12,
+          "actionable": 10,
+          "coverage": 0.8333,
+          "abstained_or_rejected": 2,
+          "directional_accuracy": 0.4,
+          "mean_signed_excess_return": -0.014869,
+          "mean_target_weight": 0.6875,
+          "total_model_cost_usd": 0.0
+        },
+        "single-luna": {
+          "decisions": 24,
+          "actionable": 17,
+          "coverage": 0.7083,
+          "abstained_or_rejected": 7,
+          "directional_accuracy": 0.6471,
+          "mean_signed_excess_return": 0.043385,
+          "mean_target_weight": 0.4062,
+          "total_model_cost_usd": 0.3345
+        }
+      },
+      "by_arm_and_treatment": {
+        "default:AR-5": {
+          "decisions": 12,
+          "actionable": 5,
+          "coverage": 0.4167,
+          "abstained_or_rejected": 7,
+          "directional_accuracy": 0.4,
+          "mean_signed_excess_return": -0.060076,
+          "mean_target_weight": 0.5625,
+          "total_model_cost_usd": 0.0
+        },
+        "default:DLinear": {
+          "decisions": 12,
+          "actionable": 8,
+          "coverage": 0.6667,
+          "abstained_or_rejected": 4,
+          "directional_accuracy": 0.5,
+          "mean_signed_excess_return": -0.011332,
+          "mean_target_weight": 0.6458,
+          "total_model_cost_usd": 0.0
+        },
+        "default:SPY": {
+          "decisions": 12,
+          "actionable": 12,
+          "coverage": 1.0,
+          "abstained_or_rejected": 0,
+          "directional_accuracy": 0.3333,
+          "mean_signed_excess_return": -0.028421,
+          "mean_target_weight": 1.0,
+          "total_model_cost_usd": 0.0
+        },
+        "default:XGBoost": {
+          "decisions": 12,
+          "actionable": 7,
+          "coverage": 0.5833,
+          "abstained_or_rejected": 5,
+          "directional_accuracy": 0.4286,
+          "mean_signed_excess_return": -0.046004,
+          "mean_target_weight": 0.5625,
+          "total_model_cost_usd": 0.0
+        },
+        "default:cash": {
+          "decisions": 12,
+          "actionable": 12,
+          "coverage": 1.0,
+          "abstained_or_rejected": 0,
+          "directional_accuracy": 0.6667,
+          "mean_signed_excess_return": 0.028421,
+          "mean_target_weight": 0.0,
+          "total_model_cost_usd": 0.0
+        },
+        "default:chronos-bolt-small": {
+          "decisions": 12,
+          "actionable": 10,
+          "coverage": 0.8333,
+          "abstained_or_rejected": 2,
+          "directional_accuracy": 0.4,
+          "mean_signed_excess_return": -0.023641,
+          "mean_target_weight": 0.6042,
+          "total_model_cost_usd": 0.0
+        },
+        "default:default-committee": {
+          "decisions": 24,
+          "actionable": 18,
+          "coverage": 0.75,
+          "abstained_or_rejected": 6,
+          "directional_accuracy": 0.6111,
+          "mean_signed_excess_return": 0.016348,
+          "mean_target_weight": 0.3958,
+          "total_model_cost_usd": 0.9144
+        },
+        "default:equal-weight": {
+          "decisions": 12,
+          "actionable": 12,
+          "coverage": 1.0,
+          "abstained_or_rejected": 0,
+          "directional_accuracy": 0.3333,
+          "mean_signed_excess_return": -0.028421,
+          "mean_target_weight": 1.0,
+          "total_model_cost_usd": 0.0
+        },
+        "default:luna-committee": {
+          "decisions": 24,
+          "actionable": 20,
+          "coverage": 0.8333,
+          "abstained_or_rejected": 4,
+          "directional_accuracy": 0.6,
+          "mean_signed_excess_return": 0.03032,
+          "mean_target_weight": 0.2917,
+          "total_model_cost_usd": 0.3729
+        },
+        "default:mean-reversion-5": {
+          "decisions": 12,
+          "actionable": 11,
+          "coverage": 0.9167,
+          "abstained_or_rejected": 1,
+          "directional_accuracy": 0.5455,
+          "mean_signed_excess_return": -0.024115,
+          "mean_target_weight": 0.5,
+          "total_model_cost_usd": 0.0
+        },
+        "default:momentum-20": {
+          "decisions": 12,
+          "actionable": 11,
+          "coverage": 0.9167,
+          "abstained_or_rejected": 1,
+          "directional_accuracy": 0.4545,
+          "mean_signed_excess_return": 0.019933,
+          "mean_target_weight": 0.7917,
+          "total_model_cost_usd": 0.0
+        },
+        "default:ridge": {
+          "decisions": 12,
+          "actionable": 10,
+          "coverage": 0.8333,
+          "abstained_or_rejected": 2,
+          "directional_accuracy": 0.4,
+          "mean_signed_excess_return": -0.014869,
+          "mean_target_weight": 0.6875,
+          "total_model_cost_usd": 0.0
+        },
+        "default:single-luna": {
+          "decisions": 24,
+          "actionable": 17,
+          "coverage": 0.7083,
+          "abstained_or_rejected": 7,
+          "directional_accuracy": 0.6471,
+          "mean_signed_excess_return": 0.043385,
+          "mean_target_weight": 0.4062,
+          "total_model_cost_usd": 0.3345
+        }
+      },
+      "portfolio_10bps_summary": {
+        "AR-5": {
+          "scenarios": 2,
+          "mean_exposure": 0.5619,
+          "mean_trading_pnl_usd": -1517.26,
+          "mean_economic_pnl_usd": -1517.26,
+          "mean_matched_spy_pnl_usd": 525.46,
+          "mean_selection_pnl_usd": -2042.73
+        },
+        "DLinear": {
+          "scenarios": 2,
+          "mean_exposure": 0.6452,
+          "mean_trading_pnl_usd": -969.75,
+          "mean_economic_pnl_usd": -969.75,
+          "mean_matched_spy_pnl_usd": 621.22,
+          "mean_selection_pnl_usd": -1590.98
+        },
+        "SPY": {
+          "scenarios": 2,
+          "mean_exposure": 0.999,
+          "mean_trading_pnl_usd": 1149.16,
+          "mean_economic_pnl_usd": 1149.16,
+          "mean_matched_spy_pnl_usd": 1149.16,
+          "mean_selection_pnl_usd": 0.0
+        },
+        "XGBoost": {
+          "scenarios": 2,
+          "mean_exposure": 0.5619,
+          "mean_trading_pnl_usd": -1481.65,
+          "mean_economic_pnl_usd": -1481.65,
+          "mean_matched_spy_pnl_usd": 606.09,
+          "mean_selection_pnl_usd": -2087.74
+        },
+        "cash": {
+          "scenarios": 2,
+          "mean_exposure": 0.0,
+          "mean_trading_pnl_usd": 0.0,
+          "mean_economic_pnl_usd": 0.0,
+          "mean_matched_spy_pnl_usd": 0.0,
+          "mean_selection_pnl_usd": 0.0
+        },
+        "chronos-bolt-small": {
+          "scenarios": 2,
+          "mean_exposure": 0.6036,
+          "mean_trading_pnl_usd": -1730.13,
+          "mean_economic_pnl_usd": -1730.13,
+          "mean_matched_spy_pnl_usd": 573.35,
+          "mean_selection_pnl_usd": -2303.47
+        },
+        "default-committee": {
+          "scenarios": 4,
+          "mean_exposure": 0.3954,
+          "mean_trading_pnl_usd": -657.4,
+          "mean_economic_pnl_usd": -657.63,
+          "mean_matched_spy_pnl_usd": 454.88,
+          "mean_selection_pnl_usd": -1112.28
+        },
+        "equal-weight": {
+          "scenarios": 2,
+          "mean_exposure": 0.999,
+          "mean_trading_pnl_usd": -1687.22,
+          "mean_economic_pnl_usd": -1687.22,
+          "mean_matched_spy_pnl_usd": 1149.16,
+          "mean_selection_pnl_usd": -2836.39
+        },
+        "luna-committee": {
+          "scenarios": 4,
+          "mean_exposure": 0.2914,
+          "mean_trading_pnl_usd": -371.99,
+          "mean_economic_pnl_usd": -372.08,
+          "mean_matched_spy_pnl_usd": 415.8,
+          "mean_selection_pnl_usd": -787.79
+        },
+        "mean-reversion-5": {
+          "scenarios": 2,
+          "mean_exposure": 0.4995,
+          "mean_trading_pnl_usd": -2144.92,
+          "mean_economic_pnl_usd": -2144.92,
+          "mean_matched_spy_pnl_usd": 252.07,
+          "mean_selection_pnl_usd": -2396.99
+        },
+        "momentum-20": {
+          "scenarios": 2,
+          "mean_exposure": 0.7909,
+          "mean_trading_pnl_usd": 483.97,
+          "mean_economic_pnl_usd": 483.97,
+          "mean_matched_spy_pnl_usd": 990.38,
+          "mean_selection_pnl_usd": -506.41
+        },
+        "ridge": {
+          "scenarios": 2,
+          "mean_exposure": 0.6868,
+          "mean_trading_pnl_usd": -1117.6,
+          "mean_economic_pnl_usd": -1117.6,
+          "mean_matched_spy_pnl_usd": 749.73,
+          "mean_selection_pnl_usd": -1867.33
+        },
+        "single-luna": {
+          "scenarios": 4,
+          "mean_exposure": 0.4058,
+          "mean_trading_pnl_usd": -124.13,
+          "mean_economic_pnl_usd": -124.21,
+          "mean_matched_spy_pnl_usd": 527.32,
+          "mean_selection_pnl_usd": -651.44
+        }
+      },
+      "spy_100pct_benchmark_10bps": {
+        "before_2026-11-02": {
+          "entry_date": "2026-11-03",
+          "exit_date": "2026-11-10",
+          "trading_pnl_usd": -785.89,
+          "return_pct": -0.7859
+        },
+        "after_2026-11-04": {
+          "entry_date": "2026-11-05",
+          "exit_date": "2026-11-12",
+          "trading_pnl_usd": 3084.21,
+          "return_pct": 3.0842
+        }
+      },
+      "scenarios_10bps": [
+        {
+          "arm": "default",
+          "decision_date": "2026-11-02",
+          "entry_date": "2026-11-03",
+          "exit_date": "2026-11-10",
+          "treatment": "AR-5",
+          "trial": 0,
+          "exposure_at_entry": 0.6244,
+          "trading_pnl_usd": -2386.29,
+          "economic_pnl_usd": -2386.29,
+          "matched_spy_pnl_usd": -491.18,
+          "selection_pnl_usd": -1895.11,
+          "return_pct": -2.3863,
+          "max_drawdown_pct": -3.0007,
+          "model_expense_usd": 0.0
+        },
+        {
+          "arm": "default",
+          "decision_date": "2026-11-02",
+          "entry_date": "2026-11-03",
+          "exit_date": "2026-11-10",
+          "treatment": "DLinear",
+          "trial": 0,
+          "exposure_at_entry": 0.7076,
+          "trading_pnl_usd": -1531.34,
+          "economic_pnl_usd": -1531.34,
+          "matched_spy_pnl_usd": -556.67,
+          "selection_pnl_usd": -974.67,
+          "return_pct": -1.5313,
+          "max_drawdown_pct": -2.6855,
+          "model_expense_usd": 0.0
+        },
+        {
+          "arm": "default",
+          "decision_date": "2026-11-02",
+          "entry_date": "2026-11-03",
+          "exit_date": "2026-11-10",
+          "treatment": "SPY",
+          "trial": 0,
+          "exposure_at_entry": 0.999,
+          "trading_pnl_usd": -785.89,
+          "economic_pnl_usd": -785.89,
+          "matched_spy_pnl_usd": -785.89,
+          "selection_pnl_usd": 0.0,
+          "return_pct": -0.7859,
+          "max_drawdown_pct": -4.4092,
+          "model_expense_usd": 0.0
+        },
+        {
+          "arm": "default",
+          "decision_date": "2026-11-02",
+          "entry_date": "2026-11-03",
+          "exit_date": "2026-11-10",
+          "treatment": "XGBoost",
+          "trial": 0,
+          "exposure_at_entry": 0.5828,
+          "trading_pnl_usd": -2385.66,
+          "economic_pnl_usd": -2385.66,
+          "matched_spy_pnl_usd": -458.43,
+          "selection_pnl_usd": -1927.23,
+          "return_pct": -2.3857,
+          "max_drawdown_pct": -3.0805,
+          "model_expense_usd": 0.0
+        },
+        {
+          "arm": "default",
+          "decision_date": "2026-11-02",
+          "entry_date": "2026-11-03",
+          "exit_date": "2026-11-10",
+          "treatment": "cash",
+          "trial": 0,
+          "exposure_at_entry": 0.0,
+          "trading_pnl_usd": 0.0,
+          "economic_pnl_usd": 0.0,
+          "matched_spy_pnl_usd": 0.0,
+          "selection_pnl_usd": 0.0,
+          "return_pct": 0.0,
+          "max_drawdown_pct": 0.0,
+          "model_expense_usd": 0.0
+        },
+        {
+          "arm": "default",
+          "decision_date": "2026-11-02",
+          "entry_date": "2026-11-03",
+          "exit_date": "2026-11-10",
+          "treatment": "chronos-bolt-small",
+          "trial": 0,
+          "exposure_at_entry": 0.666,
+          "trading_pnl_usd": -2910.66,
+          "economic_pnl_usd": -2910.66,
+          "matched_spy_pnl_usd": -523.92,
+          "selection_pnl_usd": -2386.74,
+          "return_pct": -2.9107,
+          "max_drawdown_pct": -3.672,
+          "model_expense_usd": 0.0
+        },
+        {
+          "arm": "default",
+          "decision_date": "2026-11-02",
+          "entry_date": "2026-11-03",
+          "exit_date": "2026-11-10",
+          "treatment": "default-committee",
+          "trial": 0,
+          "exposure_at_entry": 0.4163,
+          "trading_pnl_usd": -2048.12,
+          "economic_pnl_usd": -2048.36,
+          "matched_spy_pnl_usd": -327.45,
+          "selection_pnl_usd": -1720.67,
+          "return_pct": -2.0481,
+          "max_drawdown_pct": -2.5244,
+          "model_expense_usd": 0.232
+        },
+        {
+          "arm": "default",
+          "decision_date": "2026-11-02",
+          "entry_date": "2026-11-03",
+          "exit_date": "2026-11-10",
+          "treatment": "default-committee",
+          "trial": 1,
+          "exposure_at_entry": 0.3746,
+          "trading_pnl_usd": -374.87,
+          "economic_pnl_usd": -375.09,
+          "matched_spy_pnl_usd": -294.71,
+          "selection_pnl_usd": -80.16,
+          "return_pct": -0.3749,
+          "max_drawdown_pct": -1.4971,
+          "model_expense_usd": 0.2209
+        },
+        {
+          "arm": "default",
+          "decision_date": "2026-11-02",
+          "entry_date": "2026-11-03",
+          "exit_date": "2026-11-10",
+          "treatment": "equal-weight",
+          "trial": 0,
+          "exposure_at_entry": 0.999,
+          "trading_pnl_usd": -3009.09,
+          "economic_pnl_usd": -3009.09,
+          "matched_spy_pnl_usd": -785.89,
+          "selection_pnl_usd": -2223.21,
+          "return_pct": -3.0091,
+          "max_drawdown_pct": -4.4411,
+          "model_expense_usd": 0.0
+        },
+        {
+          "arm": "default",
+          "decision_date": "2026-11-02",
+          "entry_date": "2026-11-03",
+          "exit_date": "2026-11-10",
+          "treatment": "luna-committee",
+          "trial": 0,
+          "exposure_at_entry": 0.2498,
+          "trading_pnl_usd": -752.27,
+          "economic_pnl_usd": -752.38,
+          "matched_spy_pnl_usd": -196.47,
+          "selection_pnl_usd": -555.8,
+          "return_pct": -0.7523,
+          "max_drawdown_pct": -1.1227,
+          "model_expense_usd": 0.1085
+        },
+        {
+          "arm": "default",
+          "decision_date": "2026-11-02",
+          "entry_date": "2026-11-03",
+          "exit_date": "2026-11-10",
+          "treatment": "luna-committee",
+          "trial": 1,
+          "exposure_at_entry": 0.2498,
+          "trading_pnl_usd": -752.27,
+          "economic_pnl_usd": -752.36,
+          "matched_spy_pnl_usd": -196.47,
+          "selection_pnl_usd": -555.8,
+          "return_pct": -0.7523,
+          "max_drawdown_pct": -1.1227,
+          "model_expense_usd": 0.0897
+        },
+        {
+          "arm": "default",
+          "decision_date": "2026-11-02",
+          "entry_date": "2026-11-03",
+          "exit_date": "2026-11-10",
+          "treatment": "mean-reversion-5",
+          "trial": 0,
+          "exposure_at_entry": 0.666,
+          "trading_pnl_usd": -3262.59,
+          "economic_pnl_usd": -3262.59,
+          "matched_spy_pnl_usd": -523.92,
+          "selection_pnl_usd": -2738.67,
+          "return_pct": -3.2626,
+          "max_drawdown_pct": -3.7777,
+          "model_expense_usd": 0.0
+        },
+        {
+          "arm": "default",
+          "decision_date": "2026-11-02",
+          "entry_date": "2026-11-03",
+          "exit_date": "2026-11-10",
+          "treatment": "momentum-20",
+          "trial": 0,
+          "exposure_at_entry": 0.7493,
+          "trading_pnl_usd": -111.46,
+          "economic_pnl_usd": -111.46,
+          "matched_spy_pnl_usd": -589.41,
+          "selection_pnl_usd": 477.95,
+          "return_pct": -0.1115,
+          "max_drawdown_pct": -2.5368,
+          "model_expense_usd": 0.0
+        },
+        {
+          "arm": "default",
+          "decision_date": "2026-11-02",
+          "entry_date": "2026-11-03",
+          "exit_date": "2026-11-10",
+          "treatment": "ridge",
+          "trial": 0,
+          "exposure_at_entry": 0.7076,
+          "trading_pnl_usd": -1842.72,
+          "economic_pnl_usd": -1842.72,
+          "matched_spy_pnl_usd": -556.67,
+          "selection_pnl_usd": -1286.05,
+          "return_pct": -1.8427,
+          "max_drawdown_pct": -2.7126,
+          "model_expense_usd": 0.0
+        },
+        {
+          "arm": "default",
+          "decision_date": "2026-11-02",
+          "entry_date": "2026-11-03",
+          "exit_date": "2026-11-10",
+          "treatment": "single-luna",
+          "trial": 0,
+          "exposure_at_entry": 0.3746,
+          "trading_pnl_usd": -468.5,
+          "economic_pnl_usd": -468.65,
+          "matched_spy_pnl_usd": -294.71,
+          "selection_pnl_usd": -173.79,
+          "return_pct": -0.4685,
+          "max_drawdown_pct": -1.5253,
+          "model_expense_usd": 0.1473
+        },
+        {
+          "arm": "default",
+          "decision_date": "2026-11-02",
+          "entry_date": "2026-11-03",
+          "exit_date": "2026-11-10",
+          "treatment": "single-luna",
+          "trial": 1,
+          "exposure_at_entry": 0.3746,
+          "trading_pnl_usd": -468.5,
+          "economic_pnl_usd": -468.52,
+          "matched_spy_pnl_usd": -294.71,
+          "selection_pnl_usd": -173.79,
+          "return_pct": -0.4685,
+          "max_drawdown_pct": -1.5253,
+          "model_expense_usd": 0.0194
+        },
+        {
+          "arm": "default",
+          "decision_date": "2026-11-04",
+          "entry_date": "2026-11-05",
+          "exit_date": "2026-11-12",
+          "treatment": "AR-5",
+          "trial": 0,
+          "exposure_at_entry": 0.4995,
+          "trading_pnl_usd": -648.24,
+          "economic_pnl_usd": -648.24,
+          "matched_spy_pnl_usd": 1542.11,
+          "selection_pnl_usd": -2190.35,
+          "return_pct": -0.6482,
+          "max_drawdown_pct": -0.8392,
+          "model_expense_usd": 0.0
+        },
+        {
+          "arm": "default",
+          "decision_date": "2026-11-04",
+          "entry_date": "2026-11-05",
+          "exit_date": "2026-11-12",
+          "treatment": "DLinear",
+          "trial": 0,
+          "exposure_at_entry": 0.5828,
+          "trading_pnl_usd": -408.16,
+          "economic_pnl_usd": -408.16,
+          "matched_spy_pnl_usd": 1799.12,
+          "selection_pnl_usd": -2207.28,
+          "return_pct": -0.4082,
+          "max_drawdown_pct": -0.6976,
+          "model_expense_usd": 0.0
+        },
+        {
+          "arm": "default",
+          "decision_date": "2026-11-04",
+          "entry_date": "2026-11-05",
+          "exit_date": "2026-11-12",
+          "treatment": "SPY",
+          "trial": 0,
+          "exposure_at_entry": 0.999,
+          "trading_pnl_usd": 3084.21,
+          "economic_pnl_usd": 3084.21,
+          "matched_spy_pnl_usd": 3084.21,
+          "selection_pnl_usd": 0.0,
+          "return_pct": 3.0842,
+          "max_drawdown_pct": -0.4537,
+          "model_expense_usd": 0.0
+        },
+        {
+          "arm": "default",
+          "decision_date": "2026-11-04",
+          "entry_date": "2026-11-05",
+          "exit_date": "2026-11-12",
+          "treatment": "XGBoost",
+          "trial": 0,
+          "exposure_at_entry": 0.5411,
+          "trading_pnl_usd": -577.65,
+          "economic_pnl_usd": -577.65,
+          "matched_spy_pnl_usd": 1670.61,
+          "selection_pnl_usd": -2248.26,
+          "return_pct": -0.5776,
+          "max_drawdown_pct": -0.692,
+          "model_expense_usd": 0.0
+        },
+        {
+          "arm": "default",
+          "decision_date": "2026-11-04",
+          "entry_date": "2026-11-05",
+          "exit_date": "2026-11-12",
+          "treatment": "cash",
+          "trial": 0,
+          "exposure_at_entry": 0.0,
+          "trading_pnl_usd": 0.0,
+          "economic_pnl_usd": 0.0,
+          "matched_spy_pnl_usd": 0.0,
+          "selection_pnl_usd": 0.0,
+          "return_pct": 0.0,
+          "max_drawdown_pct": 0.0,
+          "model_expense_usd": 0.0
+        },
+        {
+          "arm": "default",
+          "decision_date": "2026-11-04",
+          "entry_date": "2026-11-05",
+          "exit_date": "2026-11-12",
+          "treatment": "chronos-bolt-small",
+          "trial": 0,
+          "exposure_at_entry": 0.5411,
+          "trading_pnl_usd": -549.6,
+          "economic_pnl_usd": -549.6,
+          "matched_spy_pnl_usd": 1670.61,
+          "selection_pnl_usd": -2220.21,
+          "return_pct": -0.5496,
+          "max_drawdown_pct": -1.2043,
+          "model_expense_usd": 0.0
+        },
+        {
+          "arm": "default",
+          "decision_date": "2026-11-04",
+          "entry_date": "2026-11-05",
+          "exit_date": "2026-11-12",
+          "treatment": "default-committee",
+          "trial": 0,
+          "exposure_at_entry": 0.4579,
+          "trading_pnl_usd": -65.85,
+          "economic_pnl_usd": -66.1,
+          "matched_spy_pnl_usd": 1413.6,
+          "selection_pnl_usd": -1479.44,
+          "return_pct": -0.0658,
+          "max_drawdown_pct": -0.505,
+          "model_expense_usd": 0.2511
+        },
+        {
+          "arm": "default",
+          "decision_date": "2026-11-04",
+          "entry_date": "2026-11-05",
+          "exit_date": "2026-11-12",
+          "treatment": "default-committee",
+          "trial": 1,
+          "exposure_at_entry": 0.333,
+          "trading_pnl_usd": -140.76,
+          "economic_pnl_usd": -140.97,
+          "matched_spy_pnl_usd": 1028.07,
+          "selection_pnl_usd": -1168.83,
+          "return_pct": -0.1408,
+          "max_drawdown_pct": -0.3845,
+          "model_expense_usd": 0.2104
+        },
+        {
+          "arm": "default",
+          "decision_date": "2026-11-04",
+          "entry_date": "2026-11-05",
+          "exit_date": "2026-11-12",
+          "treatment": "equal-weight",
+          "trial": 0,
+          "exposure_at_entry": 0.999,
+          "trading_pnl_usd": -365.35,
+          "economic_pnl_usd": -365.35,
+          "matched_spy_pnl_usd": 3084.21,
+          "selection_pnl_usd": -3449.56,
+          "return_pct": -0.3654,
+          "max_drawdown_pct": -1.0814,
+          "model_expense_usd": 0.0
+        },
+        {
+          "arm": "default",
+          "decision_date": "2026-11-04",
+          "entry_date": "2026-11-05",
+          "exit_date": "2026-11-12",
+          "treatment": "luna-committee",
+          "trial": 0,
+          "exposure_at_entry": 0.3746,
+          "trading_pnl_usd": -16.42,
+          "economic_pnl_usd": -16.51,
+          "matched_spy_pnl_usd": 1156.58,
+          "selection_pnl_usd": -1173.0,
+          "return_pct": -0.0164,
+          "max_drawdown_pct": -0.3903,
+          "model_expense_usd": 0.0916
+        },
+        {
+          "arm": "default",
+          "decision_date": "2026-11-04",
+          "entry_date": "2026-11-05",
+          "exit_date": "2026-11-12",
+          "treatment": "luna-committee",
+          "trial": 1,
+          "exposure_at_entry": 0.2914,
+          "trading_pnl_usd": 33.0,
+          "economic_pnl_usd": 32.92,
+          "matched_spy_pnl_usd": 899.56,
+          "selection_pnl_usd": -866.56,
+          "return_pct": 0.033,
+          "max_drawdown_pct": -0.2975,
+          "model_expense_usd": 0.0831
+        },
+        {
+          "arm": "default",
+          "decision_date": "2026-11-04",
+          "entry_date": "2026-11-05",
+          "exit_date": "2026-11-12",
+          "treatment": "mean-reversion-5",
+          "trial": 0,
+          "exposure_at_entry": 0.333,
+          "trading_pnl_usd": -1027.25,
+          "economic_pnl_usd": -1027.25,
+          "matched_spy_pnl_usd": 1028.07,
+          "selection_pnl_usd": -2055.32,
+          "return_pct": -1.0273,
+          "max_drawdown_pct": -1.7599,
+          "model_expense_usd": 0.0
+        },
+        {
+          "arm": "default",
+          "decision_date": "2026-11-04",
+          "entry_date": "2026-11-05",
+          "exit_date": "2026-11-12",
+          "treatment": "momentum-20",
+          "trial": 0,
+          "exposure_at_entry": 0.8325,
+          "trading_pnl_usd": 1079.4,
+          "economic_pnl_usd": 1079.4,
+          "matched_spy_pnl_usd": 2570.18,
+          "selection_pnl_usd": -1490.77,
+          "return_pct": 1.0794,
+          "max_drawdown_pct": -0.4849,
+          "model_expense_usd": 0.0
+        },
+        {
+          "arm": "default",
+          "decision_date": "2026-11-04",
+          "entry_date": "2026-11-05",
+          "exit_date": "2026-11-12",
+          "treatment": "ridge",
+          "trial": 0,
+          "exposure_at_entry": 0.666,
+          "trading_pnl_usd": -392.47,
+          "economic_pnl_usd": -392.47,
+          "matched_spy_pnl_usd": 2056.14,
+          "selection_pnl_usd": -2448.61,
+          "return_pct": -0.3925,
+          "max_drawdown_pct": -0.8127,
+          "model_expense_usd": 0.0
+        },
+        {
+          "arm": "default",
+          "decision_date": "2026-11-04",
+          "entry_date": "2026-11-05",
+          "exit_date": "2026-11-12",
+          "treatment": "single-luna",
+          "trial": 0,
+          "exposure_at_entry": 0.4163,
+          "trading_pnl_usd": 307.13,
+          "economic_pnl_usd": 306.98,
+          "matched_spy_pnl_usd": 1285.09,
+          "selection_pnl_usd": -977.96,
+          "return_pct": 0.3071,
+          "max_drawdown_pct": -0.2448,
+          "model_expense_usd": 0.1478
+        },
+        {
+          "arm": "default",
+          "decision_date": "2026-11-04",
+          "entry_date": "2026-11-05",
+          "exit_date": "2026-11-12",
+          "treatment": "single-luna",
+          "trial": 1,
+          "exposure_at_entry": 0.4579,
+          "trading_pnl_usd": 133.36,
+          "economic_pnl_usd": 133.34,
+          "matched_spy_pnl_usd": 1413.6,
+          "selection_pnl_usd": -1280.23,
+          "return_pct": 0.1334,
+          "max_drawdown_pct": -0.3115,
+          "model_expense_usd": 0.0199
+        }
+      ]
+    },
+    "common_evidence_v3_repaired": {
+      "source_csv": "studies/common-evidence-v3-repaired/decisions.csv",
+      "midterm_decisions_scored": 72,
+      "by_treatment": {
+        "default-committee": {
+          "decisions": 24,
+          "actionable": 20,
+          "coverage": 0.8333,
+          "abstained_or_rejected": 4,
+          "directional_accuracy": 0.55,
+          "mean_signed_excess_return": 0.024854,
+          "mean_target_weight": 0.4375,
+          "total_model_cost_usd": 1.3113
+        },
+        "luna-committee": {
+          "decisions": 24,
+          "actionable": 7,
+          "coverage": 0.2917,
+          "abstained_or_rejected": 17,
+          "directional_accuracy": 0.2857,
+          "mean_signed_excess_return": 0.000185,
+          "mean_target_weight": 0.2604,
+          "total_model_cost_usd": 0.4651
+        },
+        "single-luna": {
+          "decisions": 24,
+          "actionable": 17,
+          "coverage": 0.7083,
+          "abstained_or_rejected": 7,
+          "directional_accuracy": 0.4706,
+          "mean_signed_excess_return": 0.019594,
+          "mean_target_weight": 0.4688,
+          "total_model_cost_usd": 0.0247
+        }
+      },
+      "by_arm_and_treatment": {
+        "cited-evidence:default-committee": {
+          "decisions": 12,
+          "actionable": 9,
+          "coverage": 0.75,
+          "abstained_or_rejected": 3,
+          "directional_accuracy": 0.5556,
+          "mean_signed_excess_return": 0.023728,
+          "mean_target_weight": 0.4375,
+          "total_model_cost_usd": 0.7344
+        },
+        "cited-evidence:luna-committee": {
+          "decisions": 12,
+          "actionable": 4,
+          "coverage": 0.3333,
+          "abstained_or_rejected": 8,
+          "directional_accuracy": 0.25,
+          "mean_signed_excess_return": -0.004706,
+          "mean_target_weight": 0.2917,
+          "total_model_cost_usd": 0.2566
+        },
+        "cited-evidence:single-luna": {
+          "decisions": 12,
+          "actionable": 7,
+          "coverage": 0.5833,
+          "abstained_or_rejected": 5,
+          "directional_accuracy": 0.5714,
+          "mean_signed_excess_return": 0.019308,
+          "mean_target_weight": 0.4375,
+          "total_model_cost_usd": 0.0139
+        },
+        "shared-evidence:default-committee": {
+          "decisions": 12,
+          "actionable": 11,
+          "coverage": 0.9167,
+          "abstained_or_rejected": 1,
+          "directional_accuracy": 0.5455,
+          "mean_signed_excess_return": 0.025775,
+          "mean_target_weight": 0.4375,
+          "total_model_cost_usd": 0.5769
+        },
+        "shared-evidence:luna-committee": {
+          "decisions": 12,
+          "actionable": 3,
+          "coverage": 0.25,
+          "abstained_or_rejected": 9,
+          "directional_accuracy": 0.3333,
+          "mean_signed_excess_return": 0.006707,
+          "mean_target_weight": 0.2292,
+          "total_model_cost_usd": 0.2085
+        },
+        "shared-evidence:single-luna": {
+          "decisions": 12,
+          "actionable": 10,
+          "coverage": 0.8333,
+          "abstained_or_rejected": 2,
+          "directional_accuracy": 0.4,
+          "mean_signed_excess_return": 0.019794,
+          "mean_target_weight": 0.5,
+          "total_model_cost_usd": 0.0108
+        }
+      },
+      "portfolio_10bps_summary": {
+        "default-committee": {
+          "scenarios": 4,
+          "mean_exposure": 0.4371,
+          "mean_trading_pnl_usd": -73.21,
+          "mean_economic_pnl_usd": -73.53,
+          "mean_matched_spy_pnl_usd": 583.39,
+          "mean_selection_pnl_usd": -656.59
+        },
+        "luna-committee": {
+          "scenarios": 4,
+          "mean_exposure": 0.2601,
+          "mean_trading_pnl_usd": 220.66,
+          "mean_economic_pnl_usd": 220.55,
+          "mean_matched_spy_pnl_usd": 400.04,
+          "mean_selection_pnl_usd": -179.38
+        },
+        "single-luna": {
+          "scenarios": 4,
+          "mean_exposure": 0.4683,
+          "mean_trading_pnl_usd": -24.11,
+          "mean_economic_pnl_usd": -24.11,
+          "mean_matched_spy_pnl_usd": 679.77,
+          "mean_selection_pnl_usd": -703.88
+        }
+      },
+      "spy_100pct_benchmark_10bps": {
+        "before_2026-11-02": {
+          "entry_date": "2026-11-03",
+          "exit_date": "2026-11-10",
+          "trading_pnl_usd": -785.89,
+          "return_pct": -0.7859
+        },
+        "after_2026-11-04": {
+          "entry_date": "2026-11-05",
+          "exit_date": "2026-11-12",
+          "trading_pnl_usd": 3084.21,
+          "return_pct": 3.0842
+        }
+      },
+      "scenarios_10bps": [
+        {
+          "arm": "cited-evidence",
+          "decision_date": "2026-11-02",
+          "entry_date": "2026-11-03",
+          "exit_date": "2026-11-10",
+          "treatment": "default-committee",
+          "trial": 0,
+          "exposure_at_entry": 0.4163,
+          "trading_pnl_usd": -268.72,
+          "economic_pnl_usd": -269.08,
+          "matched_spy_pnl_usd": -327.45,
+          "selection_pnl_usd": 58.73,
+          "return_pct": -0.2687,
+          "max_drawdown_pct": -1.6106,
+          "model_expense_usd": 0.3631
+        },
+        {
+          "arm": "cited-evidence",
+          "decision_date": "2026-11-02",
+          "entry_date": "2026-11-03",
+          "exit_date": "2026-11-10",
+          "treatment": "luna-committee",
+          "trial": 0,
+          "exposure_at_entry": 0.2081,
+          "trading_pnl_usd": 59.87,
+          "economic_pnl_usd": 59.74,
+          "matched_spy_pnl_usd": -163.73,
+          "selection_pnl_usd": 223.6,
+          "return_pct": 0.0599,
+          "max_drawdown_pct": -0.7995,
+          "model_expense_usd": 0.1304
+        },
+        {
+          "arm": "cited-evidence",
+          "decision_date": "2026-11-02",
+          "entry_date": "2026-11-03",
+          "exit_date": "2026-11-10",
+          "treatment": "single-luna",
+          "trial": 0,
+          "exposure_at_entry": 0.3746,
+          "trading_pnl_usd": 389.12,
+          "economic_pnl_usd": 389.12,
+          "matched_spy_pnl_usd": -294.71,
+          "selection_pnl_usd": 683.83,
+          "return_pct": 0.3891,
+          "max_drawdown_pct": -1.4497,
+          "model_expense_usd": 0.0071
+        },
+        {
+          "arm": "cited-evidence",
+          "decision_date": "2026-11-04",
+          "entry_date": "2026-11-05",
+          "exit_date": "2026-11-12",
+          "treatment": "default-committee",
+          "trial": 0,
+          "exposure_at_entry": 0.4579,
+          "trading_pnl_usd": 385.9,
+          "economic_pnl_usd": 385.53,
+          "matched_spy_pnl_usd": 1413.6,
+          "selection_pnl_usd": -1027.7,
+          "return_pct": 0.3859,
+          "max_drawdown_pct": -0.3375,
+          "model_expense_usd": 0.3713
+        },
+        {
+          "arm": "cited-evidence",
+          "decision_date": "2026-11-04",
+          "entry_date": "2026-11-05",
+          "exit_date": "2026-11-12",
+          "treatment": "luna-committee",
+          "trial": 0,
+          "exposure_at_entry": 0.3746,
+          "trading_pnl_usd": 455.29,
+          "economic_pnl_usd": 455.17,
+          "matched_spy_pnl_usd": 1156.58,
+          "selection_pnl_usd": -701.29,
+          "return_pct": 0.4553,
+          "max_drawdown_pct": -0.2888,
+          "model_expense_usd": 0.1262
+        },
+        {
+          "arm": "cited-evidence",
+          "decision_date": "2026-11-04",
+          "entry_date": "2026-11-05",
+          "exit_date": "2026-11-12",
+          "treatment": "single-luna",
+          "trial": 0,
+          "exposure_at_entry": 0.4995,
+          "trading_pnl_usd": 56.04,
+          "economic_pnl_usd": 56.04,
+          "matched_spy_pnl_usd": 1542.11,
+          "selection_pnl_usd": -1486.06,
+          "return_pct": 0.056,
+          "max_drawdown_pct": -0.3612,
+          "model_expense_usd": 0.0068
+        },
+        {
+          "arm": "shared-evidence",
+          "decision_date": "2026-11-02",
+          "entry_date": "2026-11-03",
+          "exit_date": "2026-11-10",
+          "treatment": "default-committee",
+          "trial": 0,
+          "exposure_at_entry": 0.3746,
+          "trading_pnl_usd": -468.5,
+          "economic_pnl_usd": -468.79,
+          "matched_spy_pnl_usd": -294.71,
+          "selection_pnl_usd": -173.79,
+          "return_pct": -0.4685,
+          "max_drawdown_pct": -1.5253,
+          "model_expense_usd": 0.2876
+        },
+        {
+          "arm": "shared-evidence",
+          "decision_date": "2026-11-02",
+          "entry_date": "2026-11-03",
+          "exit_date": "2026-11-10",
+          "treatment": "luna-committee",
+          "trial": 0,
+          "exposure_at_entry": 0.2081,
+          "trading_pnl_usd": 217.65,
+          "economic_pnl_usd": 217.55,
+          "matched_spy_pnl_usd": -163.73,
+          "selection_pnl_usd": 381.38,
+          "return_pct": 0.2177,
+          "max_drawdown_pct": -0.6725,
+          "model_expense_usd": 0.1076
+        },
+        {
+          "arm": "shared-evidence",
+          "decision_date": "2026-11-02",
+          "entry_date": "2026-11-03",
+          "exit_date": "2026-11-10",
+          "treatment": "single-luna",
+          "trial": 0,
+          "exposure_at_entry": 0.4163,
+          "trading_pnl_usd": -781.21,
+          "economic_pnl_usd": -781.22,
+          "matched_spy_pnl_usd": -327.45,
+          "selection_pnl_usd": -453.76,
+          "return_pct": -0.7812,
+          "max_drawdown_pct": -1.6075,
+          "model_expense_usd": 0.0054
+        },
+        {
+          "arm": "shared-evidence",
+          "decision_date": "2026-11-04",
+          "entry_date": "2026-11-05",
+          "exit_date": "2026-11-12",
+          "treatment": "default-committee",
+          "trial": 0,
+          "exposure_at_entry": 0.4995,
+          "trading_pnl_usd": 58.5,
+          "economic_pnl_usd": 58.21,
+          "matched_spy_pnl_usd": 1542.11,
+          "selection_pnl_usd": -1483.61,
+          "return_pct": 0.0585,
+          "max_drawdown_pct": -0.5087,
+          "model_expense_usd": 0.2893
+        },
+        {
+          "arm": "shared-evidence",
+          "decision_date": "2026-11-04",
+          "entry_date": "2026-11-05",
+          "exit_date": "2026-11-12",
+          "treatment": "luna-committee",
+          "trial": 0,
+          "exposure_at_entry": 0.2498,
+          "trading_pnl_usd": 149.83,
+          "economic_pnl_usd": 149.73,
+          "matched_spy_pnl_usd": 771.05,
+          "selection_pnl_usd": -621.22,
+          "return_pct": 0.1498,
+          "max_drawdown_pct": -0.2426,
+          "model_expense_usd": 0.1009
+        },
+        {
+          "arm": "shared-evidence",
+          "decision_date": "2026-11-04",
+          "entry_date": "2026-11-05",
+          "exit_date": "2026-11-12",
+          "treatment": "single-luna",
+          "trial": 0,
+          "exposure_at_entry": 0.5828,
+          "trading_pnl_usd": 239.61,
+          "economic_pnl_usd": 239.61,
+          "matched_spy_pnl_usd": 1799.12,
+          "selection_pnl_usd": -1559.51,
+          "return_pct": 0.2396,
+          "max_drawdown_pct": -0.3517,
+          "model_expense_usd": 0.0054
+        }
+      ]
+    },
+    "debate_ablation_v5": {
+      "source_csv": "studies/debate-ablation-v5/decisions.csv",
+      "midterm_decisions_scored": 144,
+      "by_treatment": {
+        "luna-committee": {
+          "decisions": 36,
+          "actionable": 16,
+          "coverage": 0.4444,
+          "abstained_or_rejected": 20,
+          "directional_accuracy": 0.625,
+          "mean_signed_excess_return": 0.04456,
+          "mean_target_weight": 0.3472,
+          "total_model_cost_usd": 0.6994
+        },
+        "luna-no-research": {
+          "decisions": 36,
+          "actionable": 10,
+          "coverage": 0.2778,
+          "abstained_or_rejected": 26,
+          "directional_accuracy": 0.7,
+          "mean_signed_excess_return": 0.063454,
+          "mean_target_weight": 0.4167,
+          "total_model_cost_usd": 0.5445
+        },
+        "luna-no-risk": {
+          "decisions": 36,
+          "actionable": 12,
+          "coverage": 0.3333,
+          "abstained_or_rejected": 24,
+          "directional_accuracy": 0.5833,
+          "mean_signed_excess_return": 0.034702,
+          "mean_target_weight": 0.3194,
+          "total_model_cost_usd": 0.4814
+        },
+        "single-luna": {
+          "decisions": 36,
+          "actionable": 16,
+          "coverage": 0.4444,
+          "abstained_or_rejected": 20,
+          "directional_accuracy": 0.3125,
+          "mean_signed_excess_return": 0.020021,
+          "mean_target_weight": 0.4861,
+          "total_model_cost_usd": 0.0277
+        }
+      },
+      "by_arm_and_treatment": {
+        "shared-evidence:luna-committee": {
+          "decisions": 36,
+          "actionable": 16,
+          "coverage": 0.4444,
+          "abstained_or_rejected": 20,
+          "directional_accuracy": 0.625,
+          "mean_signed_excess_return": 0.04456,
+          "mean_target_weight": 0.3472,
+          "total_model_cost_usd": 0.6994
+        },
+        "shared-evidence:luna-no-research": {
+          "decisions": 36,
+          "actionable": 10,
+          "coverage": 0.2778,
+          "abstained_or_rejected": 26,
+          "directional_accuracy": 0.7,
+          "mean_signed_excess_return": 0.063454,
+          "mean_target_weight": 0.4167,
+          "total_model_cost_usd": 0.5445
+        },
+        "shared-evidence:luna-no-risk": {
+          "decisions": 36,
+          "actionable": 12,
+          "coverage": 0.3333,
+          "abstained_or_rejected": 24,
+          "directional_accuracy": 0.5833,
+          "mean_signed_excess_return": 0.034702,
+          "mean_target_weight": 0.3194,
+          "total_model_cost_usd": 0.4814
+        },
+        "shared-evidence:single-luna": {
+          "decisions": 36,
+          "actionable": 16,
+          "coverage": 0.4444,
+          "abstained_or_rejected": 20,
+          "directional_accuracy": 0.3125,
+          "mean_signed_excess_return": 0.020021,
+          "mean_target_weight": 0.4861,
+          "total_model_cost_usd": 0.0277
+        }
+      },
+      "portfolio_10bps_summary": {
+        "luna-committee": {
+          "scenarios": 6,
+          "mean_exposure": 0.3469,
+          "mean_trading_pnl_usd": -174.22,
+          "mean_economic_pnl_usd": -174.34,
+          "mean_matched_spy_pnl_usd": 479.64,
+          "mean_selection_pnl_usd": -653.87
+        },
+        "luna-no-research": {
+          "scenarios": 6,
+          "mean_exposure": 0.4163,
+          "mean_trading_pnl_usd": -550.23,
+          "mean_economic_pnl_usd": -550.33,
+          "mean_matched_spy_pnl_usd": 505.69,
+          "mean_selection_pnl_usd": -1055.92
+        },
+        "luna-no-risk": {
+          "scenarios": 6,
+          "mean_exposure": 0.3191,
+          "mean_trading_pnl_usd": -108.53,
+          "mean_economic_pnl_usd": -108.61,
+          "mean_matched_spy_pnl_usd": 393.97,
+          "mean_selection_pnl_usd": -502.5
+        },
+        "single-luna": {
+          "scenarios": 6,
+          "mean_exposure": 0.4856,
+          "mean_trading_pnl_usd": -94.59,
+          "mean_economic_pnl_usd": -94.6,
+          "mean_matched_spy_pnl_usd": 693.0,
+          "mean_selection_pnl_usd": -787.59
+        }
+      },
+      "spy_100pct_benchmark_10bps": {
+        "before_2026-11-02": {
+          "entry_date": "2026-11-03",
+          "exit_date": "2026-11-10",
+          "trading_pnl_usd": -785.89,
+          "return_pct": -0.7859
+        },
+        "after_2026-11-04": {
+          "entry_date": "2026-11-05",
+          "exit_date": "2026-11-12",
+          "trading_pnl_usd": 3084.21,
+          "return_pct": 3.0842
+        }
+      },
+      "scenarios_10bps": [
+        {
+          "arm": "shared-evidence",
+          "decision_date": "2026-11-02",
+          "entry_date": "2026-11-03",
+          "exit_date": "2026-11-10",
+          "treatment": "luna-committee",
+          "trial": 0,
+          "exposure_at_entry": 0.2914,
+          "trading_pnl_usd": -1021.66,
+          "economic_pnl_usd": -1021.77,
+          "matched_spy_pnl_usd": -229.22,
+          "selection_pnl_usd": -792.44,
+          "return_pct": -1.0217,
+          "max_drawdown_pct": -1.3192,
+          "model_expense_usd": 0.1171
+        },
+        {
+          "arm": "shared-evidence",
+          "decision_date": "2026-11-02",
+          "entry_date": "2026-11-03",
+          "exit_date": "2026-11-10",
+          "treatment": "luna-committee",
+          "trial": 1,
+          "exposure_at_entry": 0.333,
+          "trading_pnl_usd": -463.68,
+          "economic_pnl_usd": -463.8,
+          "matched_spy_pnl_usd": -261.96,
+          "selection_pnl_usd": -201.72,
+          "return_pct": -0.4637,
+          "max_drawdown_pct": -1.3176,
+          "model_expense_usd": 0.1155
+        },
+        {
+          "arm": "shared-evidence",
+          "decision_date": "2026-11-02",
+          "entry_date": "2026-11-03",
+          "exit_date": "2026-11-10",
+          "treatment": "luna-committee",
+          "trial": 2,
+          "exposure_at_entry": 0.2914,
+          "trading_pnl_usd": -53.06,
+          "economic_pnl_usd": -53.18,
+          "matched_spy_pnl_usd": -229.22,
+          "selection_pnl_usd": 176.15,
+          "return_pct": -0.0531,
+          "max_drawdown_pct": -0.9675,
+          "model_expense_usd": 0.1131
+        },
+        {
+          "arm": "shared-evidence",
+          "decision_date": "2026-11-02",
+          "entry_date": "2026-11-03",
+          "exit_date": "2026-11-10",
+          "treatment": "luna-no-research",
+          "trial": 0,
+          "exposure_at_entry": 0.333,
+          "trading_pnl_usd": -1224.1,
+          "economic_pnl_usd": -1224.19,
+          "matched_spy_pnl_usd": -261.96,
+          "selection_pnl_usd": -962.14,
+          "return_pct": -1.2241,
+          "max_drawdown_pct": -1.3998,
+          "model_expense_usd": 0.0903
+        },
+        {
+          "arm": "shared-evidence",
+          "decision_date": "2026-11-02",
+          "entry_date": "2026-11-03",
+          "exit_date": "2026-11-10",
+          "treatment": "luna-no-research",
+          "trial": 1,
+          "exposure_at_entry": 0.4579,
+          "trading_pnl_usd": -1593.36,
+          "economic_pnl_usd": -1593.45,
+          "matched_spy_pnl_usd": -360.2,
+          "selection_pnl_usd": -1233.16,
+          "return_pct": -1.5934,
+          "max_drawdown_pct": -2.0589,
+          "model_expense_usd": 0.0931
+        },
+        {
+          "arm": "shared-evidence",
+          "decision_date": "2026-11-02",
+          "entry_date": "2026-11-03",
+          "exit_date": "2026-11-10",
+          "treatment": "luna-no-research",
+          "trial": 2,
+          "exposure_at_entry": 0.4163,
+          "trading_pnl_usd": -824.54,
+          "economic_pnl_usd": -824.64,
+          "matched_spy_pnl_usd": -327.45,
+          "selection_pnl_usd": -497.09,
+          "return_pct": -0.8245,
+          "max_drawdown_pct": -1.5496,
+          "model_expense_usd": 0.0927
+        },
+        {
+          "arm": "shared-evidence",
+          "decision_date": "2026-11-02",
+          "entry_date": "2026-11-03",
+          "exit_date": "2026-11-10",
+          "treatment": "luna-no-risk",
+          "trial": 0,
+          "exposure_at_entry": 0.2914,
+          "trading_pnl_usd": 258.32,
+          "economic_pnl_usd": 258.23,
+          "matched_spy_pnl_usd": -229.22,
+          "selection_pnl_usd": 487.53,
+          "return_pct": 0.2583,
+          "max_drawdown_pct": -1.0415,
+          "model_expense_usd": 0.0823
+        },
+        {
+          "arm": "shared-evidence",
+          "decision_date": "2026-11-02",
+          "entry_date": "2026-11-03",
+          "exit_date": "2026-11-10",
+          "treatment": "luna-no-risk",
+          "trial": 1,
+          "exposure_at_entry": 0.333,
+          "trading_pnl_usd": -54.4,
+          "economic_pnl_usd": -54.48,
+          "matched_spy_pnl_usd": -261.96,
+          "selection_pnl_usd": 207.56,
+          "return_pct": -0.0544,
+          "max_drawdown_pct": -1.1227,
+          "model_expense_usd": 0.0817
+        },
+        {
+          "arm": "shared-evidence",
+          "decision_date": "2026-11-02",
+          "entry_date": "2026-11-03",
+          "exit_date": "2026-11-10",
+          "treatment": "luna-no-risk",
+          "trial": 2,
+          "exposure_at_entry": 0.2914,
+          "trading_pnl_usd": -910.69,
+          "economic_pnl_usd": -910.77,
+          "matched_spy_pnl_usd": -229.22,
+          "selection_pnl_usd": -681.47,
+          "return_pct": -0.9107,
+          "max_drawdown_pct": -1.1522,
+          "model_expense_usd": 0.0796
+        },
+        {
+          "arm": "shared-evidence",
+          "decision_date": "2026-11-02",
+          "entry_date": "2026-11-03",
+          "exit_date": "2026-11-10",
+          "treatment": "single-luna",
+          "trial": 0,
+          "exposure_at_entry": 0.4163,
+          "trading_pnl_usd": -824.54,
+          "economic_pnl_usd": -824.55,
+          "matched_spy_pnl_usd": -327.45,
+          "selection_pnl_usd": -497.09,
+          "return_pct": -0.8245,
+          "max_drawdown_pct": -1.5496,
+          "model_expense_usd": 0.0048
+        },
+        {
+          "arm": "shared-evidence",
+          "decision_date": "2026-11-02",
+          "entry_date": "2026-11-03",
+          "exit_date": "2026-11-10",
+          "treatment": "single-luna",
+          "trial": 1,
+          "exposure_at_entry": 0.3746,
+          "trading_pnl_usd": -55.73,
+          "economic_pnl_usd": -55.74,
+          "matched_spy_pnl_usd": -294.71,
+          "selection_pnl_usd": 238.98,
+          "return_pct": -0.0557,
+          "max_drawdown_pct": -1.2778,
+          "model_expense_usd": 0.0041
+        },
+        {
+          "arm": "shared-evidence",
+          "decision_date": "2026-11-02",
+          "entry_date": "2026-11-03",
+          "exit_date": "2026-11-10",
+          "treatment": "single-luna",
+          "trial": 2,
+          "exposure_at_entry": 0.4579,
+          "trading_pnl_usd": -735.73,
+          "economic_pnl_usd": -735.74,
+          "matched_spy_pnl_usd": -360.2,
+          "selection_pnl_usd": -375.54,
+          "return_pct": -0.7357,
+          "max_drawdown_pct": -1.7448,
+          "model_expense_usd": 0.0044
+        },
+        {
+          "arm": "shared-evidence",
+          "decision_date": "2026-11-04",
+          "entry_date": "2026-11-05",
+          "exit_date": "2026-11-12",
+          "treatment": "luna-committee",
+          "trial": 0,
+          "exposure_at_entry": 0.4163,
+          "trading_pnl_usd": 74.14,
+          "economic_pnl_usd": 74.02,
+          "matched_spy_pnl_usd": 1285.09,
+          "selection_pnl_usd": -1210.95,
+          "return_pct": 0.0741,
+          "max_drawdown_pct": -0.3116,
+          "model_expense_usd": 0.1148
+        },
+        {
+          "arm": "shared-evidence",
+          "decision_date": "2026-11-04",
+          "entry_date": "2026-11-05",
+          "exit_date": "2026-11-12",
+          "treatment": "luna-committee",
+          "trial": 1,
+          "exposure_at_entry": 0.4163,
+          "trading_pnl_usd": 74.14,
+          "economic_pnl_usd": 74.02,
+          "matched_spy_pnl_usd": 1285.09,
+          "selection_pnl_usd": -1210.95,
+          "return_pct": 0.0741,
+          "max_drawdown_pct": -0.3116,
+          "model_expense_usd": 0.118
+        },
+        {
+          "arm": "shared-evidence",
+          "decision_date": "2026-11-04",
+          "entry_date": "2026-11-05",
+          "exit_date": "2026-11-12",
+          "treatment": "luna-committee",
+          "trial": 2,
+          "exposure_at_entry": 0.333,
+          "trading_pnl_usd": 344.77,
+          "economic_pnl_usd": 344.65,
+          "matched_spy_pnl_usd": 1028.07,
+          "selection_pnl_usd": -683.3,
+          "return_pct": 0.3448,
+          "max_drawdown_pct": -0.232,
+          "model_expense_usd": 0.1209
+        },
+        {
+          "arm": "shared-evidence",
+          "decision_date": "2026-11-04",
+          "entry_date": "2026-11-05",
+          "exit_date": "2026-11-12",
+          "treatment": "luna-no-research",
+          "trial": 0,
+          "exposure_at_entry": 0.3746,
+          "trading_pnl_usd": -16.42,
+          "economic_pnl_usd": -16.51,
+          "matched_spy_pnl_usd": 1156.58,
+          "selection_pnl_usd": -1173.0,
+          "return_pct": -0.0164,
+          "max_drawdown_pct": -0.3903,
+          "model_expense_usd": 0.0879
+        },
+        {
+          "arm": "shared-evidence",
+          "decision_date": "2026-11-04",
+          "entry_date": "2026-11-05",
+          "exit_date": "2026-11-12",
+          "treatment": "luna-no-research",
+          "trial": 1,
+          "exposure_at_entry": 0.4579,
+          "trading_pnl_usd": 178.51,
+          "economic_pnl_usd": 178.42,
+          "matched_spy_pnl_usd": 1413.6,
+          "selection_pnl_usd": -1235.08,
+          "return_pct": 0.1785,
+          "max_drawdown_pct": -0.3182,
+          "model_expense_usd": 0.0899
+        },
+        {
+          "arm": "shared-evidence",
+          "decision_date": "2026-11-04",
+          "entry_date": "2026-11-05",
+          "exit_date": "2026-11-12",
+          "treatment": "luna-no-research",
+          "trial": 2,
+          "exposure_at_entry": 0.4579,
+          "trading_pnl_usd": 178.51,
+          "economic_pnl_usd": 178.42,
+          "matched_spy_pnl_usd": 1413.6,
+          "selection_pnl_usd": -1235.08,
+          "return_pct": 0.1785,
+          "max_drawdown_pct": -0.3182,
+          "model_expense_usd": 0.0907
+        },
+        {
+          "arm": "shared-evidence",
+          "decision_date": "2026-11-04",
+          "entry_date": "2026-11-05",
+          "exit_date": "2026-11-12",
+          "treatment": "luna-no-risk",
+          "trial": 0,
+          "exposure_at_entry": 0.2914,
+          "trading_pnl_usd": 206.61,
+          "economic_pnl_usd": 206.53,
+          "matched_spy_pnl_usd": 899.56,
+          "selection_pnl_usd": -692.95,
+          "return_pct": 0.2066,
+          "max_drawdown_pct": -0.2369,
+          "model_expense_usd": 0.0778
+        },
+        {
+          "arm": "shared-evidence",
+          "decision_date": "2026-11-04",
+          "entry_date": "2026-11-05",
+          "exit_date": "2026-11-12",
+          "treatment": "luna-no-risk",
+          "trial": 1,
+          "exposure_at_entry": 0.333,
+          "trading_pnl_usd": -154.58,
+          "economic_pnl_usd": -154.66,
+          "matched_spy_pnl_usd": 1028.07,
+          "selection_pnl_usd": -1182.65,
+          "return_pct": -0.1546,
+          "max_drawdown_pct": -0.4324,
+          "model_expense_usd": 0.0836
+        },
+        {
+          "arm": "shared-evidence",
+          "decision_date": "2026-11-04",
+          "entry_date": "2026-11-05",
+          "exit_date": "2026-11-12",
+          "treatment": "luna-no-risk",
+          "trial": 2,
+          "exposure_at_entry": 0.3746,
+          "trading_pnl_usd": 3.54,
+          "economic_pnl_usd": 3.47,
+          "matched_spy_pnl_usd": 1156.58,
+          "selection_pnl_usd": -1153.03,
+          "return_pct": 0.0035,
+          "max_drawdown_pct": -0.4096,
+          "model_expense_usd": 0.0764
+        },
+        {
+          "arm": "shared-evidence",
+          "decision_date": "2026-11-04",
+          "entry_date": "2026-11-05",
+          "exit_date": "2026-11-12",
+          "treatment": "single-luna",
+          "trial": 0,
+          "exposure_at_entry": 0.5828,
+          "trading_pnl_usd": 284.76,
+          "economic_pnl_usd": 284.76,
+          "matched_spy_pnl_usd": 1799.12,
+          "selection_pnl_usd": -1514.36,
+          "return_pct": 0.2848,
+          "max_drawdown_pct": -0.3583,
+          "model_expense_usd": 0.0047
+        },
+        {
+          "arm": "shared-evidence",
+          "decision_date": "2026-11-04",
+          "entry_date": "2026-11-05",
+          "exit_date": "2026-11-12",
+          "treatment": "single-luna",
+          "trial": 1,
+          "exposure_at_entry": 0.4995,
+          "trading_pnl_usd": 510.24,
+          "economic_pnl_usd": 510.24,
+          "matched_spy_pnl_usd": 1542.11,
+          "selection_pnl_usd": -1031.86,
+          "return_pct": 0.5102,
+          "max_drawdown_pct": -0.3634,
+          "model_expense_usd": 0.0043
+        },
+        {
+          "arm": "shared-evidence",
+          "decision_date": "2026-11-04",
+          "entry_date": "2026-11-05",
+          "exit_date": "2026-11-12",
+          "treatment": "single-luna",
+          "trial": 2,
+          "exposure_at_entry": 0.5828,
+          "trading_pnl_usd": 253.43,
+          "economic_pnl_usd": 253.42,
+          "matched_spy_pnl_usd": 1799.12,
+          "selection_pnl_usd": -1545.69,
+          "return_pct": 0.2534,
+          "max_drawdown_pct": -0.4368,
+          "model_expense_usd": 0.0054
+        }
+      ]
+    }
+  },
+  "eval_table_run_urls": {
+    "luna-committee": "https://forge.coreweave.com/wandb/wandb/tradingagents-election-lab/runs/6rg89dxj",
+    "luna-no-research": "https://forge.coreweave.com/wandb/wandb/tradingagents-election-lab/runs/7m0m2z66",
+    "luna-no-risk": "https://forge.coreweave.com/wandb/wandb/tradingagents-election-lab/runs/lks25mxz",
+    "single-luna": "https://forge.coreweave.com/wandb/wandb/tradingagents-election-lab/runs/ug9tgbsv"
+  }
+}

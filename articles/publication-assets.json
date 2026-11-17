@@ -677,6 +677,12 @@
       "sha256": "2f110f2db283e97eb0e15b45e8565fe7b04864546ed56772dad461fd654ebeb4",
       "bytes": 140967,
       "anonymous_verified": true
+    },
+    "evidence/midterms-2026-matured-20261116.json": {
+      "url": "https://api.wandb.ai/files/wandb/tradingagents-election-lab/hllta000/evidence/midterms-2026-matured-20261116.json",
+      "sha256": "0039d1b3e5e12d96d69a709fe399e3e4fdbe8d64d9eab4e4ac39c259f1d23f88",
+      "bytes": 71191,
+      "anonymous_verified": true
     }
   },
   "run_id": "hllta000"

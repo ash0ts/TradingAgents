@@ -46,6 +46,7 @@ def files():
             "tradingagents-public-evidence.zip",
             "verification-receipts.json",
             "study-design-and-budget.json",
+            "midterms-2026-matured-20261116.json",
         ]
     ]
     paths += [
