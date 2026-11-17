@@ -1,0 +1,26 @@
+{
+  "checked_on": "2026-11-06",
+  "report_images_loaded": 13,
+  "native_panels_rendered": 10,
+  "native_financial_labels_include_all_13_methods": true,
+  "desktop_viewport": [1280, 720],
+  "narrow_viewport": [390, 844],
+  "narrow_document_width": 390,
+  "narrow_document_scroll_width": 390,
+  "chapter_navigation_verified": true,
+  "public_asset_hashes_verified_anonymously": true,
+  "all_three_article_validators_passed": true,
+  "repository_ruff_passed": true,
+  "offline_reconciliation": {
+    "immutable_bundles": 60,
+    "agent_predictions_all_horizons": 360,
+    "portfolio_scenarios": 640
+  },
+  "new_model_dispatches": 0,
+  "notes": [
+    "Captured five real product views; screenshots are directly clipped, not synthetically redrawn.",
+    "Increased native financial panel height and restored fluid width after the browser check found clipped labels.",
+    "Private raw originals and authenticated case mappings remain outside the public release.",
+    "The temporary notebook inspection kernel was shut down without editing saved source."
+  ]
+}

@@ -1,0 +1,11 @@
+treatment,requested,scored,hold,pending
+default-committee,120,77,19,24
+luna-committee,120,81,15,24
+single-luna,120,81,15,24
+momentum-20,60,44,4,12
+mean-reversion-5,60,46,2,12
+AR-5,60,13,35,12
+ridge,60,29,19,12
+XGBoost,60,25,23,12
+DLinear,60,29,19,12
+chronos-bolt-small,60,35,13,12

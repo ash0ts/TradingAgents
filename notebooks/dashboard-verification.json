@@ -1,0 +1,70 @@
+{
+  "rows": 960,
+  "agent_runs": 360,
+  "baseline_predictions": 600,
+  "market_cases": 60,
+  "public_data_sha256": "f565efe5b288eaf93540484801b2f79e5f5bf8b2242ed9a3223428b797c10096",
+  "immutable_evidence_bundles": 60,
+  "predictions_and_all_horizons_reconciled": 360,
+  "portfolio_scenarios_recomputed": 640,
+  "anonymous_dashboard_metric_runs_verified": 13,
+  "anonymous_report_verified": {
+    "anonymous_report": "Would you give this investment committee money?",
+    "id": "VmlldzoxODI2MzIwNQ==",
+    "spec_readable": true
+  },
+  "agent_lens_examples_reverified": [
+    {
+      "case_id": "control-2023-before-AAPL",
+      "treatment": "default-committee",
+      "span_count": 63,
+      "model_calls": 17,
+      "tool_calls": 32,
+      "all_spans_linked": true,
+      "usage_reconciled": true
+    },
+    {
+      "case_id": "midterms-2022-before-UNH",
+      "treatment": "default-committee",
+      "span_count": 62,
+      "model_calls": 17,
+      "tool_calls": 31,
+      "all_spans_linked": true,
+      "usage_reconciled": true
+    },
+    {
+      "case_id": "control-2023-after-NVDA",
+      "treatment": "single-luna",
+      "span_count": 2,
+      "model_calls": 1,
+      "tool_calls": 0,
+      "all_spans_linked": true,
+      "usage_reconciled": true
+    }
+  ],
+  "notebook_versions_reverified": [
+    {
+      "notebook_id": "Tm90ZWJvb2s6MTUyNjA=",
+      "version": 13,
+      "source_sha256": "5966f000e38d4002885926717cfa22396881b5a769f4c140902c153d7c8ef89b",
+      "static_sha256": "24c7c84ee34c4a5cf7b93ed7ce3db3d18dab19e74e147629aaab851acd0171eb"
+    },
+    {
+      "notebook_id": "Tm90ZWJvb2s6MTUyNzE=",
+      "version": 6,
+      "source_sha256": "45ead88cd58a757906036ea6f229a08cc7ffd37bc90d9c05b2824097e370a800",
+      "static_sha256": "275a07955c95c5975d2b58fc3b8403165f3d623d26686e9ef4a9fbe770bf1c27"
+    },
+    {
+      "notebook_id": "Tm90ZWJvb2s6MTUyNzI=",
+      "version": 9,
+      "source_sha256": "3fd6c0daba058b5b7671e7237e38bbede195a5ef25e54d43788bd7569b883256",
+      "static_sha256": "c5188fa37ad7c28a2753210bfaa2457631f255c90d4bee4e8576c496c8601fe7"
+    }
+  ],
+  "pytest_passed": 1446,
+  "subtests_passed": 100,
+  "ruff": "passed",
+  "new_paid_model_calls": 0,
+  "execution_location": "Campaign: local; Agent Lens/evaluations: hosted; saved notebook execution: native Forge runtimes"
+}

@@ -1,0 +1,35 @@
+[
+  {
+    "comparable_research_final_ratings": 120,
+    "condition_phrase_candidates": 81,
+    "horizon_explicitly_not_provided": 58,
+    "matured_runs": 96,
+    "missing_tool_evidence": 120,
+    "rating_changed": 2,
+    "rating_unchanged": 118,
+    "runs": 120,
+    "treatment": "default-committee"
+  },
+  {
+    "comparable_research_final_ratings": 120,
+    "condition_phrase_candidates": 45,
+    "horizon_explicitly_not_provided": 16,
+    "matured_runs": 96,
+    "missing_tool_evidence": 120,
+    "rating_changed": 0,
+    "rating_unchanged": 120,
+    "runs": 120,
+    "treatment": "luna-committee"
+  },
+  {
+    "comparable_research_final_ratings": 0,
+    "condition_phrase_candidates": 0,
+    "horizon_explicitly_not_provided": 0,
+    "matured_runs": 96,
+    "missing_tool_evidence": 0,
+    "rating_changed": 0,
+    "rating_unchanged": 0,
+    "runs": 120,
+    "treatment": "single-luna"
+  }
+]

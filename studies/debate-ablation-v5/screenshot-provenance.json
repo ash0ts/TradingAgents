@@ -1,0 +1,36 @@
+{
+  "recorded_at": "2026-11-10T08:47:22.285733+00:00",
+  "screenshots": [
+    {
+      "file": "articles/agent-lens-in-practice/assets/lens-no-risk-instruction.jpg",
+      "sha256": "c36a2ddb02e7e6b1b63c58a04dc7fd8e3ec9c6bff16747ebad6f1265aac6718d",
+      "source": "Actual native Agent Lens conversation UI",
+      "conversation_url": "https://forge.coreweave.com/agent-lens/wandb/tradingagents-election-lab-evidence/conversations/ab4cb4b1-2395-5d1a-b1c6-c201384eb970",
+      "case": "control-2023-after-AAPL",
+      "treatment": "luna-no-risk",
+      "trial": 0,
+      "shows": "Recorded Portfolio Manager request, empty risk history and explicit omission notice; original trader proposal retained.",
+      "selection": "Prespecified AAPL trial-zero contract review, selected before financial analysis",
+      "changes": "None; UI panel resized and request expanded through native controls.",
+      "privacy_review": "No credentials or raw licensed evidence in visible area. Authenticated conversation identifier already appears in authorized derived result links."
+    },
+    {
+      "file": "articles/agent-lens-in-practice/assets/lens-insights-fixture-only.jpg",
+      "sha256": "14198eca70c7d886e17eb509f0f8d422d0e84b9b024656eb270b10301ff49242",
+      "source": "Actual native Agent Lens Insights UI",
+      "captured_at": "2026-11-10T09:15:45.719253+00:00",
+      "shows": "No completed clustering run; one classified turn, one conversation and the synthetic local export-recovery fixture.",
+      "changes": "None",
+      "privacy_review": "Only authorized project metadata and synthetic fixture content; no credentials or licensed raw evidence."
+    },
+    {
+      "file": "articles/agent-lens-in-practice/assets/forge-debate-dashboard.jpg",
+      "sha256": "c399b2235ed95c6c9d6b7e0b263e4228b68a8ace9b5e4ea7c938ac1068beffa0",
+      "source": "https://forge.coreweave.com/wandb/wandb/tradingagents-election-lab?nw=tmuo3ynvgek",
+      "captured_at": "2026-11-10T09:27:19.680400+00:00",
+      "shows": "Actual saved native selection-P&L panel with all four workflow means and horizontal values.",
+      "changes": "None; full-screen native panel opened and runs sidebar collapsed.",
+      "privacy_review": "Public derived comparison only; no credentials, protected source content or raw quotes."
+    }
+  ]
+}

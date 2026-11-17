@@ -1,0 +1,10 @@
+{
+  "source": "results.json",
+  "source_sha256": "50df369520db1f62a0c3c7b7aadcf16fb5036daa31432c3c404d41d62a640fd7",
+  "figures": [
+    "evidence-stock-selection",
+    "evidence-contract-status",
+    "evidence-paired-uncertainty"
+  ],
+  "limits": "Paired development arms, one repetition, four matured cohort blocks. Equal capital is not equal risk. Citation slots are not complete prose validation."
+}

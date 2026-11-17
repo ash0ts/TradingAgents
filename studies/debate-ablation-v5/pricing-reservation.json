@@ -1,0 +1,24 @@
+{
+  "recorded_at": "2026-11-10T08:35:11.962262+00:00",
+  "reserve_usd": 6,
+  "reason": "Original settled estimates omitted the 25% cache-write premium. Hold covers prior and current calls while preserving all actor sources and predictions.",
+  "sources": [
+    "https://developers.openai.com/api/docs/models/gpt-6-luna",
+    "https://developers.openai.com/api/docs/models/gpt-6-sol"
+  ],
+  "rates_usd_per_million": {
+    "gpt-6-luna": [
+      "0.10",
+      "0.01",
+      "0.125",
+      "0.50"
+    ],
+    "gpt-6-sol": [
+      "2.00",
+      "0.20",
+      "2.50",
+      "10.00"
+    ]
+  },
+  "scope": "Accounting correction only; no actor retry, prompt change or financial-outcome selection."
+}

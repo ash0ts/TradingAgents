@@ -1,0 +1,18 @@
+{
+  "wandb_url": "https://forge.coreweave.com/wandb/tradingagents-election-lab?nw=dufjini1rvb",
+  "forge_url": "https://forge.coreweave.com/wandb/wandb/tradingagents-election-lab?nw=dufjini1rvb",
+  "run_ids": [
+    "internals-f9bb3bf6e107b53b",
+    "internals-dc96509abb446d7f",
+    "internals-eb81eef04ee4b85b"
+  ],
+  "anonymous_tables_verified": 4,
+  "rows": 360,
+  "reviews": 5,
+  "native_panels": 3,
+  "report_panels": 2,
+  "tag_writes": 205,
+  "native_saved_views": 3,
+  "new_model_calls": 0,
+  "manifest_sha256": "8a3142fd96bfa6b721703ed2478be17f55d3119403feea18dcdeb35ccc4ccae7"
+}

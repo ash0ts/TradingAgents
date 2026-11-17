@@ -1,0 +1,16 @@
+{
+  "checked_at": "2026-11-09",
+  "native_clustering_runs": 0,
+  "first_week": null,
+  "latest_week": null,
+  "ui_message": "Insights run daily, once your project has 1,000 new turns since the last run.",
+  "campaign_turns": 360,
+  "interpretation": "Campaign below the displayed new-turn threshold. No native cluster output was available. Missing clusters are not evidence of no issues.",
+  "native_insights_used_to_discover_these_cases": false,
+  "new_model_calls": 0,
+  "docs_url": "https://docs.coreweave.com/products/agent-lens/insights",
+  "raw_readbacks": [
+    "clustering-status.json",
+    "latest-week.json"
+  ]
+}

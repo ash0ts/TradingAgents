@@ -4,6 +4,7 @@ on:
   push:
     branches: [main, 'v[0-9]+.[0-9]+.[0-9]+']
   pull_request:
+  workflow_dispatch:
 
 concurrency:
   group: ci-${{ github.ref }}
@@ -65,3 +66,18 @@ jobs:
         # The repo is fully clean under the strict select, so we lint everything
         # (generated results/ is excluded via pyproject extend-exclude).
         run: ruff check .
+
+  notebook-export:
+    name: pinned offline notebook exports
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+      - run: pip install -r notebooks/requirements.lock
+      - name: Execute saved examples without API credentials
+        run: |
+          python -m marimo export html notebooks/01_meet_the_committee.py -o /tmp/committee.html
+          python -m marimo export html notebooks/02_confident_expensive_wrong.py -o /tmp/diagnostics.html
+          python -m marimo export html notebooks/03_beat_doing_nothing.py -o /tmp/comparisons.html

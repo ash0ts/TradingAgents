@@ -1,0 +1,157 @@
+{
+  "executions": 8,
+  "model_cost_usd": 0.08959,
+  "native_conversations": 8,
+  "native_spans": 282,
+  "model_calls": 88,
+  "missing_spans_after_readback": 0,
+  "note": "One exporter timeout warning, but independent readback found no missing span; no payload needed resubmission.",
+  "rows": [
+    {
+      "case_id": "control-2025-after-AAPL",
+      "treatment": "luna-committee",
+      "status": "success",
+      "cost_upper_usd": 0.018619,
+      "latency_s": 121.70944733300007,
+      "conversation_url": "https://forge.coreweave.com/agent-lens/wandb/tradingagents-election-lab-evidence/conversations/13d80bde-0f46-5d5b-bb20-8957cf11be15",
+      "roles": {
+        "Portfolio Manager": 1,
+        "Neutral Analyst": 1,
+        "Conservative Analyst": 1,
+        "Aggressive Analyst": 1,
+        "Trader": 1,
+        "Research Manager": 1,
+        "Bear Researcher": 1,
+        "Bull Researcher": 1,
+        "Sentiment Analyst": 1,
+        "News Analyst": 1,
+        "Memory Log": 1,
+        "Market Analyst": 1,
+        "Fundamentals Analyst": 1
+      }
+    },
+    {
+      "case_id": "control-2025-after-AAPL",
+      "treatment": "single-luna",
+      "status": "success",
+      "cost_upper_usd": 0.000881,
+      "latency_s": 12.780286917000012,
+      "conversation_url": "https://forge.coreweave.com/agent-lens/wandb/tradingagents-election-lab-evidence/conversations/f9f07ccf-097e-5f11-bb5e-6652a56132a9",
+      "roles": {}
+    },
+    {
+      "case_id": "control-2025-after-AAPL",
+      "treatment": "luna-no-risk",
+      "status": "success",
+      "cost_upper_usd": 0.011345,
+      "latency_s": 142.92151962499997,
+      "conversation_url": "https://forge.coreweave.com/agent-lens/wandb/tradingagents-election-lab-evidence/conversations/3dbfe535-9cec-5662-844f-08c66d91b11d",
+      "roles": {
+        "Portfolio Manager": 1,
+        "Trader": 1,
+        "Research Manager": 1,
+        "Bear Researcher": 1,
+        "Bull Researcher": 1,
+        "Sentiment Analyst": 1,
+        "News Analyst": 1,
+        "Memory Log": 1,
+        "Market Analyst": 1,
+        "Fundamentals Analyst": 1
+      }
+    },
+    {
+      "case_id": "control-2025-after-AAPL",
+      "treatment": "luna-no-research",
+      "status": "success",
+      "cost_upper_usd": 0.014092,
+      "latency_s": 90.15128004100006,
+      "conversation_url": "https://forge.coreweave.com/agent-lens/wandb/tradingagents-election-lab-evidence/conversations/c73e839d-ab66-53e0-b3c8-914a7177b3cb",
+      "roles": {
+        "Portfolio Manager": 1,
+        "Neutral Analyst": 1,
+        "Conservative Analyst": 1,
+        "Aggressive Analyst": 1,
+        "Trader": 1,
+        "Research Manager": 1,
+        "Sentiment Analyst": 1,
+        "News Analyst": 1,
+        "Memory Log": 1,
+        "Market Analyst": 1,
+        "Fundamentals Analyst": 1
+      }
+    },
+    {
+      "case_id": "midterms-2022-before-UNH",
+      "treatment": "luna-committee",
+      "status": "success",
+      "cost_upper_usd": 0.017286,
+      "latency_s": 117.57563091700001,
+      "conversation_url": "https://forge.coreweave.com/agent-lens/wandb/tradingagents-election-lab-evidence/conversations/ab4f79f2-7c22-5b02-b5b9-d1f22a39dcd1",
+      "roles": {
+        "Portfolio Manager": 1,
+        "Neutral Analyst": 1,
+        "Conservative Analyst": 1,
+        "Aggressive Analyst": 1,
+        "Trader": 1,
+        "Research Manager": 1,
+        "Bear Researcher": 1,
+        "Bull Researcher": 1,
+        "Sentiment Analyst": 1,
+        "News Analyst": 1,
+        "Memory Log": 1,
+        "Market Analyst": 1,
+        "Fundamentals Analyst": 1
+      }
+    },
+    {
+      "case_id": "midterms-2022-before-UNH",
+      "treatment": "single-luna",
+      "status": "success",
+      "cost_upper_usd": 0.000898,
+      "latency_s": 16.742737250000005,
+      "conversation_url": "https://forge.coreweave.com/agent-lens/wandb/tradingagents-election-lab-evidence/conversations/648130fd-863b-5076-9263-dda851135587",
+      "roles": {}
+    },
+    {
+      "case_id": "midterms-2022-before-UNH",
+      "treatment": "luna-no-risk",
+      "status": "success",
+      "cost_upper_usd": 0.012795,
+      "latency_s": 85.227792292,
+      "conversation_url": "https://forge.coreweave.com/agent-lens/wandb/tradingagents-election-lab-evidence/conversations/2452a2cb-97ce-5b12-875b-0179086b5ca4",
+      "roles": {
+        "Portfolio Manager": 1,
+        "Trader": 1,
+        "Research Manager": 1,
+        "Bear Researcher": 1,
+        "Bull Researcher": 1,
+        "Sentiment Analyst": 1,
+        "News Analyst": 1,
+        "Memory Log": 1,
+        "Market Analyst": 1,
+        "Fundamentals Analyst": 1
+      }
+    },
+    {
+      "case_id": "midterms-2022-before-UNH",
+      "treatment": "luna-no-research",
+      "status": "success",
+      "cost_upper_usd": 0.013674,
+      "latency_s": 90.15924420800002,
+      "conversation_url": "https://forge.coreweave.com/agent-lens/wandb/tradingagents-election-lab-evidence/conversations/54611cf1-704b-5b90-8f4d-bae2d70519a5",
+      "roles": {
+        "Portfolio Manager": 1,
+        "Neutral Analyst": 1,
+        "Conservative Analyst": 1,
+        "Aggressive Analyst": 1,
+        "Trader": 1,
+        "Research Manager": 1,
+        "Sentiment Analyst": 1,
+        "News Analyst": 1,
+        "Memory Log": 1,
+        "Market Analyst": 1,
+        "Fundamentals Analyst": 1
+      }
+    }
+  ]
+}

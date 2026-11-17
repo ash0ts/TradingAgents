@@ -1,0 +1,112 @@
+{
+  "campaign_id": "election-contract-v2",
+  "source_tag": "https://github.com/ash0ts/TradingAgents/tree/tradingagents-contract-v2-execution",
+  "dashboard": {
+    "wandb_url": "https://forge.coreweave.com/wandb/tradingagents-election-lab?nw=zvy3sfqxpnd",
+    "forge_url": "https://forge.coreweave.com/wandb/wandb/tradingagents-election-lab?nw=zvy3sfqxpnd",
+    "run_ids": [
+      "contract-v2-782ee0cacae7dacd",
+      "contract-v2-c8fa61102261390f",
+      "contract-v2-fa07beafbd5456e3",
+      "contract-v2-d4366c20d983ecb9",
+      "contract-v2-096fd3b5cb67035b",
+      "contract-v2-baa835774b79d8d2"
+    ],
+    "native_panels": 4,
+    "report_panels": 2,
+    "anonymous_tables_verified": 6,
+    "new_executions": 360,
+    "result_sha256": "f36363670f04ed8900fc9482520d026915b25a3ece1d56663e004ee798499ed3",
+    "protocol_sha256": "49e573790f8c31854a5fe075fd2c51f1ed6a5fa6ef87afb8c2a0d9b55846a3ba"
+  },
+  "notebook": {
+    "notebook_id": "Tm90ZWJvb2s6MTUyNzI=",
+    "name": "Did it beat doing nothing?",
+    "version": {
+      "artifactTypeName": "notebook",
+      "artifactCollectionName": "Did-it-beat-doing-nothing",
+      "versionIndex": 23,
+      "sourceFileName": "notebook.py"
+    },
+    "source_sha256": "4c988015279bb129c176738bb212e86b96bc2b004ae1076e5b3219e281a3ef66",
+    "last_source_edited_at": "2026-11-06T07:25:16Z",
+    "last_static_output_at": null,
+    "has_static_output": true,
+    "url": "https://forge.coreweave.com/notebooks/Tm90ZWJvb2s6MTUyNzI=",
+    "static_sha256": "533beeee5861d313b6d266d1829e7907c27a87ce56a98560852c8e9d60940c2d",
+    "static_bytes": 6087632,
+    "local_source_sha256": "e98980edd46304cd6f7cd813dee9029c088a0693ce611893733de82152bbd249",
+    "source_equivalence": "Python AST identical after generated Marimo version normalization; editor reformats dependency comments",
+    "corrected_executions": 360,
+    "corrected_result_sha256": "f36363670f04ed8900fc9482520d026915b25a3ece1d56663e004ee798499ed3",
+    "new_model_calls": 0,
+    "scenario_rows": 1120,
+    "runtime_versions": {
+      "marimo": "0.25.1",
+      "numpy": "2.5.4",
+      "pandas": "3.1.1",
+      "matplotlib": "3.11.2",
+      "wandb": "0.30.0"
+    },
+    "runtime_stopped_after_verification": true
+  },
+  "anonymous_notebook": {
+    "id": "Tm90ZWJvb2s6MTUyNzI=",
+    "name": "Did it beat doing nothing?",
+    "anonymous_permissions": [
+      "VIEW_STATIC"
+    ],
+    "version": 23,
+    "static_sha256": "533beeee5861d313b6d266d1829e7907c27a87ce56a98560852c8e9d60940c2d",
+    "static_bytes": 6087632
+  },
+  "public_artifact": {
+    "artifact": "wandb/tradingagents-election-lab/execution-contract-v2-results:v0",
+    "digest": "d1335d9fc3a6db45514fea527135bf5a",
+    "project": "wandb/tradingagents-election-lab",
+    "protocol_sha256": "49e573790f8c31854a5fe075fd2c51f1ed6a5fa6ef87afb8c2a0d9b55846a3ba",
+    "public": true
+  },
+  "private_artifact": {
+    "artifact": "wandb/tradingagents-election-lab-evidence/execution-contract-v2-executions:v0",
+    "digest": "73fe843e54687364db4b4476af162579",
+    "project": "wandb/tradingagents-election-lab-evidence",
+    "protocol_sha256": "49e573790f8c31854a5fe075fd2c51f1ed6a5fa6ef87afb8c2a0d9b55846a3ba",
+    "public": false
+  },
+  "article": {
+    "report_url": "https://forge.coreweave.com/wandb/wandb/tradingagents-election-lab/reports/Would-you-give-this-investment-committee-money--VmlldzoxODI2MzIwNQ==",
+    "same_report_identity": true,
+    "images": 21,
+    "native_panel_grids_preserved": 2,
+    "native_panels_preserved": 10,
+    "article_count": 1,
+    "trading_scenario_panels_added": 2,
+    "trading_scenario_rows": 1120,
+    "internals_panels_added": 2,
+    "internals_observations": 360,
+    "internals_assistant_reviews": 5,
+    "corrected_campaign_panels_added": 2,
+    "corrected_campaign_executions": 360,
+    "panel_layout": "Fluid width; financial panels h=11 so all 13 method labels fit. Data, filters and IDs preserved.",
+    "source_sha256": {
+      "agent-lens-in-practice": "1a276f1df6c22f36e2a9be2c5e9fa7577aa121f4d1de4ef3e53dbafc71104cdb"
+    },
+    "before_sha256": "9b06eeeb48014f6f4170a36526b118ebe16702acaacde862f12aab4d17f55768",
+    "after_sha256": "243db7c1b046f59da696b8a8fc23b90595edeaefeef6085ce4fb954ce075d539",
+    "new_model_runs_during_publication": 0
+  },
+  "validation": {
+    "pytest_passed": 1473,
+    "subtests_passed": 100,
+    "skipped": 1,
+    "skip_reason": "Optional langchain_aws dependency absent",
+    "deselected": 1,
+    "deselected_reason": "Default pytest excludes external integration test; full hosted campaign separately verified",
+    "ruff": "passed",
+    "clean_pinned_notebook_export": "passed",
+    "selected_assistant_reviews": 30,
+    "fee_description_mismatches_in_selected_reviews": 1,
+    "desktop_and_390px_article_preview": "visually inspected"
+  }
+}

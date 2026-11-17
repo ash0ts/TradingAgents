@@ -1,0 +1,11 @@
+{
+  "method": "Independent linear account reconstruction from public per-dollar factors and accepted target weights.",
+  "matured_accounts_reconciled": 384,
+  "pending_accounts_preserved": 96,
+  "maximum_absolute_error": 5.820766091346741e-11,
+  "tolerance": 1e-07,
+  "result_sha256": "4b608feba9d1b3c7307bd5f769a1606806c3d89a611d1375f2e03ae484f34759",
+  "unit_factors_sha256": "4998b372c06314507ce8ebcb404590a9af2e8e4d2fdfa4a11d82ae82c1085e3c",
+  "requires_raw_prices_or_credentials": false,
+  "boundary": "Reconciles portfolio arithmetic, not original data collection, model outputs or investment merit."
+}

@@ -1,0 +1,27 @@
+{
+  "wandb_url": "https://forge.coreweave.com/wandb/tradingagents-election-lab?nw=94cw9owsbt4",
+  "forge_url": "https://forge.coreweave.com/wandb/wandb/tradingagents-election-lab?nw=94cw9owsbt4",
+  "run_ids": [
+    "evidence-v3-repaired-d626b9d976017586",
+    "evidence-v3-repaired-b51ddcae038fcd49",
+    "evidence-v3-repaired-091398a3dfb75e41",
+    "evidence-v3-repaired-36abdfd745483449",
+    "evidence-v3-repaired-23d6af1d775204cd",
+    "evidence-v3-repaired-501825c4a6b3da32"
+  ],
+  "stopped_pilot_run_id": "evidence-v3-stopped-79a8c471968d",
+  "stopped_pilot_url": "https://forge.coreweave.com/wandb/wandb/tradingagents-election-lab/runs/evidence-v3-stopped-79a8c471968d",
+  "native_panels": 7,
+  "report_panels": 2,
+  "anonymous_tables_verified": 25,
+  "native_views_and_tags": {
+    "conversations": 361,
+    "expected_tags_verified": 1154,
+    "saved_views_verified": 8,
+    "assistant_reviewed_conversations": 36,
+    "review_label_provenance": "Codex assistant; API tag names explicitly distinguish these from expert or automated-judge labels."
+  },
+  "result_sha256": "50df369520db1f62a0c3c7b7aadcf16fb5036daa31432c3c404d41d62a640fd7",
+  "protocol_sha256": "6e157384ffc2de0b50e4221f500a748e440c25d0efc3da1daa562234ab06eb24",
+  "executions": 360
+}

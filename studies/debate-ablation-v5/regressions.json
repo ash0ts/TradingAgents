@@ -1,0 +1,26 @@
+{
+  "version": "debate-ablation-v5-reviewed-1",
+  "purpose": "Development regression cases for future numerical-claim or judge checks; discovered during this study, never an untouched test set.",
+  "reviewer": "Codex assistant",
+  "cases": [
+    {
+      "id": "single-luna-aapl-2026-one-side-fee-comparison",
+      "case_id": "midterms-2026-before-AAPL",
+      "treatment": "single-luna",
+      "trial": 0,
+      "source_prediction_sha256": "2676e7e6b5394107ef1811842441fda7034852353c867aab7a76520e4974ef00",
+      "conversation_url": "https://forge.coreweave.com/agent-lens/wandb/tradingagents-election-lab-evidence/conversations/1dab96a7-aead-5072-86e8-309c1f2d05d6",
+      "location": "execution_decision.investment_thesis",
+      "claim": "0.1084 percentage points is smaller than the stated 10-basis-point cost on one side of a trade.",
+      "observed_label": "incorrect_unit_comparison",
+      "expected_facts": {
+        "return_percentage_points": "0.1084",
+        "one_side_fee_basis_points": "10",
+        "one_side_fee_percentage_points": "0.10",
+        "correct_relation": "greater_than"
+      },
+      "review_reason": "10 basis points = 0.10 percentage points; 0.1084 > 0.10. The comparison with a single-side fee is false. No financial outcome is needed for this check.",
+      "limits": "This checks one comparison, not all arithmetic in the report. The correctly encoded 50% allocation remains unchanged; no financial consequence is inferred."
+    }
+  ]
+}

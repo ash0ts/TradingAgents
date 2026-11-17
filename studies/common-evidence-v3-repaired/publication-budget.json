@@ -1,0 +1,10 @@
+{
+  "reserved_at": "2026-11-09T23:24:35.461586+00:00",
+  "purpose": "Re-execute and save all three existing Forge Notebooks with common-evidence study data; preserve original infrastructure holds.",
+  "reservation_id": "forge-evidence-v3-publication-runtime-reserve",
+  "additional_infrastructure_reserved_usd": 4.99,
+  "invoice_reconciled": false,
+  "prior_infrastructure_reservations_usd": 175,
+  "total_infrastructure_reserved_usd": 179.99,
+  "global_cap_usd": 250
+}

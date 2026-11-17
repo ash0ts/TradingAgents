@@ -1,0 +1,85 @@
+{
+  "hosted_readback": {
+    "conversations": 360,
+    "spans": 15058,
+    "model_calls": 4149,
+    "all_evaluation_links_verified": true,
+    "all_usage_reconciled": true
+  },
+  "offline_reconciliation": {
+    "rows": 960,
+    "agent_runs": 360,
+    "baseline_predictions": 600,
+    "market_cases": 60,
+    "public_data_sha256": "f565efe5b288eaf93540484801b2f79e5f5bf8b2242ed9a3223428b797c10096",
+    "immutable_evidence_bundles": 60,
+    "predictions_and_all_horizons_reconciled": 360,
+    "portfolio_scenarios_recomputed": 640
+  },
+  "notebook_versions": [
+    {
+      "name": "Meet the investment committee.",
+      "version": {
+        "artifactTypeName": "notebook",
+        "artifactCollectionName": "Meet-the-investment-committee.",
+        "versionIndex": 13,
+        "sourceFileName": "notebook.py"
+      },
+      "source_sha256": "5966f000e38d4002885926717cfa22396881b5a769f4c140902c153d7c8ef89b",
+      "static_sha256": "24c7c84ee34c4a5cf7b93ed7ce3db3d18dab19e74e147629aaab851acd0171eb",
+      "static_bytes": 571831,
+      "has_static_output": true,
+      "url": "https://forge.coreweave.com/notebooks/Tm90ZWJvb2s6MTUyNjA=",
+      "runtime_versions": {
+        "marimo": "0.25.1",
+        "numpy": "2.5.4",
+        "pandas": "3.1.1",
+        "matplotlib": "3.11.2",
+        "wandb": "0.30.0"
+      }
+    },
+    {
+      "name": "Confident, expensive, and wrong?",
+      "version": {
+        "artifactTypeName": "notebook",
+        "artifactCollectionName": "Confident-expensive-and-wrong",
+        "versionIndex": 6,
+        "sourceFileName": "notebook.py"
+      },
+      "source_sha256": "45ead88cd58a757906036ea6f229a08cc7ffd37bc90d9c05b2824097e370a800",
+      "static_sha256": "275a07955c95c5975d2b58fc3b8403165f3d623d26686e9ef4a9fbe770bf1c27",
+      "static_bytes": 548058,
+      "has_static_output": true,
+      "url": "https://forge.coreweave.com/notebooks/Tm90ZWJvb2s6MTUyNzE=",
+      "runtime_versions": {
+        "marimo": "0.25.1",
+        "numpy": "2.5.4",
+        "pandas": "3.1.1",
+        "matplotlib": "3.11.2",
+        "wandb": "0.30.0"
+      }
+    },
+    {
+      "name": "Did it beat doing nothing?",
+      "version": {
+        "artifactTypeName": "notebook",
+        "artifactCollectionName": "Did-it-beat-doing-nothing",
+        "versionIndex": 9,
+        "sourceFileName": "notebook.py"
+      },
+      "source_sha256": "3fd6c0daba058b5b7671e7237e38bbede195a5ef25e54d43788bd7569b883256",
+      "static_sha256": "c5188fa37ad7c28a2753210bfaa2457631f255c90d4bee4e8576c496c8601fe7",
+      "static_bytes": 4644610,
+      "has_static_output": true,
+      "url": "https://forge.coreweave.com/notebooks/Tm90ZWJvb2s6MTUyNzI=",
+      "runtime_versions": {
+        "marimo": "0.25.1",
+        "numpy": "2.5.4",
+        "pandas": "3.1.1",
+        "matplotlib": "3.11.2",
+        "wandb": "0.30.0"
+      }
+    }
+  ],
+  "scope": "Readback verifies recorded execution and source/output versions, not semantic correctness. Hosted paid-run button was not exercised."
+}

@@ -1,0 +1,13 @@
+private-evidence/
+__pycache__/
+*/working-notes.md
+*/sources.md
+*/article.json
+*/screenshots/
+catalog.json
+INDEX.md
+editorial-research.md
+validation.json
+link-check.json
+render-check.json
+report-*.png

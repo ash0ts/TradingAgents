@@ -1,0 +1,520 @@
+{
+  "notebooks": [
+    {
+      "notebook_id": "Tm90ZWJvb2s6MTUyNjA=",
+      "name": "Meet the investment committee.",
+      "version": {
+        "artifactTypeName": "notebook",
+        "artifactCollectionName": "Meet-the-investment-committee.",
+        "versionIndex": 20,
+        "sourceFileName": "notebook.py"
+      },
+      "source_sha256": "1b13f67ed73f7590a0f3005b8954a91f536a3ef098390e19791366588e57185b",
+      "last_source_edited_at": "2026-11-06T07:15:36Z",
+      "last_static_output_at": null,
+      "has_static_output": true,
+      "url": "https://forge.coreweave.com/notebooks/Tm90ZWJvb2s6MTUyNjA=",
+      "static_sha256": "eaa6457cb392d0b019c0a76770cfd918dde396d561ebd4b4209d7e53e1c149d0",
+      "static_bytes": 1484751,
+      "local_source_sha256": "361820505e8e1860513c82aeb607b72d244d7b845e08c6aae7cfa6be5aa60695",
+      "source_equivalence": "Python AST identical after normalizing generated Marimo version and leading/trailing Markdown whitespace only.",
+      "common_evidence_executions": 360,
+      "handoff_engineering_executions": 8,
+      "new_model_calls_during_notebook_execution": 0,
+      "runtime_versions": {
+        "marimo": "0.25.1",
+        "numpy": "2.5.4",
+        "pandas": "3.1.1",
+        "matplotlib": "3.11.2",
+        "wandb": "0.30.0"
+      },
+      "kernel_shutdown_after_execution": true,
+      "runtime_stopped_after_verification": true
+    },
+    {
+      "notebook_id": "Tm90ZWJvb2s6MTUyNzE=",
+      "name": "Confident, expensive, and wrong?",
+      "version": {
+        "artifactTypeName": "notebook",
+        "artifactCollectionName": "Confident-expensive-and-wrong",
+        "versionIndex": 10,
+        "sourceFileName": "notebook.py"
+      },
+      "source_sha256": "fbb0b5e2863cc8ac03ee97a0b22ca14e42c7d669dba7f6d0220d51f6eb9e734b",
+      "last_source_edited_at": "2026-11-06T07:25:15Z",
+      "last_static_output_at": null,
+      "has_static_output": true,
+      "url": "https://forge.coreweave.com/notebooks/Tm90ZWJvb2s6MTUyNzE=",
+      "static_sha256": "c688dac18a9149c7f007672c6571202518c7769ad3f8a978be6df3881ec927a1",
+      "static_bytes": 1772785,
+      "local_source_sha256": "325f313ea7b69e5e78df6fec2694e78ff9912984017c220e637fa038d0fa826f",
+      "source_equivalence": "Python AST identical after normalizing generated Marimo version and leading/trailing Markdown whitespace only.",
+      "common_evidence_executions": 360,
+      "handoff_engineering_executions": 8,
+      "new_model_calls_during_notebook_execution": 0,
+      "runtime_versions": {
+        "marimo": "0.25.1",
+        "numpy": "2.5.4",
+        "pandas": "3.1.1",
+        "matplotlib": "3.11.2",
+        "wandb": "0.30.0"
+      },
+      "kernel_shutdown_after_execution": true,
+      "runtime_stopped_after_verification": true
+    },
+    {
+      "notebook_id": "Tm90ZWJvb2s6MTUyNzI=",
+      "name": "Did it beat doing nothing?",
+      "version": {
+        "artifactTypeName": "notebook",
+        "artifactCollectionName": "Did-it-beat-doing-nothing",
+        "versionIndex": 27,
+        "sourceFileName": "notebook.py"
+      },
+      "source_sha256": "858a692f694c46f7011ea9671e569485d7243620d41a3a0a07c9e684fc700437",
+      "last_source_edited_at": "2026-11-06T07:25:16Z",
+      "last_static_output_at": null,
+      "has_static_output": true,
+      "url": "https://forge.coreweave.com/notebooks/Tm90ZWJvb2s6MTUyNzI=",
+      "static_sha256": "e375bee30862a20d89342edea525ad5f8c55b620b1f69013ff92d93a99d8b779",
+      "static_bytes": 8404732,
+      "local_source_sha256": "fd3d5e6208cc28b87fd9620be62c4dc3b5434949db95f60299cdc133e53e11ff",
+      "source_equivalence": "Python AST identical after normalizing generated Marimo version and leading/trailing Markdown whitespace only.",
+      "common_evidence_executions": 360,
+      "handoff_engineering_executions": 8,
+      "new_model_calls_during_notebook_execution": 0,
+      "runtime_versions": {
+        "marimo": "0.25.1",
+        "numpy": "2.5.4",
+        "pandas": "3.1.1",
+        "matplotlib": "3.11.2",
+        "wandb": "0.30.0"
+      },
+      "kernel_shutdown_after_execution": true,
+      "runtime_stopped_after_verification": true
+    }
+  ],
+  "anonymous_access_verified": [
+    {
+      "id": "Tm90ZWJvb2s6MTUyNjA=",
+      "version": 20,
+      "anonymous_permissions": [
+        "VIEW_STATIC"
+      ],
+      "static_sha256": "eaa6457cb392d0b019c0a76770cfd918dde396d561ebd4b4209d7e53e1c149d0",
+      "static_bytes": 1484751
+    },
+    {
+      "id": "Tm90ZWJvb2s6MTUyNzE=",
+      "version": 10,
+      "anonymous_permissions": [
+        "VIEW_STATIC"
+      ],
+      "static_sha256": "c688dac18a9149c7f007672c6571202518c7769ad3f8a978be6df3881ec927a1",
+      "static_bytes": 1772785
+    },
+    {
+      "id": "Tm90ZWJvb2s6MTUyNzI=",
+      "version": 27,
+      "anonymous_permissions": [
+        "VIEW_STATIC"
+      ],
+      "static_sha256": "e375bee30862a20d89342edea525ad5f8c55b620b1f69013ff92d93a99d8b779",
+      "static_bytes": 8404732
+    }
+  ],
+  "agent_lens_audit": {
+    "conversations": 360,
+    "spans": 15058,
+    "model_calls": 4149,
+    "all_evaluation_links_verified": true,
+    "all_usage_reconciled": true,
+    "readback_json_bytes": 567714665
+  },
+  "private_artifact": {
+    "artifact": "wandb/tradingagents-election-lab-evidence/election-lab-frozen-evidence:v0",
+    "digest": "c50332fc50210c20a567d9ec75bc8704",
+    "project": "wandb/tradingagents-election-lab-evidence",
+    "evidence_version": "92623c2d0bf66b9c698f158e1374359303469a214dbcc110583e907abec4f6ef",
+    "manifest_readback_verified": true
+  },
+  "evaluation_audit": {
+    "calls": 1456,
+    "operations": {
+      "Evaluation.evaluate": 364,
+      "Evaluation.predict_and_score": 364,
+      "Model.predict": 364,
+      "Evaluation.summarize": 364
+    },
+    "unfinished": 0,
+    "native_model_calls_not_duplicated": true
+  },
+  "project_access": {
+    "public": {
+      "name": "tradingagents-election-lab",
+      "access": "USER_READ"
+    },
+    "private": {
+      "name": "tradingagents-election-lab-evidence",
+      "access": "PRIVATE"
+    }
+  },
+  "validation": {
+    "pytest_passed": 1492,
+    "pytest_skipped": 1,
+    "pytest_deselected": 1,
+    "subtests_passed": 100,
+    "ruff": "passed",
+    "clean_pinned_notebook_exports": "passed; Marimo 0.25.2",
+    "hosted_runtimes_stopped": true,
+    "hosted_kernel_execution": "passed; Marimo 0.25.1",
+    "runtime_shutdown_boundary": "Marimo kernels shut down after checkpoint; terminateSandbox confirmed all three runtime terminations. Infrastructure charges remain subject to invoice reconciliation."
+  },
+  "corrected_campaign_audit": {
+    "2026_five_session_outcomes_pending": true,
+    "actor_code_revisions": [
+      "4eb79a67a1e64b3945c5d219b7ea92ad49313c8b"
+    ],
+    "all_prediction_hashes_match": true,
+    "budget": {
+      "calls": 8447,
+      "campaign_cap_usd": 250,
+      "cost_known_usd": 15.468169,
+      "cost_upper_usd": 190.468169,
+      "infrastructure_reserved_usd": 175.0,
+      "infrastructure_status": "Conservative holds; invoice reconciliation pending. Not recorded spend.",
+      "model_unknown_calls": 0,
+      "unknown_calls": 3
+    },
+    "campaign_id": "election-contract-v2",
+    "contract_counts": {
+      "abstained": 145,
+      "accepted": 215
+    },
+    "evidence_and_outcome_hashes_match_frozen_protocol": true,
+    "executions": 360,
+    "hosted": {
+      "all_evaluation_links_verified": true,
+      "all_model_requests_have_mandate": true,
+      "all_usage_reconciled": true,
+      "conversations": 360,
+      "model_calls": 4194,
+      "spans": 14829
+    },
+    "new_model_cost_upper_usd_including_qualification": 7.783134,
+    "nonmandate_horizons_unscored": true,
+    "original_controls_unchanged_sha256": "843580ed4cccc7d38f5d3e868c0263e12a5347112d68e646d4937e09ea3e1104",
+    "portfolio_counts": {
+      "matured": 192,
+      "pending": 48
+    },
+    "protocol_sha256": "49e573790f8c31854a5fe075fd2c51f1ed6a5fa6ef87afb8c2a0d9b55846a3ba",
+    "qualification_executions": 3,
+    "result_sha256": "f36363670f04ed8900fc9482520d026915b25a3ece1d56663e004ee798499ed3",
+    "scores_and_original_portfolios_recomputed_by_exporter": true,
+    "selected_assistant_reviews": 30,
+    "semantic_boundary": "Typed validation and numeric reconciliation do not certify factual or investment quality. See 30 selected Codex assistant reviews.",
+    "source_hashes_match_frozen_protocol": true,
+    "status_counts": {
+      "success": 360
+    },
+    "unique_conversations": 360
+  },
+  "corrected_public_artifact": {
+    "artifact": "wandb/tradingagents-election-lab/execution-contract-v2-results:v0",
+    "digest": "d1335d9fc3a6db45514fea527135bf5a",
+    "project": "wandb/tradingagents-election-lab",
+    "protocol_sha256": "49e573790f8c31854a5fe075fd2c51f1ed6a5fa6ef87afb8c2a0d9b55846a3ba",
+    "public": true
+  },
+  "prior_notebook_versions": [
+    {
+      "notebook_id": "Tm90ZWJvb2s6MTUyNjA=",
+      "name": "Meet the investment committee.",
+      "version": {
+        "artifactTypeName": "notebook",
+        "artifactCollectionName": "Meet-the-investment-committee.",
+        "versionIndex": 13,
+        "sourceFileName": "notebook.py"
+      },
+      "source_sha256": "5966f000e38d4002885926717cfa22396881b5a769f4c140902c153d7c8ef89b",
+      "last_source_edited_at": "2026-11-06T07:15:36Z",
+      "last_static_output_at": null,
+      "has_static_output": true,
+      "url": "https://forge.coreweave.com/notebooks/Tm90ZWJvb2s6MTUyNjA=",
+      "static_sha256": "24c7c84ee34c4a5cf7b93ed7ce3db3d18dab19e74e147629aaab851acd0171eb",
+      "static_bytes": 571831,
+      "public_data_sha256": "f565efe5b288eaf93540484801b2f79e5f5bf8b2242ed9a3223428b797c10096",
+      "runtime_versions": {
+        "marimo": "0.25.1",
+        "numpy": "2.5.4",
+        "pandas": "3.1.1",
+        "matplotlib": "3.11.2",
+        "wandb": "0.30.0"
+      }
+    },
+    {
+      "notebook_id": "Tm90ZWJvb2s6MTUyNzE=",
+      "name": "Confident, expensive, and wrong?",
+      "version": {
+        "artifactTypeName": "notebook",
+        "artifactCollectionName": "Confident-expensive-and-wrong",
+        "versionIndex": 6,
+        "sourceFileName": "notebook.py"
+      },
+      "source_sha256": "45ead88cd58a757906036ea6f229a08cc7ffd37bc90d9c05b2824097e370a800",
+      "last_source_edited_at": "2026-11-06T07:25:15Z",
+      "last_static_output_at": null,
+      "has_static_output": true,
+      "url": "https://forge.coreweave.com/notebooks/Tm90ZWJvb2s6MTUyNzE=",
+      "static_sha256": "275a07955c95c5975d2b58fc3b8403165f3d623d26686e9ef4a9fbe770bf1c27",
+      "static_bytes": 548058,
+      "public_data_sha256": "f565efe5b288eaf93540484801b2f79e5f5bf8b2242ed9a3223428b797c10096",
+      "runtime_versions": {
+        "marimo": "0.25.1",
+        "numpy": "2.5.4",
+        "pandas": "3.1.1",
+        "matplotlib": "3.11.2",
+        "wandb": "0.30.0"
+      }
+    },
+    {
+      "notebook_id": "Tm90ZWJvb2s6MTUyNzI=",
+      "name": "Did it beat doing nothing?",
+      "version": {
+        "artifactTypeName": "notebook",
+        "artifactCollectionName": "Did-it-beat-doing-nothing",
+        "versionIndex": 23,
+        "sourceFileName": "notebook.py"
+      },
+      "source_sha256": "4c988015279bb129c176738bb212e86b96bc2b004ae1076e5b3219e281a3ef66",
+      "last_source_edited_at": "2026-11-06T07:25:16Z",
+      "last_static_output_at": null,
+      "has_static_output": true,
+      "url": "https://forge.coreweave.com/notebooks/Tm90ZWJvb2s6MTUyNzI=",
+      "static_sha256": "533beeee5861d313b6d266d1829e7907c27a87ce56a98560852c8e9d60940c2d",
+      "static_bytes": 6087632,
+      "local_source_sha256": "e98980edd46304cd6f7cd813dee9029c088a0693ce611893733de82152bbd249",
+      "source_equivalence": "Python AST identical after generated Marimo version normalization; editor reformats dependency comments",
+      "corrected_executions": 360,
+      "corrected_result_sha256": "f36363670f04ed8900fc9482520d026915b25a3ece1d56663e004ee798499ed3",
+      "new_model_calls": 0,
+      "scenario_rows": 1120,
+      "runtime_versions": {
+        "marimo": "0.25.1",
+        "numpy": "2.5.4",
+        "pandas": "3.1.1",
+        "matplotlib": "3.11.2",
+        "wandb": "0.30.0"
+      },
+      "runtime_stopped_after_verification": true
+    }
+  ],
+  "common_evidence_audit": {
+    "2026_five_session_outcomes_pending": true,
+    "actor_code_revision": "8a98c008c57cb8ac5c48a2ca9a967cd0b866ec37",
+    "all_trial_hashes_verified": true,
+    "assistant_reviews": 36,
+    "boundary": "Citation slots reconcile to supplied observations; prose claims and investment merit require separate review.",
+    "briefs_recomputed_from_original_snapshots": 60,
+    "budget": {
+      "calls": 12942,
+      "campaign_cap_usd": 250,
+      "cost_known_usd": 25.878154,
+      "cost_upper_usd": 205.868154,
+      "infrastructure_reserved_usd": 179.99,
+      "infrastructure_status": "Conservative holds; invoice reconciliation pending. Not recorded spend.",
+      "model_unknown_calls": 0,
+      "unknown_calls": 4
+    },
+    "campaign_id": "election-evidence-v3/repaired",
+    "contract_counts": {
+      "abstained": 58,
+      "accepted": 302
+    },
+    "executions": 360,
+    "frozen_sources_verified": true,
+    "hosted": {
+      "all_evaluation_links_verified": true,
+      "all_model_requests_have_exact_brief": false,
+      "all_model_requests_have_mandate": false,
+      "all_observed_model_requests_have_exact_brief": true,
+      "all_observed_model_requests_have_mandate": true,
+      "all_usage_reconciled": false,
+      "complete_conversations": 359,
+      "conversations": 360,
+      "incomplete_conversations": [
+        {
+          "agents": [
+            "Aggressive Analyst",
+            "Bear Researcher",
+            "Conservative Analyst",
+            "Fundamentals Analyst",
+            "Market Analyst",
+            "Memory Log",
+            "Neutral Analyst",
+            "News Analyst",
+            "Portfolio Manager",
+            "Research Manager",
+            "Sentiment Analyst",
+            "Trader",
+            "luna-committee/cited-evidence"
+          ],
+          "all_model_requests_have_exact_brief": false,
+          "all_model_requests_have_mandate": false,
+          "all_observed_model_requests_have_exact_brief": true,
+          "all_observed_model_requests_have_mandate": true,
+          "all_spans_linked": true,
+          "arm": "cited-evidence",
+          "audit_schema": 2,
+          "brief_sha256": "af11634f870a7a2afebf429002fec4b4fbbd9584cb76b60f815d564ab5e805f9",
+          "case_id": "midterms-2022-before-AAPL",
+          "conversation_id": "ae47ff2b-38b4-5f86-9490-ae6b86d0ba33",
+          "incident": "Bull Researcher subagent and model spans missing after an exporter timeout; local response and usage retained; actual request not recoverable; no rerun or reconstructed span.",
+          "missing_native_activity": {
+            "input_tokens": 9836,
+            "model_calls": 1,
+            "output_tokens": 2340,
+            "tool_calls": 0
+          },
+          "missing_native_subagents": {
+            "Bull Researcher": 1
+          },
+          "model_calls": 15,
+          "native_span_export_sha256": "febba57d318ec69f228199455a02b347ddb02f86fc954ae78998bbadf512dc77",
+          "prediction_sha256": "edc0c1ba476854f6ef3d2d8be850e917571c8912545e6aa0b47fe22825d88565",
+          "span_count": 48,
+          "tool_calls": 20,
+          "trace_complete": false,
+          "trace_ids": [
+            "726620f67dc1f5b2af487ca372ca63b3"
+          ],
+          "treatment": "luna-committee",
+          "trial": 0,
+          "usage_reconciled": false
+        }
+      ],
+      "model_calls": 3910,
+      "spans": 11822
+    },
+    "matched_SPY_entry_exposure_reconciled_by_exporter": true,
+    "new_cost_usd_by_phase": {
+      "campaign": 9.009857,
+      "qualification": 0.152389
+    },
+    "new_work_cost_including_stopped_pilot_usd": 10.409984999999999,
+    "old_results_preserved": true,
+    "portfolio_counts": {
+      "matured": 192,
+      "pending": 48
+    },
+    "protocol_sha256": "6e157384ffc2de0b50e4221f500a748e440c25d0efc3da1daa562234ab06eb24",
+    "public_account_reproduction": {
+      "boundary": "Reconciles portfolio arithmetic, not original data collection, model outputs or investment merit.",
+      "matured_accounts_reconciled": 192,
+      "maximum_absolute_error": 6.366462912410498e-11,
+      "method": "Independent linear account reconstruction from public per-dollar factors and accepted target weights.",
+      "pending_accounts_preserved": 48,
+      "requires_raw_prices_or_credentials": false,
+      "result_sha256": "50df369520db1f62a0c3c7b7aadcf16fb5036daa31432c3c404d41d62a640fd7",
+      "tolerance": 1e-07,
+      "unit_factors_sha256": "4998b372c06314507ce8ebcb404590a9af2e8e4d2fdfa4a11d82ae82c1085e3c"
+    },
+    "qualification_executions": 7,
+    "result_sha256": "50df369520db1f62a0c3c7b7aadcf16fb5036daa31432c3c404d41d62a640fd7",
+    "status_counts": {
+      "success": 360
+    },
+    "stopped_pilot_executions_preserved": 40
+  },
+  "handoff_regression_audit": {
+    "actor_code_revision": "d33c5140a1440be5b8e632fdc8e541ed406dd09f",
+    "budget": {
+      "calls": 13066,
+      "campaign_cap_usd": 250,
+      "cost_known_usd": 26.178592,
+      "cost_upper_usd": 206.168592,
+      "infrastructure_reserved_usd": 179.99,
+      "infrastructure_status": "Conservative holds; invoice reconciliation pending. Not recorded spend.",
+      "model_unknown_calls": 0,
+      "unknown_calls": 4
+    },
+    "combined_evidence_model_cost_upper_usd": 10.710423,
+    "contract_counts": {
+      "accepted": 8
+    },
+    "cost_upper_usd": 0.300438,
+    "executions": 8,
+    "financial_results_exported": false,
+    "hosted": {
+      "all_evaluation_links_verified": true,
+      "all_model_requests_have_exact_brief": true,
+      "all_model_requests_have_mandate": true,
+      "all_observed_model_requests_have_exact_brief": true,
+      "all_observed_model_requests_have_mandate": true,
+      "all_usage_reconciled": true,
+      "complete_conversations": 8,
+      "conversations": 8,
+      "incomplete_conversations": [],
+      "model_calls": 124,
+      "spans": 378
+    },
+    "journal_verification_sha256": "6a3ea2a7bb35c624c134c9079e1acb99782e577deb2e153b6e969b23d8a5e48f",
+    "main_results_sha256": "50df369520db1f62a0c3c7b7aadcf16fb5036daa31432c3c404d41d62a640fd7",
+    "private_journal_spans_verified": 378,
+    "protocol_sha256": "c69ce1be23f73b0b35a521eea6dff28431fce52d1e43e22b8d5c4e069f16a446",
+    "scope": "Eight selected engineering regressions, one execution each. Checks establish the repaired handoff contract, not narrative correctness or financial improvement.",
+    "status_counts": {
+      "success": 8
+    }
+  },
+  "common_evidence_public_artifact": {
+    "artifact": "wandb/tradingagents-election-lab/common-evidence-v3-repaired-results:v1",
+    "digest": "7e2fae9d63da0eaf12736122e4779327",
+    "project": "wandb/tradingagents-election-lab",
+    "protocol_sha256": "6e157384ffc2de0b50e4221f500a748e440c25d0efc3da1daa562234ab06eb24",
+    "public": true
+  },
+  "artifact_readback": [
+    {
+      "artifact": "wandb/tradingagents-election-lab/common-evidence-v3-repaired-results:v1",
+      "digest_verified": true,
+      "files": 20,
+      "results_sha256": "50df369520db1f62a0c3c7b7aadcf16fb5036daa31432c3c404d41d62a640fd7"
+    },
+    {
+      "artifact": "wandb/tradingagents-election-lab-evidence/common-evidence-v3-repaired-executions:v0",
+      "digest_verified": true,
+      "files": 2554
+    },
+    {
+      "artifact": "wandb/tradingagents-election-lab/trader-handoff-v4-results:v0",
+      "digest_verified": true,
+      "files": 4,
+      "results_sha256": "9890d39b6e4914b3f55c6d18be6bd0441d395dea55a29c42405f9c2425d5c87f"
+    },
+    {
+      "artifact": "wandb/tradingagents-election-lab-evidence/trader-handoff-v4-executions:v0",
+      "digest_verified": true,
+      "files": 449,
+      "results_sha256": "9890d39b6e4914b3f55c6d18be6bd0441d395dea55a29c42405f9c2425d5c87f"
+    }
+  ],
+  "runtime_termination": [
+    {
+      "notebook_id": "Tm90ZWJvb2s6MTUyNjA=",
+      "termination_confirmed": true,
+      "checked_at": "2026-11-10T00:23:58.348365+00:00"
+    },
+    {
+      "notebook_id": "Tm90ZWJvb2s6MTUyNzE=",
+      "termination_confirmed": true,
+      "checked_at": "2026-11-10T00:24:01.274306+00:00"
+    },
+    {
+      "notebook_id": "Tm90ZWJvb2s6MTUyNzI=",
+      "termination_confirmed": true,
+      "checked_at": "2026-11-10T00:24:03.037164+00:00"
+    }
+  ]
+}

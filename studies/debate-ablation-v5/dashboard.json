@@ -1,0 +1,59 @@
+{
+  "result_sha256": "4b608feba9d1b3c7307bd5f769a1606806c3d89a611d1375f2e03ae484f34759",
+  "wandb_url": "https://forge.coreweave.com/wandb/tradingagents-election-lab?nw=tmuo3ynvgek",
+  "forge_url": "https://forge.coreweave.com/wandb/wandb/tradingagents-election-lab?nw=tmuo3ynvgek",
+  "run_ids": [
+    "debate-v5-38d76a6c36560be0",
+    "debate-v5-195c2cf6f26bebc5",
+    "debate-v5-8172fcd2cb10ba7b",
+    "debate-v5-43d4440bf33ce273"
+  ],
+  "native_views": [
+    {
+      "id": "01a1c4c5-2321-7354-bd43-39d68cd414d0",
+      "name": "Repeated ablation \u00b7 Full all-Luna committee",
+      "description": "Three fresh executions per frozen case. Prespecified development study; trials are not independent market dates.",
+      "url": "/agent-lens/wandb/tradingagents-election-lab-evidence/conversations?filter=%5B%7B%22id%22%3A%22tags%22%2C%22value%22%3A%7B%22operator%22%3A%22contains%22%2C%22value%22%3A%22debate-ablation-v5%22%7D%7D%2C%7B%22id%22%3A%22agent%22%2C%22value%22%3A%7B%22operator%22%3A%22eq%22%2C%22value%22%3A%5B%22luna-committee%2Fshared-evidence%22%5D%7D%7D%5D"
+    },
+    {
+      "id": "01a1c4c5-23b6-7094-a0df-633d5040867f",
+      "name": "Repeated ablation \u00b7 No research debate",
+      "description": "Three fresh executions per frozen case. Prespecified development study; trials are not independent market dates.",
+      "url": "/agent-lens/wandb/tradingagents-election-lab-evidence/conversations?filter=%5B%7B%22id%22%3A%22tags%22%2C%22value%22%3A%7B%22operator%22%3A%22contains%22%2C%22value%22%3A%22debate-ablation-v5%22%7D%7D%2C%7B%22id%22%3A%22agent%22%2C%22value%22%3A%7B%22operator%22%3A%22eq%22%2C%22value%22%3A%5B%22luna-no-research%2Fshared-evidence%22%5D%7D%7D%5D"
+    },
+    {
+      "id": "01a1c4c5-2467-70f1-bc76-cc033f991eb3",
+      "name": "Repeated ablation \u00b7 No risk debate",
+      "description": "Three fresh executions per frozen case. Prespecified development study; trials are not independent market dates.",
+      "url": "/agent-lens/wandb/tradingagents-election-lab-evidence/conversations?filter=%5B%7B%22id%22%3A%22tags%22%2C%22value%22%3A%7B%22operator%22%3A%22contains%22%2C%22value%22%3A%22debate-ablation-v5%22%7D%7D%2C%7B%22id%22%3A%22agent%22%2C%22value%22%3A%7B%22operator%22%3A%22eq%22%2C%22value%22%3A%5B%22luna-no-risk%2Fshared-evidence%22%5D%7D%7D%5D"
+    },
+    {
+      "id": "01a1c4c5-24ff-7d3f-bb7e-4fd9341925a1",
+      "name": "Repeated ablation \u00b7 Single Luna analyst",
+      "description": "Three fresh executions per frozen case. Prespecified development study; trials are not independent market dates.",
+      "url": "/agent-lens/wandb/tradingagents-election-lab-evidence/conversations?filter=%5B%7B%22id%22%3A%22tags%22%2C%22value%22%3A%7B%22operator%22%3A%22contains%22%2C%22value%22%3A%22debate-ablation-v5%22%7D%7D%2C%7B%22id%22%3A%22agent%22%2C%22value%22%3A%7B%22operator%22%3A%22eq%22%2C%22value%22%3A%5B%22single-luna%2Fshared-evidence%22%5D%7D%7D%5D"
+    },
+    {
+      "id": "01a1c4c5-2796-74a8-9e6a-16fe0f6be2ce",
+      "name": "Repeated ablation \u00b7 Failed attempts",
+      "description": "Three fresh executions per frozen case. Prespecified development study; trials are not independent market dates.",
+      "url": "/agent-lens/wandb/tradingagents-election-lab-evidence/conversations?filter=%5B%7B%22id%22%3A%22tags%22%2C%22value%22%3A%7B%22operator%22%3A%22contains%22%2C%22value%22%3A%22debate-ablation-v5%22%7D%7D%2C%7B%22id%22%3A%22errors%22%2C%22value%22%3A%7B%22operator%22%3A%22gt%22%2C%22value%22%3A0%7D%7D%5D"
+    },
+    {
+      "id": "01a1c4c5-2a4c-7d70-a24f-67a40ff3723a",
+      "name": "Repeated ablation \u00b7 Prespecified assistant reviews",
+      "description": "Three fresh executions per frozen case. Prespecified development study; trials are not independent market dates.",
+      "url": "/agent-lens/wandb/tradingagents-election-lab-evidence/conversations?filter=%5B%7B%22id%22%3A%22tags%22%2C%22value%22%3A%7B%22operator%22%3A%22contains%22%2C%22value%22%3A%22reviewed-v5-codex-assistant%22%7D%7D%5D"
+    },
+    {
+      "id": "01a1c4c5-2ae3-71cf-9fad-ae72eb539805",
+      "name": "Repeated ablation \u00b7 Reviewed numerical comparison",
+      "description": "Three fresh executions per frozen case. Prespecified development study; trials are not independent market dates.",
+      "url": "/agent-lens/wandb/tradingagents-election-lab-evidence/conversations?filter=%5B%7B%22id%22%3A%22tags%22%2C%22value%22%3A%7B%22operator%22%3A%22contains%22%2C%22value%22%3A%22reviewed-v5-numerical-comparison%22%7D%7D%5D"
+    }
+  ],
+  "anonymous_tables_verified": 20,
+  "native_panels": 6,
+  "report_panels": 2,
+  "tagged_conversations": 720
+}

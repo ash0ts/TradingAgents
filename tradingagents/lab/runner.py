@@ -131,14 +131,27 @@ def run_one(root, output, case_id, treatment, trial=0, phase="campaign", publish
             "code_revision": revision, "outcome_status": "not_scored"}
     config = deepcopy(DEFAULT_CONFIG)
     events = []
+    lab_provider = (os.getenv("TRADINGAGENTS_LAB_PROVIDER") or "openai").strip().lower()
+    if lab_provider == "forge":
+        backend_url = "https://api.inference.wandb.ai/v1"
+        quick_llm = os.getenv("TRADINGAGENTS_LAB_QUICK_MODEL") or "zai-org/GLM-5.3-Flash"
+        deep_llm = os.getenv("TRADINGAGENTS_LAB_DEEP_MODEL") or (
+            "deepseek-ai/DeepSeek-V4" if treatment == "default-committee" else quick_llm
+        )
+    else:
+        backend_url = "https://api.openai.com/v1"
+        quick_llm = os.getenv("TRADINGAGENTS_LAB_QUICK_MODEL") or "gpt-6-luna"
+        deep_llm = os.getenv("TRADINGAGENTS_LAB_DEEP_MODEL") or (
+            "gpt-6-sol" if treatment == "default-committee" else quick_llm
+        )
     config.update({"forge_project": trace_project, "forge_conversation_id": cid,
                    "forge_event_sink": events,
                    "forge_metadata": meta, "replay_root": str(root.resolve()), "replay_evidence": evidence_hash,
                    "results_dir": str(run_dir / "reports"), "data_cache_dir": str(run_dir / "cache"),
                    "memory_log_path": str(run_dir / "memory.md"), "checkpoint_enabled": False,
                    "llm_max_retries": 0, "max_tokens": 4096,
-                   "backend_url": "https://api.openai.com/v1", "llm_provider": "openai",
-                   "quick_think_llm": "gpt-6-luna", "deep_think_llm": "gpt-6-sol" if treatment == "default-committee" else "gpt-6-luna"})
+                   "backend_url": backend_url, "llm_provider": lab_provider,
+                   "quick_think_llm": quick_llm, "deep_think_llm": deep_llm})
     budget = BudgetCallback(ledger, key, phase)
     if debate_ablation:
         config["lab_debate_ablation"] = debate_ablation
@@ -177,7 +190,7 @@ def run_one(root, output, case_id, treatment, trial=0, phase="campaign", publish
         row["evaluation_ids"] = attrs
         try:
             from tradingagents.dataflows.config import run_config
-            with run_config(config), network_guard(["api.openai.com", "forge.coreweave.com", "api.wandb.ai", "trace.wandb.ai"]):
+            with run_config(config), network_guard(["api.openai.com", "api.inference.wandb.ai", "forge.coreweave.com", "api.wandb.ai", "trace.wandb.ai"]):
                 if treatment == "single-luna":
                     row.update(single_analyst(config, data, budget))
                 else:

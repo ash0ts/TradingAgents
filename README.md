@@ -4,6 +4,20 @@
 
 # TradingAgents: Multi-Agents LLM Financial Trading Framework
 
+This personal fork adds an optional **TradingAgents × Agent Lens election replay
+lab**. Start with [the study contract](docs/election-study.md),
+[native instrumentation](docs/agent-lens.md), and
+[the three Forge notebooks](docs/forge-notebooks.md). The integration and research
+extensions are independent of the upstream TradingAgents authors' work.
+
+Open the [article and live Forge panels](https://forge.coreweave.com/wandb/wandb/tradingagents-election-lab/reports/Would-you-give-this-investment-committee-money--VmlldzoxODI2MzIwNQ==)
+for the original 13-method comparison, subsequent repairs, and the completed
+[720-attempt debate ablation](studies/debate-ablation-v5/README.md). The latest
+[dashboard](https://forge.coreweave.com/wandb/wandb/tradingagents-election-lab?nw=tmuo3ynvgek)
+links each decision to Agent Lens. All attempts, provider failures, uncertain
+comparisons and pending outcomes remain visible; these retrospective development
+studies do not establish investment skill.
+
 <div align="center" style="line-height: 1;">
   <a href="https://arxiv.org/abs/2412.20138" target="_blank"><img alt="arXiv" src="https://img.shields.io/badge/arXiv-2412.20138-B31B1B?logo=arxiv"/></a>
   <a href="https://discord.com/invite/hk9PGKShPK" target="_blank"><img alt="Discord" src="https://img.shields.io/badge/Discord-TradingResearch-7289da?logo=discord&logoColor=white&color=7289da"/></a>

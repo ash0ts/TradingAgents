@@ -1,0 +1,36 @@
+{
+  "recorded_at": "2026-11-10T08:39:28.759181+00:00",
+  "protocol_sha256": "f0d79a346a1f581248efeb18a8abfd10e8142badd08fbb02913eb695b23d4fda",
+  "completed_at_recording": 243,
+  "observed_actor_failures": 3,
+  "financial_results_inspected_for_this_amendment": false,
+  "changes": [
+    {
+      "kind": "failure-audit implementation repair",
+      "reason": "The existing audit assumes every prediction includes callback events, but the frozen runner does not persist them when a provider request fails. HTTP 520 errors exposed this assumption.",
+      "procedure": "Keep predictions untouched. Compare all original journal IDs with hosted spans; reconcile request counts and reported successful-call usage with the durable ledger. Preserve failed model spans, unknown charges and cash outcomes. Do not infer that unknown usage was zero."
+    },
+    {
+      "kind": "pricing correction and selection-rule deviation",
+      "reason": "The original estimates priced cache creation at the uncached rate; official Luna/Sol prices charge 1.25 times that rate.",
+      "procedure": "Reserve $6 inside the original cap while actors finish; reconcile every previously settled call against recorded cache creation and release the hold after reconciliation. Original predictions and historical exports remain frozen; new derived costs disclose the correction.",
+      "selection_rule_impact": "Corrected qualification maxima imply a twofold main projection of $18.816120. Earlier follow-up correction is $1.502464 and corrected qualification $0.100634; together with prior $10.710423 this totals $31.129641, above the $30 subcap. The corrected original selection rule would have chosen six stocks and two trials. The already-running six-stock/three-trial schedule is retained, with the same hard $30 and $250 dispatch guards and a $6 accounting hold. This is a disclosed deviation from the qualification-margin rule, not an increased spending cap or an outcome-selected sample."
+    }
+  ],
+  "unchanged": [
+    "actor sources and revision",
+    "case membership and three-trial schedule",
+    "no retries",
+    "cash policy for failed attempts",
+    "all primary contrasts and uncertainty definitions",
+    "November 5 outcome freeze",
+    "global and follow-up hard caps"
+  ],
+  "source_sha256": {
+    "scripts/audit_debate_failures.py": "bb8a73436392dbe2c860d6f81643a74cd349746708e8dab3f4f30a1737a32684",
+    "scripts/reconcile_cache_write_costs.py": "2b23ed1566b7dd7a4f957e7c28df5c655aebed48a5565b5a9e2fc157725fc944",
+    "scripts/finalize_debate_ablation.py": "3bd28f6d7c509e23a56681a3b0bd97f045fd71a9a6faf49e653ba39773b75146",
+    "tests/test_cache_write_reconciliation.py": "3621b4c9f734a012553007fddbeb38942c1b6ff144f64798ac6df93386d19930"
+  },
+  "reproduction": "python scripts/finalize_debate_ablation.py; python scripts/reproduce_evidence_accounts.py --data studies/debate-ablation-v5"
+}
